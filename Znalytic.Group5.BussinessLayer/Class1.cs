@@ -8,5 +8,6 @@ namespace Znalytic.Group5.BussinessLayer
 {
     public class Class1
     {
+        private string _name;
     }
 }
