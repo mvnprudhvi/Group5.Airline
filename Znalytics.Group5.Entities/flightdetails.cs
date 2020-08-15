@@ -1,6 +1,4 @@
-﻿
-///flightdetails
-public class Flight
+﻿public class Flight
 
 {
     private string _flightName;
