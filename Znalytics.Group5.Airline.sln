@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytic.Group5.BussinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Entities", "Znalytics.Group5.Entities\Znalytics.Group5.Entities.csproj", "{B5D2CF2F-DE1D-4DAA-8B85-9ED0AF6B53CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6BD29D37-E6EE-4354-88EB-5D6AA250B92E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cancellationpgm.cs", "ConsoleApp1\cancellationpgm.cs.csproj", "{6BD29D37-E6EE-4354-88EB-5D6AA250B92E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
