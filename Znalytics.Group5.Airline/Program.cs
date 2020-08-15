@@ -33,6 +33,10 @@
         r.SetFullName(System.Console.ReadLine());
         System.Console.WriteLine(r.GetFullName());
 
+        System.Console.WriteLine("enter your gender:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
         System.Console.ReadKey();
 
     }
