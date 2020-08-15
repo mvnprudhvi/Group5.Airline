@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.DataAccessLayer
+namespace Znalytic.Group5.BussinessLayer
 {
-    public class Class1
+    public class customer
     {
+        private string _name;
     }
 }
