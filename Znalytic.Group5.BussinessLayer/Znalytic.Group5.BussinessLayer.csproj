@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cancellation.cs" />
     <Compile Include="customer.cs" />
     <Compile Include="flightdetails.cs" />
     <Compile Include="Prices.cs" />
