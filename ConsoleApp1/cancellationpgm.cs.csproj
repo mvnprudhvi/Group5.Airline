@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E252EFCE-8DCF-4421-A748-1E0AF1D8D850}</ProjectGuid>
+    <ProjectGuid>{6BD29D37-E6EE-4354-88EB-5D6AA250B92E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Znalytics.Group5.Airline</RootNamespace>
-    <AssemblyName>Znalytics.Group5.Airline</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytics.Group5.Entities\Znalytics.Group5.Entities.csproj">
+      <Project>{b5d2cf2f-de1d-4daa-8b85-9ed0af6b53cf}</Project>
+      <Name>Znalytics.Group5.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
