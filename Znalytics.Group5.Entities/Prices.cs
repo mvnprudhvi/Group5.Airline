@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytic.Group5.BussinessLayer
+namespace Znalytics.Group5.Entities
 {
-    public class Class1
+    class Prices
     {
-        private string _name;
     }
 }

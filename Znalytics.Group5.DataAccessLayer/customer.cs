@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.Entities
+namespace Znalytics.Group5.DataAccessLayer
 {
-    public class Class1
+    public class customer
     {
     }
 }

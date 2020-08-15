@@ -1,47 +1,43 @@
-﻿public class Flight
-
+﻿class Program
 {
-    private string _flightName;
-    private int _flightId;
-    private string _sourseStatioin;
-    private string _destinationStation;
-    private string _departureDate;
-    private string _departureTime;
+    static void Main()
+    {
+        Registration r = new Registration();
+        System.Console.WriteLine("registration page:");
 
-    public void SetFlightName(string value)
-    {
-        if (value.Length <= 30)
-        {
-            _flightName = value;
-        }
-    }
-    public string GetflightName()
-    {
-        return _flightName;
-    }
-    public void SetFlighhtId(int value)
-    {
-        _flightId = value;
-    }
-    public int GetflightId()
-    {
-        return _flightId;
-    }
-    public void SetdepartureDate(string value)
-    {
-        _departureDate = value;
-    }
-    public string GetdepartureDate()
-    {
-        return _departureDate;
-    }
-    public void SetdepartureTime(string value)
-    {
-        _departureTime = value;
-    }
-    public string GetdepartureTime()
-    {
-        return _departureTime;
-    }
+        System.Console.WriteLine("enter your full name:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
 
+        System.Console.WriteLine("enter your username:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your password:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your email:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your mobile number:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your aadhar card number:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your pan card number:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.WriteLine("enter your gender:");
+        r.SetFullName(System.Console.ReadLine());
+        System.Console.WriteLine(r.GetFullName());
+
+        System.Console.ReadKey();
+
+    }
 }
