@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytic.Group5.BussinessLayer
+namespace Znalytics.Group5.DataAccessLayer
 {
-    public class Class1
+    class cancellation
     {
-        private string _name;
     }
 }
