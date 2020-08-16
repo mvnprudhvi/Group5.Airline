@@ -44,6 +44,7 @@
     <Compile Include="Cancellation.cs" />
     <Compile Include="customer.cs" />
     <Compile Include="flightdetails.cs" />
+    <Compile Include="Flightsearching.cs" />
     <Compile Include="Prices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
