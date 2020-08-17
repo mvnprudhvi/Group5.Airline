@@ -24,7 +24,7 @@ public class FlightSchedule
         set
         {
             if (value.Length <= 10)
-                flightName = value;
+                _flightName = value;
         }
         get { return _flightName; }
     }
@@ -34,7 +34,7 @@ public class FlightSchedule
         set
         {
             if (value.Length <= 10)
-                flightId = value;
+                _flightId = value;
         }
         get { return _flightId; }
     }
@@ -44,7 +44,7 @@ public class FlightSchedule
         set
         {
             if (value.Length <= 10)
-                source = value;
+                _source = value;
         }
         get { return _source; }
     }
@@ -64,7 +64,7 @@ public class FlightSchedule
         set
         {
             if (value.Length <= 10)
-                departureTiming = value;
+                _departureTiming = value;
         }
         get { return _departureTiming; }
     }
@@ -73,7 +73,7 @@ public class FlightSchedule
         set
         {
             if (value.Length <= 10)
-                arrivalTiming = value;
+                _arrivalTiming = value;
         }
         get { return _arrivalTiming; }
     }
