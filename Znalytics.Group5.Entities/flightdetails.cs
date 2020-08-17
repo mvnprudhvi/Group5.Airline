@@ -1,47 +1,80 @@
-﻿public class Flight
+﻿
+
+public class FlightSchedule
 
 {
-    private string _flightName;
-    private int _flightId;
-    private string _sourseStatioin;
-    private string _destinationStation;
-    private string _departureDate;
-    private string _departureTime;
+    private string _flightName { set; get; }
+    private string _flightId { set; get; }
+    private string _source { set; get; }
+    private string _destination { set; get; }
+    private string _departureTiming { set; get; }
+    private string _arrivalTiming { set; get; }
 
-    public void SetFlightName(string value)
+    public FlightSchedule(string flightName, string flightId, string source, string destination, string departureTiming, string arrivalTiming)
     {
-        if (value.Length <= 30)
+        _flightName = flightName;
+        _flightId = flightId;
+        _source = source;
+        _destination = destination;
+        _departureTiming = departureTiming;
+        _arrivalTiming = arrivalTiming;
+    }
+    public string flightName
+    {
+        set
         {
-            _flightName = value;
+            if (value.Length <= 10)
+                flightName = value;
         }
-    }
-    public string GetflightName()
-    {
-        return _flightName;
-    }
-    public void SetFlighhtId(int value)
-    {
-        _flightId = value;
-    }
-    public int GetflightId()
-    {
-        return _flightId;
-    }
-    public void SetdepartureDate(string value)
-    {
-        _departureDate = value;
-    }
-    public string GetdepartureDate()
-    {
-        return _departureDate;
-    }
-    public void SetdepartureTime(string value)
-    {
-        _departureTime = value;
-    }
-    public string GetdepartureTime()
-    {
-        return _departureTime;
+        get { return _flightName; }
     }
 
+    public string flightId
+    {
+        set
+        {
+            if (value.Length <= 10)
+                flightId = value;
+        }
+        get { return _flightId; }
+    }
+
+    public string source
+    {
+        set
+        {
+            if (value.Length <= 10)
+                source = value;
+        }
+        get { return _source; }
+    }
+
+    public string destination
+    {
+        set
+        {
+            if (value.Length <= 10)
+                _destination = value;
+        }
+        get { return _destination; }
+    }
+
+    public string departureTiming
+    {
+        set
+        {
+            if (value.Length <= 10)
+                departureTiming = value;
+        }
+        get { return _departureTiming; }
+    }
+    public string arrivalTiming
+    {
+        set
+        {
+            if (value.Length <= 10)
+                arrivalTiming = value;
+        }
+        get { return _arrivalTiming; }
+    }
 }
