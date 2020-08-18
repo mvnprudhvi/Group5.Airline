@@ -14,7 +14,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
 
         public void AddCustomer(Customer customer)
         {
-            if (customer.CustomerName != null)
+            if (customer.userName != null)
             {
                 cdal.AddCustomer(customer);
             }
