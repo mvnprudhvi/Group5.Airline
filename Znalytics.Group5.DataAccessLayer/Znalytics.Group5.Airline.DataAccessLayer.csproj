@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cancellation.cs" />
-    <Compile Include="customer.cs" />
+    <Compile Include="CancellationDataAcessLayer.cs" />
+    <Compile Include="CustomerDataAccessLayer.cs" />
     <Compile Include="FlightDetailDataAccessLayer.cs" />
     <Compile Include="Flightsearching.cs" />
     <Compile Include="PriceDataAccessLayer.cs" />
