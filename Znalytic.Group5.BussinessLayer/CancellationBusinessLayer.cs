@@ -1,5 +1,4 @@
-﻿
-using Znalytics.AirLine.CancellationBLModule.Entities;
+﻿using Znalytics.AirLine.CancellationBLModule.Entities;
 using Znalytics.AirLine.DataAccessLayer;
 
 namespace Znalytics.AirLine.BusinessLogicLayer
@@ -21,9 +20,6 @@ namespace Znalytics.AirLine.BusinessLogicLayer
         }
     }
 }
-
-
-
 
 
 
