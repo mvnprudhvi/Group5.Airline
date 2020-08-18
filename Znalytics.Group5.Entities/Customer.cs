@@ -1,67 +1,152 @@
-﻿public class Registration
+﻿namespace Znalytics.Group5.Airline.Entities
 {
-    private string _FullName;
-    private string _UserName;
-    private string _Password;
-    private string _Email;
-    private long _MobileNumber;
-    private long _AadharNumber;
-    private string _PanCardNumber;
-    public void SetFullName(string value)
-    {
-        _FullName = value;
-    }
-    public string GetFullName()
-    {
-        return _FullName;
-    }
+    /// <summary>
+    /// Represents Customer
+    /// </summary>
 
-    public void SetUserName(string value)
+    public class Customer
     {
-        _UserName = value;
-    }
-    public string GetUserName()
-    {
-        return _UserName;
-    }
-    public void SetPassword(string value)
-    {
-        _Password = value;
-    }
-    public string GetPassword()
-    {
-        return _Password;
-    }
-    public void SetEmail(string value)
-    {
-        _Email = value;
-    }
-    public string GetEmail()
-    {
-        return _Email;
-    }
-    public void SetMobileNumber(long value)
-    {
-        _MobileNumber = value;
-    }
-    public long GetMobileNumber()
-    {
-        return _MobileNumber;
-    }
-    public void SetAadharNumber(long value)
-    {
-        _AadharNumber = value;
-    }
-    public long GetAadharNumber()
-    {
-        return _AadharNumber;
-    }
-    public void SetPanCardNumber(string value)
-    {
-        _PanCardNumber = value;
-    }
-    public string GetPanCardNumber()
-    {
-        return _PanCardNumber;
+
+        //private fields
+        private string _firstName;
+        private string _lastName;
+        private string _email;
+        private string _password;
+        private string _mobileNumber;
+
+        private string _aadharNumber;
+        private string _pancardNumber;
+
+        /// <summary>
+        /// constructors thst initializes deatails of customer
+        /// </summary>
+
+        public Customer(string firstName, string lastName, string email, string password, string mobileNumber, string aadharNumber, string pancardnumber)
+        {
+
+            /// <param name="email"></param> email of customer
+            /// <param name="password"></param> password of customer
+            /// <param name="mobileNumber"></param> mobile number of customer
+            /// <param name="aadharNumber"></param> aadhar number of customer
+            /// <param name="pancardnumber"></param> pan card number of customer
+
+            _firstName = firstName;
+            _lastName = lastName;
+            _email = email;
+            _password = password;
+            _mobileNumber = mobileNumber;
+
+            _aadharNumber = aadharNumber;
+            _pancardNumber = pancardnumber;
+        }
+        /// <summary>
+        /// represents email of the customer
+        /// </summary>
+        public string FirstName
+        {
+            set
+            {
+                if (value.Length <= 10)
+                    FirstName = value;
+            }
+            get
+            {
+                return _firstName;
+            }
+        }
+
+        public string LastName
+        {
+            set
+            {
+                if (value.Length <= 10)
+                    LastName = value;
+            }
+            get
+            {
+                return _lastName;
+            }
+        }
+
+        public string Email
+        {
+            set
+            {
+                if (value.Length <= 20)
+                    Email = value;
+            }
+            get
+            {
+                return _email;
+            }
+        }
+        /// <summary>
+        /// represents password of the customer 
+        /// </summary>
+        public string Password
+        {
+            set
+            {
+                if (value.Length <= 10)
+                    Password = value;
+            }
+            get
+            {
+                return _password;
+            }
+        }
+        /// <summary>
+        /// represents number of the customer
+        /// </summary>
+        public string MobileNumber
+        {
+            set
+            {
+                //mobile number should contain 10 digits only
+                if (value.Length == 10)
+                {
+                    MobileNumber = value;
+                }
+                else
+                {
+                    throw new Exception("Mobile number should contain 10 digits only");
+                }
+            }
+            get
+            {
+                return MobileNumber;
+            }
+        }
+
+        /// <summary>
+        /// represents aadhar card number of customer
+        /// </summary>
+        public string AadharNumber
+        {
+            set
+            {
+                if (value.Length == 12)
+                    AadharNumber = value;
+            }
+            get
+            {
+                return AadharNumber;
+            }
+        }
+        /// <summary>
+        /// represents pan card number of customer
+        /// </summary>
+        public string PancardNumber
+        {
+            set
+            {
+                if (value.Length == 10)
+                    PancardNumber = value;
+            }
+            get
+            {
+                return PancardNumber;
+            }
+        }
     }
 }
