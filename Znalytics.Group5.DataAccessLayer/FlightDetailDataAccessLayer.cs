@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.DataAccessLayer
+namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     class FlightDetailDataAccessLayer
     {
