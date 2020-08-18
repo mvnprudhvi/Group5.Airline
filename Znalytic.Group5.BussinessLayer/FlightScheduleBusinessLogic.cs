@@ -1,14 +1,28 @@
-﻿
-///BussinessLogic Layer
+﻿//
 ///
-using System;
-using System.Collections.Generic;
 
-using Znalytics.OnlineShopping.CustomersModule.Entities;
-
-namespace Znalytic.Group5.Airline.FlightModule.BussinessLayer
+namespace Znalytic.Group5.Airline.FlightSearchingModule.BussinessLayer
 {
-    class FlightScheduleBusinessLogic
+    class FlightSearchingBusinessLogic
     {
+        public class FlightSearchingBusinessLogicLayer : IFlightSearchingBusinessLogicLayer
+        {
+            private IFlightSearchingDataAccessLayer fdal = null;
+            
+            public FlightSearchingBusinessLogicLayer()
+            {
+                fdal = new FlightSearchingDataAccessLayer();
+            }
+
+            public void AddFlightName(FlightName FlightName)
+            {
+                if (FlightName.FlightName != null)
+
+                    fdal.AddFlightName(FlightName);
+            }
+        }
     }
+
+
+}
 }

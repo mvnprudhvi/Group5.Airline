@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Znalytic.Group5.BussinessLayer
 {
-    class Flightsearching
+    class FlightDetailBussinesssLogicLayer
     {
     }
 }
