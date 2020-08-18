@@ -39,12 +39,7 @@ public class Flight
         //not initializing
     }
 
-
-    /// <summary>
-    /// Static constructor
-    /// </summary>
-
-
+    
     /// <summary>
     /// Represents name of the AirLine
     /// </summary>

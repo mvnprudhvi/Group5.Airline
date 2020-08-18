@@ -3,20 +3,20 @@ using Znalytics.AirLine.DataAccessLayer;
 
 namespace Znalytics.AirLine.BusinessLogicLayer
 {
-    public class FlightBusinessLogicLayer : FlightBusinessLogicLayer
+    public class CancellationBusinessLogicLayer : ICancellationBusinessLogicLayer
     {
-        private FlightDataAccessLayer fdal = null;
+        private ICancellationDataAccessLayer cdal = null;
 
-        public FlightBusinessLogicLayer()
+        public CancellationBusinessLogicLayer()
         {
-            fdal = new FlightDataAccessLayer();
+            cdal = new CancellationDataAccessLayer();
         }
 
-        public void AddFlightName(FlightName Flight)
+        public void AddFlightName(FlightName FlightName)
         {
-            if (Flight.FlightName != null)
+            if (FlightName.FlightName != null)
        
-                fdal.AddFlight(Flight);
+                cdal.AddFlightName(FlightName);
             }
         }
     }
