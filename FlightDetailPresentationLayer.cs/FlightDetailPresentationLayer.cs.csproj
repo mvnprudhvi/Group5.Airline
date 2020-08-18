@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5D2CF2F-DE1D-4DAA-8B85-9ED0AF6B53CF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Znalytics.Group5.Entities</RootNamespace>
-    <AssemblyName>Znalytics.Group5.Entities</AssemblyName>
+    <ProjectGuid>{54E51D91-F68E-46EA-A1A5-A6F953963CB5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FlightDetailPresentationLayer.cs</RootNamespace>
+    <AssemblyName>FlightDetailPresentationLayer.cs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,18 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cancellation.cs" />
-    <Compile Include="flightdetails.cs" />
-    <Compile Include="FlightSearching.cs" />
-    <Compile Include="Prices.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.DataAccessLayer.csproj">
-      <Project>{2c7065c8-5006-4686-b3f2-a7c9f81c500e}</Project>
-      <Name>Znalytics.Group5.DataAccessLayer</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

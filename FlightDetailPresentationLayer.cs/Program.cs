@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.DataAccessLayer
+namespace FlightDetailPresentationLayer.cs
 {
-    class cancellation
+    class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }
