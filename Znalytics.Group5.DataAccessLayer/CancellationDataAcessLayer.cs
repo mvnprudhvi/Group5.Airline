@@ -6,7 +6,7 @@ namespace Znalytics.Group5.AirLine.DataAccessLayer
     public class FlightNameDataAccessLayer : FlightDataAccessLayer
     {
         //create list
-        List<Flightname> FlightName = new List<FlightName>();
+        List<FlightName> FlightName = new List<FlightName>();
 
         public void AddFlightName(FlightName FlightName)
         {
