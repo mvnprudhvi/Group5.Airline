@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-namespace Znalytic.Group5.BussinessLayer
+namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
      public class PriceBusinessLogic
     {
