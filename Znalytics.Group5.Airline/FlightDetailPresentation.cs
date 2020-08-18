@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
 {
     class FlightDetailPresentation
