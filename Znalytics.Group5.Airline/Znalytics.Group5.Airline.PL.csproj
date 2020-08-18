@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CancellationPL.cs" />
     <Compile Include="FlightDetailPresentation.cs" />
+    <Compile Include="flightsearchingPL.cs" />
     <Compile Include="MenuPresenterr.cs" />
     <Compile Include="PricePL.cs" />
     <Compile Include="program.cs" />
