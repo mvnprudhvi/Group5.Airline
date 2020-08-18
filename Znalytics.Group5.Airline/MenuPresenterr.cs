@@ -51,12 +51,12 @@ namespace Znalytics.Group5.Airline
                 } while (choice != 9);
             }
 
-            private static void AddFlight()
+         private static void AddFlight()
             {
                 Flight flight = new Flight();
                 Console.Write("Enter flight name to be added: ");
-                string userinput = Console.ReadLine();
-                if (userinput != "null")
+                /**string userinput = Console.ReadLine();
+                ///if (userinput != "null")
                 {
                     flight.Add(userinput);
                     foreach (object obj in flight)
@@ -66,11 +66,11 @@ namespace Znalytics.Group5.Airline
                 {
                     Console.Write("not allowed");
                 }
-
+                */
+                flight.FlightName = Console.ReadLine();
             }
         }
 
 
     }
-}
 }
