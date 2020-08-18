@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-namespace Znalytics.Group5.DataAccessLayer
+using Znalytics.Group5.Airline.Entities;
+
+namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     public class PriceDataAccessLayer
     {
