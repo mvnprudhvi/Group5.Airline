@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline", "Znalytics.Group5.Airline\Znalytics.Group5.Airline.csproj", "{E252EFCE-8DCF-4421-A748-1E0AF1D8D850}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline.PL", "Znalytics.Group5.Airline\Znalytics.Group5.Airline.PL.csproj", "{E252EFCE-8DCF-4421-A748-1E0AF1D8D850}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airlines.DataAccessLayer", "Znalytics.Group5.DataAccessLayer\Znalytics.Group5.Airlines.DataAccessLayer.csproj", "{2C7065C8-5006-4686-B3F2-A7C9F81C500E}"
 EndProject
