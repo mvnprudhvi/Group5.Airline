@@ -1,6 +1,6 @@
 ﻿namespace Znalytics.Group5.Airline.Entities
 {
-    class Price
+    public class Price
     {
         private double _price;
         public double AirlinePrice

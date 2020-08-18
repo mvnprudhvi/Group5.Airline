@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cancellation.cs" />
-    <Compile Include="CustomerBusinessLogicLayer.cs" />
-    <Compile Include="FlightBusinessLogicLayer.cs" />
+    <Compile Include="customer.cs" />
+    <Compile Include="FlightDetailBusinessLogic.cs" />
     <Compile Include="Flightsearching.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
