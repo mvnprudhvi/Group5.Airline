@@ -9,9 +9,9 @@ namespace Znalytics.Group5.DataAccessLayer
     class FlightDetailDataAccessLayer
     {
         //create list
-        List<Flight> customers = new List<Flight>();
+        List<Flight> flight = new List<Flight>();
 
-        public void AddCustomer(Flight flight)
+        public void AddFlight(Flight flight)
         {
             ////code generating new flight id
 
