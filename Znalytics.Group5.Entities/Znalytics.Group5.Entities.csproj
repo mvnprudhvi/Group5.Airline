@@ -43,10 +43,16 @@
   <ItemGroup>
     <Compile Include="cancellation.cs" />
     <Compile Include="flightdetails.cs" />
-    <Compile Include="Flightsearching.cs" />
+    <Compile Include="FlightSearching.cs" />
     <Compile Include="Prices.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.DataAccessLayer.csproj">
+      <Project>{2c7065c8-5006-4686-b3f2-a7c9f81c500e}</Project>
+      <Name>Znalytics.Group5.DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

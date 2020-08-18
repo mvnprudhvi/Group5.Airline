@@ -1,6 +1,8 @@
 ﻿public class Flight
 
 {
+    
+
     private string _flightName;
     private int _flightId;
     private string _sourseStatioin;
