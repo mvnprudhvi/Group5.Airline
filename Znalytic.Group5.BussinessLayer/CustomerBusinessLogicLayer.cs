@@ -1,5 +1,5 @@
 ﻿using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.CustomerDataAccessLayer;
+using Znalytics.Group5.Airline.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
