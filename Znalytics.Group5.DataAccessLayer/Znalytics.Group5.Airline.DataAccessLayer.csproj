@@ -45,7 +45,7 @@
     <Compile Include="customer.cs" />
     <Compile Include="FlightDetailDataAccessLayer.cs" />
     <Compile Include="Flightsearching.cs" />
-    <Compile Include="PriceDataAccess.cs" />
+    <Compile Include="PriceDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

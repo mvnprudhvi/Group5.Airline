@@ -45,7 +45,7 @@
     <Compile Include="customer.cs" />
     <Compile Include="FlightDetailBusinessLogic.cs" />
     <Compile Include="Flightsearching.cs" />
-    <Compile Include="PriceBusiness.cs" />
+    <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
