@@ -1,5 +1,4 @@
-﻿
-/// <summary>
+﻿/// <summary>
 /// Represents Flight
 /// </summary>
 public class Flight
