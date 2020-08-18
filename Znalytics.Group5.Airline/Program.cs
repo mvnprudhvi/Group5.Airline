@@ -1,4 +1,4 @@
-﻿class Program
+﻿/*class Program
 {
     static void Main()
     {
@@ -39,5 +39,28 @@
 
         System.Console.ReadKey();
 
+    }
+}*/
+
+
+class Program
+{
+    static void Main()
+    {
+        System.Console.WriteLine("Enter flight name");
+        string FlightName = System.Console.ReadLine();
+        System.Console.WriteLine("Enter Date:");
+        string Date = System.Console.ReadLine();
+        System.Console.WriteLine("Enter Time");
+        string Time = System.Console.ReadLine();
+        System.Console.WriteLine("cancellation");
+        string Cancel = System.Console.ReadLine();
+
+
+        System.Console.WriteLine("flightname"); //get method will be called
+        System.Console.WriteLine("Date"); //get method will be called
+        System.Console.WriteLine("Time"); //get method will be called 
+        System.Console.WriteLine("Cancel"); //get method will be called
+        System.Console.ReadKey();
     }
 }
