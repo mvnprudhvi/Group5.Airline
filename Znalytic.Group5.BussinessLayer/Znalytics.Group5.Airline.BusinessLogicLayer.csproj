@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5D2CF2F-DE1D-4DAA-8B85-9ED0AF6B53CF}</ProjectGuid>
+    <ProjectGuid>{A8C7658B-260D-40B9-B365-99FCB194D296}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Znalytics.Group5.Entities</RootNamespace>
-    <AssemblyName>Znalytics.Group5.Entities</AssemblyName>
+    <RootNamespace>Znalytic.Group5.BussinessLayer</RootNamespace>
+    <AssemblyName>Znalytic.Group5.BussinessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,12 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cancellation.cs" />
-    <Compile Include="flightdetails.cs" />
+    <Compile Include="CancellationBL.cs" />
+    <Compile Include="customer.cs" />
+    <Compile Include="FlightDetailBusinessLogic.cs" />
     <Compile Include="Flightsearching.cs" />
-    <Compile Include="Prices.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.Airline.DataAccessLayer.csproj">
+      <Project>{2c7065c8-5006-4686-b3f2-a7c9f81c500e}</Project>
+      <Name>Znalytics.Group5.Airline.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Znalytics.Group5.Entities\Znalytics.Group5.Airline.Entities.csproj">
+      <Project>{b5d2cf2f-de1d-4daa-8b85-9ed0af6b53cf}</Project>
+      <Name>Znalytics.Group5.Airline.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
