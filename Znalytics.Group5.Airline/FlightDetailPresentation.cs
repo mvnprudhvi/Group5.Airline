@@ -12,6 +12,8 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
         {
             //create refernce variable
 
+            // MultiDimensionalArray
+
             private static string[,] flightName = new string[2, 2];
             private static int[,] flightId = new int[2, 2];
             private static string[,] source = new string[2, 2];
