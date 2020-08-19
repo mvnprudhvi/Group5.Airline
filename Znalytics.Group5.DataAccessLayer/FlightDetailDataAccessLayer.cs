@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.FlightsModule.Entities;
+using Znalytics.Group5.Airline.FlightDetailModule.Entities;
 /// <summary>
 /// represents dataAccessLayer for Flight
 /// </summary>
@@ -22,6 +22,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void AddToList(string flightName, String flightId)
         {
             listOfFlightDetail.Add(new FlightDetail{ flightName = "HYD", flightId = "123" });
+           
         }
             
      /// <summary>
