@@ -5,7 +5,7 @@ namespace Znalytics.AirLine.BusinessLogicLayer
 {
     public class CancellationBusinessLogicLayer : ICancellationBusinessLogicLayer
     {
-        private ICancellationDataAccessLayer cdal = null;
+        private ICancellationDataAccessLayer cdl = null;
 
         public CancellationBusinessLogicLayer()
         {
