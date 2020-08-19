@@ -41,12 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cancellation.cs" />
+    <Compile Include="CancellationDAL.cs" />
     <Compile Include="customer.cs" />
+    <Compile Include="Flight.cs" />
     <Compile Include="flightdetails.cs" />
     <Compile Include="Flightsearching.cs" />
     <Compile Include="Prices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytics.Group5.Entities\Znalytics.Group5.Entities.csproj">
+      <Project>{b5d2cf2f-de1d-4daa-8b85-9ed0af6b53cf}</Project>
+      <Name>Znalytics.Group5.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
