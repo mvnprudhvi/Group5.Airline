@@ -12,16 +12,16 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
         //create list
 
-         List<FlightDetail> listOfFlights = new List<FlightDetail>();
+         List<FlightDetail> listOfFlightDetail = new List<FlightDetail>();
 
 
         /// <summary>
         /// Adding new flight Details
         /// </summary>
         /// <param name="flight">Attribute to add new flight</param>
-        public void AddFlight(FlightDetail flight)
+        public void AddToList(string flightName, String flightId)
         {
-            listOfFlights.Add(flight);
+            listOfFlightDetail.Add(new FlightDetail{ flightName = "HYD", flightId = "123" });
         }
             
      /// <summary>
@@ -31,12 +31,12 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
      /// <param name="flightName"></param>
      public void DeleteFlightDetailByflightId(string flightId,string flightName)
         {
-            listOfFlights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
+            listOfFlightDetail.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
         }
 
         public void UpdateToList( string source, string destination)
         {
-            listOfFlights.
+            listOfFlightDetail
         }
             
             
