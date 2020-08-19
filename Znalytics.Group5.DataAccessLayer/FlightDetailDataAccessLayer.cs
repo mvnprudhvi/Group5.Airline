@@ -1,32 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Group5.Airline.FlightDetailModule.Entities;
-
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.FlightsModule.Entities;
+/// <summary>
+/// represents dataAccessLayer for Flight
+/// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-    class FlightDetailDataAccessLayer
+   public class FlightDetailDataAccessLayer
     {
         //create list
-        List<Flight> flight = new List<Flight>();
-        private IEnumerable<string> flightName;
 
-        public void AddFlight(Flight flight)
+        private List<FlightDetail> _dataBase;
+
+        public FlightDetailDataAccessLayer()
         {
-            ////code generating new flight 
-            Console.Write("Enter flight name to be added: ");
-             string userinput = Console.ReadLine();
-             if(userinput != "null")
-             {
-                 flight.Add(userinput);
-                 foreach (string obj in flightName)
-                     Console.Write(obj.ToString() + " ");
-             }
-             else
-             {
-                 Console.Write("not allowed");
-             }
-            
-            
+            _dataBase = new List<FlightDetail>();
         }
+
+        /// <summary>
+        /// Adding new flight Details
+        /// </summary>
+        /// <param name="flight">Attribute to add new flight</param>
+        public void AddFlight(FlightDetail flight)
+        {
+            _dataBase.Add(flight);
+        }
+            
+             
+            
+            
+        
     }
 }
