@@ -6,7 +6,7 @@ public class Flight
     //private fields
     private string _FlightName;
     private System.DateTime _Date;
-    private System.DateTime Time;
+    private string _Time;
     private string _Cancel;
 
     /// <summary>
@@ -16,7 +16,7 @@ public class Flight
     /// <param name="Date">represents date of flight</param>
     /// <param name="Time">represents time of flight</param>
     /// <param name="cancel">represents cancellation of flight</param>
-    public Flight(string FlightName, System.DateTime _Date, System.DateTime _Time, string cancel)
+    public Flight(string FlightName, System.DateTime Date, int Time, string cancel)
     {
         //_FlightName = flightName;
         //_Date = date;
@@ -24,10 +24,9 @@ public class Flight
         //_Cancel = cancel;
 
         _FlightName = FlightName; //set method will be called
-        //_Date = date; //set method will be called
-        //_Time = time; //set method will be called
-        _Cancel = cancel; //set method will be called
-
+        _Date = Date; //set method will be called
+        _Time = _Time;
+        _Cancel = _Cancel;
     }
 
     /// <summary>
@@ -38,7 +37,7 @@ public class Flight
         //not initializing
     }
 
-    
+
     /// <summary>
     /// Represents name of the AirLine
     /// </summary>
@@ -69,19 +68,42 @@ public class Flight
             _Date = value;
         }
     }
-    public string Cancel
-    {
+
+    public System.DateTime date
         set
         {
-            if (value.Length <= 30)
-                _Cancel = value;
+            return _Date;
         }
-        get
-        {
-            return _Cancel;
-        }
+}
+/// <summary>
+/// time of flight
+/// </summary>
+
+public string Time
+{
+    set
+    {
+        _time = value;
     }
 }
+get
+    {
+        return _time;
+    }
+    }
+public string Cancel
+{
+    set
+    {
+        if (value.Length <= 30)
+            _cancel = value;
+    }
+    get
+    {
+        return _cancel;
+    }
+}
+
 
 
 
