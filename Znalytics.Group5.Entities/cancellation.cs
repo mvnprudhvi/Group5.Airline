@@ -69,7 +69,7 @@ public class Flight
         }
     }
 
-    public System.DateTime date
+    /*lic System.DateTime date
         set
         {
             return _Date;
@@ -90,18 +90,18 @@ get
     {
         return _time;
     }
-    }
+    }*/
 public string Cancel
 {
     set
     {
         if (value.Length <= 30)
         { 
-            _cancel = value;
+            _Cancel= value;
     }
     get
     {
-        return _cancel;
+                return _Cancel;
     }
 }
 
