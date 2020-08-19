@@ -1,5 +1,5 @@
 ﻿using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.CustomerDataAccessLayer;
+using Znalytics.Group5.Airline.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
@@ -14,7 +14,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
 
         public void AddCustomer(Customer customer)
         {
-            if (customer.CustomerName != null)
+            if (customer.userName != null)
             {
                 cdal.AddCustomer(customer);
             }

@@ -1,12 +1,11 @@
-﻿
-using Znalytics.AirLine.CancellationBLModule.Entities;
+﻿using Znalytics.AirLine.CancellationBLModule.Entities;
 using Znalytics.AirLine.DataAccessLayer;
 
 namespace Znalytics.AirLine.BusinessLogicLayer
 {
     public class CancellationBusinessLogicLayer : ICancellationBusinessLogicLayer
     {
-        private ICancellationDataAccessLayer cdal = null;
+        private ICancellationDataAccessLayer cdl = null;
 
         public CancellationBusinessLogicLayer()
         {
@@ -21,9 +20,6 @@ namespace Znalytics.AirLine.BusinessLogicLayer
         }
     }
 }
-
-
-
 
 
 

@@ -24,9 +24,9 @@ public class Flight
         //_Cancel = cancel;
 
         _FlightName = FlightName; //set method will be called
-        _Date = Date; //set method will be called
-        _Time = _Time;
-        _Cancel = _Cancel;
+        //_Date = Date; //set method will be called
+        //_Time = _Time;
+        _Cancel = cancel;
     }
 
     /// <summary>
@@ -69,7 +69,7 @@ public class Flight
         }
     }
 
-    public System.DateTime date
+    /*lic System.DateTime date
         set
         {
             return _Date;
@@ -90,19 +90,21 @@ get
     {
         return _time;
     }
-    }
+    }*/
 public string Cancel
-{
-    set
     {
-        if (value.Length <= 30)
-            _cancel = value;
+        set
+        {
+            if (value.Length <= 30)
+            {
+                _Cancel = value;
+            }
+            get
+        {
+                return _Cancel;
+            }
+        }
     }
-    get
-    {
-        return _cancel;
-    }
-}
 
 
 

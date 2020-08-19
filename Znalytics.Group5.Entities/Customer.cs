@@ -8,8 +8,8 @@
     {
 
         //private fields
-        private string _firstName;
-        private string _lastName;
+        private string _userName;
+         
         private string _email;
         private string _password;
         private string _mobileNumber;
@@ -21,7 +21,7 @@
         /// constructors thst initializes deatails of customer
         /// </summary>
 
-        public Customer(string firstName, string lastName, string email, string password, string mobileNumber, string aadharNumber, string pancardnumber)
+        public Customer(string userName,string email, string password, string mobileNumber, string aadharNumber, string pancardnumber)
         {
 
             /// <param name="email"></param> email of customer
@@ -30,8 +30,8 @@
             /// <param name="aadharNumber"></param> aadhar number of customer
             /// <param name="pancardnumber"></param> pan card number of customer
 
-            _firstName = firstName;
-            _lastName = lastName;
+            _userName = userName;
+             
             _email = email;
             _password = password;
             _mobileNumber = mobileNumber;
@@ -42,29 +42,16 @@
         /// <summary>
         /// represents email of the customer
         /// </summary>
-        public string FirstName
+        public string UserName
         {
             set
             {
                 if (value.Length <= 10)
-                    FirstName = value;
+                    UserName = value;
             }
             get
             {
-                return _firstName;
-            }
-        }
-
-        public string LastName
-        {
-            set
-            {
-                if (value.Length <= 10)
-                    LastName = value;
-            }
-            get
-            {
-                return _lastName;
+                return _userName;
             }
         }
 

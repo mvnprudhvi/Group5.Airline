@@ -1,21 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Znalytics.Group5.DataAccessLayer
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.FlightDetailModule.Entities;
+/// <summary>
+/// represents dataAccessLayer for Flight
+/// </summary>
+namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-    class FlightDetailDataAccessLayer
+   public class FlightDetailDataAccessLayer
     {
+
         //create list
-        List<Flight> customers = new List<Flight>();
 
-        public void AddCustomer(Flight flight)
+         List<FlightDetail> listOfFlightDetail = new List<FlightDetail>();
+
+
+        /// <summary>
+        /// Adding new flight Details
+        /// </summary>
+        /// <param name="flight">Attribute to add new flight</param>
+        public void AddToList(string flightName, String flightId)
         {
-            ////code generating new flight id
-
-            //flight.Add(flight);
+            listOfFlightDetail.Add(new FlightDetail{ flightName = "HYD", flightId = "123" });
+           
         }
+            
+     /// <summary>
+     /// Delete Method with 2 parameters
+     /// </summary>
+     /// <param name="flightId"></param>
+     /// <param name="flightName"></param>
+     public void DeleteFlightDetailByflightId(string flightId,string flightName)
+        {
+            listOfFlightDetail.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
+        }
+
+        public void UpdateToList( string source, string destination)
+        {
+            listOfFlightDetail
+        }
+            
+            
+        
     }
 }

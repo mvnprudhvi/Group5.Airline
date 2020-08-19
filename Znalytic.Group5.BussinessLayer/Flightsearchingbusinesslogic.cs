@@ -14,25 +14,25 @@ namespace Znalytic.Group5.BussinessLayer
     }
 //}
 
-using Znalytics.OnlineShopping.CustomersModule.Entities;
-using Znalytics.OnlineShopping.DataAccessLayer;
+using Znalytics.Group5.FlightSearching.Entities;
+using Znalytics.Group5.DataAccessLayer;
 
-namespace Znalytics.OnlineShopping.BusinessLogicLayer
+namespace Znalytics.Group5.BusinessLogicLayer
 {
-    public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
-    {
-        private ICustomerDataAccessLayer cdal = null;
-
-        public CustomerBusinessLogicLayer()
+    public class FlightSearching : IFlightSearchingBusinessLogicLayer
         {
-            cdal = new CustomerDataAccessLayer();
+        private IFlightSearchingDataAccessLayer fdal = null;
+
+        public FlightSearchingBusinessLogicLayer()
+        {
+            fdal = new FlightSearchingDataAccessLayer();
         }
 
-        public void AddCustomer(Customer customer)
+        public void AddFlightSearching(FlightSearching FlightSearching)
         {
-            if (customer.CustomerName != null)
+            if (FlightSearching.FlightSearching != null)
             {
-                cdal.AddCustomer(customer);
+                fdal.AddFlightSearching(FlightSearching);
             }
         }
     }
