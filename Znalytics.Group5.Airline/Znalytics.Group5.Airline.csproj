@@ -47,6 +47,7 @@
     <Compile Include="FlightDetailPresentation.cs" />
     <Compile Include="flightsearchingPL.cs" />
     <Compile Include="MenuPresenterr.cs" />
+    <Compile Include="PriceMenu.cs" />
     <Compile Include="PricePL.cs" />
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
