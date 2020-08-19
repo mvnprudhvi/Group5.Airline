@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cancellation.cs" />
-    <Compile Include="customer.cs" />
+    <Compile Include="CustomerBusinessLogicLayer.cs" />
     <Compile Include="FlightDetailBusinessLogic.cs" />
     <Compile Include="Flightsearching.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
