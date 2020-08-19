@@ -104,7 +104,6 @@ public string Cancel
                 return _Cancel;
             }
         }
-    }
 
 
 
