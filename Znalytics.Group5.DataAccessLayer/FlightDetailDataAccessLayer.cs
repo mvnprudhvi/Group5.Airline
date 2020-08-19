@@ -9,15 +9,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 {
    public class FlightDetailDataAccessLayer
     {
-        
+
         //create list
 
-        private List<FlightDetail> _dataBase;
+         List<FlightDetail> listOfFlights = new List<FlightDetail>();
 
-        public FlightDetailDataAccessLayer()
-        {
-            _dataBase = new List<FlightDetail>();
-        }
 
         /// <summary>
         /// Adding new flight Details
@@ -25,10 +21,23 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="flight">Attribute to add new flight</param>
         public void AddFlight(FlightDetail flight)
         {
-            _dataBase.Add(flight);
+            listOfFlights.Add(flight);
         }
             
-             
+     /// <summary>
+     /// Delete Method with 2 parameters
+     /// </summary>
+     /// <param name="flightId"></param>
+     /// <param name="flightName"></param>
+     public void DeleteFlightDetailByflightId(string flightId,string flightName)
+        {
+            listOfFlights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
+        }
+
+        public void UpdateToList( string source, string destination)
+        {
+            listOfFlights.
+        }
             
             
         
