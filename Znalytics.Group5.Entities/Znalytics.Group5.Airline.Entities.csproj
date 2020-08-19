@@ -48,15 +48,5 @@
     <Compile Include="Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Znalytic.Group5.BussinessLayer\Znalytics.Group5.Airline.BusinessLogicLayer.csproj">
-      <Project>{a8c7658b-260d-40b9-b365-99fcb194d296}</Project>
-      <Name>Znalytics.Group5.Airline.BusinessLogicLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Group5.Airline\Znalytics.Group5.Airline.PL.csproj">
-      <Project>{e252efce-8dcf-4421-a748-1e0af1d8d850}</Project>
-      <Name>Znalytics.Group5.Airline.PL</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

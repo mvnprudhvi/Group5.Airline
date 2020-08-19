@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.DataAccessLayer
@@ -13,10 +14,10 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
         public void AddCustomer(Customer Customer)
         {
-            ////code generating new customer id
-
+            ////code generating new customer username
+            Console.Write("enter username");
             //customers.Add(customer);
-            customer.Add()
+            customer.Add(customer);
             //not done
 
         }
