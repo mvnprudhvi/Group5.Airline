@@ -112,7 +112,7 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
                 do
                 {
 
-                    MenuPresenter.Menu();
+                    MenuPresenterr.Menu();
 
                 } while (userInput != 5);// do not enter '5', the code will executes in loop.
 
