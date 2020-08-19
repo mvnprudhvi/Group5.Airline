@@ -10,6 +10,8 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
 
         class Program
         {
+            //create refernce variable
+
             private static string[,] flightName = new string[2, 2];
             private static int[,] flightId = new int[2, 2];
             private static string[,] source = new string[2, 2];
@@ -18,7 +20,7 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
             private static string[,] arrivalTiming = new string[2, 2];
 
 
-            // Row and Coloumn is used display the flight details in table format
+            // Read All elements
             public static void PrintDetails()
             {
                 for (int row = 0; row <= 2; row++)

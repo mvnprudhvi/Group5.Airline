@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Znalytics.Group5.Airline.FlightDetailModule.Entities;
 
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
@@ -10,6 +8,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     {
         //create list
         List<Flight> flight = new List<Flight>();
+        private IEnumerable<string> flightName;
 
         public void AddFlight(Flight flight)
         {
@@ -19,7 +18,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
              if(userinput != "null")
              {
                  flight.Add(userinput);
-                 foreach (object obj in flight)
+                 foreach (string obj in flightName)
                      Console.Write(obj.ToString() + " ");
              }
              else
