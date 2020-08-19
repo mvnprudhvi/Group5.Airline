@@ -1,4 +1,5 @@
-﻿using Znalytics.AirLine.CancellationBLModule.Entities;
+﻿
+using Znalytics.AirLine.CancellationBLModule.Entities;
 using Znalytics.AirLine.DataAccessLayer;
 
 namespace Znalytics.AirLine.BusinessLogicLayer
@@ -15,11 +16,12 @@ namespace Znalytics.AirLine.BusinessLogicLayer
         public void AddFlightName(FlightName FlightName)
         {
             if (FlightName.FlightName != null)
-       
+
                 cdal.AddFlightName(FlightName);
-            }
         }
     }
+}
+
 
 
 
