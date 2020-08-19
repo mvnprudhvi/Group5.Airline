@@ -9,6 +9,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 {
    public class FlightDetailDataAccessLayer
     {
+        
         //create list
 
         private List<FlightDetail> _dataBase;
