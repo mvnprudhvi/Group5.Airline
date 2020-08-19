@@ -7,9 +7,9 @@ namespace Znalytics.OnlineShopping.DataAccessLayer
     public class FlightDataAccessLayer : FlightDataAccessLayer
     {
         //create list
-        List<Flight> customers = new List<Flight>();
+        List<FlightName> FlightName = new List<FlightName>();
 
-        public void AddFlightName(Flight Flight)
+        public void AddFlightName(FlightName FlightName)
         {
             ////code generating new customer id
 
