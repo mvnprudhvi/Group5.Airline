@@ -6,6 +6,8 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     public class PriceDataAccessLayer
     {
         //create list
-        List<Price> prices = new List<Price>();
+       List<Price> prices = new List<Price>();
+        
+       
     }
 }
