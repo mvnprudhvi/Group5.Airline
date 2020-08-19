@@ -92,18 +92,19 @@ get
     }
     }*/
 public string Cancel
-{
-    set
     {
-        if (value.Length <= 30)
-        { 
-            _Cancel= value;
-    }
-    get
-    {
+        set
+        {
+            if (value.Length <= 30)
+            {
+                _Cancel = value;
+            }
+            get
+        {
                 return _Cancel;
+            }
+        }
     }
-}
 
 
 
