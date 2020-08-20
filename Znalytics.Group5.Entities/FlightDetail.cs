@@ -28,11 +28,12 @@ namespace Znalytics.Group5.Airline.FlightsModule.Entities
         public string flightName
         {
             set
+                //set the value
             {
 
                 _flightName = value;
             }
-            get { return _flightName; }
+            get { return _flightName; } // get the value
         }
 
 

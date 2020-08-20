@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace Znalytic.Group5.Airline.BussinessLayer
 {
-    class FlightDetailBusinessLogicLayer
+   public  class FlightDetailBusinessLogicLayer
     {
-        private  void AddFlight(f)
-           
-        }
+        FlightDetail f = new FlightDetail();
+       FlightDetailDataAccessLayer fdal = new FlightDetailDataAccessLayer();
+
+    }
     }
 }
