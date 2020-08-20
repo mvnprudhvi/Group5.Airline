@@ -45,7 +45,7 @@ namespace Znalytics.Group5.Airline
                         switch (choice)
                         {
                             case 1: AddFlightDetail(); break;
-                            case 2: UpdateFlightDetail(); break;
+                            case 2: UpdateFlightDetails(); break;
 
 
 

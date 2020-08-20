@@ -33,7 +33,7 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         }
         public void UpdateFlightDetails(FlightDetail flight)
         {
-            if (flight.flightName != null)
+            if (flight.flightId != null)
             {
                 _flightsDataAccessLogic.UpdateEmployee(flight);
             }
