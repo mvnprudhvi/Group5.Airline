@@ -2,7 +2,7 @@
 //Entities
 namespace Znalytics.Group5.Airline.FlightsModule.Entities
 {
-    public class FlightSchedule
+    public class FlightDetail
 
     {
         //Private Fields
@@ -14,7 +14,7 @@ namespace Znalytics.Group5.Airline.FlightsModule.Entities
         private string _departureTiming { set; get; }
         private string _arrivalTiming { set; get; }
 
-        public FlightSchedule(string flightName, string flightId, string source, string destination, string departureTiming, string arrivalTiming)
+        public FlightDetail(string flightName, string flightId, string source, string destination, string departureTiming, string arrivalTiming)
         {
             _flightName = flightName;
             _flightId = flightId;
@@ -28,11 +28,12 @@ namespace Znalytics.Group5.Airline.FlightsModule.Entities
         public string flightName
         {
             set
+                //set the value
             {
 
                 _flightName = value;
             }
-            get { return _flightName; }
+            get { return _flightName; } // get the value
         }
 
 
