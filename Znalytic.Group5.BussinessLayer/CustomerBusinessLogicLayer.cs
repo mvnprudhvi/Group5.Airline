@@ -7,20 +7,35 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
     public class CustomerBusinessLogicLayer
     {
-        private CustomerDataAccessLayer cdal = null;
-
+        CustomerDataAccessLayer _CustomerDataAccessLayer;
         public CustomerBusinessLogicLayer()
         {
-            cdal = new CustomerDataAccessLayer();
+            _CustomerDataAccessLayer = new CustomerDataAccessLayer();
+        }
+        //add
+        public void Add(Customer customer)
+        {
+            if (customer.UserName != null)
+            {
+                _CustomerDataAccessLayer.Add(customer);
+            }
+            else
+            {
+                throw new Exception("Username can't be null");
+            }
+        }
+        //get customer
+        public List<Customer> GetCustomers()
+        {
+            return _CustomerDataAccessLayer.GetCustomers();
         }
 
-        public void AddCustomer(Customer customer)
+        public void UpdateCustomer(Customer customer)
         {
-            if (customer.userName != null)
+            if (customer.UserName != null)
             {
-                cdal.AddCustomer(customer);
+                _CustomerDataAccessLayer.UpdateCustomer(customer);
             }
         }
     }
 }
-

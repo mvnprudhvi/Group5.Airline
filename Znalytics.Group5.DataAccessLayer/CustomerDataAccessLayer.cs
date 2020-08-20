@@ -7,7 +7,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     public class CustomerDataAccessLayer
     {
         //private fields
-        private static List<Customer> customer = new List<Customer>();
+        private static List<Customer> _customer = new List<Customer>();
 
         //Add
         public void Add(Customer customer)
@@ -21,13 +21,13 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         }
 
         //Update
-        public void UpdateCustomer(Customer employee)
+        public void UpdateCustomer(Customer customer)
         {
             //updating customer username
-            Customer customer = _customer.Find(temp => temp._userName == customer._userName);
-            if (customer != null)
+            Customer cust = _customer.Find(temp => temp.UserName == customer.UserName);
+            if (cust != null)
             {
-                return _userName;
+                cust.UserName = customer.UserName;
             }
         }
     }
