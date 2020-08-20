@@ -1,11 +1,28 @@
 ﻿// created by Reshma//
 /// <summary>
-/// Represents FlightSearching
+/// Represents Flightsearching
 /// </summary>
-namespace Znaltyics.Group5.Airline.Flightsearching.Entities
+   namespace Znaltyics.Group5.Airline.Flightsearching.Entities
 {
+   
+        public class Flightsearching
+        {
+            //auto-implimented properties
+            public int FlightID { get; set; }
+            public string FlightName { get; set; }
 
-    public class FlightSearching
+        //public Flight(int FlightID, string FlightName)
+        //{
+        //    this.FlightID = FlightID;
+        //    this.FlightName = FlightName;
+        //}
+    }
+    
+
+
+
+
+     // public class FlightSearching
     {
         //private fields
         private string _FlightName;
@@ -37,6 +54,7 @@ namespace Znaltyics.Group5.Airline.Flightsearching.Entities
             _FlightTime = FlightTime;
 
         }
+    //
 
         /// <summary>
         /// Parameterless constructor
