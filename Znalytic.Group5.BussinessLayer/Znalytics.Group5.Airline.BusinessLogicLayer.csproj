@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Znalytics.Group5.Airline\Znalytics.Group5.Airline.PL.csproj">
+    <ProjectReference Include="..\Znalytics.Group5.Airline\Znalytics.Group5.Airline.PresentationLayer.csproj">
       <Project>{e252efce-8dcf-4421-a748-1e0af1d8d850}</Project>
-      <Name>Znalytics.Group5.Airline.PL</Name>
+      <Name>Znalytics.Group5.Airline.PresentationLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
