@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Znalytics.Group5.AirLine.CancellationModule.Entities;
 
-namespace Znalytics.Group5.AirLine.DataAccessLayer
+namespace Znalytics.Group5.AirLine.CancellationDataAccessLayer
 {
-    public class FlightNameDataAccessLayer : FlightDataAccessLayer
+    public class CancellationDataAccessLayer : CancellationDataAccessLayer
     {
         //create list
         List<FlightName> FlightName = new List<FlightName>();

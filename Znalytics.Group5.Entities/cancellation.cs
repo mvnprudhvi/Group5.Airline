@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Represents Flight
 /// </summary>
-public class Flight
+public class Cancellation
 {
     //private fields
     private string _FlightName;
@@ -16,7 +16,7 @@ public class Flight
     /// <param name="Date">represents date of flight</param>
     /// <param name="Time">represents time of flight</param>
     /// <param name="cancel">represents cancellation of flight</param>
-    public Flight(string FlightName, System.DateTime Date, int Time, string cancel)
+    public Cancellation(string FlightName, System.DateTime Date, int Time, string cancel)
     {
         //_FlightName = flightName;
         //_Date = date;
@@ -32,7 +32,7 @@ public class Flight
     /// <summary>
     /// Parameterless constructor
     /// </summary>
-    public Flight()
+    public Cancellation()
     {
         //not initializing
     }
@@ -104,6 +104,7 @@ public string Cancel
                 return _Cancel;
             }
         }
+    }
 
 
 
