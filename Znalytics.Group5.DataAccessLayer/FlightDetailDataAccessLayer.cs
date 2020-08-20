@@ -1,32 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.FlightDetailModule.Entities;
-
+/// <summary>
+/// represents dataAccessLayer for Flight
+/// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-    class FlightDetailDataAccessLayer
+   public class FlightDetailDataAccessLayer
     {
-        //create list
-        List<Flight> flight = new List<Flight>();
-        private IEnumerable<string> flightName;
 
-        public void AddFlight(Flight flight)
+        //create list
+
+         List<FlightDetail> listOfFlightDetail = new List<FlightDetail>();
+
+
+        /// <summary>
+        /// Adding new flight Details
+        /// </summary>
+        /// <param name="flight">Attribute to add new flight</param>
+        public void AddToList(string flightName, String flightId)
         {
-            ////code generating new flight 
-            Console.Write("Enter flight name to be added: ");
-             string userinput = Console.ReadLine();
-             if(userinput != "null")
-             {
-                 flight.Add(userinput);
-                 foreach (string obj in flightName)
-                     Console.Write(obj.ToString() + " ");
-             }
-             else
-             {
-                 Console.Write("not allowed");
-             }
-            
-            
+            listOfFlightDetail.Add(new FlightDetail{ flightName = "HYD", flightId = "123" });
+           
         }
+            
+     /// <summary>
+     /// Delete Method with 2 parameters
+     /// </summary>
+     /// <param name="flightId"></param>
+     /// <param name="flightName"></param>
+     public void DeleteFlightDetailByflightId(string flightId,string flightName)
+        {
+            listOfFlightDetail.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
+        }
+
+        public void UpdateToList( string source, string destination)
+        {
+            listOfFlightDetail
+        }
+            
+            
+        
     }
 }

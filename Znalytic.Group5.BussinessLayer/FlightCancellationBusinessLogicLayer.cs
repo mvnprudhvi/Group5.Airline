@@ -3,9 +3,9 @@ using Znalytics.AirLine.DataAccessLayer;
 
 namespace Znalytics.AirLine.BusinessLogicLayer
 {
-    public class CancellationBusinessLogicLayer : ICancellationBusinessLogicLayer
+    public class CancellationBusinessLogicLayer : CancellationBusinessLogicLayer
     {
-        private ICancellationDataAccessLayer cdl = null;
+        private CancellationDataAccessLayer cdl = null;
 
         public CancellationBusinessLogicLayer()
         {

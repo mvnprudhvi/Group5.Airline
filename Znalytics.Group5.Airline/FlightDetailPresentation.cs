@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
 {
+   
+    
     class FlightDetailPresentation
     {
-       
-
-
-        class Program
+          class Program
         {
             //create refernce variable
 
@@ -56,10 +55,10 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
                         System.Console.Write("Enter FlightId:"); // enter flight id
                         flightId[row, coloumn] = int.Parse(System.Console.ReadLine());
 
-                        System.Console.Write("Enter source:"); // Enter FROM Address
+                        System.Console.Write("Enter source:"); // Enter "FROM" Address
                         source[row, coloumn] = System.Console.ReadLine();
 
-                        System.Console.Write("Enter destination:"); //enter To Addrress
+                        System.Console.Write("Enter destination:"); //enter "To" Addrress
                         destination[row, coloumn] = System.Console.ReadLine();
 
                         //DateTime used to represent date and time of the Day
@@ -115,7 +114,7 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
                 do
                 {
 
-                    MenuPresenterr.Menu();
+                    MenuPresenter.Menu();
 
                 } while (userInput != 5);// do not enter '5', the code will executes in loop.
 
