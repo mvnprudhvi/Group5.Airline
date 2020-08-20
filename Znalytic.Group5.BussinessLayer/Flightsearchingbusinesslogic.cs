@@ -1,17 +1,63 @@
 ﻿//////using System;
 using System.Collections.Generic;
+using System;
+
+using Znalytics.Group5.Airline.Flightsearching.DataAccessLayer;
+using Znalytics.Group5.Airline.Flightsearching.Entities;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytic.Group5.BussinessLayer
+
+using Znalytics.Group5.Airline.Flightsearching.DataAccessLayer;
+using Znalytics.Group5.Airline.Flightsearching.Entities;
+
+namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
 {
-    class Flightsearchingbusinesslogic
-    {
+   
 
+        public class FlightsearchingBusinessLogic
+        {
+            FlightsearchingDataAccessLogic _FlightsearchingDataAccessLogic;
 
+            public FlightsearchingBusinessLogic()
+            {
+                _FlightsearchingDataAccessLogic = new FlightsearchingDataAccessLogic();
+            }
 
+            //Add
+            public void Add(FlightsearchingDataAccessLogic FlightName)
+            {
+                if (FlightsearchingDataAccessLogic.FlightName != null)
+                {
+                    _FlightsearchingDataAccessLogic.Add(FlightName);
+                }
+                else
+                {
+                    throw new Exception("flight Name can't be null");
+                }
+            }
+
+            //GetAllflightNames
+            public List<FlightsearchingBusinessLogic> Get()
+            {
+                return _FlightsearchingDataAccessLogic.Get(Flightsearching);
+            }
+
+            public void UpdateFlightName(Flightsearching FlightName)
+            {
+                if (Flightsearching.FlightName != null)
+                {
+                    _FlightsearchingDataAccessLogic.UpdateEmployee(FlightName);
+                }
+            }
+        }
     }
+
+
+
+
+
 //}
 
 using Znalytics.Group5.FlightSearching.Entities;

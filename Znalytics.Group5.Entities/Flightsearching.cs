@@ -1,17 +1,14 @@
 ﻿// created by Reshma//
 /// <summary>
-/// Represents FlightSearching
+/// Represents Flightsearching
 /// </summary>
-namespace Znaltyics.Group5.Airline.Flightsearching.Entities
+public class FlightSearching
 {
-
-    public class FlightSearching
-    {
-        //private fields
-        private string _FlightName;
-        private int _NumberOfFlights;
-        private System.DateTime _FlightTime;
-        private System.DateTime _FlightDate;
+    //private fields
+    private string _FlightName;
+    private int _NumberOfFlights;
+    private System.DateTime _FlightTime;
+    private System.DateTime _FlightDate;
 
         /// <summary>
         /// Constructor that initializes details of FlightSearching
@@ -36,7 +33,7 @@ namespace Znaltyics.Group5.Airline.Flightsearching.Entities
             _FlightDate = FlightDate; //set method will be called
             _FlightTime = FlightTime;
 
-        }
+    }
 
         /// <summary>
         /// Parameterless constructor
