@@ -7,7 +7,7 @@ using Znalytic.Group5.Airline.Entities;
 namespace Znalytic.Group5.Airline.PresentationLayer
 {
    
-       class Program
+       class FlightDetailPresentation
         {
            
             static void Main()

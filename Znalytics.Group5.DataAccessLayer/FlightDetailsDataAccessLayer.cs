@@ -27,7 +27,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
 
         //Search details of flight using find()
-        public void SearchFlightDetailsBySource(string source, string flightName)
+        public void SearchFlightDetailsBySource(string flightName, string flightId)
         {
          //Get matching flights based on flightId
             FlightDetail fd = _flights.Contains(temp => temp.source == flight.source);
