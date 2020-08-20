@@ -44,33 +44,28 @@ namespace Znalytics.Group5.Airline
                     {
                         switch (choice)
                         {
-                            case 1: AddFlight(); break;
+                            case 1: AddFlightDetail(); break;
+                            case 2: UpdateFlightDetail(); break;
+
+
 
                         }
                     }
                 } while (choice != 9);
             }
 
-         private static void AddFlight()
+            private static void AddFlightDetail()
             {
-                Flight flight = new Flight();
+                Flight f = new Flight();
                 Console.Write("Enter flight name to be added: ");
-                /**string userinput = Console.ReadLine();
-                ///if (userinput != "null")
-                {
-                    flight.Add(userinput);
-                    foreach (object obj in flight)
-                        Console.Write(obj.ToString() + " ");
-                }
-                else
-                {
-                    Console.Write("not allowed");
-                }
-                */
-                flight.FlightName = Console.ReadLine();
+                f.FlightName = Console.ReadLine();
+
             }
+
+
         }
 
-
+    
     }
 }
+

@@ -1,6 +1,5 @@
 ﻿using static System.Console;
-
-namespace Znalytics.Group5.Airline.PL
+namespace Znalytics.Group5.Airline
 {
     class PricePL
     {
@@ -10,12 +9,12 @@ namespace Znalytics.Group5.Airline.PL
             WriteLine("AIRLINE PRICES");
             WriteLine("==================================");
             Write("\nUserName:");
-            string userNane = ReadLine();
+            string userName = ReadLine();
             Write("\nPassword:");
             string password = ReadLine();
-            if(userNane=="system"&&password=="manager")
+            if(userName=="system"&&password=="manager")
             {
-                MenuPresenter.Menu();
+                PriceMenu.Menu();
             }
                ReadKey();
         }
