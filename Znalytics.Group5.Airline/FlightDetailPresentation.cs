@@ -1,102 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
+using Znalytic.Group5.Airline.BussinessLogicLayer;
+using Znalytic.Group5.Airline.Entities;
 
-namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
+
+namespace Znalytic.Group5.Airline.PresentationLayer
 {
    
-    
-    class FlightDetailPresentation
-    {
-          class Program
+       class Program
         {
-            //create refernce variable
-
-            // MultiDimensionalArray
-
-            private static string[,] flightName = new string[2, 2];
-            private static int[,] flightId = new int[2, 2];
-            private static string[,] source = new string[2, 2];
-            private static string[,] destination = new string[2, 2];
-            private static string[,] departureTiming = new string[2, 2];
-            private static string[,] arrivalTiming = new string[2, 2];
-
-
-            // Read All elements
-            public static void PrintDetails()
-            {
-                for (int row = 0; row <= 2; row++)
-                {
-                    for (int coloumn = 0; coloumn <= 2; coloumn++)
-                    {
-                        if (flightName[row, coloumn] == null)
-                            return;
-                        else
-                        {
-                            System.Console.WriteLine(flightName[row, coloumn] + "\t\t" + flightId[row, coloumn] + "\t\t" + source[row, coloumn] + "\t\t" + destination[row, coloumn] + "\t\t" + departureTiming[row, coloumn] + "\t\t" + arrivalTiming[row, coloumn]);
-                        }
-                    }
-                }
-            }
-
+           
             static void Main()
             {
-
-
-                for (int row = 0; row <= 2; row++)
-                {
-                    for (int coloumn = 0; coloumn <= 2; coloumn++)
-                    {
-
                         // Enter the details of Flight
-
-                        System.Console.Write("Enter FlightName:"); //Name of the Flight
-                        flightName[row, coloumn] = System.Console.ReadLine();
+                         System.Console.Write("Enter FlightName:"); //Name of the Flight
+                         string flightName = Console.ReadLine();
 
                         System.Console.Write("Enter FlightId:"); // enter flight id
-                        flightId[row, coloumn] = int.Parse(System.Console.ReadLine());
+                         int flightId = int.Parse(Console.ReadLine());
 
                         System.Console.Write("Enter source:"); // Enter "FROM" Address
-                        source[row, coloumn] = System.Console.ReadLine();
+                        String  source = Console.ReadLine();
 
                         System.Console.Write("Enter destination:"); //enter "To" Addrress
-                        destination[row, coloumn] = System.Console.ReadLine();
+                        string  destination = Console.ReadLine();
 
                         //DateTime used to represent date and time of the Day
 
                         System.Console.WriteLine("enter Departure Timing:"); //
-                        var userDate = System.Console.ReadLine();
+                        var userDate = Console.ReadLine();
                         System.DateTime UserDateTime;  //  DateTime is of type DateTime Datatype
-                        if (System.DateTime.TryParse(System.Console.ReadLine(), out UserDateTime))
+                        if (System.DateTime.TryParse(Console.ReadLine(), out UserDateTime))
                         {
-                            System.Console.WriteLine("the day of the week is:" + UserDateTime.DayOfWeek);
+                            Console.WriteLine("the day of the week is:" + UserDateTime.DayOfWeek);
                         }
                         else
                         {
-                            System.Console.WriteLine("you have entered an incorrect value:");
+                            Console.WriteLine("you have entered an incorrect value:");
                         }
-                        System.Console.ReadLine();
-                        departureTiming[row, coloumn] = System.Console.ReadLine();
-
-
+                        Console.ReadLine();
+                        string departureTiming = Console.ReadLine();
 
                         System.Console.WriteLine("enter Arrival Timing:");
-                        var inputtedDate = System.Console.ReadLine();
+                        var inputtedDate = Console.ReadLine();
                         System.DateTime result;
                         System.DateTime.TryParse(inputtedDate, out result);
-                        arrivalTiming[row, coloumn] = System.Console.ReadLine();
+                        string  arrivalTiming= Console.ReadLine();
 
 
-
-                        // Display the Flight Details
+                      // Display the Flight Details
 
                         System.Console.WriteLine("---------------FLIGHT SCHEDULE---------------------------------------------");
 
-                        System.Console.WriteLine("flightName:" + flightName[row, coloumn]);
-                        System.Console.WriteLine("flightId:" + flightId[row, coloumn]);
-                        System.Console.WriteLine("source:" + source[row, coloumn]);
-                        System.Console.WriteLine("destination:" + destination[row, coloumn]);
-                        System.Console.WriteLine("departureTiming:" + departureTiming[row, coloumn]);
-                        System.Console.WriteLine("arrivalTiming:" + arrivalTiming[row, coloumn]);
+                        System.Console.WriteLine("flightName:" + flightName);
+                        System.Console.WriteLine("flightId:" + flightId);
+                        System.Console.WriteLine("source:" + source);
+                        System.Console.WriteLine("destination:" + destination);
+                        System.Console.WriteLine("departureTiming:" + departureTiming);
+                        System.Console.WriteLine("arrivalTiming:" + arrivalTiming);
 
                         System.Console.WriteLine("--------------------------------------------------------------------------------------------");
 
@@ -105,21 +66,111 @@ namespace Znalytic.Group5.Airline.FlightModule.PresentationLayer
 
 
                         System.Console.WriteLine("----------------------------------------------------------------------------------------------");
-                        PrintDetails();
-                    }
+
+
+                         FlightDetailsMenu();
+                         Console.ReadKey();
+            }
+
+         static void FlightDetailsMenu()
+        {
+            int choice = 0;
+            do
+            {
+                Console.WriteLine("========FLIGHT MENU=========");
+                Console.WriteLine("1. Add FlightDetail");
+                Console.WriteLine("2. View FlightDetails");
+                Console.WriteLine("3. Update FlightDetail");
+                Console.WriteLine("4. Search FlightDetails");
+                Console.WriteLine("5. Delete FlightDetail");
+                Console.WriteLine("6. Exit");
+                Console.Write("Enter choice: ");
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1: AddFlightDetail(); break;
+                    case 2: ViewFlightDetails(); break;
+                    case 3: UpdateFlightDetails(); break;
+                    case 4: SearchFlightDetails(); break;
+                    case 5: DeleteFlightDetail(); break;
 
                 }
 
-                int userInput = 0;
-                do
-                {
+            } while (choice != 6);
+        }
 
-                    MenuPresenter.Menu();
+        static void AddFlightDetail()
+        {
+           FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+            FlightDetail flight = new FlightDetail();
 
-                } while (userInput != 5);// do not enter '5', the code will executes in loop.
+            Console.Write("Enter flight ID: ");
+            flight.flightId = int.Parse(Console.ReadLine());
+            Console.Write("Enter flight Name: ");
+            flight.flightName = Console.ReadLine();
+
+            flightBusinessLogic.Add(flight);
+            Console.WriteLine("flight is Added.\n");
+        }
 
 
+        static void ViewFlightDetails()
+        {
+            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+            List<FlightDetail> f = flightBusinessLogic.GetFlightDetail();
+
+            foreach(FlightDetail flight in f)
+            {
+                Console.WriteLine(flight.flightId + ", " + flight.flightName);
             }
         }
+
+
+        static void UpdateFlightDetails()
+        {
+            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+           FlightDetail flight = new FlightDetail();
+
+            Console.Write("Enter Existing flight Id : ");
+            flight.flightId = int.Parse(Console.ReadLine());
+            Console.Write("Enter New flight Name: ");
+             flight.flightName = Console.ReadLine();
+
+            flightBusinessLogic.UpdateFlightDetails(flight);
+            Console.WriteLine("flight is  Updated.\n");
+        }
+
+        static void SearchFlightDetails()
+        {
+            FlightDetail flight = new FlightDetail();
+            Console.WriteLine("enter flightname you wish to search:");
+            string flightName = Console.ReadLine();
+            if (flight.contains(flightName))
+            Console.WriteLine("success,flight" + flightName);
+
+        }
+
+
+        static void DeleteFlightDetail()
+        {
+            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+            FlightDetail flight = new FlightDetail();
+            Console.WriteLine("enter the flightName you wish to delete:");
+            string flightName = Console.ReadLine();
+            flight.Remove(flightName);
+            flightBusinessLogic.DeleteFlightDetails(flight);
+            Console.WriteLine("flight deleted succcessfully.\n");
+        }
+
+      
+     
+
+
+
+
     }
+
+
 }
+        

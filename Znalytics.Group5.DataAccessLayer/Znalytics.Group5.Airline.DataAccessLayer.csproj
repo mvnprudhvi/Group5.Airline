@@ -43,13 +43,19 @@
   <ItemGroup>
     <Compile Include="CancellationDataAcessLayer.cs" />
     <Compile Include="CustomerDataAccessLayer.cs" />
-    <Compile Include="FlightDetailDataAccessLayer.cs" />
+    <Compile Include="FlightDetailsDataAccessLayer.cs" />
     <Compile Include="FlightSearchingDataAcessLayer.cs" />
     <Compile Include="PriceDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytics.Group5.Entities\Znalytics.Group5.Airline.Entities.csproj">
+      <Project>{b5d2cf2f-de1d-4daa-8b85-9ed0af6b53cf}</Project>
+      <Name>Znalytics.Group5.Airline.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
