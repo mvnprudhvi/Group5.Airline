@@ -1,6 +1,6 @@
 ﻿
 //Entities
-namespace Znalytics.Group5.Airline.FlightsModule.Entities
+namespace Znalytics.Group5.Airline.Entities
 {
     public class FlightDetail
 

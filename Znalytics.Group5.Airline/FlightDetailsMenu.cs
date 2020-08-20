@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline
 {
-    class MenuPresenterr
+    class FlightDetailsMenu
     {
-        public class MenuPresenter
+        public class FlightDetailsMenu
         {
-            public static void Menu()
+            public static void FlightDetailsMenu()
             {
                 int choice = -1;
 
