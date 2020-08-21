@@ -1,4 +1,4 @@
-﻿//Created By Dinesh
+﻿
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
