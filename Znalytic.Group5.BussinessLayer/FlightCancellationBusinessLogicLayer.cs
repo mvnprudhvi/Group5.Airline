@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytics.EmpMgmt.BusinessLogicLayer
+namespace Znalytics.Group5.BusinessLogicLayer
 {
     public class FlightcancellationBusinessLogicLayer
     {
-        FlightCancellationDataAccessLayer = _flightcancellationdataAccessLayer
+        FlightCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
             {
         public FlightCancellationBusinessLogicLayer()
         {
@@ -19,16 +19,16 @@ namespace Znalytics.EmpMgmt.BusinessLogicLayer
         {
             if (flightCancellation.FlightName != null)
             {
-                _FlightCancellationDataAccessLayer.Add(employee);
+                _FlightCancellationDataAccessLayer.Add(flight);
             }
             else
             {
-                throw new Exception("Employee Name can't be null");
+                throw new Exception("Flight Name can't be null");
             }
         }
 
         //GetAllEmployees
-        public List<Employee> GetEmployees()
+        public List<FlightcancellationBusinessLogicLayer> GetFlight()
         {
             return _FlightDataAccessLogic.GetFlight();
         }

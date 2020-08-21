@@ -2,35 +2,8 @@
 /// <summary>
 /// Represents Flightsearching
 /// </summary>
-/// 
-
-namespace Znalytics.Group5.Airline.Flightsearching.entities
-
+public class FlightSearching
 {
-
-    public class Flightsearching
-
-    {
-
-        //auto-impl properties
-        public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
-
-        //public Employee(int EmployeeID, string EmployeeName)
-        //{
-        //    this.EmployeeID = EmployeeID;
-        //    this.EmployeeName = EmployeeName;
-        //}
-    }
-}
-
-
-
-
-
-
-
-
     //private fields
     private string _FlightName;
     private int _NumberOfFlights;
