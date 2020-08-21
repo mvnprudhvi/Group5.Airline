@@ -37,7 +37,7 @@ class Customer
         Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
 
 
-        MenuPresenter();
+        Menu();
         System.Console.ReadKey();
 
     }
@@ -113,10 +113,21 @@ class Customer
             cust.mobileNumber = int.Parse(Console.ReadLine());
             Console.Write("enter new mobile number");
             cust.mobileNumber = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(Cust);
+            customerBusinessLogicLayer.UpdateCustomer(cust);
             Console.WriteLine("new mobile number is updated");
 
         }
+        static void ViewCustomer()
+        {
+            CustomerBusinessLogic customerBusinessLogic = new CustomerBusinessLogic();
+            List<Customer> cust = customerBusinessLogic.GetFlightDetail();
+
+            foreach (Customer customer in cust)
+            {
+                Console.WriteLine(flight.flightId + ", " + flight.flightName);
+            }
+        }
+
     }
 }
 }
