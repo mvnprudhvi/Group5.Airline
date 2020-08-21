@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Znalytics.Group5.Airline.Entities;
+﻿using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
+using System;
+using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
