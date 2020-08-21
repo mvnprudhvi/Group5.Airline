@@ -6,7 +6,7 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Airline
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
