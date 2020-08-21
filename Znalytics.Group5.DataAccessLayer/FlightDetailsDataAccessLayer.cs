@@ -45,7 +45,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
            _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
         }
 
-        public void Add(FlightDetail flight)
+        
 
 
     }

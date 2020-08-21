@@ -27,15 +27,16 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
             }
         }
         //GetAll Flights
-        public List<FlightDetail> GetEmployees()
+        public List<FlightDetail> GetFlightDetails()
         {
             return _flightsDataAccessLogic.GetFlightDetails();
         }
+
         public void UpdateFlightDetails(FlightDetail flight)
         {
             if (flight.flightId != null)
             {
-                _flightsDataAccessLogic.UpdateEmployee(flight);
+                _flightsDataAccessLogic.UpdateFlightDetails(flight);
             }
         }
     }
