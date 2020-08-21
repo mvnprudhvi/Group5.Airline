@@ -1,4 +1,4 @@
-﻿//created by madhumitha
+﻿//created by Madhumitha
 using System;
 
 namespace Znalytics.Group5.Entities
@@ -97,8 +97,6 @@ namespace Znalytics.Group5.Entities
                 return _time;
             }
         }
-
-    }
 }
 
 
