@@ -14,6 +14,7 @@ namespace Znalytics.Group5.Airline.Entities
         private string _departureTiming { set; get; }
         private string _arrivalTiming { set; get; }
 
+        //constructor
         public FlightDetail(string flightName, string flightId, string source, string destination, string departureTiming, string arrivalTiming)
         {
             _flightName = flightName;
