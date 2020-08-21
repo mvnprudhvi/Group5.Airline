@@ -27,15 +27,13 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         }
 
         //Get all flights
-        public List<FlightCancellation> GetFlightCancellation()
+        public List<FlightName> GetFlightCancellation()
         {
             return _FlightName;
         }
 
-        //Update
         public void UpdateFlightCancellation(flightcancellation flightcancellation)
-        {
-            //Get matching flightname based on flightid
+    { 
             FlightCancellationDataAccessLayer fli = _flightid.Find(temp => temp.FlightID == FlightCancellationDataAccessLayer.EmployeeID);
             if (fli != null)
             {
