@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CancellationBusinessLayer.cs" />
+    <Compile Include="FlightCancellationBusinessLogicLayer.cs" />
     <Compile Include="CustomerBusinessLogicLayer.cs" />
     <Compile Include="FlightDetailBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />

@@ -1,4 +1,42 @@
-﻿/// <summary>
+﻿using System;
+
+namespace Znalytics.Group5.Entities
+{
+    public class FlightCancellation
+    {
+        //auto-impl properties
+        public int _FlightName { get; set; }
+        public int _FlightID { get; set; }
+        public System.DateTime _Date { get; set; }
+        public System.DateTime _Time { get; set; }
+        public string _Cancel { get; set; }
+
+        //public FlightCancellation(int FlightName,string FlightID,System.DateTime _Date,System.DateTime _Time,string _Cancel)
+        //{
+        //    this.FlightName = FlightName;
+        //    this.FlightID = FlightID;
+        //    this.Date = Date;
+        //    this.Time = Time;
+        //    this.Cancel = Cancel; 
+        //}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*/// <summary>
 /// Represents Flight
 /// </summary>
 public class Cancellation
@@ -6,7 +44,7 @@ public class Cancellation
     //private fields
     private string _FlightName;
     private System.DateTime _Date;
-    private string _Time;
+    private System.DateTime _Time;
     private string _Cancel;
 
     /// <summary>
@@ -91,7 +129,7 @@ get
         return _time;
     }
     }*/
-public string Cancel
+/*public string Cancel
     {
         set
         {
@@ -104,7 +142,7 @@ public string Cancel
                 return _Cancel;
             }
         }
-    }
+    }*/
 
 
 
@@ -242,46 +280,46 @@ public string Cancel
 
 
 
-       /* public class Flight
+/* public class Flight
 {
-    private string _FlightName;
-    private System.DateTime _Date;
-    private System.DateTime _Time;
-    private string _Cancel;
+private string _FlightName;
+private System.DateTime _Date;
+private System.DateTime _Time;
+private string _Cancel;
 
-    public void SetFlightName(string FlightName)
-    {
-        this._FlightName = FlightName;
-    }
-    public string GetFlightName()
-    {
-        return this._FlightName;
-    }
-    public void SetDate(System.DateTime Date)
-    {
-        this._Date = Date;
-    }
-    public string GetDate()
-    {
-        return this._FlightName;
-    }
-    public void SetCancel(string Cancel)
-    {
-        this._Cancel = Cancel;
-    }
-    public string GetCancel()
-    {
-        return this._Cancel;
-    }
+public void SetFlightName(string FlightName)
+{
+ this._FlightName = FlightName;
+}
+public string GetFlightName()
+{
+ return this._FlightName;
+}
+public void SetDate(System.DateTime Date)
+{
+ this._Date = Date;
+}
+public string GetDate()
+{
+ return this._FlightName;
+}
+public void SetCancel(string Cancel)
+{
+ this._Cancel = Cancel;
+}
+public string GetCancel()
+{
+ return this._Cancel;
+}
 }
 
 /*public void SetTime(System.DateTime Time)
 {
-    this._Time = Time;
+this._Time = Time;
 }
 public System.DateTime GetDate()
 {
-    return this._Time;
+return this._Time;
 }
 }*/
 
