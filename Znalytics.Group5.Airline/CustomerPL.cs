@@ -26,13 +26,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("enter your password:");
             string password = System.Console.ReadLine();
 
-        //customer mobile number
-        System.Console.WriteLine("enter your mobile number:");
-        string mobilenumber = System.Console.ReadLine();
+            //customer mobile number
+            System.Console.WriteLine("enter your mobile number:");
+            string mobilenumber = System.Console.ReadLine();
 
-        //customer aadhar card number
-        System.Console.WriteLine("enter your aadhar card number:");
-        string aadharcardnumber = System.Console.ReadLine();
+            //customer aadhar card number
+            System.Console.WriteLine("enter your aadhar card number:");
+            string aadharcardnumber = System.Console.ReadLine();
 
             //customer pan card number
             System.Console.WriteLine("enter your pan card number:");
@@ -42,11 +42,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
 
 
-        Menu();
-        System.Console.ReadKey();
+            Menu();
+            System.Console.ReadKey();
 
-    }
-    public class MenuPresenter
+        }
+    public class Menu
     {
         public static void Menu()
         {
