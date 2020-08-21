@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cancellation.cs" />
     <Compile Include="FlightDetail.cs" />
     <Compile Include="Flightsearching.cs" />
     <Compile Include="Customer.cs" />
