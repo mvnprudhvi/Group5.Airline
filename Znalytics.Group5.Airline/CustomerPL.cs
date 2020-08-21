@@ -46,8 +46,10 @@ class Customer
         System.Console.ReadKey();
 
     }
+        //represents menu presenter
     public class MenuPresenter
     {
+            //represents menu
         public static void Menu()
         {
             int choice = -1;
@@ -68,7 +70,7 @@ class Customer
                 }
             } while (choice != 2);
         }
-
+            //represents customers menu
         public static void CustomersMenu()
         {
             int choice = -1;
@@ -89,27 +91,24 @@ class Customer
                     {
                         case 1: AddCustomer(); break;
                         case 2: UpdateCustomer(); break;
-                        case 3: viewCustomer(); break;
-                        case 4: deleteCustomer(); break;
+                        case 3: ViewCustomer(); break;
+                        case 4: DeleteCustomer(); break;
 
                     }
                 }
             } while (choice != 5);
         }
-
+            //add customer username
         public static void AddCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            CustomerBusinessLogicLayer.AddCustomer(customer); //call BL
             CustomerMenu customer = new CustomerMenu();
             Console.Write("Enter new username: ");
             customer.UserName = Console.ReadLine();
-
-
-
             customerBusinessLogicLayer.Add(customer);
             Console.WriteLine("username added");
         }
+            //update customer mobile number
         public static void UpdateCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
@@ -122,24 +121,28 @@ class Customer
             Console.WriteLine("new mobile number is updated");
 
         }
+            //view customer details
         static void ViewCustomer()
         {
-            CustomerBusinessLogic customerBusinessLogic = new CustomerBusinessLogic();
-            List<Customer> cust = customerBusinessLogic.GetCustomer();
+            CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+            List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
 
             foreach (Customer customer in cust)
             {
-                Console.WriteLine(customer.UserName + ", " + flight.flightName);
+                Console.WriteLine(customer.UserName + ", " + customer.password + "," + customer.email + "," + customer.mobileNumber + "," + customer.aadharNumber + customer.pancardNumber + "," + ",");
             }
         }
-
-    }
+            //delete username
+            static void DeleteCustomer()
+            {
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Customer customer= new Customer();
+                Console.WriteLine("enter the username to delete:");
+                string userName = Console.ReadLine();
+                customer.Remove(userName);
+                customerBusinessLogicLayer.DeleteuserName(customer);
+                Console.WriteLine("username deleted succcessfully.\n");
+            }
+        }
 }
-}
-
-
-
-
- 
-
 }
