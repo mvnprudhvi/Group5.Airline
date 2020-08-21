@@ -38,6 +38,14 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("enter your pan card number:");
             string pancardnumber = System.Console.ReadLine();
 
+
+            System.Console.WriteLine("flightName:" + flightName);
+            System.Console.WriteLine("flightId:" + flightId);
+            System.Console.WriteLine("source:" + source);
+            System.Console.WriteLine("destination:" + destination);
+            System.Console.WriteLine("departureTiming:" + departureTiming);
+            System.Console.WriteLine("arrivalTiming:" + arrivalTiming);
+
             //customer details are stored
             Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
 
@@ -46,7 +54,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.ReadKey();
 
         }
-            public static void Menu()
+            private static void Menu()
         {
             int choice = -1;
 

@@ -23,9 +23,6 @@ namespace Znalytics.Group5.AirLine
                 ReadKey();
             }
 
-        private static void Menu()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
     }
