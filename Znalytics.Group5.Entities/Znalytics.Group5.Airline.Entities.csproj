@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlightDetail.cs" />
-    <Compile Include="Flightsearching.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
