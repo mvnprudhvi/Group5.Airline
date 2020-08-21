@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytic.Group5.Airline.DataAccessLayer;
+using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytic.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
     public class FlightDetailBusinessLogic
     {
-        FlightDetailsDataAccessLogic _flightsDataAccessLogic;
+        FlightDetailsDataAccessLogic _fDal;
 
         public FlightDetailBusinessLogic()
         {
-            _flightsDataAccessLogic = new FlightDetailsDataAccessLogic();
+            _fDal = new FlightDetailsDataAccessLogic();
         }
 
         //Add
@@ -19,7 +19,7 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         {
             if (flight.flightName != null)
             {
-                _flightsDataAccessLogic.Add(flight);
+                _fDal.Add(flight);
             }
             else
             {
@@ -29,14 +29,14 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         //GetAll Flights
         public List<FlightDetail> GetFlightDetails()
         {
-            return _flightsDataAccessLogic.GetFlightDetails();
+            return _fDal.GetFlightDetails();
         }
 
         public void UpdateFlightDetails(FlightDetail flight)
         {
             if (flight.flightId != null)
             {
-                _flightsDataAccessLogic.UpdateFlightDetails(flight);
+                _fDal.UpdateFlightDetails(flight);
             }
         }
     }

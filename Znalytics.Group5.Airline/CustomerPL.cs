@@ -8,49 +8,66 @@ using Znalytic.Group5.Airline.Entities;
 namespace Znalytic.Group5.Airline.PresentationLayer
 {
 
-class Customer
-{
-    static void Main()
+    class Customer
     {
-        //registration page
-        System.Console.WriteLine("REGISTRATION PAGE:");
+        static void Main()
+        {
+                Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
 
-        //customer user name
-        System.Console.WriteLine("enter your user name:");
-        string username = System.Console.ReadLine();
-        //customer email
-        System.Console.WriteLine("enter your email:");
-        string email = System.Console.ReadLine();
+            //registration page
+            System.Console.WriteLine("REGISTRATION PAGE:");
 
-        //customer password
-        System.Console.WriteLine("enter your password:");
-        string password = System.Console.ReadLine();
+            //customer user name
+            System.Console.WriteLine("enter your user name:");
+            string username = System.Console.ReadLine();
+            //customer email
+            System.Console.WriteLine("enter your email:");
+            string email = System.Console.ReadLine();
 
-        //customer mobile number
-        System.Console.WriteLine("enter your mobile number:");
-        string mobilenumber = System.Console.ReadLine();
+            //customer password
+            System.Console.WriteLine("enter your password:");
+            string password = System.Console.ReadLine();
 
-        //customer aadhar card number
-        System.Console.WriteLine("enter your aadhar card number:");
-        string aadharcardnumber = System.Console.ReadLine();
+            //customer mobile number
+            System.Console.WriteLine("enter your mobile number:");
+            string mobilenumber = System.Console.ReadLine();
 
-        //customer pan card number
-        System.Console.WriteLine("enter your pan card number:");
-        string pancardnumber = System.Console.ReadLine();
+            //customer aadhar card number
+            System.Console.WriteLine("enter your aadhar card number:");
+            string aadharcardnumber = System.Console.ReadLine();
 
-        //customer details are stored
-        Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
+            //customer pan card number
+            System.Console.WriteLine("enter your pan card number:");
+            string pancardnumber = System.Console.ReadLine();
 
 
-        Menu();
-        System.Console.ReadKey();
+            System.Console.WriteLine("flightName:" + flightName);
+            System.Console.WriteLine("flightId:" + flightId);
+            System.Console.WriteLine("source:" + source);
+            System.Console.WriteLine("destination:" + destination);
+            System.Console.WriteLine("departureTiming:" + departureTiming);
+            System.Console.WriteLine("arrivalTiming:" + arrivalTiming);
 
-    }
-        //represents menu presenter
-    public class MenuPresenter
-    {
-            //represents menu
-        public static void Menu()
+            //customer details are stored
+            Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
+            
+
+            //Login
+            Console WriteLine("-------LOGIN FORM-----------------");
+            Console.WriteLine("==================================");
+            Console.WriteLine("\nUsername:");
+            string userName = Console.ReadLine();
+            Console.Write("Password:");
+            string Password = Console.ReadLine();
+
+            if (userName == "," && password == ",")
+            {
+                Menu();
+                Console.ReadKey();
+            }
+
+        }
+            private static void Menu()
         {
             int choice = -1;
 
@@ -132,17 +149,14 @@ class Customer
                 Console.WriteLine(customer.UserName + ", " + customer.password + "," + customer.email + "," + customer.mobileNumber + "," + customer.aadharNumber + customer.pancardNumber + "," + ",");
             }
         }
-            //delete username
-            static void DeleteCustomer()
-            {
-                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-                Customer customer= new Customer();
-                Console.WriteLine("enter the username to delete:");
-                string userName = Console.ReadLine();
-                customer.Remove(userName);
-                customerBusinessLogicLayer.DeleteuserName(customer);
-                Console.WriteLine("username deleted succcessfully.\n");
-            }
-        }
+
+    }
 }
+}
+
+
+
+
+ 
+
 }

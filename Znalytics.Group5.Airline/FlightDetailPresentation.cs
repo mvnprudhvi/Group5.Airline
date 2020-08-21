@@ -94,7 +94,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     case 2: ViewFlightDetails(); break;
                     case 3: UpdateFlightDetails(); break;
                     case 4: SearchFlightDetails(); break;
-                    case 5: DeleteFlightDetail(); break;
+                    case 5: DeleteFlightDetails(); break;
 
                 }
 
@@ -111,7 +111,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.Write("Enter flight Name: ");
             flight.flightName = Console.ReadLine();
 
-            flightBusinessLogic.Add(flight);
+            flight.Add(flight);
             Console.WriteLine("flight is Added.\n");
         }
 
@@ -153,7 +153,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
 
-        static void DeleteFlightDetail()
+        static void DeleteFlightDetails()
         {
             FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
             FlightDetail flight = new FlightDetail();

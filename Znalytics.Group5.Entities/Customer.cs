@@ -14,16 +14,16 @@ namespace Znalytics.Group5.Airline.Entities
          
         private string _email;
         private string _password;
-        private string _mobileNumber;
+        private int _mobileNumber;
 
-        private string _aadharNumber;
+        private int _aadharNumber;
         private string _pancardNumber;
 
         /// <summary>
         /// constructors thst initializes deatails of customer
         /// </summary>
 
-        public Customer(string userName,string email, string password, string mobileNumber, string aadharNumber, string pancardnumber)
+        public Customer(string userName,string email, string password, int mobileNumber, int aadharNumber, string pancardnumber)
         {
 
             /// <param name="email"></param> email of customer
@@ -87,12 +87,12 @@ namespace Znalytics.Group5.Airline.Entities
         /// <summary>
         /// represents number of the customer
         /// </summary>
-        public string MobileNumber
+        public int MobileNumber
         {
             set
             {
                 //mobile number should contain 10 digits only
-                if (value.Length == 10)
+                if (value == 10)
                 {
                     MobileNumber = value;
                 }
@@ -110,11 +110,11 @@ namespace Znalytics.Group5.Airline.Entities
         /// <summary>
         /// represents aadhar card number of customer
         /// </summary>
-        public string AadharNumber
+        public int AadharNumber
         {
             set
             {
-                if (value.Length == 12)
+                if (value == 12)
                     AadharNumber = value;
             }
             get

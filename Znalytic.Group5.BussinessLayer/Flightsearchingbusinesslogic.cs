@@ -26,9 +26,9 @@ namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
             }
 
             //Addflightname
-            public void Add(FlightsearchingDataAccessLogic FlightName)
+            public void Add(Flightsearching FlightName)
             {
-                if (FlightsearchingDataAccessLogic.FlightName != null)
+                if (Flightsearching.FlightName != null)
                 {
                     _FlightsearchingDataAccessLogic.Add(FlightName);
                 }
@@ -41,7 +41,7 @@ namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
             //GetAllflightNames
             public List<FlightsearchingBusinessLogic> Get()
             {
-                return _FlightsearchingDataAccessLogic.Get(Flightsearching);
+                return _FlightsearchingDataAccessLogic.Get(FlightName);
             }
 
             public void UpdateFlightName(Flightsearching FlightName)
