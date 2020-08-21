@@ -5,6 +5,7 @@ using Znalytics.Group5.Airline.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
+    //represents customer business logic layer
     public class CustomerBusinessLogicLayer
     {
         CustomerDataAccessLayer _CustomerDataAccessLayer;
@@ -12,7 +13,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             _CustomerDataAccessLayer = new CustomerDataAccessLayer();
         }
-        //add
+        //add customer
         public void Add(Customer customer)
         {
             if (customer.UserName != null)
@@ -29,6 +30,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             return _CustomerDataAccessLayer.GetCustomers();
         }
+        //update customer
 
         public void UpdateCustomer(Customer customer)
         {
