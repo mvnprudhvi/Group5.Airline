@@ -3,58 +3,50 @@ using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
+/// <summary>
+/// represents dataAccessLayer of Flightcancellation
+/// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-    public class FlightCancellationDataAccessLayer
+    public class FlightCancellationDataAccessLogic
     {
-        //private fields
-        private static List<FlightCancellationDataAccessLayer> _flightcancellations;
 
-        //constructor
-        static FlightCancellationDataAccessLayer()
+        // create list
+        private static List<FlightCancellationDataAccessLogic> _flights = new List<FlightCancellationDataAccessLogic>();
+
+        //Add
+        public void AddFlightDetail(FlightCancellation flight)
         {
-            _FlightCancellation = new List<FlightCancellation>()
-            {
-                new FlightCancellationDataAccessLayer(){ FlightID = 12345, FlightName = "Indigo" },
-                new FlightCancellationDataAccessLayer(){ FlightID = 56789, FlightName = "BritishAirways" }
-            };
+            _flights.Add(flight);
         }
 
-    }
-        public void Add(FlightName FlightName)
+        //Get all FlightDetails
+        public List<FlightDetail> GetFlightDetails()
         {
-            _FlightName.Add(flightName);
+            return _flights;
         }
 
-        //Get all flights
-        public List<FlightName> GetFlightCancellation()
+
+        //Search.. details of flight using find()
+        public void SearchFlightDetailsByName(string flightId, string flightName)
         {
-            return _FlightName;
-        }
-
-        public void UpdateFlightCancellationbyFlightNameAndFlightId(flightcancellation flightcancellation)
-    { 
-            FlightCancellationDataAccessLayer fli = _flightid.Find(temp => temp.FlightID == FlightCancellationDataAccessLayer.EmployeeID);
-            if (fli != null)
-            {
-                fli.flightcancellation = flightcancellation.FlightName;
-            }
-        }
-    public void SearchFlightCancellationByName(string flightId, string flightName)
-    {
-        _flights.Contains()
+            //Get matching flights based on flightId
+            _flights.Contains()
 
 
         }
 
-    public void DeleteFlightNameByflightId(string flightId, string flightName)
-    {
-        _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
-    }
+        //
 
-}
-
-
+        /// <summary>
+        /// Delete Method with 2 parameters
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <param name="flightName"></param>
+        public void DeleteFlightDetailByflightId(string flightId, string flightName)
+        {
+            _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
+        }
 
 
 
