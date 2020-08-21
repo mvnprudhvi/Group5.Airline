@@ -8,12 +8,12 @@ namespace Znalytics.Group5.Airline.Entities
     {
         public static object price;
 
-        //auto-impl properties
+        //Using Automatic Implemented properties
         public int FlightID { get; set; }
         public string FlightName { get; set; }
         public double FlightPrice { get; set; }
 
-        //Constructor
+        //Using Constructor
         public Price(int FlightID, string FlightName, double FlightPrice)
         {
             this.FlightID = FlightID;
@@ -21,6 +21,7 @@ namespace Znalytics.Group5.Airline.Entities
             this.FlightPrice = FlightPrice;
         }
 
+        //Default Constructor Which is Parameter Less
         public Price()
         {
         }

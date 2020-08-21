@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
+    /// <summary>
+    /// This Class Represents Business Logic Layer Of Price
+    /// </summary>
     public class PriceBusinessLogic
     {
         PriceDataAccessLayer _priceDataAccessLayer;

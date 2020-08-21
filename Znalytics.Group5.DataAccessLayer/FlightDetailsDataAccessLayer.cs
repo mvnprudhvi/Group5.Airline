@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
 /// <summary>
-/// represents dataAccessLayer for Flight
+/// represents dataAccessLayer of Flight
 /// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
@@ -26,10 +26,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         }
 
 
-        //Search details of flight using find()
+        //Search.. details of flight using find()
         public void SearchFlightDetailsByName(string flightId, string flightName)
         {
          //Get matching flights based on flightId
+         _flights.Contains()
              
         }      
 
