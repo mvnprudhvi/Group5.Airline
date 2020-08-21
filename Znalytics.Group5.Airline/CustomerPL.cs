@@ -12,6 +12,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     {
         static void Main()
         {
+                Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
+
             //registration page
             System.Console.WriteLine("REGISTRATION PAGE:");
 
@@ -48,10 +50,21 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             //customer details are stored
             Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
+            
 
+            //Login
+            Console WriteLine("-------LOGIN FORM-----------------");
+            Console.WriteLine("==================================");
+            Console.WriteLine("\nUsername:");
+            string userName = Console.ReadLine();
+            Console.Write("Password:");
+            string Password = Console.ReadLine();
 
-            Menu();
-            System.Console.ReadKey();
+            if (userName == "," && password == ",")
+            {
+                Menu();
+                Console.ReadKey();
+            }
 
         }
             private static void Menu()
