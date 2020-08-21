@@ -40,10 +40,8 @@ class Customer
         Menu();
         System.Console.ReadKey();
 
-    }
-    public class MenuPresenter
-    {
-        public static void Menu()
+    
+        static void Menu()
         {
             int choice = -1;
 
@@ -120,11 +118,11 @@ class Customer
         static void ViewCustomer()
         {
             CustomerBusinessLogic customerBusinessLogic = new CustomerBusinessLogic();
-            List<Customer> cust = customerBusinessLogic.GetFlightDetail();
+            List<Customer> cust = customerBusinessLogic.GetCustomer();
 
             foreach (Customer customer in cust)
             {
-                Console.WriteLine(flight.flightId + ", " + flight.flightName);
+                
             }
         }
 
