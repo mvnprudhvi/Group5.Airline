@@ -17,6 +17,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     {
         PriceDataAccessLayer _priceDataAccessLayer;
 
+        //Constructor for Business Logic Layer
         public PriceBusinessLogic()
         {
             _priceDataAccessLayer = new PriceDataAccessLayer();

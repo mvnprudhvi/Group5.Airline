@@ -15,6 +15,9 @@ namespace Znalytics.Group5.Airline
     /// </summary>
     class PricePL
     {
+        /// <summary>
+        /// Main Method
+        /// </summary>
         static void Main()
         {
             PricesMenu();//Calling Menu Method For List Of Menus
