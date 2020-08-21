@@ -38,7 +38,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void DeletePrice(Price price)
         {
             //Based on Flight Name the Price Will be deleted 
-           _prices.Remove(temp => temp.FlightName == Price.FlightName);
+           _prices.Remove(temp => temp.FlightName == price.FlightName);
 
         }
 
