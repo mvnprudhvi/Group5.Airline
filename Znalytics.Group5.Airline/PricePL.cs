@@ -5,6 +5,9 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline
 {
+    /// <summary>
+    /// This Class Represents Presentation Layer Of Price
+    /// </summary>
     class PricePL
     {
         static void Main()

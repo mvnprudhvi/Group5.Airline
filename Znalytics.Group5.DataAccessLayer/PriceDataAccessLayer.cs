@@ -5,12 +5,15 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
+    /// <summary>
+    /// This Class Represents Data Access Layer Of Price
+    /// </summary>
     public class PriceDataAccessLayer
     {
-        //private fields
+        //private Field of price Collection
         private static List<Price> _prices;
 
-        //constructor
+        //constructor for  Data Access Layer
         static PriceDataAccessLayer()
         {
             _prices = new List<Price>();
@@ -23,14 +26,17 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void AddPrice(Price price)
         {
             _prices.Add(price);
-
         }
+
+        /// <summary>
+        /// This Method Repreents Delete Price
+        /// </summary>
+        /// <param name="price"></param>
         public void DeletePrice(Price price)
         {
-            _prices.Remove(tem => tem.price == Price.price);
+            _prices.Remove(tem => tem.FlightName == Price.FlightName);
 
         }
-
 
         /// <summary>
         /// This Method Represents UpdatePrice
@@ -45,7 +51,6 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
                 pri.FlightPrice = price.FlightPrice;
             }
         }
-
 
         /// <summary>
         /// This Method Represents GetPrices

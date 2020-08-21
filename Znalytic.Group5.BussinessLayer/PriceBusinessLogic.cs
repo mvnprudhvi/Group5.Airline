@@ -5,6 +5,9 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
+    /// <summary>
+    /// This Class Represents Business Logic Layer Of Price
+    /// </summary>
     public class PriceBusinessLogic
     {
         PriceDataAccessLayer _priceDataAccessLayer;
