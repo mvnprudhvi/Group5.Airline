@@ -5,7 +5,7 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.BusinessLogicLayer
 {
-    public class FlightcancellationBusinessLogicLayer
+    public class FlightcancellationBusinessLogiclayer
     {
         FlightCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
             {
