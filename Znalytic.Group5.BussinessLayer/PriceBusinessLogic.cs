@@ -1,5 +1,6 @@
 ﻿/// <summary>
 /// Created By Dinesh
+/// Module Name is Price
 /// </summary>
 
 using Znalytics.Group5.Airline.Entities;
@@ -16,6 +17,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     {
         PriceDataAccessLayer _priceDataAccessLayer;
 
+        //Constructor for Business Logic Layer
         public PriceBusinessLogic()
         {
             _priceDataAccessLayer = new PriceDataAccessLayer();
