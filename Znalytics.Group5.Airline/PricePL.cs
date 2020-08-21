@@ -1,4 +1,9 @@
-﻿using static System.Console;
+﻿/// <summary>
+/// Created By Dinesh
+/// Module Name is Price
+/// </summary>
+
+using static System.Console;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
@@ -10,12 +15,18 @@ namespace Znalytics.Group5.Airline
     /// </summary>
     class PricePL
     {
+        /// <summary>
+        /// Main Method
+        /// </summary>
         static void Main()
         {
             PricesMenu();//Calling Menu Method For List Of Menus
             ReadKey();
         }
 
+        /// <summary>
+        /// This Method Represents PriceMenu To View Operations Of Price
+        /// </summary>
         static void PricesMenu()
         {
             int choice = 0;
@@ -39,6 +50,7 @@ namespace Znalytics.Group5.Airline
                 }
             } while (choice != 5);
         }
+
         /// <summary>
         /// This Method Represents AddPrice to Add price of Flight
         /// </summary>
@@ -63,7 +75,6 @@ namespace Znalytics.Group5.Airline
         /// <summary>
         /// This Method Represents Delete Price To Delete Price of Flight
         /// </summary>
-
         static void DeletePrice()
         {
             PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();

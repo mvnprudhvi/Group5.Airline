@@ -1,4 +1,8 @@
-﻿
+﻿/// <summary>
+/// Created By Dinesh
+/// Module Name is Price
+/// </summary>
+
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
@@ -27,4 +31,3 @@ namespace Znalytics.Group5.Airline.Entities
         }
     }
 }
-

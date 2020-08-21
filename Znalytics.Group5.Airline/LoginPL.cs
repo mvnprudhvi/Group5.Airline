@@ -1,22 +1,20 @@
 ﻿using static System.Console;
 
-namespace Znalytics.Group5
-{
-    namespace Airline.PL
+namespace Znalytics.Group5.AirLine
     {
-        class Program
+        class LoginPL
         {
             static void Main()
             {
                 //Login
-                WriteLine("ONLINE SHOPPING");
+                WriteLine("AIRLINE RESERVATION SYSTEM");
                 WriteLine("==================================");
                 Write("\nUsername:");
                 string userName = ReadLine();
                 System.Console.Write("Password:");
                 string password = ReadLine();
 
-                if (userName == "system" && password == "manager")
+                if (userName == "," && password == ",")
                 {
                     MenuPresenter.Menu();
                 }
@@ -25,4 +23,3 @@ namespace Znalytics.Group5
             }
         }
     }
-}

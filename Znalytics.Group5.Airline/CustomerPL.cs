@@ -26,13 +26,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("enter your password:");
             string password = System.Console.ReadLine();
 
-            //customer mobile number
-            System.Console.WriteLine("enter your mobile number:");
-            string mobilenumber = System.Console.ReadLine();
+        //customer mobile number
+        System.Console.WriteLine("enter your mobile number:");
+        string mobilenumber = System.Console.ReadLine();
 
-            //customer aadhar card number
-            System.Console.WriteLine("enter your aadhar card number:");
-            string aadharcardnumber = System.Console.ReadLine();
+        //customer aadhar card number
+        System.Console.WriteLine("enter your aadhar card number:");
+        string aadharcardnumber = System.Console.ReadLine();
 
             //customer pan card number
             System.Console.WriteLine("enter your pan card number:");
@@ -42,11 +42,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
 
 
-            Menu();
-            System.Console.ReadKey();
-        }
+        Menu();
+        System.Console.ReadKey();
 
-
+    }
+    public class MenuPresenter
+    {
         public static void Menu()
         {
             int choice = -1;
@@ -67,7 +68,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 }
             } while (choice != 2);
         }
-
+            //represents customers menu
         public static void CustomersMenu()
         {
             int choice = -1;
@@ -88,27 +89,24 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     {
                         case 1: AddCustomer(); break;
                         case 2: UpdateCustomer(); break;
-                        case 3: viewCustomer(); break;
-                        case 4: deleteCustomer(); break;
+                        case 3: ViewCustomer(); break;
+                        case 4: DeleteCustomer(); break;
 
                     }
                 }
             } while (choice != 5);
         }
-
+            //add customer username
         public static void AddCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            CustomerBusinessLogicLayer.AddCustomer(customer); //call BL
             CustomerMenu customer = new CustomerMenu();
             Console.Write("Enter new username: ");
             customer.UserName = Console.ReadLine();
-
-
-
             customerBusinessLogicLayer.Add(customer);
             Console.WriteLine("username added");
         }
+            //update customer mobile number
         public static void UpdateCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
@@ -121,17 +119,25 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.WriteLine("new mobile number is updated");
 
         }
+            //view customer details
         static void ViewCustomer()
         {
-            CustomerBusinessLogic customerBusinessLogic = new CustomerBusinessLogic();
-            List<Customer> cust = customerBusinessLogic.GetCustomer();
+            CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+            List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
 
             foreach (Customer customer in cust)
             {
-                Console.WriteLine(customer.UserName + ", " + flight.flightName);
+                Console.WriteLine(customer.UserName + ", " + customer.password + "," + customer.email + "," + customer.mobileNumber + "," + customer.aadharNumber + customer.pancardNumber + "," + ",");
             }
         }
 
     }
 }
+}
 
+
+
+
+ 
+
+}
