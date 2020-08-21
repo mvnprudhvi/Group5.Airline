@@ -113,7 +113,7 @@ class Customer
             cust.mobileNumber = int.Parse(Console.ReadLine());
             Console.Write("enter new mobile number");
             cust.mobileNumber = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(Cust);
+            customerBusinessLogicLayer.UpdateCustomer(cust);
             Console.WriteLine("new mobile number is updated");
 
         }
