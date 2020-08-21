@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿
+using System;
+/// <summary>
 /// represents customer
 /// </summary>
 class Customer
