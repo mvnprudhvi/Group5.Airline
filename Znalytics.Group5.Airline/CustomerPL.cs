@@ -11,8 +11,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     class Customer
     {
         static void Main()
-        {
-                Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
+        {    
+
+            Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
 
             //registration page
             System.Console.WriteLine("REGISTRATION PAGE:");
@@ -53,7 +54,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             
 
             //Login
-            Console WriteLine("-------LOGIN FORM-----------------");
+            Console.WriteLine("-------LOGIN FORM-----------------");
             Console.WriteLine("==================================");
             Console.WriteLine("\nUsername:");
             string userName = Console.ReadLine();
