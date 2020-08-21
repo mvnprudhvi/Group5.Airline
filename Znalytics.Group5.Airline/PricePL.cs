@@ -1,7 +1,7 @@
 ﻿using static System.Console;
 using System.Collections.Generic;
-using Znalytics.Group5.Airline.BusinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.BusinessLogicLayer;
 
 namespace Znalytics.Group5.Airline
 {
@@ -39,7 +39,9 @@ namespace Znalytics.Group5.Airline
                 }
             } while (choice != 5);
         }
-
+        /// <summary>
+        /// This Method Represents AddPrice
+        /// </summary>
         static void AddPrice()
         {
             PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();
