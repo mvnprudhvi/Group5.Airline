@@ -12,8 +12,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
         //create list
 
-         List<FlightDetail> listOfFlightDetail = new List<FlightDetail>();
-
+        List<FlightDetailDataAccessLayer> listOfFlightDetail = new List<FlightDetailDataAccessLayer>();
 
         /// <summary>
         /// Adding new flight Details
