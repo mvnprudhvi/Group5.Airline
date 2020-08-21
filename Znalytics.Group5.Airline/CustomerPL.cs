@@ -39,12 +39,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             string pancardnumber = System.Console.ReadLine();
 
 
-            System.Console.WriteLine("flightName:" + flightName);
-            System.Console.WriteLine("flightId:" + flightId);
-            System.Console.WriteLine("source:" + source);
-            System.Console.WriteLine("destination:" + destination);
-            System.Console.WriteLine("departureTiming:" + departureTiming);
-            System.Console.WriteLine("arrivalTiming:" + arrivalTiming);
+            System.Console.WriteLine("userName:" + username);
+            System.Console.WriteLine("email:" + email);
+            System.Console.WriteLine("password:" + password);
+            System.Console.WriteLine("mobilenumber:" + mobilenumber);
+            System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
+            System.Console.WriteLine("pancardnumber:" + pancardnumber);
 
             //customer details are stored
             Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
