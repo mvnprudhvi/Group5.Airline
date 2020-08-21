@@ -53,7 +53,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             
 
             //Login
-            Console WriteLine("-------LOGIN FORM-----------------");
+            Console.WriteLine("-------LOGIN FORM-----------------");
             Console.WriteLine("==================================");
             Console.WriteLine("\nUsername:");
             string userName = Console.ReadLine();
