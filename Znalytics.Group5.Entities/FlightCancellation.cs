@@ -1,10 +1,11 @@
-﻿using System;
+﻿//created by madhumitha
+using System;
 
 namespace Znalytics.Group5.Entities
 {
     public class FlightCancellation
     {
-        //auto-impl properties
+       
         public int _FlightName { get; set; }
         public int _FlightID { get; set; }
         public System.DateTime _Date { get; set; }
