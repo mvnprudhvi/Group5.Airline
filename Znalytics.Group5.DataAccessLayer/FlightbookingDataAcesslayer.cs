@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
-    class FlightbookingDataAcesslayer
+    class flightbookingDataAcessLayer
     {
     }
 }

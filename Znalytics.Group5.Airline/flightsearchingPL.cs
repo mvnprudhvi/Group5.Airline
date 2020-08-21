@@ -10,7 +10,7 @@ namespace Znalytics.Group5.Airline
     {
             static void Main()
             {
-                FlightSearching f = new FlightSearching();
+               // FlightSearching f = new FlightSearching();
                 System.Console.WriteLine("FlightSearching......");
                 System.Console.WriteLine("enter the flight number......");
                 f.SetNoOfFlight(int.Parse(System.Console.ReadLine()));
@@ -24,7 +24,7 @@ namespace Znalytics.Group5.Airline
                 System.Console.WriteLine("enter flight time......");
                 f.SetTime(int.Parse(System.Console.ReadLine()));
                 System.Console.WriteLine(f.GetTime());
-                System.Console.ReadKey();
+                //System.Console.ReadKey();
             }
         }
 
