@@ -1,4 +1,6 @@
-﻿namespace Znalytics.Group5.Airline.Entities
+﻿using System;
+
+namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
     /// Represents Customer
