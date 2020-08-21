@@ -48,7 +48,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <summary>
         /// This Method Represents GetPrice 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>_priceDataAccessLayer</returns>
         public List<Price> GetPrices()
         {
             return _priceDataAccessLayer.GetPrices();

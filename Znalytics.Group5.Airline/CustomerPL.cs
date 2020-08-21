@@ -1,8 +1,13 @@
-﻿
-using System;
-/// <summary>
-/// represents customer
-/// </summary>
+﻿using System;
+using System.Collections.Generic;
+using Znalytic.Group5.Airline.BussinessLogicLayer;
+using Znalytic.Group5.Airline.Entities;
+
+//Represents Presentation Layer
+
+namespace Znalytic.Group5.Airline.PresentationLayer
+{
+
 class Customer
 {
     static void Main()
@@ -40,8 +45,10 @@ class Customer
         Menu();
         System.Console.ReadKey();
 
-    
-        static void Menu()
+    }
+    public class MenuPresenter
+    {
+        public static void Menu()
         {
             int choice = -1;
 
@@ -122,7 +129,7 @@ class Customer
 
             foreach (Customer customer in cust)
             {
-                
+                Console.WriteLine(customer.UserName + ", " + flight.flightName);
             }
         }
 
