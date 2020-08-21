@@ -27,22 +27,32 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         }
 
         //Get all flights
-        public List<FlightCancellation> GetFlightCancellation()
+        public List<FlightName> GetFlightCancellation()
         {
             return _FlightName;
         }
 
-        //Update
-        public void UpdateFlightCancellation(flightcancellation flightcancellation)
-        {
-            //Get matching flightname based on flightid
+        public void UpdateFlightCancellationbyFlightNameAndFlightId(flightcancellation flightcancellation)
+    { 
             FlightCancellationDataAccessLayer fli = _flightid.Find(temp => temp.FlightID == FlightCancellationDataAccessLayer.EmployeeID);
             if (fli != null)
             {
                 fli.flightcancellation = flightcancellation.FlightName;
             }
         }
+    public void SearchFlightCancellationByName(string flightId, string flightName)
+    {
+        _flights.Contains()
+
+
+        }
+
+    public void DeleteFlightNameByflightId(string flightId, string flightName)
+    {
+        _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
     }
+
+}
 
 
 
@@ -83,16 +93,16 @@ using Znalytics.Group5.AirLine.CancellationModule.Entities;
 
 namespace Znalytics.Group5.AirLine.CancellationDataAccessLayer
 {
-    public class CancellationDataAccessLayer : CancellationDataAccessLayer
+    public class FlightCancellationDataAccessLayer : CancellationDataAccessLayer
     {
         //create list
         List<FlightName> FlightName = new List<FlightName>();
 
         public void AddFlightName(FlightName FlightName)
         {
-            ////code generating new customer id
+            ////flight generating new customer id
 
-            //customers.Add(customer);
+            //flight.Add(flight);
 
             //not done
         }

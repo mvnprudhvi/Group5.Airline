@@ -1,5 +1,8 @@
-﻿using System;
-using System.CodeDom.Compiler;
+﻿/// <summary>
+/// Created By Dinesh
+/// Module Name is Price
+/// </summary>
+
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
@@ -34,7 +37,8 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="price"></param>
         public void DeletePrice(Price price)
         {
-            _prices.Remove(tem => tem.FlightName == Price.FlightName);
+            //Based on Flight Name the Price Will be deleted 
+           _prices.Remove(temp => temp.FlightName == Price.FlightName);
 
         }
 
@@ -44,7 +48,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="price"></param>
         public void UpdatePrice(Price price)
         {
-            //Get matching Flightname based on FLIGHTID
+             //Based on Flight Name the Price Will be Updated 
             Price pri = _prices.Find(temp => temp.FlightName == price.FlightName);
             if (pri != null)
             {

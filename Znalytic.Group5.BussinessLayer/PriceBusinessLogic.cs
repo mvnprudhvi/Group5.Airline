@@ -1,7 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/// <summary>
+/// Created By Dinesh
+/// Module Name is Price
+/// </summary>
+
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
+using System;
+using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
@@ -12,6 +17,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     {
         PriceDataAccessLayer _priceDataAccessLayer;
 
+        //Constructor for Business Logic Layer
         public PriceBusinessLogic()
         {
             _priceDataAccessLayer = new PriceDataAccessLayer();
@@ -48,7 +54,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <summary>
         /// This Method Represents GetPrice 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>_priceDataAccessLayer</returns>
         public List<Price> GetPrices()
         {
             return _priceDataAccessLayer.GetPrices();

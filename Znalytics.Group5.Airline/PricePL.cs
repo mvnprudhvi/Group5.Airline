@@ -1,4 +1,9 @@
-﻿using static System.Console;
+﻿/// <summary>
+/// Created By Dinesh
+/// Module Name is Price
+/// </summary>
+
+using static System.Console;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
@@ -10,12 +15,18 @@ namespace Znalytics.Group5.Airline
     /// </summary>
     class PricePL
     {
+        /// <summary>
+        /// Main Method
+        /// </summary>
         static void Main()
         {
-            PricesMenu();
+            PricesMenu();//Calling Menu Method For List Of Menus
             ReadKey();
         }
 
+        /// <summary>
+        /// This Method Represents PriceMenu To View Operations Of Price
+        /// </summary>
         static void PricesMenu()
         {
             int choice = 0;
@@ -39,8 +50,9 @@ namespace Znalytics.Group5.Airline
                 }
             } while (choice != 5);
         }
+
         /// <summary>
-        /// This Method Represents AddPrice
+        /// This Method Represents AddPrice to Add price of Flight
         /// </summary>
         static void AddPrice()
         {
@@ -57,10 +69,24 @@ namespace Znalytics.Group5.Airline
             price.FlightPrice = double.Parse(ReadLine());
 
             priceBusinessLogic.AddPrice(price);
-            WriteLine("The Details of Price Successfully Added \n");
+            WriteLine("The Details of Price is Successfully Added \n");
         }
 
+        /// <summary>
+        /// This Method Represents Delete Price To Delete Price of Flight
+        /// </summary>
+        static void DeletePrice()
+        {
+            PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();
+            Price p = new Price();
+            Write("Enter Existing Flight Name to Delete Price of That Flight");
+            priceBusinessLogic.DeletePrice(p);
+            WriteLine("The Price Of Flight is Deleted Successfully \n");
+        }
 
+        /// <summary>
+        /// This Method Represents Update Price to update Price of Flight
+        /// </summary>
         static void UpdatePrice()
         {
             PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();
@@ -73,18 +99,12 @@ namespace Znalytics.Group5.Airline
             pr.FlightPrice = double.Parse(ReadLine());
 
             priceBusinessLogic.UpdatePrice(pr);
-            WriteLine("The Price of Flight Updated Successfully \n");
+            WriteLine("The Price of Flight is Updated Successfully \n");
         }
 
-        static void DeletePrice()
-        {
-            PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();
-            Price p = new Price();
-            Write("Enter Existing Flight Name to Delete Price of Flight");
-            priceBusinessLogic.DeletePrice(p);
-            WriteLine("The Price Of Flight is Deleted Successfully \n");
-        }
-
+        /// <summary>
+        /// This Method Represents GetPrices To View prices of Flight
+        /// </summary>
         static void GetPrices()
         {
             PriceBusinessLogic priceBusinessLogic = new PriceBusinessLogic();
