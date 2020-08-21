@@ -40,7 +40,12 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
                 fli.flightcancellation = flightcancellation.FlightName;
             }
         }
+    public void DeleteFlightNameByflightId(string flightId, string flightName)
+    {
+        _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
     }
+
+}
 
 
 
