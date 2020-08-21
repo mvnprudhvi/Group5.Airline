@@ -17,7 +17,7 @@ namespace Znalytics.Group5.AirLine
 
                 if (userName == "," && password == ",")
                 {
-                 Menu();
+                Menu();
                 }
 
                 ReadKey();
