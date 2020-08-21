@@ -36,7 +36,7 @@ namespace Znalytics.Airline
             } while (choice != 4);
         }
 
-        static void AddFlightNumbers()
+        static void AddFlightName()
         {
             FlightCancellationBusinessLogicLayer flightcancellationBusinessLogic = new FlightCancellationBusinessLogic();
             FlightCancellation FlightCancellation = new FlightCancellation();
@@ -61,7 +61,7 @@ namespace Znalytics.Airline
             }
         }
 
-        static void UpdateFlightCancellation()
+        static void UpdateFlightName()
         {
             FlightCancellationBusinessLogic FlightCancellationBusinessLogic = new FlightCancellationBusinessLogic();
             Flight flight = new flight();
@@ -69,7 +69,7 @@ namespace Znalytics.Airline
             Console.Write("Enter Existing Fli ID: ");
             FlightCancellation.FlightID = int.Parse(Console.ReadLine());
             Console.Write("Enter New Fli Name: ");
-            FlightCancellation.FlightName = Console.ReadLine();
+            Flight.FlightName = Console.ReadLine();
 
             FlightCancellationBusinessLogic.UpdateFlightName(flight);
             Console.WriteLine("FlightName Updated.\n");
