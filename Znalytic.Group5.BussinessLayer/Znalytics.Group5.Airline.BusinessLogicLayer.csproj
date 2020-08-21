@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CancellationBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLogicLayer.cs" />
+    <Compile Include="FlightbookingBusinessLogicLayer.cs" />
     <Compile Include="FlightDetailBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
