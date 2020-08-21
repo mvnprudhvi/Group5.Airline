@@ -28,11 +28,11 @@ class Customer
 
         //customer mobile number
         System.Console.WriteLine("enter your mobile number:");
-        string mobilenumber = System.Console.ReadLine();
+        int mobilenumber =int.Parse(Console.ReadLine());
 
         //customer aadhar card number
         System.Console.WriteLine("enter your aadhar card number:");
-        string aadharcardnumber = System.Console.ReadLine();
+        int aadharcardnumber = int.Parse(Console.ReadLine());
 
         //customer pan card number
         System.Console.WriteLine("enter your pan card number:");
