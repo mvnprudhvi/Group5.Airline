@@ -1,8 +1,13 @@
-﻿
-using System;
-/// <summary>
-/// represents customer
-/// </summary>
+﻿using System;
+using System.Collections.Generic;
+using Znalytic.Group5.Airline.BussinessLogicLayer;
+using Znalytic.Group5.Airline.Entities;
+
+//Represents Presentation Layer
+
+namespace Znalytic.Group5.Airline.PresentationLayer
+{
+
 class Customer
 {
     static void Main()
@@ -120,11 +125,11 @@ class Customer
         static void ViewCustomer()
         {
             CustomerBusinessLogic customerBusinessLogic = new CustomerBusinessLogic();
-            List<Customer> cust = customerBusinessLogic.GetFlightDetail();
+            List<Customer> cust = customerBusinessLogic.GetCustomer();
 
             foreach (Customer customer in cust)
             {
-                Console.WriteLine(flight.flightId + ", " + flight.flightName);
+                Console.WriteLine(customer.UserName + ", " + flight.flightName);
             }
         }
 
