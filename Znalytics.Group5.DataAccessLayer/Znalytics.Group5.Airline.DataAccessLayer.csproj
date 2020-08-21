@@ -44,12 +44,18 @@
     <Compile Include="FlightCancellationDataAcessLayer.cs" />
     <Compile Include="CustomerDataAccessLayer.cs" />
     <Compile Include="FlightDetailDataAccessLayer.cs" />
-    <Compile Include="FlightSearchingDataAcessLayer.cs" />
+    <Compile Include="FlightsearchingDataAcessLayer.cs" />
     <Compile Include="PriceDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Znalytic.Group5.BussinessLayer\Znalytics.Group5.Airline.BusinessLogicLayer.csproj">
+      <Project>{a8c7658b-260d-40b9-b365-99fcb194d296}</Project>
+      <Name>Znalytics.Group5.Airline.BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

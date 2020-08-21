@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightCancellationBusinessLogicLayer.cs" />
+    <Compile Include="CancellationBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLogicLayer.cs" />
     <Compile Include="FlightDetailBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />
@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.Airline.DataAccessLayer.csproj">
-      <Project>{2c7065c8-5006-4686-b3f2-a7c9f81c500e}</Project>
-      <Name>Znalytics.Group5.Airline.DataAccessLayer</Name>
+    <ProjectReference Include="..\Znalytics.Group5.Airline\Znalytics.Group5.Airline.csproj">
+      <Project>{e252efce-8dcf-4421-a748-1e0af1d8d850}</Project>
+      <Name>Znalytics.Group5.Airline.PL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
