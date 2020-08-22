@@ -15,7 +15,6 @@ namespace Znalytics.Group5.Entities
         public string _Time { get; set; }
 
         public string _Cancel { get; set; }
-        {
         /// <summary>
         /// Constructor that initializes details of cancellation
         /// </summary>
