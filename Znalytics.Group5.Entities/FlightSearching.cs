@@ -18,11 +18,7 @@
         //}
     }
     
-
-
-
-
-     // public class FlightSearching
+  // public class FlightSearching
     {
         //private fields
         private string _FlightName;
