@@ -25,23 +25,14 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
             return _flights;
         }
 
-
-        //Search.. details of flight using find()
-        public void SearchFlightDetailsByName(string flightId, string flightName)
-        {
-         //Get matching flights based on flightId
-         _flights.Contains()
-             
-        }      
-
-        //
+ 
             
      /// <summary>
      /// Delete Method with 2 parameters
      /// </summary>
      /// <param name="flightId"></param>
      /// <param name="flightName"></param>
-     public void DeleteFlightDetailByflightId(string flightId,string flightName)
+     public void DeleteFlightDetailByflightId(int flightId,string flightName)
         {
            _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
         }

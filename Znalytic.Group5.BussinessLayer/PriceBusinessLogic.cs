@@ -15,12 +15,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     /// </summary>
     public class PriceBusinessLogic
     {
-        PriceDataAccessLayer _priceDataAccessLayer;
+        PriceDataAccessLayer _priceDataAccessLayer;//Reference Variable Of Price Data Access Layer
 
         //Constructor for Business Logic Layer
         public PriceBusinessLogic()
         {
-            _priceDataAccessLayer = new PriceDataAccessLayer();
+            _priceDataAccessLayer = new PriceDataAccessLayer();//Creating Object for Price Data Access Layer
         }
 
         /// <summary>
@@ -43,6 +43,10 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             _priceDataAccessLayer.DeletePrice(price);
         }
 
+        /// <summary>
+        /// This Method Represents UpdatePrice 
+        /// </summary>
+        /// <param name="price"></param>
         public void UpdatePrice(Price price)
         {
             if (Price.price != null)

@@ -1,4 +1,4 @@
-﻿//created by madhumitha
+﻿//created by Madhumitha
 using System;
 
 namespace Znalytics.Group5.Entities
@@ -7,143 +7,98 @@ namespace Znalytics.Group5.Entities
     {
        
         public int _FlightName { get; set; }
+
         public int _FlightID { get; set; }
-        public System.DateTime _Date { get; set; }
-        public System.DateTime _Time { get; set; }
+
+        public string _Date { get; set; }
+
+        public string _Time { get; set; }
+
         public string _Cancel { get; set; }
-
-        //public FlightCancellation(int FlightName,string FlightID,System.DateTime _Date,System.DateTime _Time,string _Cancel)
-        //{
-        //    this.FlightName = FlightName;
-        //    this.FlightID = FlightID;
-        //    this.Date = Date;
-        //    this.Time = Time;
-        //    this.Cancel = Cancel; 
-        //}
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*/// <summary>
-/// Represents Flight
-/// </summary>
-public class Cancellation
-{
-    //private fields
-    private string _FlightName;
-    private System.DateTime _Date;
-    private System.DateTime _Time;
-    private string _Cancel;
-
-    /// <summary>
-    /// Constructor that initializes details of cancellation
-    /// </summary>
-    /// <param name="FlightName">Represents flight number</param>
-    /// <param name="Date">represents date of flight</param>
-    /// <param name="Time">represents time of flight</param>
-    /// <param name="cancel">represents cancellation of flight</param>
-    public Cancellation(string FlightName, System.DateTime Date, int Time, string cancel)
-    {
-        //_FlightName = flightName;
-        //_Date = date;
-        //_Time = time;
-        //_Cancel = cancel;
-
-        _FlightName = FlightName; //set method will be called
-        //_Date = Date; //set method will be called
-        //_Time = _Time;
-        _Cancel = cancel;
-    }
-
-    /// <summary>
-    /// Parameterless constructor
-    /// </summary>
-    public Cancellation()
-    {
-        //not initializing
-    }
-
-
-    /// <summary>
-    /// Represents name of the AirLine
-    /// </summary>
-    public string FlightName
-    {
-        set
         {
-            //Name should be less than 30 stringacters
-            if (value.Length <= 30)
+        /// <summary>
+        /// Constructor that initializes details of cancellation
+        /// </summary>
+        /// <param name="FlightName">Represents flight number</param>
+        /// <param name="FlightID">represents flight Id</param>
+        /// <param name="Date">represents date of flight</param>
+        /// <param name="Time">represents time of flight</param>
+        /// <param name="cancel">represents cancellation of flight</param>
+
+        public FlightCancellation(int FlightName, string FlightID, System.DateTime _Date, System.DateTime _Time, string _Cancel)
+        {
+            //    this.FlightName = FlightName;
+            //    this.FlightID = FlightID;
+            //    this.Date = Date;
+            //    this.Time = Time;
+            //    this.Cancel = Cancel;
+            _FlightName = flightName; //set method will be called
+            _FlightID = flightID;//set method will be called
+            _Date = date; //set method will be called
+            _Time = time;//set method will be called
+            _Cancel = cancel;//set method will be called
+        }
+    /// <summary>
+    /// Represents name of the FlightName
+    /// </summary>
+            //properties
+        public string flightName
+        {
+            set //set the value
             {
-                _FlightName = value;
+
+                _flightName = value;
             }
-        }
-
-        get
-        {
-            return _FlightName;
-        }
-    }
-
-    /// <summary>
-    /// date of flight
-    /// </summary>
-    public System.DateTime date
-    {
-        set
-        {
-            _Date = value;
-        }
-    }
-
-    /*lic System.DateTime date
-        set
-        {
-            return _Date;
-        }
-}
-/// <summary>
-/// time of flight
-/// </summary>
-
-public string Time
-{
-    set
-    {
-        _time = value;
-    }
-}
-get
-    {
-        return _time;
-    }
-    }*/
-/*public string Cancel
-    {
-        set
-        {
-            if (value.Length <= 30)
+            get // get the value
             {
-                _Cancel = value;
-            }
-            get
-        {
-                return _Cancel;
+                
+                return _flightName; 
             }
         }
-    }*/
+
+
+        public string flightId
+        {
+            set //set the value
+            {
+
+                _flightId = value;
+            }
+            get // get the value
+            { 
+                return _flightId; 
+            }
+        }
+        /// <summary>
+        /// date of flightcancellation
+        /// </summary>
+            public string date
+        {
+            set // set the value
+            {
+                _date = value;
+            }
+            get // get the value
+            {
+                return _date; 
+            }
+        }
+        /// <summary>
+        /// time of flightcancellation
+        /// </summary>
+        public string Time
+        {
+            set // set the value
+            {
+                _time = value;
+            }
+            get // get the value
+            {
+                return _time;
+            }
+        }
+}
+
 
 
 

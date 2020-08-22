@@ -8,14 +8,14 @@ namespace Znalytics.Group5.Airline.Entities
         //Private Fields
 
         private string _flightName { set; get; }
-        private string _flightId { set; get; }
+        private int _flightId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private string _departureTiming { set; get; }
         private string _arrivalTiming { set; get; }
 
         //constructor
-        public FlightDetail(string flightName, string flightId, string source, string destination, string departureTiming, string arrivalTiming)
+        public FlightDetail(string flightName, int flightId, string source, string destination, string departureTiming, string arrivalTiming)
         {
             _flightName = flightName;
             _flightId = flightId;
@@ -38,7 +38,7 @@ namespace Znalytics.Group5.Airline.Entities
         }
 
 
-        public string flightId
+        public int flightId
         {
             set
             {
