@@ -28,7 +28,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         //get customer
         public List<Customer> GetCustomers()
         {
-            return _CustomerDataAccessLayer.GetCustomers();
+            return _CustomerDataAccessLayer.GetCustomer();
         }
         //update customer
 
