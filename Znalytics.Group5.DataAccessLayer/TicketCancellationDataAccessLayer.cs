@@ -38,16 +38,7 @@ namespace Znalytics.Group5.DataAccessLayer
             {
                 _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
             }
-
-
-
-
         }
-
-    public class Flight
-    {
-    }
-}
 
 
 
@@ -76,6 +67,3 @@ namespace Znalytics.Group5.DataAccessLayer
             }
         }
     }*/
-
-}
-    }
