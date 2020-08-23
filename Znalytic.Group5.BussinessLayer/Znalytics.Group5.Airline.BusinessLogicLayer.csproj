@@ -45,6 +45,7 @@
     <Compile Include="FlightBookingbusinessLogic.cs" />
     <Compile Include="FlightDetailBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />
+    <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightDetailBusinessLogic.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
