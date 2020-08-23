@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flight.cs" />
     <Compile Include="CustomerDataAccessLayer.cs" />
+    <Compile Include="FlightBookingDataAcessLayer.cs" />
     <Compile Include="FlightDetailsDataAccessLayer.cs" />
     <Compile Include="FlightSearchingDataAcessLayer.cs" />
     <Compile Include="PriceDataAccessLayer.cs" />

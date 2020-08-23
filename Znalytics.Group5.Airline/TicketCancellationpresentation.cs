@@ -1,4 +1,146 @@
-﻿//created by Madhumitha
+﻿/// <summary>
+/// Created By Madhumitha
+/// </summary>
+
+using static System.Console;
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.BusinessLogicLayer;
+using System;
+
+namespace Znalytics.Group5.Airline.PresentationLayer
+{
+    /// <summary>
+    /// This Class Represents Presentation Layer Of Price
+    /// </summary>
+    class TicketCancellationPresentation
+    {
+        /// <summary>
+        /// Main Method
+        /// </summary>
+        static void Main()
+        {
+            TicketCancellationPresentationMenu();//Calling Menu Method For List Of Menus
+            ReadKey();
+        }
+
+        private static void TicketCancellationPresentationMenu()
+        {
+            throw new NotImplementedException();
+        }
+        static void TicketCancellation()
+        {
+            int choice = 0;
+            do
+            {
+                WriteLine("===TICKET CANCELLATION MENU===");
+                WriteLine("1. Add Booking ID");
+                WriteLine("2. Delete Booking ID");
+                WriteLine("3. Update Booking ID");
+                WriteLine("4. View Booking ID");
+                WriteLine("5. Add seatnumber");
+                WriteLine("6. View seatnumber");
+                WriteLine("7. cancel");
+                Write("Enter Your choice: ");
+                choice = int.Parse(ReadLine());
+
+                switch (choice)
+                {
+                    case 1: AddbookingID(); break;
+                    case 2: ViewBookingId(); break;
+                    case 3: AddseatNumber(); break;
+                    case 4: viewseatNumber(); break;
+                    case 5: Cancel(); break;
+
+
+                }
+            } while (choice != 6);
+        }
+
+        /// <summary>
+        /// This Method Represents AddPrice to Add price of Flight
+        /// </summary>
+
+        public static void AddbookingID()
+        {
+            TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+            TicketCancellation TicketCancellation = new TicketCancellation()
+
+            Write("Enter Booking id: ");
+            TicketCancellation.bookingID = int.Parse(ReadLine());
+
+            TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+            WriteLine("The Details of booking is Successfully Added \n");
+        }
+
+    }
+  public static void viewbookingID()
+    {
+        TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+        TicketCancellation TicketCancellation = new TicketCancellation()
+
+            Write("View Booking id: ");
+        TicketCancellation.bookingID = int.Parse(ReadLine());
+
+        TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+        WriteLine("view is successfull \n");
+    }
+    private static void AddseatNumber()
+    {
+        TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+        TicketCancellation TicketCancellation = new TicketCancellation()
+
+            Write("View seat number: ");
+        TicketCancellation.seatNumber = int.Parse(ReadLine());
+
+        TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+        WriteLine("booking id added succesfull \n");
+    }
+    private static void viewseatNumber()
+    {
+        throw new NotImplementedException();
+    }
+    private static void Cancel()
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//created by Madhumitha
 using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
@@ -10,7 +152,7 @@ namespace Znalytics.Airline
     {
         static void Main()
         {
-            FlightCancellationPresentation();
+            TicketCancellationPresentation();
             Console.ReadKey();
         }
 

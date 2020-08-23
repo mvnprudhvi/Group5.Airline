@@ -50,15 +50,7 @@ namespace Znalytics.Group5.Airline.FlightsearchingDataAccessLayer
 }
 
     //
-    public class FlightsearchingBusinessLogic
-    {
-        FlightsearchingDataAccessLogic _FlightsearchingDataAccessLogic;
-
-        public Flightsearching()
-        {
-            _FlightsearchingDataAccessLogic = new FlightsearchingDataAccessLogic();
-        }
-    }
+   
 
   //  
 
