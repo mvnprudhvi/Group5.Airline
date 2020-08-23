@@ -1,4 +1,6 @@
-﻿using System;
+﻿//.......KEERTHANA
+
+using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
@@ -14,18 +16,17 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         private static List<FlightDetail> _flights = new List<FlightDetail>();
 
         //Add
-        public void AddFlightDetail(FlightDetail flight)
+        public void AddflightName(FlightDetail fname)
         {
-            _flights.Add(flight);
+            _flights.Add(fname);
         }
 
-        //Get all FlightDetails
-        public List<FlightDetail> GetFlightDetails()
+        //Get  FlightName
+        public List<FlightDetail> GetFlightName()
         {
             return _flights;
         }
 
- 
             
      /// <summary>
      /// Delete Method with 2 parameters
@@ -42,3 +43,5 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
     }
 }
+
+

@@ -82,9 +82,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("1. Add FlightDetail");
                 Console.WriteLine("2. View FlightDetails");
                 Console.WriteLine("3. Update FlightDetail");
-                Console.WriteLine("4. Search FlightDetails");
-                Console.WriteLine("5. Delete FlightDetail");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("4. Delete FlightDetail");
+                Console.WriteLine("5. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
 
@@ -93,12 +92,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     case 1: AddFlightDetail(); break;
                     case 2: ViewFlightDetails(); break;
                     case 3: UpdateFlightDetails(); break;
-                    case 4: SearchFlightDetails(); break;
-                    case 5: DeleteFlightDetails(); break;
+                    case 4: DeleteFlightDetails(); break;
 
                 }
 
-            } while (choice != 6);
+            } while (choice != 5);
         }
 
         static void AddFlightDetail()
@@ -142,16 +140,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.WriteLine("flight is  Updated.\n");
         }
 
-        static void SearchFlightDetails()
-        {
-            FlightDetail flight = new FlightDetail();
-            Console.WriteLine("enter flightname you wish to search:");
-            string flightName = Console.ReadLine();
-            if (flight.contains(flightName))
-            Console.WriteLine("success,flight" + flightName);
-
-        }
-
+       
 
         static void DeleteFlightDetails()
         {

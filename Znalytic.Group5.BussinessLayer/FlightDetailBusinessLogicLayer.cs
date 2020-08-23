@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
-
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
     public class FlightDetailBusinessLogic : IFlightDetailBusinessLogic
@@ -19,7 +18,7 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         {
             if (fname.flightName != null)
             {
-                _fDal.AddAddflightName(fname);
+                _fDal.AddflightName(fname);
             }
             else
             {
