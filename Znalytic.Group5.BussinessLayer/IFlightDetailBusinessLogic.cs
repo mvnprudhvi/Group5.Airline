@@ -1,11 +1,12 @@
-﻿using Znalytics.Group5.Airline.Entities;
+﻿//........KEERTHANA....
+
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
     public interface IFlightDetailBusinessLogic
     {
-        void AddflightName(FlightDetail flightName);
+        void AddNewFlightDetails(FlightDetail fd);
     }
 }
-
 
