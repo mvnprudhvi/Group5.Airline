@@ -5,7 +5,7 @@ namespace Znalytics.Group5.Entities
 {
     public class FlightCancellation
     {
-       
+
         public int _FlightName { get; set; }
 
         public int _FlightID { get; set; }
@@ -37,10 +37,10 @@ namespace Znalytics.Group5.Entities
             _Time = time;//set method will be called
             _Cancel = cancel;//set method will be called
         }
-    /// <summary>
-    /// Represents name of the FlightName
-    /// </summary>
-            //properties
+        /// <summary>
+        /// Represents name of the FlightName
+        /// </summary>
+        //properties
         public string flightName
         {
             set //set the value
@@ -50,8 +50,8 @@ namespace Znalytics.Group5.Entities
             }
             get // get the value
             {
-                
-                return _flightName; 
+
+                return _flightName;
             }
         }
 
@@ -64,14 +64,14 @@ namespace Znalytics.Group5.Entities
                 _flightId = value;
             }
             get // get the value
-            { 
-                return _flightId; 
+            {
+                return _flightId;
             }
         }
         /// <summary>
         /// date of flightcancellation
         /// </summary>
-            public string date
+        public string date
         {
             set // set the value
             {
@@ -79,7 +79,7 @@ namespace Znalytics.Group5.Entities
             }
             get // get the value
             {
-                return _date; 
+                return _date;
             }
         }
         /// <summary>
@@ -96,12 +96,7 @@ namespace Znalytics.Group5.Entities
                 return _time;
             }
         }
-}
-
-
-
-
-
+    }
 
 /*namespace Znalytics.Airline.CancellationModule.Entitie
     public class Airline

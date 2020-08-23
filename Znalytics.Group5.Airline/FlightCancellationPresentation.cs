@@ -38,7 +38,7 @@ namespace Znalytics.Airline
 
         static void AddFlightName()
         {
-            FlightCancellationBusinessLogicLayer flightcancellationBusinessLogic = new FlightCancellationBusinessLogic();
+            flightcancellationBusinessLogic = new FlightCancellationBusinessLogic();
             FlightCancellation FlightCancellation = new FlightCancellation();
 
             Console.Write("Enter FlightId: ");
@@ -52,8 +52,8 @@ namespace Znalytics.Airline
 
         static void ViewFlightName()
         {
-           FlightCancellationBusinessLogic employeeBusinessLogic = new FlightCancellationBusinessLogic();
-            List<Flight> fli = flightcancellationBusinessLogic.GetEmployees();
+           FlightCancellationBusinessLogic FlightCancellationLogic = new FlightCancellationBusinessLogic();
+            List<FlightCancellation> fli = flightcancellationBusinessLogic.GetEmployees();
 
             foreach (FlightName Flight in fli)
             {
@@ -64,7 +64,7 @@ namespace Znalytics.Airline
         static void UpdateFlightName()
         {
             FlightCancellationBusinessLogic FlightCancellationBusinessLogic = new FlightCancellationBusinessLogic();
-            Flight flight = new flight();
+            FlightName flight = new Flight();
 
             Console.Write("Enter Existing Fli ID: ");
             FlightCancellation.FlightID = int.Parse(Console.ReadLine());
@@ -76,41 +76,6 @@ namespace Znalytics.Airline
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*class Program
