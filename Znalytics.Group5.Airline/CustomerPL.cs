@@ -47,10 +47,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("mobilenumber:" + mobilenumber);
             System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
             System.Console.WriteLine("pancardnumber:" + pancardnumber);
-
-            //customer details are stored
-            Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
-            
+           
 
             //Login
             Console.WriteLine("-------LOGIN FORM-----------------");
@@ -151,12 +148,4 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
     }
-}
-}
-
-
-
-
- 
-
 }
