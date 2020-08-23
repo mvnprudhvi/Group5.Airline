@@ -3,45 +3,26 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytic.Group5.BussinessLayer
+namespace Znalytic.Group5.BussinessLogicLayer
 {
-    class TicketCancellationBusinessLogicLayer
+    class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
+            {
+        private ITicketCancellationDataAccessLayer _tdal = null;
+
+        public TicketCancellationBusinessLogicLayer()
         {
-            TicketCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
-            {
-        public FlightCancellationBusinessLogicLayer()
-            {
-                _FlightCancellationDataAccessLayer = new FlightCancellationDataAccessLayer();
-            }
+            tdal = new CustomerDataAccessLayer();
+        }
 
-            //Add
-            public void Add(FlightCancellationDataAccessLayer flight)
+        public void AddCustomer(Customer customer)
+        {
+            if (customer.CustomerName != null)
             {
-                if (flightCancellation.FlightName != null)
-                {
-                    _FlightCancellationDataAccessLayer.Add(flight);
-                }
-                else
-                {
-                    throw new Exception("Flight Name can't be null");
-                }
-            }
-
-            //GetAllEmployees
-            public List<FlightcancellationBusinessLogicLayer> GetFlight()
-            {
-                return _FlightDataAccessLogic.GetFlight();
-            }
-
-            public void UpdateFlightCancellation(FlightCancellationDataAccessLayer flight)
-            {
-                if (FlightCancellationDataAccessLayer.flight != null)
-                {
-                    _FlightCancellationDataAccessLayer.UpdateFlightName(FlightName);
-                }
+                cdal.AddCustomer(customer);
             }
         }
     }
+}
 
 
 
