@@ -16,7 +16,14 @@ namespace Znaltyics.Group5.Airline.Flightsearching.Entities
         //    this.FlightID = FlightID;
         //    this.FlightName = FlightName;
         //}
+    }
+    
 
+
+
+
+     // public class FlightSearching
+    {
         //private fields
         private string _FlightName;
         private int _NumberOfFlights;
