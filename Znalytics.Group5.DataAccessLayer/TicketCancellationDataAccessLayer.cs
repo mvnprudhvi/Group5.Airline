@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group5.Airline.Entities;
 /// <summary>
-/// represents dataAccessLayer of Flightcancellation
+/// represents dataAccessLayer of Ticketcancellation
 /// </summary>
 
 
@@ -18,7 +18,7 @@ namespace Znalytics.Group5.DataAccessLayer
             //Add
             public void AddFlightName(Flight flight)
             {
-                _flights.Add(Flight);
+                _flights.Add(flight);
             }
 
             //Get all FlightDetails

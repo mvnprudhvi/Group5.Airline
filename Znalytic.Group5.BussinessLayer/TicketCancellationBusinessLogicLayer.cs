@@ -7,18 +7,18 @@ namespace Znalytic.Group5.BussinessLogicLayer
 {
     class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
             {
-        private ITicketCancellationDataAccessLayer _tdal = null;
+        private TicketCancellationdataAccessLayer _tdal = null;
 
         public TicketCancellationBusinessLogicLayer()
         {
             tdal = new CustomerDataAccessLayer();
         }
 
-        public void AddCustomer(Customer customer)
+        public void AddBookingId(TicketCancellation Ticket)
         {
-            if (customer.CustomerName != null)
+            if (bookingID.BookingId != null)
             {
-                cdal.AddCustomer(customer);
+                tdal.AddbookingId(bookingId);
             }
         }
     }

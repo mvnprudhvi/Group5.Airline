@@ -1,85 +1,109 @@
-﻿using System;
-using Znalytics.Group5.Airline.BusinessLogicLayer;.Entities;
-using Znalytics.OnlineShopping.BusinessLogicLayer;
+﻿/// <summary>
+/// Created By Madhumitha
+/// </summary>
 
-namespace Znalytics.OnlineShopping.PresentationLayer
+using static System.Console;
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.BusinessLogicLayer;
+using System;
+
+namespace Znalytics.Group5.Airline.PresentationLayer
 {
-    public class MenuPresenter
+    /// <summary>
+    /// This Class Represents Presentation Layer Of Price
+    /// </summary>
+    class TicketCancellationPresentation
     {
-        public static void Menu()
+        /// <summary>
+        /// Main Method
+        /// </summary>
+        static void Main()
         {
-            int choice = -1;
+            TicketCancellationPresentationMenu();//Calling Menu Method For List Of Menus
+            ReadKey();
+        }
 
+        private static void TicketCancellationPresentationMenu()
+        {
+            throw new NotImplementedException();
+        }
+        static void TicketCancellation()
+        {
+            int choice = 0;
             do
             {
-                Console.WriteLine("Menu:");
-                Console.WriteLine("1. Customers");
-                Console.WriteLine("2. Accounts");
-                Console.WriteLine("9. Exit");
+                WriteLine("===TICKET CANCELLATION MENU===");
+                WriteLine("1. Add Booking ID");
+                WriteLine("2. Delete Booking ID");
+                WriteLine("3. Update Booking ID");
+                WriteLine("4. View Booking ID");
+                WriteLine("5. Add seatnumber");
+                WriteLine("6. View seatnumber");
+                WriteLine("7. cancel");
+                Write("Enter Your choice: ");
+                choice = int.Parse(ReadLine());
 
-                bool b = int.TryParse(Console.ReadLine(), out choice);
-                if (b == true)
+                switch (choice)
                 {
-                    switch (choice)
-                    {
-                        case 1: CustomersMenu(); break;
-                    }
+                    case 1: AddbookingID(); break;
+                    case 2: ViewBookingId(); break;
+                    case 3: AddseatNumber(); break;
+                    case 4: viewseatNumber(); break;
+                    case 5: Cancel(); break;
+
+
                 }
-            } while (choice != 9);
+            } while (choice != 6);
         }
 
-        public static void CustomersMenu()
+        /// <summary>
+        /// This Method Represents AddPrice to Add price of Flight
+        /// </summary>
+
+        public static void AddbookingID()
         {
-            int choice = -1;
+            TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+            TicketCancellation TicketCancellation = new TicketCancellation()
 
-            do
-            {
-                Console.WriteLine("Customers Menu:");
-                Console.WriteLine("1. Add Customer");
-                Console.WriteLine("2. Update Customer");
-                Console.WriteLine("9. Exit");
+            Write("Enter Booking id: ");
+            TicketCancellation.bookingID = int.Parse(ReadLine());
 
-                bool b = int.TryParse(Console.ReadLine(), out choice);
-                if (b == true)
-                {
-                    switch (choice)
-                    {
-                        case 1: AddCustomer(); break;
-                    }
-                }
-            } while (choice != 9);
+            TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+            WriteLine("The Details of booking is Successfully Added \n");
         }
 
-        public static void AddCustomer()
-        {
-            Customer customer = new Customer();
-            Console.Write("Enter customer name: ");
-            customer.CustomerName = Console.ReadLine();
-
-            ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            customerBusinessLogicLayer.AddCustomer(customer); //call BL
-
-            Console.WriteLine(customer.GetType()); //Output: Znalytics.OnlineShopping.CustomersModule.Entities.Customer
-
-            Console.WriteLine(customer.ToString()); //Output: Znalytics.OnlineShopping.CustomersModule.Entities.Customer
-
-            Console.WriteLine(customer.GetHashCode()); //Output: 46104728
-
-
-            Customer customer1 = new Customer() { CustomerName = "John", Email = "john@gmail.com" };
-            Customer customer2 = new Customer() { CustomerName = "John", Email = "john@gmail.com" };
-
-            Console.WriteLine(customer1.Equals(customer2)); //Output: True 
-        }
     }
-}
+  public static void viewbookingID()
+    {
+        TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+        TicketCancellation TicketCancellation = new TicketCancellation()
 
+            Write("View Booking id: ");
+        TicketCancellation.bookingID = int.Parse(ReadLine());
 
+        TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+        WriteLine("view is successfull \n");
+    }
+    private static void AddseatNumber()
+    {
+        TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+        TicketCancellation TicketCancellation = new TicketCancellation()
 
+            Write("View seat number: ");
+        TicketCancellation.seatNumber = int.Parse(ReadLine());
 
-
-
-
+        TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
+        WriteLine("booking id added succesfull \n");
+    }
+    private static void viewseatNumber()
+    {
+        throw new NotImplementedException();
+    }
+    private static void Cancel()
+    {
+        throw new NotImplementedException();
+    }
 
 
 
