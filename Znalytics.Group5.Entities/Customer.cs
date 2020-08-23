@@ -92,7 +92,7 @@ namespace Znalytics.Group5.Airline.Entities
             set
             {
                 //mobile number should contain 10 digits only
-                if (value.Length == 10)
+                if (value == 10)
                 {
                     MobileNumber = value;
                 }
@@ -114,7 +114,7 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                if (value.Length == 12)
+                if (value == 12)
                     AadharNumber = value;
             }
             get

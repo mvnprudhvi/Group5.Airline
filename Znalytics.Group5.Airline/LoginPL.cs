@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
 
 namespace Znalytics.Group5.AirLine
     {
@@ -16,10 +17,12 @@ namespace Znalytics.Group5.AirLine
 
                 if (userName == "," && password == ",")
                 {
-                    MenuPresenter.Menu();
+                Menu();
                 }
 
                 ReadKey();
             }
-        }
+
+       
+    }
     }
