@@ -12,6 +12,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     {
         static void Main()
         {
+            int Type;
+           Customer c = new Customer();
+            CustomerBusinessLogicLayer bd = new CustomerBusinessLogicLayer();
                 Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
 
             //registration page
@@ -40,6 +43,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("enter your pan card number:");
             string pancardnumber = System.Console.ReadLine();
 
+            System.Console.WriteLine("Enter your Gender 0 for Male  or 1 for Female :");
+            bool val = int.TryParse(System.Console.ReadLine(), out Type);
+           if(val = 0)
+
 
             System.Console.WriteLine("userName:" + username);
             System.Console.WriteLine("email:" + email);
@@ -47,7 +54,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("mobilenumber:" + mobilenumber);
             System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
             System.Console.WriteLine("pancardnumber:" + pancardnumber);
-           
+            System.Console.WriteLine("Gender:" + gender);
+
 
             //Login form
             Console.WriteLine("-------LOGIN FORM-----------------");

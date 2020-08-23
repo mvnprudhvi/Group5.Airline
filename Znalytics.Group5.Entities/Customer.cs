@@ -18,12 +18,13 @@ namespace Znalytics.Group5.Airline.Entities
 
         private int _aadharNumber;
         private string _pancardNumber;
+        private string _gender;
 
         /// <summary>
         /// constructors thst initializes deatails of customer
         /// </summary>
 
-        public Customer(string userName,string email, string password, int mobileNumber, int aadharNumber, string pancardnumber)
+        public Customer(string userName,string email, string password, int mobileNumber, int aadharNumber, string pancardnumber , string gender)
         {
 
             /// <param name="email"></param> email of customer
@@ -40,6 +41,7 @@ namespace Znalytics.Group5.Airline.Entities
 
             _aadharNumber = aadharNumber;
             _pancardNumber = pancardnumber;
+            _gender = gender;
         }
         /// <summary>
         /// represents email of the customer
@@ -137,5 +139,8 @@ namespace Znalytics.Group5.Airline.Entities
                 return PancardNumber;
             }
         }
+
+        public string gender { set; get; }
+       
     }
 }

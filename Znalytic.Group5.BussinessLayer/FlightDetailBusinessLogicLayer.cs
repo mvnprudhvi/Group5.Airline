@@ -1,4 +1,5 @@
-﻿using System;
+﻿//........KEERTHANA....
+using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
@@ -6,6 +7,8 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
     public class FlightDetailBusinessLogic : IFlightDetailBusinessLogic
     {
+        //List<string> Flight Details = new List<string>();
+
         FlightDetailsDataAccessLogic _fDal;
 
         public FlightDetailBusinessLogic()
@@ -14,33 +17,23 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         }
 
         //Add
-        public void AddflightName(FlightDetail fname)
+        public void AddNewFlightDetails(FlightDetail fd)
         {
-            if (fname.flightName != null)
-            {
-                _fDal.AddflightName(fname);
-            }
-            else
-            {
-                throw new Exception("Flight Name should not be null");
-            }
-        }
-        //GetAll Flights
-        public List<flightName> GetflightName()
-        {
-            return  _fDal.GetflightName();
+            _fDal.AddNewFlightDetails(fd);
         }
 
-        public void UpdateflightId(FlightDetail fid)
+        //GetAll Flights
+        public List<FlightDetail> GetFlightDetails
         {
-            if (fid.flightId != null)
+            get
             {
-                _fDal.UpdateFlightId(fid);
+                return _fDal.GetFlightDetails();
             }
-            else
-            {
-                throw new Exception("flight id can't be null ");
-            }
+        }
+
+        public void UpdateExistingFlightDetails(FlightDetail fd)
+        {
+           
         }
     }
 }

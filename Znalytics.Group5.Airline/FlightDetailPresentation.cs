@@ -1,87 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
 using Znalytic.Group5.Airline.BussinessLogicLayer;
-using Znalytic.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.Entities;
 
 //Represents Presentation Layer
 
 namespace Znalytic.Group5.Airline.PresentationLayer
 {
    
-       class FlightDetailSchedule
+       class FlightSchedule
         {
-           
-            static void Main()
-            {
-                        // Enter the details of Flight
-                         System.Console.Write("Enter FlightName:"); //Name of the Flight
-                         string flightName = Console.ReadLine();
 
-                        System.Console.Write("Enter FlightId:"); // enter flight id
-                         int flightId = int.Parse(Console.ReadLine());
-
-                        System.Console.Write("Enter source:"); // Enter "FROM" Address
-                        String  source = Console.ReadLine();
-
-                        System.Console.Write("Enter destination:"); //enter "To" Addrress
-                        string  destination = Console.ReadLine();
-
-                        //DateTime used to represent date and time of the Day
-
-                        System.Console.WriteLine("enter Departure Timing:"); //
-                        var userDate = Console.ReadLine();
-                        System.DateTime UserDateTime;  //  DateTime is of type DateTime Datatype
-                        if (System.DateTime.TryParse(Console.ReadLine(), out UserDateTime))
-                        {
-                            Console.WriteLine("the day of the week is:" + UserDateTime.DayOfWeek);
-                        }
-                        else
-                        {
-                            Console.WriteLine("you have entered an incorrect value:");
-                        }
-                        Console.ReadLine();
-                        string departureTiming = Console.ReadLine();
-
-                        System.Console.WriteLine("enter Arrival Timing:");
-                        var inputtedDate = Console.ReadLine();
-                        System.DateTime result;
-                        System.DateTime.TryParse(inputtedDate, out result);
-                        string  arrivalTiming= Console.ReadLine();
+        static void Main()
+        {
+            // Enter the details of Flight
 
 
-                      // Display the Flight Details
+            FlightDetail fd = new FlightDetail();
+            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
 
-                        System.Console.WriteLine("---------------FLIGHT SCHEDULE---------------------------------------------");
+           Console.Write("Enter FlightName:"); //Name of the Flight
+            fd.flightName = Console.ReadLine();
 
-                        System.Console.WriteLine("flightName:" + flightName);
-                        System.Console.WriteLine("flightId:" + flightId);
-                        System.Console.WriteLine("source:" + source);
-                        System.Console.WriteLine("destination:" + destination);
-                        System.Console.WriteLine("departureTiming:" + departureTiming);
-                        System.Console.WriteLine("arrivalTiming:" + arrivalTiming);
+           Console.Write("Enter FlightId:"); // enter flight id
+            fd.flightId = int.Parse(Console.ReadLine());
 
-                        System.Console.WriteLine("--------------------------------------------------------------------------------------------");
+           Console.Write("Enter source:"); // Enter "FROM" Address
+            fd.source = Console.ReadLine();
 
-                        System.Console.WriteLine("--------------------SCHEDULE LIST------------------------------------------------------------");
-                        System.Console.WriteLine("flightName    flightId      source       destination     departureTiming       arrivalTiming");
+           Console.Write("Enter destination:"); //enter "To" Addrress
+            fd.destination = Console.ReadLine();
+
+            //DateTime used to represent date and time of the Day
+
+            Console.WriteLine("enter Departure Timing:"); //
+            var userDate = Console.ReadLine();
+            System.DateTime UserDateTime;  //  DateTime is of type DateTime Datatype
+            System.DateTime.TryParse(Console.ReadLine(), out UserDateTime);
+            Console.ReadLine();
+            fd.departureTiming = Console.ReadLine();
+
+            Console.WriteLine("enter Arrival Timing:");
+            var inputtedDate = Console.ReadLine();
+            System.DateTime result;
+            System.DateTime.TryParse(inputtedDate, out result);
+            fd.arrivalTiming = Console.ReadLine();
 
 
-                        System.Console.WriteLine("----------------------------------------------------------------------------------------------");
+            // Display the Flight Details
 
 
-                         FlightDetailsMenu();
-                         Console.ReadKey();
-            }
+            Console.WriteLine("---------------FLIGHT SCHEDULE---------------------------------------------");
+            Console.WriteLine("flightName:" + fd.flightName);
+            Console.WriteLine("flightId:" + fd.flightId);
+            Console.WriteLine("source:" + fd.source);
+            Console.WriteLine("destination:" + fd.destination);
+            Console.WriteLine("departureTiming:" + fd.departureTiming);
+            Console.WriteLine("arrivalTiming:" + fd.arrivalTiming);
+
+           Console.WriteLine("--------------------------------------------------------------------------------------------");
+
+            Console.WriteLine("--------------------SCHEDULE LIST------------------------------------------------------------");
+            Console.WriteLine("flightName    flightId      source       destination     departureTiming       arrivalTiming");
+
+
+            Console.WriteLine("----------------------------------------------------------------------------------------------");
+
+
+            FlightDetailsMenu();
+            Console.ReadKey();
+        }
 
          static void FlightDetailsMenu()
         {
-            int choice = 0;
+            int choice = 1;
             do
             {
                 Console.WriteLine("========FLIGHT MENU=========");
-                Console.WriteLine("1. Add FlightDetail");
-                Console.WriteLine("2. View FlightDetails");
-                Console.WriteLine("3. Update FlightDetail");
+                Console.WriteLine("1. AddNewFlighDetails");
+                Console.WriteLine("2. Update FlightDetails");
+                Console.WriteLine("3. View FlightDetail");
                 Console.WriteLine("4. Delete FlightDetail");
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter choice: ");
@@ -89,7 +87,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                 switch (choice)
                 {
-                    case 1: AddFlightDetail(); break;
+                    case 1: AddNewFlightDetails(); break;
                     case 2: ViewFlightDetails(); break;
                     case 3: UpdateFlightDetails(); break;
                     case 4: DeleteFlightDetails(); break;
@@ -99,57 +97,138 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             } while (choice != 5);
         }
 
-        static void AddFlightDetail()
+        static void AddNewFlightDetails()
         {
-           FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
-            FlightDetail flight = new FlightDetail();
+            int choice1 = 1;
+            FlightDetail fd = new FlightDetail();
+            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+            do
+            {
+                Console.WriteLine("Enter your choice  to add Particular FlightDetails");
+                Console.WriteLine("1.FlightName:");
+                Console.WriteLine("2.FlightId");
+                Console.WriteLine("3.Source");
+                Console.WriteLine("4.destination");
+                Console.WriteLine("5.DepartureTiming");
+                Console.WriteLine("6.ArrivalTiming");
 
-            Console.Write("Enter flight ID: ");
-            flight.flightId = int.Parse(Console.ReadLine());
-            Console.Write("Enter flight Name: ");
-            flight.flightName = Console.ReadLine();
+                switch (choice1)
+                {
+                    case 1:
+                        Console.Write("Enter New flight to be added: ");
+                        fd.flightName = Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.Write("Enter new flight Id to be added : ");
+                        fd.flightId = int.Parse(Console.ReadLine());
+                        break;
+                    case 3:
+                        Console.Write("Enter new Source: ");
+                        fd.source = Console.ReadLine();
+                        break;
+                    case 4:
+                        Console.Write("Enter New destination: ");
+                        fd.destination = Console.ReadLine();
+                        break;
+                    case 5:
+                        Console.Write("Enter New DepartureTiming: ");
+                        fd.departureTiming = Console.ReadLine();
+                        break;
+                    case 6:
+                        Console.Write("Enter New ArrivalTiming: ");
+                        fd.arrivalTiming = Console.ReadLine();
+                        break;
+                    case 7:
+                        Console.WriteLine("flightDetails are  added successfully \n");
+                        break;
+                    default:
+                        System.Console.WriteLine("Enter valid Option");
+                        break;
 
-            flight.Add(flight);
-            Console.WriteLine("flight is Added.\n");
+                }
+
+            } while (choice1 <= 7);
+
         }
 
-
+            
         static void ViewFlightDetails()
         {
-            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
-            List<FlightDetail> f = flightBusinessLogic.GetFlightDetail();
+            
+            List<FlightDetail> f = flightBusinessLogic.GetFlightDetails();
 
-            foreach(FlightDetail flight in f)
+            foreach(FlightDetail fd in f)
             {
-                Console.WriteLine(flight.flightId + ", " + flight.flightName);
+                Console.WriteLine(fd.flightId + ", " + fd.flightName + " ," + fd.source + "," + fd.destination + "," + fd.arrivalTiming + "," + fd.departureTiming);
+                   
             }
         }
 
 
         static void UpdateFlightDetails()
         {
-            FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
-           FlightDetail flight = new FlightDetail();
 
-            Console.Write("Enter Existing flight Id : ");
-            flight.flightId = int.Parse(Console.ReadLine());
-            Console.Write("Enter New flight Name: ");
-             flight.flightName = Console.ReadLine();
+           int choice2 = 1;
+           FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
+           FlightDetail fd = new FlightDetail();
+            do
+            {
+                Console.WriteLine("Enter your option for updating Particular FlightDetails");
+                Console.WriteLine("1.FlightName:");
+                Console.WriteLine("2.FlightId");
+                Console.WriteLine("3.Source");
+                Console.WriteLine("4.destination");
+                Console.WriteLine("5.DepartureTiming");
+               Console.WriteLine("6.ArrivalTiming");
 
-            flightBusinessLogic.UpdateFlightDetails(flight);
-            Console.WriteLine("flight is  Updated.\n");
+                switch (choice2)
+                {
+
+                    case 1:
+                        Console.Write("Enter New flight Name: ");
+                        fd.flightName = Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.Write("Enter new flight Id : ");
+                        fd.flightId = int.Parse(Console.ReadLine());
+                        break;
+                    case 3:
+                        Console.Write("Enter Source: ");
+                        fd.source = Console.ReadLine();
+                        break;
+                    case 4:
+                        Console.Write("Enter New destination: ");
+                        fd.destination = Console.ReadLine();
+                        break;
+                    case 5:
+                        Console.Write("Enter New DepartureTiming: ");
+                        fd.departureTiming = Console.ReadLine();
+                        break;
+                    case 6:
+                        Console.Write("Enter New ArrivalTiming: ");
+                        fd.arrivalTiming = Console.ReadLine();
+                        break;
+                    case 7:
+                        Console.WriteLine("flightDetails are  Updated successfully \n");
+                        break;
+                    default:
+                        System.Console.WriteLine("Enter valid Option");
+                        break;
+
+                }
+
+            } while (choice2 <= 7);        
+            
         }
-
-       
 
         static void DeleteFlightDetails()
         {
             FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
-            FlightDetail flight = new FlightDetail();
+            FlightDetail fd = new FlightDetail();
             Console.WriteLine("enter the flightName you wish to delete:");
             string flightName = Console.ReadLine();
-            flight.Remove(flightName);
-            flightBusinessLogic.DeleteFlightDetails(flight);
+            fd.Remove(flightName);
+            flightBusinessLogic.DeleteFlightDetails(fd);
             Console.WriteLine("flight deleted succcessfully.\n");
         }
 
