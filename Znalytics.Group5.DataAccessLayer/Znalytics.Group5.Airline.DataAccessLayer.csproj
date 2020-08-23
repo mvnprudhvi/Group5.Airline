@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Flight.cs" />
-    <Compile Include="FlightCancellationDataAcessLayer.cs" />
     <Compile Include="CustomerDataAccessLayer.cs" />
     <Compile Include="FlightDetailsDataAccessLayer.cs" />
     <Compile Include="FlightSearchingDataAcessLayer.cs" />

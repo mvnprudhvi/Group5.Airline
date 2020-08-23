@@ -34,11 +34,10 @@ namespace Znalytics.Airline
                     case 3: UpdateFlightNames(); break;
                 }
             } while (choice != 4);
-        }
 
         static void AddFlightName()
         {
-            flightcancellationBusinessLogic = new FlightCancellationBusinessLogic();
+            FlightcancellationBusinessLogic = new FlightCancellationBusinessLogic();
             FlightCancellation FlightCancellation = new FlightCancellation();
 
             Console.Write("Enter FlightId: ");
