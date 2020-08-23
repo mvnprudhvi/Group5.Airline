@@ -46,8 +46,9 @@
     <Compile Include="FlightDetailBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
-    <Compile Include="PriceDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketCancellationBusinessLogicLayer.cs" />
+    <Compile Include="_ITicketCancellationBusinessLogicLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.Airline.DataAccessLayer.csproj">

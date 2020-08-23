@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline.Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline.Entities", "Znalytics.Group5.Entities\Znalytics.Group5.Airline.Entities.csproj", "{B5D2CF2F-DE1D-4DAA-8B85-9ED0AF6B53CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline.PresentationLayer", "Znalytics.Group5.Airline\Znalytics.Group5.Airline.PresentationLayer.csproj", "{E252EFCE-8DCF-4421-A748-1E0AF1D8D850}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Znalytics.Group5.Airline", "Znalytics.Group5.Airline\Znalytics.Group5.Airline.csproj", "{E252EFCE-8DCF-4421-A748-1E0AF1D8D850}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

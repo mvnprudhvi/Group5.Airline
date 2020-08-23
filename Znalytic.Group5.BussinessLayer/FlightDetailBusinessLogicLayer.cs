@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
-using Znalytic.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
-    public class FlightDetailBusinessLogic
+    public class FlightDetailBusinessLogic : IFlightDetailBusinessLogic
     {
         FlightDetailsDataAccessLogic _fDal;
 
@@ -15,11 +15,11 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         }
 
         //Add
-        public void Add(FlightDetail flight)
+        public void AddflightName(FlightDetail fname)
         {
-            if (flight.flightName != null)
+            if (fname.flightName != null)
             {
-                _fDal.Add(flight);
+                _fDal.AddAddflightName(fname);
             }
             else
             {
@@ -27,17 +27,26 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
             }
         }
         //GetAll Flights
-        public List<FlightDetail> GetFlightDetails()
+        public List<flightName> GetflightName()
         {
-            return _fDal.GetFlightDetails();
+            return  _fDal.GetflightName();
         }
 
-        public void UpdateFlightDetails(FlightDetail flight)
+        public void UpdateflightId(FlightDetail fid)
         {
-            if (flight.flightId != null)
+            if (fid.flightId != null)
             {
-                _fDal.UpdateFlightDetails(flight);
+                _fDal.UpdateFlightId(fid);
+            }
+            else
+            {
+                throw new Exception("flight id can't be null ");
             }
         }
     }
 }
+
+
+
+
+
