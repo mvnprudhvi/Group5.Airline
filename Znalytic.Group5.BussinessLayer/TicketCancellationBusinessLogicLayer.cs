@@ -2,45 +2,46 @@
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
-namespace Znalytics.Group5.BusinessLogicLayer
+
+namespace Znalytic.Group5.BussinessLayer
 {
-    public class FlightcancellationBusinessLogiclayer
-    {
-        FlightCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
+    class TicketCancellationBusinessLogicLayer
+        {
+            TicketCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
             {
         public FlightCancellationBusinessLogicLayer()
-        {
-            _FlightCancellationDataAccessLayer = new FlightCancellationDataAccessLayer();
-        }
-
-        //Add
-        public void Add(FlightCancellationDataAccessLayer flight)
-        {
-            if (flightCancellation.FlightName != null)
             {
-                _FlightCancellationDataAccessLayer.Add(flight);
+                _FlightCancellationDataAccessLayer = new FlightCancellationDataAccessLayer();
             }
-            else
+
+            //Add
+            public void Add(FlightCancellationDataAccessLayer flight)
             {
-                throw new Exception("Flight Name can't be null");
+                if (flightCancellation.FlightName != null)
+                {
+                    _FlightCancellationDataAccessLayer.Add(flight);
+                }
+                else
+                {
+                    throw new Exception("Flight Name can't be null");
+                }
             }
-        }
 
-        //GetAllEmployees
-        public List<FlightcancellationBusinessLogicLayer> GetFlight()
-        {
-            return _FlightDataAccessLogic.GetFlight();
-        }
-
-        public void UpdateFlightCancellation(FlightCancellationDataAccessLayer flight)
-        {
-            if (FlightCancellationDataAccessLayer.flight != null)
+            //GetAllEmployees
+            public List<FlightcancellationBusinessLogicLayer> GetFlight()
             {
-                _FlightCancellationDataAccessLayer.UpdateFlightName(FlightName);
+                return _FlightDataAccessLogic.GetFlight();
+            }
+
+            public void UpdateFlightCancellation(FlightCancellationDataAccessLayer flight)
+            {
+                if (FlightCancellationDataAccessLayer.flight != null)
+                {
+                    _FlightCancellationDataAccessLayer.UpdateFlightName(FlightName);
+                }
             }
         }
     }
-}
 
 
 
@@ -112,3 +113,6 @@ namespace Znalytics.AirLine.BusinessLogicLayer
             FlightBussinessLayer fdl = new FlightBussinessLayer()
         }
     }
+
+    }
+}

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
 
-namespace Znalytics.Group5.Airline
+namespace Znalytics.Group5.Airline.PresentationLayer
 {
     /// <summary>
     /// This Class Represents Presentation Layer Of Price
