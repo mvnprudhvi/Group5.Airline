@@ -14,7 +14,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             _CustomerDataAccessLayer = new CustomerDataAccessLayer();
         }
        /// <summary>
-       /// validating customerNmae
+       /// validating User Name
        /// </summary>
        /// <param name="customer"></param>
         public void AddUserName(Customer customer)
@@ -29,6 +29,10 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             }
         }
 
+        /// <summary>
+        /// validating Mobile numbber
+        /// </summary>
+        /// <param name="customer"></param>
         public void AddmobileNumber(Customer customer)
         {
             if (customer.mobileNumber <= 999999999)
@@ -46,8 +50,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             return _CustomerDataAccessLayer.GetCustomer();
         }
-        //update customer
+        
 
+        /// <summary>
+        /// update existing password
+        /// </summary>
+        /// <param name="customer"></param>
         public void UpdateExistingCustomer(Customer customer)
         {
             if (customer.Password != null)
