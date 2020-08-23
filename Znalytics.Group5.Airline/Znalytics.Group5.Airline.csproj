@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightCancellationPresentation.cs" />
+    <Compile Include="TicketCancellationpresentation.cs" />
     <Compile Include="CustomerPL.cs" />
     <Compile Include="FlightDetailPresentation.cs" />
     <Compile Include="FlightsearchingPL.cs" />
