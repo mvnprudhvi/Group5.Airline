@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerPL.cs" />
+    <Compile Include="FlightBookingPL.cs" />
     <Compile Include="FlightDetailPresentation.cs" />
     <Compile Include="PricePL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

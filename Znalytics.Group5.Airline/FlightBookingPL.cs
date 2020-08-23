@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 
-namespace FlightBooking
+namespace  FlightBooking
     {
         class Program
         {
@@ -43,6 +43,4 @@ namespace FlightBooking
         }
     }
 
-    //entities
-}
-}
+    

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.Entities
+namespace Znalytics.Group5.Airline.FlightBooking.Entities
 {
-
-        public class FlightBooking
+    public class FlightBooking
         {
             string _flightName { set; get; }
             int _flightId { set; get; }
