@@ -48,9 +48,6 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("mobilenumber:" + mobilenumber);
             System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
             System.Console.WriteLine("pancardnumber:" + pancardnumber);
-
-            //customer details are stored
-            Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
             
 
             //Login
@@ -147,7 +144,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             foreach (Customer customer in cust)
             {
-                Console.WriteLine(customer.UserName + ", " + customer.password + "," + customer.email + "," + customer.mobileNumber + "," + customer.aadharNumber + customer.pancardNumber + "," + ",");
+                Console.WriteLine(customer.UserName + ", " + customer.Password + "," + customer.Email + "," + customer.mobileNumber + "," + customer.aadharNumber + customer.pancardNumber + "," + ",");
             }
         }
 
