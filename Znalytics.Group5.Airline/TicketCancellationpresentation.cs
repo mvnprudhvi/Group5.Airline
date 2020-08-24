@@ -47,7 +47,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 switch (choice)
                 {
                     case 1: AddbookingID(); break;
-                    case 2: ViewBookingId(); break;
+                    case 2: ViewbookingId(); break;
                     case 3: AddseatNumber(); break;
                     case 4: viewseatNumber(); break;
                     case 5: Cancel(); break;
@@ -63,7 +63,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
         public static void AddbookingID()
         {
-            TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+            TicketCancellationBusinessLogicLayer TicketCancellationBusinessLogic = new TicketCancellationBusinessLogicLayer();
             TicketCancellation TicketCancellation = new TicketCancellation()
 
             Write("Enter Booking id: ");
@@ -74,7 +74,12 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         }
 
     }
-  public static void viewbookingID()
+
+    internal class TicketCancellationBusinessLogicLayer
+    {
+    }
+
+    public static void viewbookingID()
     {
         TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
         TicketCancellation TicketCancellation = new TicketCancellation()

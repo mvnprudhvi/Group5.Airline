@@ -7,7 +7,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
 {
     class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
             {
-        private TicketCancellationdataAccessLayer _tdal = null;
+        private TicketCancellationDataAccessLayer _tdal = null;
 
         public TicketCancellationBusinessLogicLayer()
         {
