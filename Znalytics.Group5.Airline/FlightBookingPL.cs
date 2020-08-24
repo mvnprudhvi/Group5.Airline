@@ -33,7 +33,7 @@ namespace  FlightBooking
                 Console.WriteLine(" flightName :" + flightName);
                 Console.WriteLine(" flightId :" + flightId);
                 Console.WriteLine(" passengerName :" + passengerName);
-                Console.WriteLine(" you are seated in seat number: " + SeatNumber);
+                Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
                 Console.WriteLine("============================================================");
 
                 Console.WriteLine(" flightName   flightId  passengerName Seat Number");
