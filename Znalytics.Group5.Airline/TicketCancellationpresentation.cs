@@ -11,7 +11,7 @@ using System;
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
     /// <summary>
-    /// This Class Represents Presentation Layer Of Price
+    /// This Class Represents Presentation Layer of ticket cancellation
     /// </summary>
     class TicketCancellationPresentation
     {
