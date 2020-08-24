@@ -21,6 +21,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             FlightDetail fd = new FlightDetail();
             FlightDetailBusinessLogic flightBusinessLogic = new FlightDetailBusinessLogic();
 
+            // Set data into object "fd"
+
            Console.Write("Enter FlightName:"); //Name of the Flight
             fd.flightName = Console.ReadLine();
 
@@ -51,6 +53,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             // Display the Flight Details
 
+            // get the data from "fd" object
 
             Console.WriteLine("---------------FLIGHT SCHEDULE---------------------------------------------");
             Console.WriteLine("flightName:" + fd.flightName);
