@@ -4,7 +4,7 @@
 namespace Znalytics.Group5.Airline.Entities
 {
 
-    // creating a class "FlightDetail"
+    // creating a class "FlightSchedule"
     public class FlightSchedule
 
     {

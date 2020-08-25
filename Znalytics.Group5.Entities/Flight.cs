@@ -5,12 +5,12 @@ namespace Znalytics.Group5.Entities
     class Flight
     {
         private string _flightName { set; get; }
-        private string _flightNumber { set; get; }
-        private string _flightCapacity { set; get; }
-        private string  _luggageWeightage { set; get; }
+        private int _flightNumber { set; get; }
+        private int _flightCapacity { set; get; }
+        private int  _luggageWeightage { set; get; }
 
 
-        public Flight( string FlightName , string FlightNumber , string FlightCapacity, string LuggageWeightage)
+        public Flight( string FlightName , int FlightNumber , int FlightCapacity, int LuggageWeightage)
         {
             _flightName = FlightName;
             _flightNumber = FlightNumber;
@@ -29,7 +29,7 @@ namespace Znalytics.Group5.Entities
                 return _flightName; // get the value
             }
         }
-         public string FlightNumber
+         public int FlightNumber
          {
             set
             {
@@ -41,11 +41,11 @@ namespace Znalytics.Group5.Entities
             }
          }
 
-        public string FlightCapacity
+        public int  FlightCapacity
         {
             set
             {
-                if( FlightCapacity.Length <= 250 )
+                if( FlightCapacity  <= 250 )
                 {
                     _flightCapacity = value;
                 }
@@ -60,11 +60,11 @@ namespace Znalytics.Group5.Entities
             }
         }
 
-        public string LuggageWeightage
+        public int LuggageWeightage
         {
             set
             {
-                  if(LuggageWeightage.Length <= 30)
+                  if(LuggageWeightage <= 30)
                 {
                     _luggageWeightage = value;
                 }
