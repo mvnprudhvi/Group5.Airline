@@ -8,5 +8,6 @@ namespace Znalytic.Group5.BussinessLayer
 {
     class FlightBookingbusinessLogic
     {
+        //
     }
 }

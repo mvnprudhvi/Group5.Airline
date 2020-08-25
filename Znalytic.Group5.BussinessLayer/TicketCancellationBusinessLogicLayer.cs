@@ -5,13 +5,13 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
-    class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
+    class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer();
             {
         private TicketCancellationDataAccessLayer _tdal = null;
 
         public TicketCancellationBusinessLogicLayer()
         {
-            tdal = new CustomerDataAccessLayer();
+            tcdal = new TicketCancellationDataAccessLayer();
         }
 
         public void AddBookingId(TicketCancellation Ticket)
