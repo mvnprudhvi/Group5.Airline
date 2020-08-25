@@ -13,9 +13,9 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
     public class FlightBooking
         {
         // private fields
-        private string _flightName { set; get; }
+        private string _flightName { set; get;}
         private int _flightId { set; get; }
-        private string _passengerName { set; get; }
+        private string _passengerName { set; get;}
         private int _seatNumber { set; get; }
        private int _bookingId { set; get; }
 
