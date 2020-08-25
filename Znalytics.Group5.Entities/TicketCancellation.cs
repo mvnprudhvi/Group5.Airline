@@ -25,6 +25,10 @@ namespace Znalytics.Group5.Airline.Entities
             _arrivalTiming = arrivalTiming;
         }
 
+        public TicketCancellation()
+        {
+        }
+
         //properties
         public string flightName
         {
