@@ -43,10 +43,11 @@
   <ItemGroup>
     <Compile Include="CustomerBusinessLogicLayer.cs" />
     <Compile Include="FlightBookingbusinessLogic.cs" />
-    <Compile Include="FlightDetailBusinessLogicLayer.cs" />
+    <Compile Include="FlightScheduleBusinessLogicLayer.cs" />
     <Compile Include="Flightsearchingbusinesslogic.cs" />
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightDetailBusinessLogic.cs" />
+    <Compile Include="IFlightScheduleBusinessLogic.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCancellationBusinessLogicLayer.cs" />
