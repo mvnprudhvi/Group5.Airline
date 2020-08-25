@@ -9,20 +9,20 @@ using Znalytics.Group5.Airline.Entities;
 /// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-   public class FlightDetailsDataAccessLogic
+   public class FlightSchedulesDataAccessLogic
     {
 
         // create list
-        private static List<FlightDetail> _flights = new List<FlightDetail>();
+        private static List<FlightSchedule> _flights = new List<FlightSchedule>();
 
         //Add
-        public void AddflightName(FlightDetail fname)
+        public void AddflightName(FlightSchedule fname)
         {
             _flights.Add(fname);
         }
 
         //Get  FlightName
-        public List<FlightDetail> GetFlightName()
+        public List<FlightSchedule> GetFlightName()
         {
             return _flights;
         }
@@ -33,7 +33,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
      /// </summary>
      /// <param name="flightId"></param>
      /// <param name="flightName"></param>
-     public void DeleteFlightDetailByflightId(int flightId,string flightName)
+     public void DeleteFlightFlightScheduleByflightId(int flightId ,string flightName)
         {
            _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
         }

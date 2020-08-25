@@ -5,22 +5,22 @@ using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
-    public class FlightDetailBusinessLogic : IFlightDetailBusinessLogic
+    public class FlightScheduleBusinessLogic : IFlightScheduleBusinessLogic
     {
         //List<string> Flight Details = new List<string>();
-       
-        FlightDetailsDataAccessLogic _fDal;
 
-        public FlightDetailBusinessLogic()
+        FlightScheduleDataAccessLogic _fDal;
+
+        public FlightScheduleBusinessLogic()
         {
-            _fDal = new FlightDetailsDataAccessLogic();
+            _fDal = new FlightScheduleDataAccessLogic();
         }
 
         /// <summary>
         /// validating FlightName
         /// </summary>
         /// <param name="fd"></param>
-        public void AddflightName(FlightDetail fd)
+        public void AddflightName(FlightSchedule fs)
         {
             if(fd.flightName.Length < 15 )
             {
@@ -36,11 +36,11 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         /// methods for validating FlightId
         /// </summary>
         /// <param name="fd"></param>
-        public void AddflightId(FlightDetail fd)
+        public void AddflightId(FlightSchedule fs)
         {
-            if (fd.flightId < 10)
+            if (fs.flightId < 10)
             {
-                _fDal.AddflightId(fd.flightId);
+                _fDal.AddflightId(fs.flightId);
             }
             else
             {
@@ -48,15 +48,15 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
             }
         }
         //GetAll Flights
-        public List<FlightDetail> GetFlightDetails
+        public List<FlightSchedule> GetFlightSchedule
         {
             get
             {
-                return _fDal.GetFlightDetails();
+                return _fDal.GetFlightSchedule();
             }
         }
 
-        public void UpdateExistingFlightDetails(FlightDetail fd)
+        public void UpdateExistingFlightSchedule(FlightSchedule fs)
         {
            
         }
