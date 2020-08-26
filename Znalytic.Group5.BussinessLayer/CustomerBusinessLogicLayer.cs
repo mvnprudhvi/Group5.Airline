@@ -35,7 +35,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <param name="customer"></param>
         public void AddmobileNumber(Customer customer)
         {
-            if (customer.mobileNumber <= 999999999)
+            if (customer.MobileNumber <= 10)
             {
                 _CustomerDataAccessLayer.Add(customer);
             }
