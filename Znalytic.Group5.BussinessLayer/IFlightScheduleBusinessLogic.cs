@@ -1,9 +1,10 @@
 ﻿//........KEERTHANA....
-
+using System;
+using Znalytics.Group5.Airline.FlightModule.Entities;
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
 {
-    public interface IFlightScheduleBusinessLogic
+    public interface IFlightScheduleBusinessLogicLayer
     {
-        void AddNewFlightDetails(FlightSchedule fs);
+        void AddFlightSchedule(FlightSchedule flightSchedule);
     }
 }
