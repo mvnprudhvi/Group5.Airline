@@ -14,31 +14,31 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     public class PriceDataAccessLayer
     {
         //private Field of price Collection
-        private static List<Price> _prices;
+        private static List<FlightPrice> _flightPrices;
 
         //constructor for  Data Access Layer
         static PriceDataAccessLayer()
         {
-            _prices = new List<Price>();
+            _flightPrices = new List<FlightPrice>();
         }
 
         /// <summary>
         /// This Method Represents AddPrice
         /// </summary>
         /// <param name="price"></param>
-        public void AddPrice(Price price)
+        public void AddFlightPrice(FlightPrice price)
         {
-            _prices.Add(price);
+            _flightPrices.Add(price);
         }
 
         /// <summary>
         /// This Method Repreents Delete Price
         /// </summary>
         /// <param name="price"></param>
-        public void DeletePrice(Price price)
+        public void DeleteFlightPrice(FlightPrice price)
         {
             //Based on Flight Name the Price Will be deleted 
-            _prices.Remove(temp => temp.FlightName == price.FlightName);
+            _flightPrices.Remove();
 
         }
 
@@ -46,23 +46,20 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// This Method Represents UpdatePrice
         /// </summary>
         /// <param name="price"></param>
-        public void UpdatePrice(Price price)
+        public void UpdateFlightPrice(FlightPrice price)
         {
             //Based on Flight Name the Price Will be Updated 
-            Price pri = _prices.Find(temp => temp.FlightName == price.FlightName);
-            if (pri != null)
-            {
-                pri.FlightPrice = price.FlightPrice;
-            }
+                 Price pri = _flightPrices.Find();
+                pri.Price = price.Price;
         }
 
         /// <summary>
         /// This Method Represents GetPrices
         /// </summary>
         /// <returns>_prices</returns>
-        public List<Price> GetPrices()
+        public List<FlightPrice> GetFlightPrices()
         {
-            return _prices;
+            return _flightPrices;
         }
     }
 }
