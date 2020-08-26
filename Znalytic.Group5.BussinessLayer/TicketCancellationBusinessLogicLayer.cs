@@ -13,7 +13,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         TicketCancellationDataAccessLayer _TicketCancellationDataAccessLayer;//Reference Variable Of Ticket cancellaation Data Access Layer
 
         //Constructor for Business Logic Layer
-        public TicketCancellationBussinessLogicLayer()
+        public  void TicketCancellationBussinessLogicLayer()
         {
             _TicketCancellationDataAccessLayer = new TicketCancellationDataAccessLayer();//Creating Object for ticket cancellation Data Access Layer
         }
@@ -39,11 +39,11 @@ namespace Znalytic.Group5.BussinessLogicLayer
 
         }
 
-/// <summary>
-/// This Method Represents Update ticket cancellation
-/// </summary>
-/// <param name="bookingid"></param>
-public void UpdatebookingId(TicketCancellation bookingId)
+        /// <summary>
+        /// This Method Represents Update ticket cancellation
+        /// </summary>
+        /// <param name="bookingid"></param>
+        public void UpdatebookingId(TicketCancellation bookingId)
         {
             if (TicketCancellation.bookingId != null)
             {
@@ -58,6 +58,10 @@ public void UpdatebookingId(TicketCancellation bookingId)
         public List<TicketCancellation> GetbookingId()
         {
             return _TicketCancellationDataAccessLayer.GetbookingId();
+        }
+        public List<TicketCancellation> Getdate()
+        {
+            return _TicketCancellationDataAccessLayer.Getdate();
         }
     }
 }
