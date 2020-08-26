@@ -129,7 +129,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         fs.arrivalTiming = Console.ReadLine();
                         break;
                     case 5:
-                        Console.WriteLine("FlightSchedule is  added successfully \n");
+                        Console.WriteLine("Flightdate is  added successfully \n");
                         break;
                     default:
                         System.Console.WriteLine("Enter valid Option");

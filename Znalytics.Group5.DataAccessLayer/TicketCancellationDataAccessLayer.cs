@@ -16,12 +16,12 @@ namespace Znalytics.Group5.DataAccessLayer
             private static List<TicketCancellation> _flights = new List<TicketCancellation>();
 
             //Add
-            public void AddFlightName(flightName flight)
+            public void (flightName flight)
             {
                 _flights.Add(flightName);
             }
 
-            //Get all FlightDetails
+            //Get a
             public List<FlightName> GetFlightNames()
             {
                 return _flightName;
@@ -59,7 +59,7 @@ namespace Znalytics.Group5.DataAccessLayer
 
             public void AddFlightName(FlightName FlightName)
             {
-                ////flight generating new customer id
+                ////flight generating 
 
                 //flight.Add(flight);
 

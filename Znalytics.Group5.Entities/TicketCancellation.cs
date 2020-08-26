@@ -7,30 +7,28 @@ namespace Znalytics.Group5.Airline.Entities
     {
         //Private Fields
 
-        private string _flightName { set; get; }
-        private int _flightId { set; get; }
+       // private string _flightName { set; get; }
+        //private int _flightId { set; get; }
         private int _bookingId { set; get; }
         private int _seatNumber { set; get; }
-        private string _departureTiming { set; get; }
-        private string _arrivalTiming { set; get; }
+        private int _price { set; get; }
+        private string _time { set; get; }
+        // private string _arrivalTiming { set; get; }
 
         //constructor
-        public TicketCancellation(string flightName, int flightId, int bookingId,int seatNumber, string departureTiming, string arrivalTiming)
+        public TicketCancellation(int bookingId, int seatNumber, int price,string time)
         {
-            _flightName = flightName;
-            _flightId = flightId;
+            // _flightName = flightName;
+            //_flightId = flightId;
             _bookingId = bookingId;
             _seatNumber = seatNumber;
-            _departureTiming = departureTiming;
-            _arrivalTiming = arrivalTiming;
-        }
-
-        public TicketCancellation()
-        {
+            _price = price;
+            _time = time;
+            // _arrivalTiming = arrivalTiming;
         }
 
         //properties
-        public string flightName
+        /*public string flightName
         {
             set
             //set the value
@@ -50,7 +48,7 @@ namespace Znalytics.Group5.Airline.Entities
                 _flightId = value;
             }
             get { return _flightId; }
-        }
+        }*/
 
         public int bookingid
         {
@@ -72,19 +70,29 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get { return _seatNumber; }
         }
-
-
-        public string departureTiming
+        public int price
         {
             set
             {
-                _departureTiming = value;
+
+                _price = value;
             }
-            get { return _departureTiming; }
+            get { return _price; }
+        }
+
+         public string time
+        {
+            set
+            {
+                _time = value;
+            }
+            get { 
+        return _time;
+        }
         }
 
 
-        public string arrivalTiming
+       /* public string arrivalTiming
         {
             set
             {
@@ -93,188 +101,188 @@ namespace Znalytics.Group5.Airline.Entities
             get { return _arrivalTiming; }
         }
 
-    }
+    }*/
 
 
 
-    /*namespace Znalytics.Airline.CancellationModule.Entitie
-        public class Airline
-    {
-        private int _FlightNumber;
-        private string _View;
-        private int _Time;
-        private int _Date;
-        private string _Cancel;
-        public void SetFlightNumber(int value)
+        /*namespace Znalytics.Airline.CancellationModule.Entitie
+            public class Airline
         {
-            _FlightNumber = value;
-        }
-        public int FlightNumber()
-        {
-            return _FlightNumber;
-        }
-        public void SetView(string value)
-        {
-            _View = value;
-
-        }
-        public string GetView()
-        {
-            return _View;
-        }
-        public void SetTime(int value)
-        {
-            _Time = value;
-
-        }
-        public int GetTime()
-        {
-            return _Time;
-        }
-        public void SetDate(int value)
-        {
-            _Date = value;
-
-        }
-        public int GetDate()
-        {
-            return _Date;
-        }
-        public void SetCancel(string value)
-        {
-            _Cancel = value;
-
-        }
-        public string GetCancel()
-        {
-            return _Cancel;
-        }
-
-    }
-
-    /*{
-        private string _FlightName;
-        private System.DateTime _Date;
-        private System.DateTime _Time;
-        private bool _Cancel;
-
-
-        public string FlightName
-        {
-            set
+            private int _FlightNumber;
+            private string _View;
+            private int _Time;
+            private int _Date;
+            private string _Cancel;
+            public void SetFlightNumber(int value)
             {
-                if (value.Length <= 30)
-                {
-                    _FlightName = value;
-                }
+                _FlightNumber = value;
             }
-            get
+            public int FlightNumber()
             {
-                return _FlightName;
+                return _FlightNumber;
             }
-        }
-        public string Cancel
-        {
-            set
+            public void SetView(string value)
             {
-                if (value.Length <= 30)
-                {
-                    _Cancel = value;
-                }
+                _View = value;
+
             }
-            get
+            public string GetView()
+            {
+                return _View;
+            }
+            public void SetTime(int value)
+            {
+                _Time = value;
+
+            }
+            public int GetTime()
+            {
+                return _Time;
+            }
+            public void SetDate(int value)
+            {
+                _Date = value;
+
+            }
+            public int GetDate()
+            {
+                return _Date;
+            }
+            public void SetCancel(string value)
+            {
+                _Cancel = value;
+
+            }
+            public string GetCancel()
             {
                 return _Cancel;
             }
+
         }
 
+        /*{
+            private string _FlightName;
+            private System.DateTime _Date;
+            private System.DateTime _Time;
+            private bool _Cancel;
 
 
-        /*public System.DateTime _Date;
+            public string FlightName
+            {
+                set
                 {
-                    set
+                    if (value.Length <= 30)
                     {
-                        _Date = value;
-                    }
-                    get
-                    {
-                        return _Date;
+                        _FlightName = value;
                     }
                 }
-        public System.DateTime _Date;
+                get
                 {
-                    set
+                    return _FlightName;
+                }
+            }
+            public string Cancel
+            {
+                set
+                {
+                    if (value.Length <= 30)
                     {
-                        _Date = value;
-                    }
-                    get
-                    {
-                        return _Date;
+                        _Cancel = value;
                     }
                 }
+                get
+                {
+                    return _Cancel;
+                }
+            }
 
 
-        public override string ToString()
+
+            /*public System.DateTime _Date;
+                    {
+                        set
+                        {
+                            _Date = value;
+                        }
+                        get
+                        {
+                            return _Date;
+                        }
+                    }
+            public System.DateTime _Date;
+                    {
+                        set
+                        {
+                            _Date = value;
+                        }
+                        get
+                        {
+                            return _Date;
+                        }
+                    }
+
+
+            public override string ToString()
+            {
+                return base.ToString() + "FlightName: " + FlightName + ", Cancel: " + Cancel;
+            }
+
+            public override int GetHashCode()
+            {
+                return 1000;
+            }*/
+
+
+
+
+
+
+        /* public class Flight
         {
-            return base.ToString() + "FlightName: " + FlightName + ", Cancel: " + Cancel;
+        private string _FlightName;
+        private System.DateTime _Date;
+        private System.DateTime _Time;
+        private string _Cancel;
+
+        public void SetFlightName(string FlightName)
+        {
+         this._FlightName = FlightName;
+        }
+        public string GetFlightName()
+        {
+         return this._FlightName;
+        }
+        public void SetDate(System.DateTime Date)
+        {
+         this._Date = Date;
+        }
+        public string GetDate()
+        {
+         return this._FlightName;
+        }
+        public void SetCancel(string Cancel)
+        {
+         this._Cancel = Cancel;
+        }
+        public string GetCancel()
+        {
+         return this._Cancel;
+        }
         }
 
-        public override int GetHashCode()
+        /*public void SetTime(System.DateTime Time)
         {
-            return 1000;
+        this._Time = Time;
+        }
+        public System.DateTime GetDate()
+        {
+        return this._Time;
+        }
         }*/
 
 
 
 
 
-
-    /* public class Flight
-    {
-    private string _FlightName;
-    private System.DateTime _Date;
-    private System.DateTime _Time;
-    private string _Cancel;
-
-    public void SetFlightName(string FlightName)
-    {
-     this._FlightName = FlightName;
     }
-    public string GetFlightName()
-    {
-     return this._FlightName;
-    }
-    public void SetDate(System.DateTime Date)
-    {
-     this._Date = Date;
-    }
-    public string GetDate()
-    {
-     return this._FlightName;
-    }
-    public void SetCancel(string Cancel)
-    {
-     this._Cancel = Cancel;
-    }
-    public string GetCancel()
-    {
-     return this._Cancel;
-    }
-    }
-
-    /*public void SetTime(System.DateTime Time)
-    {
-    this._Time = Time;
-    }
-    public System.DateTime GetDate()
-    {
-    return this._Time;
-    }
-    }*/
-
-
-
-
-
-}
 }
