@@ -8,29 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
-using Znalytics.Group5.Airline.Flightsearching.DataAccessLayer;
-using Znalytics.Group5.Airline.Flightsearching.Entities;
 
-namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
-{
-   
+{ 
 
-        public class FlightsearchingBusinessLogic
-        {
-            FlightsearchingDataAccessLogic _FlightsearchingDataAccessLogic;
+        public class FlightSearchingbusinessLogicLayer : IFlightSearchingbusinessLogicLayer
+             
 
-            public FlightsearchingBusinessLogic()
+    
+            private IFlightSearchingDataAccessLayer fdal = null;
+
+            public FlightSearchingbusinessLogicLayer()
             {
-                _FlightsearchingDataAccessLogic = new FlightsearchingDataAccessLogic();
+                fdal = new FlightSearchingDataAccessLayer();
             }
-
-            //Addflightname
-            public void Add(Flightsearching FlightName)
+              //Addflightname
+            public void Add(FlightName FlightName)
             {
-                if (Flightsearching.FlightName != null)
+                if (FlightName.FlightName != null)
                 {
-                    _FlightsearchingDataAccessLogic.Add(FlightName);
+                    _FlightSearchingDataAccessLayer.Add(FlightName);
                 }
                 else
                 {
@@ -39,16 +37,16 @@ namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
             }
 
             //GetAllflightNames
-            public List<FlightsearchingBusinessLogic> Get()
+            public List<FlightSearchingbusinessLogicLayer> Get()
             {
-                return _FlightsearchingDataAccessLogic.Get(FlightName);
+                return _FlightSearchingDataAccessLayer.Get(FlightName);
             }
 
-            public void UpdateFlightName(Flightsearching FlightName)
+            public void UpdateFlightName(FlightName FlightName)
             {
-                if (Flightsearching.FlightName != null)
+                if (FlightName.FlightName != null)
                 {
-                    _FlightsearchingDataAccessLogic.UpdateEmployee(FlightName);
+                    _FlightSearchingDataAccessLayer.UpdateFlightName(FlightName);
                 }
             }
         }
@@ -58,14 +56,14 @@ namespace Znalytics.Group5.Airline.FlightsearchingBussinessLayer
 
 
 
-//
 
-using Znalytics.Group5.FlightSearching.Entities;
+
+/*using Znalytics.Group5.FlightSearching.Entities;
 using Znalytics.Group5.DataAccessLayer;
 
 namespace Znalytics.Group5.BusinessLogicLayer
 {
-    public class FlightSearching : IFlightSearchingBusinessLogicLayer
+    public class FlightSearchingBusinessLogicLayer : IFlightSearchingBusinessLogicLayer
         {
         private IFlightSearchingDataAccessLayer fdal = null;
 
@@ -82,5 +80,5 @@ namespace Znalytics.Group5.BusinessLogicLayer
             }
         }
     }
-}
-//
+}*/
+

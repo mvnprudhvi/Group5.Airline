@@ -11,9 +11,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     class Customer
     {
         static void Main()
-        {    
-
-            Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
+        {
+            int Type;
+           Customer c = new Customer();
+            CustomerBusinessLogicLayer bd = new CustomerBusinessLogicLayer();
+                Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
 
             //registration page
             System.Console.WriteLine("REGISTRATION PAGE:");
@@ -41,6 +43,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("enter your pan card number:");
             string pancardnumber = System.Console.ReadLine();
 
+            System.Console.WriteLine("Enter your Gender 0 for Male  or 1 for Female :");
+            bool gender = int.TryParse(System.Console.ReadLine(), out Type);
+           if(gender = 0)
+
 
             System.Console.WriteLine("userName:" + username);
             System.Console.WriteLine("email:" + email);
@@ -48,12 +54,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.WriteLine("mobilenumber:" + mobilenumber);
             System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
             System.Console.WriteLine("pancardnumber:" + pancardnumber);
+            System.Console.WriteLine("Gender:" + gender);
 
-            //customer details are stored
-            Customer customer = new Customer(username, email, password, mobilenumber, aadharcardnumber, pancardnumber);
-            
 
-            //Login
+            //Login form
             Console.WriteLine("-------LOGIN FORM-----------------");
             Console.WriteLine("==================================");
             Console.WriteLine("\nUsername:");
@@ -120,23 +124,66 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         public static void AddCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            CustomerMenu customer = new CustomerMenu();
+             Customer customersmenu= new CustomersMenu();
             Console.Write("Enter new username: ");
-            customer.UserName = Console.ReadLine();
-            customerBusinessLogicLayer.Add(customer);
+            Customer.UserName = Console.ReadLine();
+            customerBusinessLogicLayer.Add(cust);
             Console.WriteLine("username added");
         }
-            //update customer mobile number
+
+            //update customer details
         public static void UpdateCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
             Customer cust = new Customer();
+
+            //update customer username
+            Console.Write("enter existing username");
+            cust.userName = int.Parse(Console.ReadLine());
+            Console.Write("enter new username");
+            cust.userName = Console.ReadLine();
+            customerBusinessLogicLayer.UpdateCustomer(cust);
+            Console.WriteLine("new username is updated");
+
+            //update customer email
+            Console.Write("enter existing email");
+            cust.email = int.Parse(Console.ReadLine());
+            Console.Write("enter new email");
+            cust.email = Console.ReadLine();
+            customerBusinessLogicLayer.UpdateCustomer(cust);
+            Console.WriteLine("new email is updated");
+
+            //update customer password
+            Console.Write("enter existing password");
+            cust.pasword = int.Parse(Console.ReadLine());
+            Console.Write("enter new password");
+            cust.password = Console.ReadLine();
+            customerBusinessLogicLayer.UpdateCustomer(cust);
+            Console.WriteLine("new password is updated");
+
+            //update customer mobile number
             Console.Write("enter existing mobile number");
             cust.mobileNumber = int.Parse(Console.ReadLine());
             Console.Write("enter new mobile number");
             cust.mobileNumber = Console.ReadLine();
             customerBusinessLogicLayer.UpdateCustomer(cust);
             Console.WriteLine("new mobile number is updated");
+
+            //update customer aadhar number
+            Console.Write("enter existing aadhar number");
+            cust.aadharNumber= int.Parse(Console.ReadLine());
+            Console.Write("enter new aadhar number");
+            cust.aadharNumber = Console.ReadLine();
+            customerBusinessLogicLayer.UpdateCustomer(cust);
+            Console.WriteLine("new aadhar number is updated");
+
+            //update customer pan card number
+            Console.Write("enter existing pan card number");
+            cust.pancardNumber = int.Parse(Console.ReadLine());
+            Console.Write("enter new username");
+            cust.pancardnumber = Console.ReadLine();
+            customerBusinessLogicLayer.UpdateCustomer(cust);
+            Console.WriteLine("new pan card number is updated");
 
         }
             //view customer details
@@ -152,12 +199,4 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
     }
-}
-}
-
-
-
-
- 
-
 }

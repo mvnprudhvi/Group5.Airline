@@ -3,46 +3,38 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytic.Group5.BussinessLayer
+namespace Znalytic.Group5.BussinessLogicLayer
 {
-    class TicketCancellationBusinessLogicLayer
+    public class TicketCancellationBusinessLogicLayer : ITicketCancellationBusinessLogicLayer;
+
+        public TicketCancellationBusinessLogicLayer()
         {
-            TicketCancellationDataAccessLayer = _flightcancellationdataAccessLayer;
-            {
-        public FlightCancellationBusinessLogicLayer()
-            {
-                _FlightCancellationDataAccessLayer = new FlightCancellationDataAccessLayer();
-            }
+            tcdal = new TicketCancellationDataAccessLayer();
+        }
 
-            //Add
-            public void Add(FlightCancellationDataAccessLayer flight)
+        public void AddbookingId(TicketCancellation bookingId)
+        {
+            if (TicketCancellation.bookingId != null)
             {
-                if (flightCancellation.FlightName != null)
-                {
-                    _FlightCancellationDataAccessLayer.Add(flight);
-                }
-                else
-                {
-                    throw new Exception("Flight Name can't be null");
-                }
+                _TicketcancellationDataAccessLayer.Add(bookingId);
             }
-
-            //GetAllEmployees
-            public List<FlightcancellationBusinessLogicLayer> GetFlight()
+            else
             {
-                return _FlightDataAccessLogic.GetFlight();
+                throw new Exception("booking id can't be null");
             }
-
-            public void UpdateFlightCancellation(FlightCancellationDataAccessLayer flight)
+        }
+        public void Adddate(TicketCancellation date)
+        {
+            if (TicketCancellation.date != null)
             {
-                if (FlightCancellationDataAccessLayer.flight != null)
-                {
-                    _FlightCancellationDataAccessLayer.UpdateFlightName(FlightName);
-                }
+                _TicketcancellationDataAccessLayer.Add(date);
+            }
+            else
+            {
+                throw new Exception("date can't be null");
             }
         }
     }
-
 
 
 

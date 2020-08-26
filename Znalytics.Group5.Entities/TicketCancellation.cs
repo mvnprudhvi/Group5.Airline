@@ -1,102 +1,109 @@
 ﻿//created by Madhumitha
-using System;
-
-namespace Znalytics.Group5.Entities
+//Entities
+namespace Znalytics.Group5.Airline.Entities
 {
-    class TicketCancellation
+    public class TicketCancellation
+
     {
+        //Private Fields
 
-            public int _FlightName { get; set; }
+       // private string _flightName { set; get; }
+        //private int _flightId { set; get; }
+        private int _bookingId { set; get; }
+        private int _seatNumber { set; get; }
+        private int _price { set; get; }
+        private string _time { set; get; }
+        // private string _arrivalTiming { set; get; }
 
-            public int _FlightID { get; set; }
-
-            public string _Date { get; set; }
-
-            public string _Time { get; set; }
-
-            public string _Cancel { get; set; }
-            /// <summary>
-            /// Constructor that initializes details of cancellation
-            /// </summary>
-            /// <param name="FlightName">Represents flight number</param>
-            /// <param name="FlightID">represents flight Id</param>
-            /// <param name="Date">represents date of flight</param>
-            /// <param name="Time">represents time of flight</param>
-            /// <param name="cancel">represents cancellation of flight</param>
-
-            public FlightCancellation(int FlightName, string FlightID, System.DateTime _Date, System.DateTime _Time, string _Cancel)
-            {
-                //    this.FlightName = FlightName;
-                //    this.FlightID = FlightID;
-                //    this.Date = Date;
-                //    this.Time = Time;
-                //    this.Cancel = Cancel;
-                _FlightName = flightName; //set method will be called
-                _FlightID = flightID;//set method will be called
-                _Date = date; //set method will be called
-                _Time = time;//set method will be called
-                _Cancel = cancel;//set method will be called
-            }
-            /// <summary>
-            /// Represents name of the FlightName
-            /// </summary>
-            //properties
-            public string flightName
-            {
-                set //set the value
-                {
-
-                    _flightName = value;
-                }
-                get // get the value
-                {
-
-                    return _flightName;
-                }
-            }
-
-
-            public string flightId
-            {
-                set //set the value
-                {
-
-                    _flightId = value;
-                }
-                get // get the value
-                {
-                    return _flightId;
-                }
-            }
-            /// <summary>
-            /// date of flightcancellation
-            /// </summary>
-            public string date
-            {
-                set // set the value
-                {
-                    _date = value;
-                }
-                get // get the value
-                {
-                    return _date;
-                }
-            }
-            /// <summary>
-            /// time of flightcancellation
-            /// </summary>
-            public string Time
-            {
-                set // set the value
-                {
-                    _time = value;
-                }
-                get // get the value
-                {
-                    return _time;
-                }
-            }
+        //constructor
+        public TicketCancellation(int bookingId, int seatNumber, int price,string time)
+        {
+            // _flightName = flightName;
+            //_flightId = flightId;
+            _bookingId = bookingId;
+            _seatNumber = seatNumber;
+            _price = price;
+            _time = time;
+            // _arrivalTiming = arrivalTiming;
         }
+
+        //properties
+        /*public string flightName
+        {
+            set
+            //set the value
+            {
+
+                _flightName = value;
+            }
+            get { return _flightName; } // get the value
+        }
+
+
+        public int flightId
+        {
+            set
+            {
+
+                _flightId = value;
+            }
+            get { return _flightId; }
+        }*/
+
+        public int bookingid
+        {
+            set
+            {
+
+                _bookingId = value;
+            }
+            get { return _bookingId; }
+        }
+
+
+        public int seatNumber
+        {
+            set
+            {
+
+                _seatNumber = value;
+            }
+            get { return _seatNumber; }
+        }
+        public int price
+        {
+            set
+            {
+
+                _price = value;
+            }
+            get { return _price; }
+        }
+
+         public string time
+        {
+            set
+            {
+                _time = value;
+            }
+            get { 
+        return _time;
+        }
+        }
+
+
+       /* public string arrivalTiming
+        {
+            set
+            {
+                _arrivalTiming = value;
+            }
+            get { return _arrivalTiming; }
+        }
+
+    }*/
+
+
 
         /*namespace Znalytics.Airline.CancellationModule.Entitie
             public class Airline
