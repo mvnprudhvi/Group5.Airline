@@ -5,24 +5,38 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
-    class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
+    public class TicketCancellationBusinessLogicLayer : ITicketCancellationBusinessLogicLayer;
             {
         private TicketCancellationDataAccessLayer _tdal = null;
 
         public TicketCancellationBusinessLogicLayer()
         {
-            tdal = new CustomerDataAccessLayer();
+            tcdal = new TicketCancellationDataAccessLayer();
         }
 
-        public void AddBookingId(TicketCancellation Ticket)
+        public void Add(TicketCancellation bookingId)
         {
-            if (bookingID.BookingId != null)
+            if (TicketCancellation.bookingId != null)
             {
-                tdal.AddbookingId(bookingId);
+                _TicketcancellationDataAccessLayer.Add(bookingId);
+            }
+            else
+            {
+                throw new Exception("booking id can't be null");
+            }
+        }
+        public void Add(TicketCancellation date)
+        {
+            if (TicketCancellation.date != null)
+            {
+                _TicketcancellationDataAccessLayer.Add(date);
+            }
+            else
+            {
+                throw new Exception("date can't be null");
             }
         }
     }
-}
 
 
 

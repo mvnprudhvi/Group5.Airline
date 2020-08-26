@@ -29,55 +29,53 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             throw new NotImplementedException();
         }
         static void TicketCancellation()
-        {
+        { 
             int choice = 0;
             do
             {
-                WriteLine("===TICKET CANCELLATION MENU===");
-                WriteLine("1. Add Booking ID");
-                WriteLine("2. Delete Booking ID");
-                WriteLine("3. Update Booking ID");
-                WriteLine("4. View Booking ID");
-                WriteLine("5. Add seatnumber");
-                WriteLine("6. View seatnumber");
-                WriteLine("7. cancel");
-                Write("Enter Your choice: ");
-                choice = int.Parse(ReadLine());
-
-                switch (choice)
+                Console.WriteLine("===TICKET CANCELLATION MENU===");
+                Console.WriteLine("1. Add Booking ID");
+                Console.WriteLine("2. view Date");
+                Console.WriteLine("4. cancel or replace");
+                Console.WriteLine("3. update Date");
                 {
-                    case 1: AddbookingID(); break;
-                    case 2: ViewbookingId(); break;
-                    case 3: AddseatNumber(); break;
-                    case 4: viewseatNumber(); break;
-                    case 5: Cancel(); break;
 
+                    switch (choice = 1)
+                    {
 
+                        case 1:
+                            Console.WriteLine("Enter  Booking Id: ");
+                            tc.bookingId = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter date: ");
+                            tc.seatNumber = Console.ReadLine();
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter  cancel or replace Date: ");
+                            tc.date = Console.ReadLine();
+                            break;
+                        case 4:
+                            Console.WriteLine("Enter  updated date: ");
+                            tc.date = Console.ReadLine();
+                            break;
+                        default:
+                            System.Console.WriteLine("cancellation  bookingid");
+                            tc.bookingid = Console.ReadLine();
+                            break;
+                    }
                 }
-            } while (choice != 6);
-        }
+            } while (choice >= 5);
+            public void Ticketcancellation()
+            {
+                if ("Ticketcancellation=cancel")
+                {
+                    else (replace) break;
+                }
+            }
 
-        /// <summary>
-        /// This Method Represents AddPrice to Add price of Flight
-        /// </summary>
 
-        public static void AddbookingID()
-        {
-            TicketCancellationBusinessLogicLayer TicketCancellationBusinessLogic = new TicketCancellationBusinessLogicLayer();
-            TicketCancellation TicketCancellation = new TicketCancellation()
 
-            Write("Enter Booking id: ");
-            TicketCancellation.bookingID = int.Parse(ReadLine());
-
-            TicketcancellationBusinessLogic.AddBookingId(TicketCancellation);
-            WriteLine("The Details of booking is Successfully Added \n");
-        }
-
-    }
-
-    internal class TicketCancellationBusinessLogicLayer
-    {
-    }
 
     public static void viewbookingID()
     {
@@ -92,7 +90,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     }
     private static void AddseatNumber()
     {
-        TicketCancellationBusinessLogic TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
+        TicketCancellationBusinessLogicLayer TicketCancellationBusinessLogic = new TicketCancellationBusinessLogic();
         TicketCancellation TicketCancellation = new TicketCancellation()
 
             Write("View seat number: ");
