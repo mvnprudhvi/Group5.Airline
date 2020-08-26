@@ -4,55 +4,52 @@ using System.Collections.Generic;
 
 using Znalytics.Group5.Flightsearching.Entities;
 
-namespace Znalytics.Group5.Airline.FlightsearchingDataAccessLayer
+namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
 
 
 
-    public class FlightsearchingDataAccessLogic
+    public class FlightSearchingDataAcessLayer
     {
         //private fields
-        private static List<FlightsearchingDataAccessLogic> _Flightsearching;
+        private static List<FlightSearchingDataAcessLayer> _FlightSearching;
 
         //constructor
-        static FlightsearchingDataAccessLogic()
+        static FlightSearchingDataAcessLayer()
         {
-            _Flightsearching = new List<FlightsearchingDataAccessLogic>()
-            {
-                new _Flightsearching(){ FlightID = 102, FlightName= "SpiceJet" },
-                new _Flightsearching(){ FlightID= 103,FlightName= "AirAsia India" }
-            };
-        }
+            _FlightSearching = new List<FlightSearchingDataAcessLayer>();
 
-        //Add
-        public void Add(Flightsearching Flightsearching)
+         
+            
+            //Add
+            public void Add(FlightSearching FlightSearching)
         {
-            _Flightsearching.Add(Flightsearching);
+            _FlightSearching.Add(FlightSearching);
         }
 
         //Get all details of flight
-        public List<Flightsearching> GetFlightsearching()
+        public List<FlightSearching> GetFlightSearching()
         {
-            return _Flightsearching;
+            return _FlightSearching;
         }
 
         //Update
-        public void UpdateFlightsearching(Flightsearching Flightsearching)
+        public void UpdateFlightSearching(FlightSearching FlightSearching)
         {
             //Get matching flightnames based on flightname
-            _Flightsearching fs = _Flightsearching.Find(temp => temp.FlightID == fs.FlightID);
+            _FlightSearching fs = _FlightSearching.Find(temp => temp.FlightID == fs.FlightID);
             if (fs != null)
             {
                 fs.flightName = Flight.FlightName;
             }
         }
+   
+       
     }
 }
 
-    //
-   
-
-  //  
+  
+  
 
 
 
@@ -61,15 +58,6 @@ namespace Znalytics.Group5.Airline.FlightsearchingDataAccessLayer
 
 
 
-            //Add
-  // public class FlightSearchingDataAccessLayer
-    {
-        //create list
-        List<FlightName> FlightName = new List<FlightName>();
+           
+  
 
-        public void AddFlightName(FlightName FlightName )
-        {
-
-        }
-    //}
-//

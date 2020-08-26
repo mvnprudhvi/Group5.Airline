@@ -1,4 +1,4 @@
-﻿//created by Madhumitha
+﻿//created by Madhumitha.....
 using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group5.Airline.Entities;
@@ -10,35 +10,42 @@ using Znalytics.Group5.Airline.Entities;
 namespace Znalytics.Group5.DataAccessLayer
 {
     class TicketCancellationDataAccessLayer
-    { 
+    {
 
-            // create list
-            private static List<TicketCancellation> _flights = new List<TicketCancellation>();
+        // create list
+        private static List<TicketCancellation> _flights = new List<TicketCancellation>();
 
-            //Add
-            public void (flightName flight)
-            {
-                _flights.Add(flightName);
-            }
-
-            //Get a
-            public List<FlightName> GetFlightNames()
-            {
-                return _flightName;
-            }
-
-
-
-            /// <summary>
-            /// Delete Method with 2 parameters
-            /// </summary>
-            /// <param name="flightId"></param>
-            /// <param name="flightName"></param>
-            public void DeleteFlightNameByflightId(int flightId, string flightName)
-            {
-                _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
-            }
+        //represents adding booking id
+        public void AddbookingId(TicketCancellation bookingId)
+        {
+            _flights.Add(bookingId);
         }
+
+        //represents Get  bookingid
+        public List<TicketCancellation> GetbookingId()
+        {
+            return _flights;
+        }
+
+
+        //add date
+        public void Adddate(TicketCancellation date)
+        {
+            _flights.Add(date);
+        }
+
+        //Get  date
+        public List<TicketCancellation> Getdate()
+        {
+            return _flights;
+        }
+        //update date
+        public void updatedate(TicketCancellation date)
+        {
+            _flights.Add(date);
+        }
+    }
+}
 
 
 

@@ -2,10 +2,15 @@
 //Entities
 namespace Znalytics.Group5.Airline.Entities
 {
+    /// <summary>
+    /// This Class Represents cancellation of ticket
+    /// </summary>
+
     public class TicketCancellation
 
     {
         //Private Fields
+        //represeents auto implemented properties
 
        // private string _flightName { set; get; }
         //private int _flightId { set; get; }

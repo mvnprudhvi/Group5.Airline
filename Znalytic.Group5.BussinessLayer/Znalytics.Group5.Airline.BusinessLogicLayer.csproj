@@ -45,14 +45,13 @@
     <Compile Include="FlightBookingbusinessLogic.cs" />
     <Compile Include="FlightBusinessLogicLayer.cs" />
     <Compile Include="FlightScheduleBusinessLogicLayer.cs" />
-    <Compile Include="Flightsearchingbusinesslogic.cs" />
+    <Compile Include="FlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
     <Compile Include="IFlightScheduleBusinessLogic.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCancellationBusinessLogicLayer.cs" />
-    <Compile Include="_ITicketCancellationBusinessLogicLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Znalytics.Group5.DataAccessLayer\Znalytics.Group5.Airline.DataAccessLayer.csproj">

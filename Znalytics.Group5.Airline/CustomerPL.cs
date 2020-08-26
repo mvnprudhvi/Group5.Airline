@@ -1,58 +1,70 @@
-﻿using System;
+﻿//....MVN Prudhvi........
+
+using System;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using Znalytic.Group5.Airline.BussinessLogicLayer;
-using Znalytic.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.Entities;
 
 //Represents Presentation Layer
 
 namespace Znalytic.Group5.Airline.PresentationLayer
 {
 
-    class Customer
+    public class CustomerPL
     {
         static void Main()
         {
             int Type;
-           Customer c = new Customer();
-            CustomerBusinessLogicLayer bd = new CustomerBusinessLogicLayer();
-                Console.WriteLine("-----------------AIRLINE RESERVATION----------------------:");
+
+            CustomerPL c = new CustomerPL();
+            CustomerBusinessLogicLayer bll = new CustomerBusinessLogicLayer();
+
+            Console.WriteLine("-----------------ONLINE AIRLINE RESERVATION SYSTEM----------------------:");
 
             //registration page
-            System.Console.WriteLine("REGISTRATION PAGE:");
+            Console.WriteLine("REGISTRATION PAGE:");
 
             //customer user name
-            System.Console.WriteLine("enter your user name:");
-            string username = System.Console.ReadLine();
+            Console.WriteLine("enter your user name:");
+            string username = Console.ReadLine();
+
+
             //customer email
-            System.Console.WriteLine("enter your email:");
-            string email = System.Console.ReadLine();
+            Console.WriteLine("enter your email:");
+            string email = Console.ReadLine();
 
             //customer password
-            System.Console.WriteLine("enter your password:");
-            string password = System.Console.ReadLine();
+            Console.WriteLine("enter your password:");
+            string password = Console.ReadLine();
 
             //customer mobile number
-            System.Console.WriteLine("enter your mobile number:");
-            string mobilenumber = System.Console.ReadLine();
+            Console.WriteLine("enter your mobile number:");
+            long mobilenumber = Convert.ToInt64(Console.ReadLine());
 
             //customer aadhar card number
-            System.Console.WriteLine("enter your aadhar card number:");
-            string aadharcardnumber = System.Console.ReadLine();
+            Console.WriteLine("enter your aadhar card number:");
+            int aadharnumber = Convert.ToInt32(Console.ReadLine());
 
             //customer pan card number
-            System.Console.WriteLine("enter your pan card number:");
-            string pancardnumber = System.Console.ReadLine();
+            Console.WriteLine("enter your pan card number:");
+            string pancardnumber = Console.ReadLine();
 
-            System.Console.WriteLine("Enter your Gender 0 for Male  or 1 for Female :");
-            bool val = int.TryParse(System.Console.ReadLine(), out Type);
-           if(val = 0)
+            Console.WriteLine("Enter your Gender Male  or Female :");
+            bool gender = int.TryParse(Console.ReadLine(), out Type);
+            if (gender)
+            {
+
+            }
+
+
 
 
             System.Console.WriteLine("userName:" + username);
             System.Console.WriteLine("email:" + email);
             System.Console.WriteLine("password:" + password);
             System.Console.WriteLine("mobilenumber:" + mobilenumber);
-            System.Console.WriteLine("aadharnumber:" + aadharcardnumber);
+            System.Console.WriteLine("aadharnumber:" + aadharnumber);
             System.Console.WriteLine("pancardnumber:" + pancardnumber);
             System.Console.WriteLine("Gender:" + gender);
 
@@ -72,7 +84,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
         }
-            private static void Menu()
+        private static void Menu()
         {
             int choice = -1;
 
@@ -92,7 +104,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 }
             } while (choice != 2);
         }
-            //represents customers menu
+        //represents customers menu
         public static void CustomersMenu()
         {
             int choice = -1;
@@ -120,72 +132,86 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 }
             } while (choice != 5);
         }
-            //add customer username
-        public static void AddCustomer()
+        //add customer username
+        static void AddCustomer()
         {
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-             Customer customersmenu= new CustomersMenu();
+            Customer customersmenu = new CustomersMenu();
             Console.Write("Enter new username: ");
             Customer.UserName = Console.ReadLine();
             customerBusinessLogicLayer.Add(cust);
             Console.WriteLine("username added");
         }
 
-            //update customer details
-        public static void UpdateCustomer()
+        //update customer details
+        static void UpdateCustomer()
         {
-            CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            Customer cust = new Customer();
+            int choice2;
+            System.Console.WriteLine("Enter your option for updating Particular detail");
+            System.Console.WriteLine("For username enter 1");
+            System.Console.WriteLine("For email enter 2");
+            System.Console.WriteLine("For password enter 3");
+            System.Console.WriteLine("for mobile number Enter 4 ");
+            System.Console.WriteLine("For aadhar number Enter 5");
+            System.Console.WriteLine("For pan card number Enter 6");
+            System.Console.WriteLine("For gender Enter 7");
+            System.Console.WriteLine("To Finish Modifiying Enter 8");
+            bool c = int.TryParse(System.Console.ReadLine(), out choice2);
+            if (c)
+            {
+                do
+                {
+                    switch (choice2)
+                    {
+                        case 1:
+                            System.Console.WriteLine("Enter your new username:");
+                            c.UserName = (System.Console.ReadLine());
+                            break;
 
-            //update customer username
-            Console.Write("enter existing username");
-            cust.userName = int.Parse(Console.ReadLine());
-            Console.Write("enter new username");
-            cust.userName = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new username is updated");
+                        case 2:
+                            System.Console.WriteLine("Enter Your new email:");
+                            c.email = (System.Console.ReadLine());
+                            break;
+                        case 3:
+                            System.Console.WriteLine("Enter your new password:");
+                            c.password = (System.Convert.ToInt64(System.Console.ReadLine()));
+                            break;
+                        case 4:
+                            System.Console.WriteLine("Enter Your new mobile number:");
+                            c.mobilenumber = System.Console.ReadLine();
+                            break;
+                        case 5:
+                            System.Console.WriteLine("Enter your new aadhar Number:");
+                            c.aadharnumber = (System.Console.ReadLine());
+                            break;
+                        case 6:
+                            System.Console.WriteLine("Enter Your new pan card number");
+                            c.pancardnumber = (System.Console.ReadLine());
+                            break;
+                        case 7:
+                            System.Console.WriteLine("Enter your gender:");
+                            c.gender = (Console.ReadLine());
+                            break;
+                        case 8:
+                            Console.WriteLine("---------Mofification are finished-------");
 
-            //update customer email
-            Console.Write("enter existing email");
-            cust.email = int.Parse(Console.ReadLine());
-            Console.Write("enter new email");
-            cust.email = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new email is updated");
 
-            //update customer password
-            Console.Write("enter existing password");
-            cust.pasword = int.Parse(Console.ReadLine());
-            Console.Write("enter new password");
-            cust.password = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new password is updated");
+                        default:
+                            Console.WriteLine("Enter valid Option");
+                            break;
 
-            //update customer mobile number
-            Console.Write("enter existing mobile number");
-            cust.mobileNumber = int.Parse(Console.ReadLine());
-            Console.Write("enter new mobile number");
-            cust.mobileNumber = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new mobile number is updated");
+                    }
 
-            //update customer aadhar number
-            Console.Write("enter existing aadhar number");
-            cust.aadharNumber= int.Parse(Console.ReadLine());
-            Console.Write("enter new aadhar number");
-            cust.aadharNumber = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new aadhar number is updated");
-
-            //update customer pan card number
-            Console.Write("enter existing pan card number");
-            cust.pancardNumber = int.Parse(Console.ReadLine());
-            Console.Write("enter new username");
-            cust.pancardnumber = Console.ReadLine();
-            customerBusinessLogicLayer.UpdateCustomer(cust);
-            Console.WriteLine("new pan card number is updated");
-
+                } while (choice2 <= 8);
+            }
+            else
+            {
+                goto UpdateCustomer;
+            }
         }
+
+    }
+}
             //view customer details
         static void ViewCustomer()
         {

@@ -11,20 +11,19 @@ namespace Znalytics.Group5.Airline.Entities
 
         //private fields
         private string _userName;
-         
         private string _email;
         private string _password;
-        private int _mobileNumber;
-
+        private long _mobileNumber;
         private int _aadharNumber;
         private string _pancardNumber;
-        private string _gender;
+        public string _gender { set; get; }
 
-        /// <summary>
-        /// constructors thst initializes deatails of customer
-        /// </summary>
 
-        public Customer(string userName,string email, string password, int mobileNumber, int aadharNumber, string pancardnumber , string gender)
+/// <summary>
+/// constructors thst initializes deatails of customer
+/// </summary>
+
+public Customer(string userName,string email, string password, long mobileNumber, int aadharNumber, string pancardnumber , string gender)
         {
 
             /// <param name="email"></param> email of customer
@@ -34,11 +33,9 @@ namespace Znalytics.Group5.Airline.Entities
             /// <param name="pancardnumber"></param> pan card number of customer
 
             _userName = userName;
-             
             _email = email;
             _password = password;
             _mobileNumber = mobileNumber;
-
             _aadharNumber = aadharNumber;
             _pancardNumber = pancardnumber;
             _gender = gender;
@@ -89,12 +86,12 @@ namespace Znalytics.Group5.Airline.Entities
         /// <summary>
         /// represents number of the customer
         /// </summary>
-        public int MobileNumber
+        public long MobileNumber
         {
             set
             {
                 //mobile number should contain 10 digits only
-                if (value == 10)
+                if (value <= 9999999999 && value > 1111111111)
                 {
                     MobileNumber = value;
                 }
@@ -140,7 +137,4 @@ namespace Znalytics.Group5.Airline.Entities
             }
         }
 
-        public string gender { set; get; }
-       
-    }
-}
+        
