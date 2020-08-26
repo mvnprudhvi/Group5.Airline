@@ -5,7 +5,6 @@
 
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
-using System;
 using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
@@ -27,7 +26,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// This Method Represents AddPrice 
         /// </summary>
         /// <param name="price"></param>
-        public void AddFlightPrice(Price price)
+        public void AddFlightPrice(FlightPrice price)
         {
             _priceDataAccessLayer.AddFlightPrice(price);
         }
@@ -50,14 +49,9 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// This Method Represents GetPrice 
         /// </summary>
         /// <returns>_priceDataAccessLayer</returns>
-        public List<FlightPrice> GetPrices()
+        public List<FlightPrice> GetFlightPrices()
         {
             return _priceDataAccessLayer.GetFlightPrices();
-        }
-
-        public void AddFlightPrice(FlightPrice price)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void DeleteFlightPrice(FlightPrice price)
         {
             //Based on Flight Name the Price Will be deleted 
-            _flightPrices.Remove();
+            _flightPrices.Remove(temp => temp.ScheduleNumber==price.ScheduleNumber);
 
         }
 
@@ -49,7 +49,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void UpdateFlightPrice(FlightPrice price)
         {
             //Based on Flight Name the Price Will be Updated 
-                 Price pri = _flightPrices.Find();
+                 Price pri = _flightPrices.Find(temp => temp.ScheduleNumber == price.ScheduleNumber);
                 pri.Price = price.Price;
         }
 

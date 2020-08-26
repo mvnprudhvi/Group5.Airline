@@ -2,11 +2,11 @@
 /// Created By Dinesh
 /// Module Name is Price
 /// </summary>
-
+/// 
 using static System.Console;
-using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
+using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
@@ -15,13 +15,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     /// </summary>
     class PricePL
     {
-       static  PriceBusinessLogic _priceBusinessLogic;
+        private static PriceBusinessLogic _priceBusinessLogic;//Reference Variable Of Price Business Logic Layer
         /// <summary>
         /// Main Method
         /// </summary>
         static void Main()
         {
-            _priceBusinessLogic = new PriceBusinessLogic;
+            _priceBusinessLogic = new PriceBusinessLogic();
             PricesMenu();//Calling Menu Method For List Of Menus
             ReadKey();
         }
@@ -58,13 +58,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void AddFlightPrice()
         {
-            FlightPrice price = new FlightPrice();
+            FlightPrice fp = new FlightPrice();
 
-            Write("Enter Schedule ID: ");
-            price.ScheduleId = int.Parse(ReadLine());
+            Write("Enter Schedule Number: ");
+            fp.ScheduleNumber = int.Parse(ReadLine());
 
             Write("Enter Flight Price: ");
-            price.Price = double.Parse(ReadLine());
+            fp.Price = double.Parse(ReadLine());
 
             _priceBusinessLogic.AddFlightPrice(price);
 
@@ -77,9 +77,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void DeleteFlightPrice()
         {
 
-            Price p = new Price();
-            Write("Enter Existing Flight Name to Delete Price of That Flight");
-            _priceBusinessLogic.DeleteFlightPrice(p);
+            FlightPrice fpr = new FlightPrice();
+            Write("Enter Existing Flight Schedule Number to Delete Price of That Flight");
+            _priceBusinessLogic.DeleteFlightPrice(fpr);
             WriteLine("The Price Of Flight is Deleted Successfully \n");
         }
 
@@ -88,16 +88,16 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void UpdateFlightPrice()
         {
-     
-            Price pr = new Price();
 
-            Write("Enter Existing Flight Name: ");
-            pr.FlightName = ReadLine();
+            FlightPrice fpri = new FlightPrice();
+
+            Write("Enter Existing Flight Schedule Number: ");
+            fpri.ScheduleNumber = ReadLine();
 
             Write("Enter New Flight Price: ");
-            pr.FlightPrice = double.Parse(ReadLine());
+            fpri.SceduleNumber = double.Parse(ReadLine());
 
-            _priceBusinessLogic.UpdatePrice(pr);
+            _priceBusinessLogic.UpdateFlightPrice(fpri);
             WriteLine("The Price of Flight is Updated Successfully \n");
         }
 
@@ -107,9 +107,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void GetFlightPrices()
         {
           
-            List<FlightPrice> pric = _priceBusinessLogic.GetPrices();
+            List<FlightPrice> pric = _priceBusinessLogic.GetFlightPrices();
 
-            foreach (Price pri in pric)
+            foreach (Price pri in _flightPrices)
             {
                 Write("=====The Flight Prices are Below=====");
                 WriteLine(pri.FlightName + "=" + pri.FlightPrice);
