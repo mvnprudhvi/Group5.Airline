@@ -45,6 +45,7 @@ namespace Znalytics.Group5.DataAccessLayer
             _flights.Add(date);
         }
     }
+}
 
 
 

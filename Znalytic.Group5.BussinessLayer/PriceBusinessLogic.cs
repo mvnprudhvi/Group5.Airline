@@ -5,7 +5,6 @@
 
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
-using System;
 using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
@@ -27,41 +26,32 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// This Method Represents AddPrice 
         /// </summary>
         /// <param name="price"></param>
-        public void AddPrice(Price price)
+        public void AddFlightPrice(FlightPrice price)
         {
-            if (price.FlightName != null)
-            {
-                _priceDataAccessLayer.AddPrice(price);
-            }
-            else
-            {
-                throw new Exception("Flight Name and Price can't be null");
-            }
+            _priceDataAccessLayer.AddFlightPrice(price);
         }
-        public void DeletePrice(Price price)
+        
+        public void DeleteFlightPrice(FlightPrice price)
         {
-            _priceDataAccessLayer.DeletePrice(price);
+            _priceDataAccessLayer.DeleteFlightPrice(price);
         }
 
         /// <summary>
         /// This Method Represents UpdatePrice 
         /// </summary>
         /// <param name="price"></param>
-        public void UpdatePrice(Price price)
+        public void UpdateFlightPrice(FlightPrice price)
         {
-            if (Price.price != null)
-            {
-                _priceDataAccessLayer.UpdatePrice(price);
-            }
+           _priceDataAccessLayer.UpdateFlightPrice(price);
         }
 
         /// <summary>
         /// This Method Represents GetPrice 
         /// </summary>
         /// <returns>_priceDataAccessLayer</returns>
-        public List<Price> GetPrices()
+        public List<FlightPrice> GetFlightPrices()
         {
-            return _priceDataAccessLayer.GetPrices();
+            return _priceDataAccessLayer.GetFlightPrices();
         }
     }
 }
