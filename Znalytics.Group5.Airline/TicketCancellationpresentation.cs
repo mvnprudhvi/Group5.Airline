@@ -49,7 +49,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                             break;
                         case 2:
                             Console.WriteLine("Enter date: ");
-                            tc.seatNumber= Console.ReadLine();
+                            tc.seatNumber = Console.ReadLine();
                             break;
                         case 3:
                             Console.WriteLine("Enter  cancel or replace Date: ");
@@ -59,12 +59,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                             Console.WriteLine("Enter  updated date: ");
                             tc.date = Console.ReadLine();
                             break;
-                      default:
+                        default:
                             System.Console.WriteLine("Enter valid bookingid");
                             tc.bookingid = Console.ReadLine();
                             break;
                     }
                 }
+            } while (choice >= 5);
 
 
 

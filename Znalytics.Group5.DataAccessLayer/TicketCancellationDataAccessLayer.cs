@@ -15,26 +15,42 @@ namespace Znalytics.Group5.DataAccessLayer
             // create list
             private static List<TicketCancellation> _flights = new List<TicketCancellation>();
 
-            //Add
-            public void (flightName flight)
+        //add booking id
+        public void AddbookingId(TicketCancellation bookingId)
+        {
+            _flights.Add(bookingId);
+        }
+
+            //Get  bookingid
+            public List<TicketCancellation> GetbookingId()
             {
-                _flights.Add(flightName);
+                return _flights;
             }
 
-            //Get a
-            public List<FlightName> GetFlightNames()
-            {
-                return _flightName;
-            }
 
+            //add date
+            public void Adddate(TicketCancellation date)
+        {
+            _flights.Add(date);
+        }
 
+        //Get  date
+        public List<TicketCancellation> Getdate()
+        {
+            return _flights;
+        }
+        //update date
+        public void updatedate(TicketCancellation date)
+        {
+            _flights.Add(date);
+        }
 
-            /// <summary>
-            /// Delete Method with 2 parameters
-            /// </summary>
-            /// <param name="flightId"></param>
-            /// <param name="flightName"></param>
-            public void DeleteFlightNameByflightId(int flightId, string flightName)
+        /// <summary>
+        /// Delete Method with 2 parameters
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <param name="flightName"></param>
+        public void DeleteFlightNameByflightId(int flightId, string flightName)
             {
                 _flights.RemoveAll(temp => temp.flightId == flightId && temp.flightName == flightName);
             }
