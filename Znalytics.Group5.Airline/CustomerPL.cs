@@ -44,8 +44,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             string pancardnumber = System.Console.ReadLine();
 
             System.Console.WriteLine("Enter your Gender 0 for Male  or 1 for Female :");
-            bool val = int.TryParse(System.Console.ReadLine(), out Type);
-           if(val = 0)
+            bool gender = int.TryParse(System.Console.ReadLine(), out Type);
+           if(gender = 0)
 
 
             System.Console.WriteLine("userName:" + username);
