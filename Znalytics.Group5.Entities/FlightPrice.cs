@@ -13,16 +13,15 @@ namespace Znalytics.Group5.Airline.Entities
         //Using Automatic Implemented properties
         public double Price{ get; set; }
 
-        //Using Constructor
+        //Using Parameterised Constructor
         public FlightPrice(double Price)
         {
             this.Price = Price;
         }
 
+        //Default Constructor Which is Parameter Less
         public FlightPrice()
         {
         }
-
-        //Default Constructor Which is Parameter Less
     }
 }
