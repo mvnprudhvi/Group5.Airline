@@ -11,37 +11,40 @@ using System.Collections.Generic;
 
 namespace  FlightBooking
     {
-        class Program
+    class FlightBooking
+    {
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                Console.Write("enter flightName:");
-                string flightName = Console.ReadLine();
+            Console.Write("enter flightName:");
+            string flightName = Console.ReadLine();
 
-                Console.Write("enter flight Id:");
-                int flightId = int.Parse(Console.ReadLine());
+            Console.Write("enter flight Id:");
+            int flightId = int.Parse(Console.ReadLine());
 
-                Console.Write("enter passengerName:");
-                string passengerName = Console.ReadLine();
-                    Console.Write("enter booking id:");
-                 int bookingId = int.Parse(Console.ReadLine());
-
+            Console.Write("enter passengerName:");
+            string passengerName = Console.ReadLine();
+            Console.Write("enter booking id:");
+            int bookingId = int.Parse(Console.ReadLine());
+            Console.Write("enter seatNumber:");
             //Random class generates pseudo Randon numbers
+
             var random = new Random();
-                int RandomNo = random.Next();
-                int SeatNumber = RandomNo;
+            int RandomNo = random.Next();
+            int SeatNumber = RandomNo;
+            int seatNumber = int.Parse(Console.ReadLine());
 
-          
+
             Console.WriteLine("================== FlightBooking ==========================");
-                Console.WriteLine(" flightName :" + flightName);
-                Console.WriteLine(" flightId :" + flightId);
-                Console.WriteLine(" passengerName :" + passengerName);
-                Console.WriteLine("bookingId:" + bookingId);
-                Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
-                Console.WriteLine("============================================================");
+            Console.WriteLine(" flightName :" + flightName);
+            Console.WriteLine(" flightId :" + flightId);
+            Console.WriteLine(" passengerName :" + passengerName);
+            Console.WriteLine("bookingId:" + bookingId);
+            Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
 
-                Console.WriteLine(" flightName   flightId  passengerName Seat Number");
-                Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine("============================================================");
+
+            Console.WriteLine(" flightName   flightId  passengerName Seat Number bookingId");
+            Console.WriteLine("-----------------------------------------------------");
 
 
             static void FlightBookingMenu()
@@ -75,40 +78,52 @@ namespace  FlightBooking
 
                 //create another list in the collection called  "flightbooking1"
                 List<FlightBooking> flightBooking1 = new List<FlightBooking>() {
-                 new FlightBooking() {  flightName = "AirInia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am",SeatNumber = "01",bookingId ="1234"},
-                 new FlightBooking() { flightName = "AirIndia", flightNumber = "101",  source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am",seatNumber = "02",bookingId ="1234"},
-                 new FlightBooking() { flightName = "AirIndia", flightNumber = "101",   source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am",SeatNumber = "03",bookingId ="3456" },
-                 new FlightBooking() {  flightName = "AirIndia", flightNumber = "101",   source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am",SeatNumber = "04",bookingId ="7891"},
-                 new FlightBooking() {  flightName = "AirIndia", flightNumber = "101",   source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am",SeatNumber = "05",bookingId ="6789"}
-                 };
+                    new FlightBooking() { flightName = "AirInia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "01", bookingId = "1234" },
+                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", seatNumber = "02", bookingId = "1234" },
+                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "03", bookingId = "3456" },
+                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "04", bookingId = "7891" },
+                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "05", bookingId = "6789" } };
 
-            // add all the elements of "flightSchedule1" collection at the end of "flightschedule" colletion
-            FlightBooking.AddRange(flight Booking);
 
-                //get values from list collection
-                foreach (FlightBooking item in FlightBooking)
+
+                static void ViewFlightBooking()
                 {
-                    Console.WriteLine(item);
 
+                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+                    FlightBooking fb = new FlightBooking();
 
+                    foreach (FlightBooking item in fb)
+                    {
+                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb +.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
+
+                    }
                 }
-            Console.ReadKey();
-        }
+                static void updateFlightBooking()
+                {
 
-        static void ViewFlightBooking()
-        {
+                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+                    FlightBooking fb = new FlightBooking();
 
-            List< FlightBooking fb = FlightBookingbusinessLogic.GetFlightBooking();
-            FlightBooking fb = new FlightBooking();
+                    foreach (FlightBooking item in fb)
+                    {
+                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
 
-            foreach (FlightBooking item in fb)
-            {
-                Console.WriteLine(fb.flightName + "," + fb.flightId + "," +   fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb+.departureTiming+ "," + fb.seatNmuber + ","+ fb.bookingId+",");
+                    }
+                }
 
+                static void DeleteFlightBooking()
+                {
+
+                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+                    FlightBooking fb = new FlightBooking();
+
+                    foreach (FlightBooking item in fb)
+                    {
+                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
+
+                    }
+                }
             }
         }
-
     }
-}
-
     

@@ -11,24 +11,24 @@ namespace Znalytics.Group5.Airline.Entities
     {
         //Private Fields
         //represeents auto implemented properties
-
-       // private string _flightName { set; get; }
-        //private int _flightId { set; get; }
         private int _bookingId { set; get; }
+        //private string _flightName { set; get; }
+
         private int _seatNumber { set; get; }
-        private int _price { set; get; }
-        private string _time { set; get; }
+
+        //private int _price { set; get; }
+        private string _date { set; get; }
         // private string _arrivalTiming { set; get; }
 
         //constructor
-        public TicketCancellation(int bookingId, int seatNumber, int price,string time)
+        public TicketCancellation(int bookingId, int seatNumber,  string date)
         {
             // _flightName = flightName;
             //_flightId = flightId;
             _bookingId = bookingId;
             _seatNumber = seatNumber;
-            _price = price;
-            _time = time;
+            //_price = price;
+            _date = date;
             // _arrivalTiming = arrivalTiming;
         }
 
@@ -75,26 +75,29 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get { return _seatNumber; }
         }
-        public int price
-        {
-            set
+        /*public int price
+       {
+           set
             {
 
                 _price = value;
             }
             get { return _price; }
-        }
+        }*/
 
-         public string time
+        public string date
         {
             set
             {
-                _time = value;
+                _date = value;
             }
-            get { 
-        return _time;
+            get
+            {
+                return _date;
+            }
         }
-        }
+    }
+}
 
 
        /* public string arrivalTiming
@@ -283,11 +286,11 @@ namespace Znalytics.Group5.Airline.Entities
         {
         return this._Time;
         }
-        }*/
+        }
 
 
 
 
 
     }
-}
+}*/

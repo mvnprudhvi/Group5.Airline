@@ -9,9 +9,9 @@ using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System;
     namespace FlightBooking
     {
-        class Program
+        public class TicketCancellation
         {
-            static void Main(string[] args)
+            public static void Main()
             {
                 Console.Write("enter bookingId:");
                 int bookingId = int.Parse(Console.ReadLine());
@@ -20,10 +20,15 @@ using System;
                 int date = int.Parse(Console.ReadLine());
 
                 Console.Write("enter seatNumber:");
-            int seatNumber = Console.ReadLine();
+                int seatNumber =int.Parse (Console.ReadLine());
 
-                //Random class generates pseudo Randon numbers
-                var random = new Random();
+            Console.WriteLine("BookingID:" + flight.bookingId);
+            Console.WriteLine("SeatNumber:" + flight.seatNumber);
+            Console.WriteLine("Date:" + flight.Date);
+
+
+            //Random class generates pseudo Random numbers
+            var random = new Random();
                 int RandomNo = random.Next();
                 int SeatNumber = RandomNo;
 
@@ -35,11 +40,12 @@ using System;
                 Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
                 Console.WriteLine("============================================================");
 
-                Console.WriteLine(" bookingId   date SeatNumber");
+                Console.WriteLine(" bookingId  date SeatNumber");
                 Console.WriteLine("-----------------------------------------------------");
+            Console.ReadKey();
 
 
-                static void TicketCancellationMenu()
+                public static void TicketCancellationMenu()
                 {
                     int choice = 1;
                     do
@@ -191,7 +197,7 @@ namespace Znalytics.Airline
             Console.ReadKey();
         }
 
-        static void FlightCancellationPresentation()
+        static void TicketCancellationPresentation()
         {
             int choice = 0;
             do
@@ -251,29 +257,29 @@ namespace Znalytics.Airline
             Console.WriteLine("FlightName Updated.\n");
         }
     }
-}
+}*/
 
 
 /*class Program
 {
     static void Main()
     {
-        System.Console.WriteLine("Enter flight name");
-        string FlightName = System.Console.ReadLine();
-        System.Console.WriteLine("Enter Date:");
-        string Date = System.Console.ReadLine();
+        System.Console.WriteLine("Enter bookingid");
+        string bookingId = System.Console.ReadLine();
+        System.Console.WriteLine("Enter seatNumber:");
+        string seatNumber = System.Console.ReadLine();
         System.Console.WriteLine("Enter Time");
         string Dime = System.Console.ReadLine();
-        System.Console.WriteLine("cancellation");
+        System.Console.WriteLine("enter Ticket cancellation");
         string Cancel = System.Console.ReadLine();
 
 
-        System.Console.WriteLine("flightname"); //get method will be called
-        System.Console.WriteLine("Date"); //get method will be called
-        System.Console.WriteLine("Time"); //get method will be called 
-        System.Console.WriteLine("Cancel"); //get method will be called
+        System.Console.WriteLine("enter bookingId"); //get method will be called
+        System.Console.WriteLine(" enter seatNumber"); //get method will be called
+        System.Console.WriteLine(" enter Time"); //get method will be called 
+        System.Console.WriteLine(" enter TicketCancellation"); //get method will be called
 
-        Flight.fli = "flight name"; //set method will be called
+        F. = "flight name"; //set method will be called
         f.Date = "Date";//set method will be called
         f.time = "Time";//set method will be called
         f.cancel = "Cancel";
