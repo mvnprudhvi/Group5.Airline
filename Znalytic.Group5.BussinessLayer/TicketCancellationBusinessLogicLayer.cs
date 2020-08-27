@@ -5,7 +5,7 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
-     public class TicketCancellationBusinessLogicLayer : _ITicketCancellationBusinessLogicLayer;
+    public class TicketCancellationBusinessLogicLayer : ITicketCancellationBusinessLogicLayer;
             {
         private TicketCancellationDataAccessLayer _tdal = null;
 
@@ -25,6 +25,18 @@ namespace Znalytic.Group5.BussinessLogicLayer
                 throw new Exception("booking id can't be null");
             }
         }
+        public void Add(TicketCancellation date)
+        {
+            if (TicketCancellation.date != null)
+            {
+                _TicketcancellationDataAccessLayer.Add(date);
+            }
+            else
+            {
+                throw new Exception("date can't be null");
+            }
+        }
+    }
 
 
 

@@ -60,12 +60,19 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                             tc.date = Console.ReadLine();
                             break;
                         default:
-                            System.Console.WriteLine("Enter valid bookingid");
+                            System.Console.WriteLine("cancellation  bookingid");
                             tc.bookingid = Console.ReadLine();
                             break;
                     }
                 }
             } while (choice >= 5);
+            public void Ticketcancellation()
+            {
+                if ("Ticketcancellation=cancel")
+                {
+                    else (replace) break;
+                }
+            }
 
 
 
