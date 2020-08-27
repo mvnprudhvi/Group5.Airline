@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
@@ -29,40 +30,40 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             throw new NotImplementedException();
         }
         static void TicketCancellation()
-        { 
-                int choice = 0;
+        {
+            int choice = 0;
             do
             {
                 Console.WriteLine("=======FLIGHT DETAILS=====");
                 Console.WriteLine("1. Add bookingId");
-                Console.WriteLine("2. View FlightNames");
-                Console.WriteLine("3. Update FlightNames");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("2. add seatnumber");
+                Console.WriteLine("3. Update dates");
+                Console.WriteLine("4.cancel orExit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
                 {
-                    case 1: AddFlightName(); break;
-                    case 2: ViewFlightName(); break;
-                    case 3: UpdateFlightName(); break;
+                    case 1: AddbookingId(); break;
+                    case 2: AddseatNumber(); break;
+                    case 3: UpdadatebookingId(); break;
                 }
             } while (choice != 4);
 
-            public static void AddFlightName()
+            public static void AddBookingId()
             {
                 TicketCancellationBusinessLogicLayer = new TicketCancellationBussinessLogicLayer();
                 TicketCancellation TicketCancellation = new TicketCancellation();
 
-                Console.Write("Enter FlightId: ");
-                TicketCancellation.FlightId = int.Parse(Console.ReadLine());    
-                Console.Write("Enter FlightName");
+                Console.Write("Enter BookingId: ");
+                TicketCancellation.bookingid = int.Parse(Console.ReadLine());
+                Console.Write("Enter seatnumber");
                 TicketCancellation.FlightName = Console.ReadLine();
 
-                TicketCancellation.Add(FlightName);
-                Console.WriteLine("FlightName Added.\n");
+                TicketCancellation.Add(bookingid);
+                Console.WriteLine("bookingid Added.\n");
             }
-            static void ViewFlightName()
+            Public static void ViewFlightName()
             {
                 FlightCancellationBusinessLogic FlightCancellationLogic = new FlightCancellationBusinessLogic();
                 List<FlightCancellation> fli = flightcancellationBusinessLogic.GetEmployees();
@@ -87,6 +88,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 Console.WriteLine("FlightName Updated.\n");
             }
         }
+    }
     
 
 
