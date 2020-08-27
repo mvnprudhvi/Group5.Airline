@@ -17,20 +17,21 @@ using System.Threading.Tasks;
 namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
 {
    
-        public class FlightSearchingbusinessLogicLayer : _FlightSearchingbusinessLogicLayer();
+        public class FlightBookingbusinessLogicLayer : _FlightBookingbusinessLogicLayer();
             {
-            private FlightSearchingDataAcessLayer _fsdal = null;
+            private FlightBookingDataAcessLayer _fbdal = null;
 
-            public FlightSearchingbusinessLogicLayer()
+            public FlightBookingbusinessLogicLayer()
             {
-                _fsdal = new FlightSearchingDataAcessLayer();
+                _fbdal = new FlightBookingDataAcessLayer();
             }
 
-            public void Add(FlightSearching bookingId)
+            
+            public void  AddBooking(Booking Booking)
             {
-                if (FlightSearching.bookingId != null)
+                if (Booking.bookingId != null)
                 {
-                    _FlightSearchingDataAcessLayer.Add(bookingId);
+                _fbdal.AddBooking(Booking);
                 }
                 else
                 {

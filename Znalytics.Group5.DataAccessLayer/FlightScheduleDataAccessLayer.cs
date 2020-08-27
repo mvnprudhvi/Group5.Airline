@@ -1,24 +1,24 @@
-﻿///'...........KEERTHANA...
+﻿///'...........KEERTHANA.........
 
 using System;
 using System.Collections.Generic;
-using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 
 /// <summary>
 /// represents dataAccessLayer of Flight
 /// </summary>
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-   public class FlightSchedulesDataAccessLogic
+   public class FlightScheduleDataAccessLayer
     {
 
         // create list
-        private static List<FlightSchedule> _flights = new List<FlightSchedule>();
+        List<FlightSchedule> _schedules = new List<FlightSchedule>();
 
         //Add
-        public void AddflightName(FlightSchedule fname)
+        public void AddSchedule(FlightSchedule flightSchedule)
         {
-            _flights.Add(fname);
+            _schedules.Add(flightSchedule);
         }
 
         //Get  FlightName

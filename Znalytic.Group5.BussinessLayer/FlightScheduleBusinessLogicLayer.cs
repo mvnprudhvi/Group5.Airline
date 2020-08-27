@@ -1,34 +1,34 @@
 ﻿//........KEERTHANA....
 using System;
 using System.Collections.Generic;
+using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.DataAccessLayer;
-using Znalytics.Group5.Airline.Entities;
-namespace Znalytic.Group5.Airline.BussinessLogicLayer
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
 {
-    public class FlightScheduleBusinessLogic : IFlightScheduleBusinessLogic
+    public class FlightScheduleBusinessLogicLayer : IFlightScheduleBusinessLogicLayer
     {
-        //List<string> Flight Details = new List<string>();
 
-        FlightScheduleDataAccessLogic _fDal;
+        FlightScheduleDataAccessLayer _fdal;
 
-        public FlightScheduleBusinessLogic()
+        public FlightScheduleBusinessLogicLayer()
         {
-            _fDal = new FlightScheduleDataAccessLogic();
+            _fdal = new FlightScheduleDataAccessLayer();
         }
 
-        /// <summary>
-        /// validating FlightName
-        /// </summary>
-        /// <param name="fd"></param>
-        public void AddflightName(FlightSchedule fs)
+       /// <summary>
+       /// validating Source
+       /// </summary>
+       /// <param name="flightSchedule"></param>
+        public void AddSchedule(FlightSchedule flightSchedule)
         {
-            if(fd.flightName.Length < 15 )
+            if(flightSchedule.Source != null )
             {
-                _fDal.AddflightName(fd.flightName);
+                _fdal.AddSchedule(flightSchedule);
             }
             else
             {
-                Console.WriteLine("flight name can't be Null");
+                Console.WriteLine("Source can't be Null");
             }
         }
 

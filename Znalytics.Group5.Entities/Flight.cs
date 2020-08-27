@@ -1,23 +1,40 @@
 ﻿using System;
 
-namespace Znalytics.Group5.Entities
+namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     class Flight
     {
+        //Instance (or) non.staticfields
         private string _flightName { set; get; }
         private int _flightNumber { set; get; }
         private int _flightCapacity { set; get; }
         private int  _luggageWeightage { set; get; }
 
-
+        //Constructor
         public Flight( string FlightName , int FlightNumber , int FlightCapacity, int LuggageWeightage)
         {
+            
             _flightName = FlightName;
             _flightNumber = FlightNumber;
             _flightCapacity = FlightCapacity;
             _luggageWeightage = LuggageWeightage;      
         }
 
+        public string ScheduleNumber
+        {
+            set
+            {
+                if (ScheduleNumber != null)
+                {
+                    _scheduleNumber = value;
+                }
+                else
+                {
+                    Console.WriteLine("schedule number can't be null");
+                }
+            }
+            get { return _scheduleNumber; }
+        }
         public string FlightName
         {
             set
