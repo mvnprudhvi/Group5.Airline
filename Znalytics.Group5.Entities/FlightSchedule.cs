@@ -14,11 +14,11 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         private int _scheduleNumber { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
-        private string _departureTiming { set; get; }
-        private string _arrivalTiming { set; get; }
+        private DateTime _departureTiming { set; get; }
+        private DateTime _arrivalTiming { set; get; }
 
         //constructor
-        public FlightSchedule( int ScheduleNumber, string Source, string Destination, string DepartureTiming, string ArrivalTiming)
+        public FlightSchedule( int ScheduleNumber, string Source, string Destination, DateTime DepartureTiming, DateTime ArrivalTiming)
         {
             _scheduleNumber = ScheduleNumber;
             _source = Source;
@@ -32,7 +32,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         {
             set
             {
-                if (ScheduleNumber != 0s)
+                if (ScheduleNumber != 0)
                 {
                     _scheduleNumber = value;
                 }
@@ -66,7 +66,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         }
 
 
-        public string DepartureTiming
+        public DateTime DepartureTiming
         {
             set
             {
@@ -76,7 +76,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         }
 
 
-        public string ArrivalTiming
+        public DateTime ArrivalTiming
         {
             set
             {

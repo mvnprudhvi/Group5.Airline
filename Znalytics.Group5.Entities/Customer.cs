@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Schema;
 
 namespace Znalytics.Group5.Airline.Entities
 {
@@ -16,14 +17,14 @@ namespace Znalytics.Group5.Airline.Entities
         private long _mobileNumber;
         private int _aadharNumber;
         private string _pancardNumber;
-        public string _gender { set; get; }
+        public string _gender;
 
 
-/// <summary>
-/// constructors thst initializes deatails of customer
-/// </summary>
+        /// <summary>
+        /// constructors thst initializes deatails of customer
+        /// </summary>
 
-public Customer(string userName,string email, string password, long mobileNumber, int aadharNumber, string pancardnumber , string gender)
+        public Customer(string userName, string email, string password, long mobileNumber, int aadharNumber, string pancardnumber, string gender)
         {
 
             /// <param name="email"></param> email of customer
@@ -124,17 +125,38 @@ public Customer(string userName,string email, string password, long mobileNumber
         /// <summary>
         /// represents pan card number of customer
         /// </summary>
-        public string PancardNumber
+        public string PanCardNumber
         {
             set
             {
                 if (value.Length == 10)
-                    PancardNumber = value;
+                    PanCardNumber = value;
             }
             get
             {
-                return PancardNumber;
+                return PanCardNumber;
             }
         }
-
+        public string Gender 
+        {
+            set
+            {
+                if (value.Length == male && value.Length == female)
+                {
+                    Gender = value;
+                }
+                else
+                {
+                    throw new Exception("Gender must be either male or female only");
+                }
+            }
+            get
+            {
+                return Gender;
+            }
+        }
+    }
+}
+        
+    
         

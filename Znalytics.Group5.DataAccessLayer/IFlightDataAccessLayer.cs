@@ -6,6 +6,6 @@ namespace Znalytics.Group5.DataAccessLayer
     public interface IFlightDataAccessLayer
     {
         void AddFlights(Flight flight);
-        void UpdateFlights(Flight flight);
+        void UpdateFlightNameByFlightId(Flight flight);
     }
 }

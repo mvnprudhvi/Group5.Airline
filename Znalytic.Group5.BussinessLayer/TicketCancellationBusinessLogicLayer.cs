@@ -35,7 +35,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         }
         public void DeletebookingId(bookingId)
         {
-            _TicketCancellationDataAccessLayer.DeletebookingId(bookingId);
+            _TicketCancellationDataAccessLayer.DeletebookingId(BookingID);
 
         }
 
