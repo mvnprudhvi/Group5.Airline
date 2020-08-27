@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 
-namespace  FlightBooking
-    {
+namespace FlightBooking
+{
     class FlightBooking
     {
         static void Main(string[] args)
@@ -77,7 +77,8 @@ namespace  FlightBooking
             {
 
                 //create another list in the collection called  "flightbooking1"
-                List<FlightBooking> flightBooking1 = new List<FlightBooking>() {
+                List<FlightBooking> flightBooking1 = new List<FlightBooking>() 
+                {
                     new FlightBooking() { flightName = "AirInia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "01", bookingId = "1234" },
                     new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", seatNumber = "02", bookingId = "1234" },
                     new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "03", bookingId = "3456" },
@@ -88,10 +89,9 @@ namespace  FlightBooking
 
                 static void ViewFlightBooking()
                 {
-
+                    
                     List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                    FlightBooking fb = new FlightBooking();
-
+                  
                     foreach (FlightBooking item in fb)
                     {
                         Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb +.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
@@ -102,8 +102,7 @@ namespace  FlightBooking
                 {
 
                     List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                    FlightBooking fb = new FlightBooking();
-
+                    
                     foreach (FlightBooking item in fb)
                     {
                         Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
@@ -115,8 +114,7 @@ namespace  FlightBooking
                 {
 
                     List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                    FlightBooking fb = new FlightBooking();
-
+                    
                     foreach (FlightBooking item in fb)
                     {
                         Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
@@ -124,6 +122,7 @@ namespace  FlightBooking
                     }
                 }
             }
+
         }
     }
-    
+}

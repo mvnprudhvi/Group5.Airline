@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
 {
    
-        public class FlightBookingbusinessLogicLayer : _FlightBookingbusinessLogicLayer();
+        public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer();
             {
             private FlightBookingDataAcessLayer _fbdal = null;
 
@@ -27,11 +27,11 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
             }
 
             
-            public void  AddBooking(Booking Booking)
+            public void  AddBookingId(FlightBooking BookingId)
             {
-                if (Booking.bookingId != null)
+                if (FlightBooking.bookingId != null)
                 {
-                _fbdal.AddBooking(Booking);
+                _fbdal.AddBooking(BookingId);
                 }
                 else
                 {
