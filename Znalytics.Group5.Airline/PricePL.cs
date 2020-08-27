@@ -67,6 +67,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             price.Price = double.Parse(ReadLine());
 
             _priceBusinessLogic.AddFlightPrice(price);
+
             WriteLine("The Details of Price is Successfully Added \n");
         }
 
