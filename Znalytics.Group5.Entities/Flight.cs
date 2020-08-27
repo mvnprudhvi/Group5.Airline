@@ -7,43 +7,41 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         //Instance (or) non.staticfields
         private string _flightName { set; get; }
         private int _flightNumber { set; get; }
+        private string _flightType { set; get; }
         private int _flightCapacity { set; get; }
         private int  _luggageWeightage { set; get; }
 
         //Constructor
-        public Flight( string FlightName , int FlightNumber , int FlightCapacity, int LuggageWeightage)
+        public Flight( string FlightName , int FlightNumber,string FlightType, int FlightCapacity, int LuggageWeightage)
         {
             
             _flightName = FlightName;
             _flightNumber = FlightNumber;
+            _flightType = FlightType;
             _flightCapacity = FlightCapacity;
             _luggageWeightage = LuggageWeightage;      
         }
 
-        public string ScheduleNumber
+        public Flight()
         {
-            set
-            {
-                if (ScheduleNumber != null)
-                {
-                    _scheduleNumber = value;
-                }
-                else
-                {
-                    Console.WriteLine("schedule number can't be null");
-                }
-            }
-            get { return _scheduleNumber; }
         }
+
         public string FlightName
         {
             set
             {
-                _flightName = value; // set the value
+                if(FlightType.Length <= 10)
+                {
+                    _flightName = value;
+                }
+                else
+                {
+                    throw new Exception("FlightType should be less than 10");
+                }
             }
             get
             {
-                return _flightName; // get the value
+                return   _flightType;
             }
         }
          public int FlightNumber
@@ -57,6 +55,17 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                 return _flightNumber;
             }
          }
+        public string FlightType
+        {
+            set
+            {
+                _flightType = value;
+            }
+            get
+            {
+                return _flightType;
+            }
+        }
 
         public int  FlightCapacity
         {

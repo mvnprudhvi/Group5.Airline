@@ -31,7 +31,7 @@ namespace Znalytic.Group5.Airline.BusinessLayer
         {
             return fdl.Getflights();
         }
-        public void UpdateFlights(Flights flight)
+        public Flight GetFlightByFlightId(int flightId)
         {
             if(flight.flightNumber != 0)
             {

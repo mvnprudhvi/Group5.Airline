@@ -13,7 +13,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 {
 
     class FlightPresentation
-    {
+    { 
 
         /// <summary>
         /// Beginning of the program
@@ -61,8 +61,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     {
                         case 1: AddFlights(); break;
                         case 2: UpdateFlights(); break;
-                        case 3: ViewFlights(); break;
-                        case 4: DeleteFlights(); break;
+                        case 3: DisplayFlights(); break;
+                        case 4: DeleteFlights(); break;      
+                        case 5: ViewFlights(); break;
 
 
                     }
@@ -79,6 +80,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             System.Console.Write("Enter FlightNumber:"); // enter flight id
             flight.flightNumber = int.Parse(System.Console.ReadLine());
 
+            System.Console.Write("Enter FlightType:"); // enter flight id
+            flight.flightType = System.Console.ReadLine();
+
             System.Console.Write("Enter FlightCapacity:"); //no of seats present in particual flight
             flight.flightCapacity = System.Console.ReadLine();
 
@@ -87,16 +91,17 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             Console.WriteLine("FlightName:" + flight.flightName);
             Console.WriteLine("FlightNumber:" + flight.flightNumber);
+            Console.WriteLine("FlightType:" + flight.flightType);
             Console.WriteLine("FlightCapacity:" + flight.flightCapacity);
             Console.WriteLine("luggageWeightage:" + flight.luggageWeightage);
 
 
-            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------------------------");
 
-            Console.WriteLine("--------------------SCHEDULE LIST-----------------------------");
-            Console.WriteLine(" FlightName  FlightNumber   FlightCapacity   LuggageWeightage ");
+            Console.WriteLine("--------------------SCHEDULE LIST----------------------------------------");
+            Console.WriteLine(" FlightName  FlightNumber flightType  FlightCapacity   LuggageWeightage ");
 
-            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("-------------------------------------------------------------------------");
 
             IFlightBusinessLogicLayer flightBusinessLogicLayer = new FlightBusinessLogicLayer();
             flightBusinessLogicLayer.AddFlights(flight); //calls Businesslogiclayer
@@ -106,58 +111,69 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         {
             Flight flight = new Flight();
             IFlightBusinessLogicLayer flightBusinessLogicLayer = new FlightBusinessLogicLayer();
-            int choice = 1;
 
-            System.Console.WriteLine("Enter your option to update particular  field:");
-            System.Console.WriteLine("Enter 1: FlightName");
-            System.Console.WriteLine("Enter 2: FlightNumber");
-            System.Console.WriteLine("Enter 3: FlightCapacity");
-            System.Console.WriteLine("Enter 4: luggageWeightage ");
-
-            do
-            {
-                switch (choice)
-                {
-                    case 1:
-                        Console.WriteLine("Enter existing FlightName:");
-                        flight.flightName = Console.ReadLine();
-                        Console.WriteLine("Enter New FlightName:");
-                        flight.flightName = Console.ReadLine();
-                        flightBusinessLogicLayer.UpdateFlights(flight);
-                        Console.WriteLine("FlightName is updated successfully");
-                        break;
-
-                    case 2:
-                        Console.WriteLine("Enter Your existing FlightNumber:");
-                        flight.flightNumber = Convert.ToInt64(System.Console.ReadLine());
-                        Console.WriteLine("Enter New FlightNumber:");
-                        flight.flightNumber = Console.ReadLine();
-                        flightBusinessLogicLayer.UpdateFlights(flight);
-                        Console.WriteLine("FlightNumber is updated successfully");
-                        break;
-                    case 3:
-                        Console.WriteLine("Enter existing FlightCapacity:");
-                        flight.flightCapacity = Convert.ToInt64(System.Console.ReadLine());
-                        Console.WriteLine("Enter New flight Capacity:");
-                        flight.flightCapacity = Convert.ToInt64(Console.ReadLine());
-                        flightBusinessLogicLayer.UpdateFlights(flight);
-                        Console.WriteLine("flightCapacity is  updated successfully");
-                        break;
-                    case 4:
-                        Console.WriteLine("Enter Your Luggage Weightage:");
-                        flight.luggageWeightage = Convert.ToInt64(System.Console.ReadLine());
-                        Console.WriteLine("Enter New Luggage weighhtage:");
-                        flight.luggageWeightage = Convert.ToInt64(Console.ReadLine());
-                        flightBusinessLogicLayer.UpdateFlights(flight);
-                        Console.WriteLine("luggage weight is updated successfully ");
-                        break;
-                    default: Console.WriteLine("enter valid option:"); break;
-                }
-
-            } while (choice != 5);
-
+            Console.WriteLine("Enter existing FlightId:");
+            flight.flightId = Console.ReadLine();
+            Console.WriteLine("Enter New FlightName:");
+            flight.flightName = Console.ReadLine();
+            flightBusinessLogicLayer.UpdateFlightNameByFlightId(flight);
         }
-        public static void ViewFlights()
+            public static void DisplayFlightByFlightId()
+            {
+
+              Flight flight = new Flight();
+             IFlightBusinessLogicLayer flightBusinessLogicLayer = new FlightBusinessLogicLayer();
+             int choice = 1;
+             System.Console.WriteLine("Enter your option to update particular  field:");
+              System.Console.WriteLine("Enter 1: FlightName");
+              System.Console.WriteLine("Enter 2: FlightNumber");
+              System.Console.WriteLine("Enter 3: FlightCapacity");
+              System.Console.WriteLine("Enter 4: luggageWeightage ");
+
+              do
+              {
+                  switch (choice)
+                  {
+                      case 1:
+                          Console.WriteLine("Enter existing FlightName:");
+                          flight.flightName = Console.ReadLine();
+                          Console.WriteLine("Enter New FlightName:");
+                          flight.flightName = Console.ReadLine();
+                          flightBusinessLogicLayer.UpdateFlights(flight);
+                          Console.WriteLine("FlightName is updated successfully");
+                          break;
+
+                      case 2:
+                          Console.WriteLine("Enter Your existing FlightNumber:");
+                          flight.flightNumber = Convert.ToInt64(System.Console.ReadLine());
+                          Console.WriteLine("Enter New FlightNumber:");
+                          flight.flightNumber = Console.ReadLine();
+                          flightBusinessLogicLayer.UpdateFlights(flight);
+                          Console.WriteLine("FlightNumber is updated successfully");
+                          break;
+                      case 3:
+                          Console.WriteLine("Enter existing FlightCapacity:");
+                          flight.flightCapacity = Convert.ToInt64(System.Console.ReadLine());
+                          Console.WriteLine("Enter New flight Capacity:");
+                          flight.flightCapacity = Convert.ToInt64(Console.ReadLine());
+                          flightBusinessLogicLayer.UpdateFlights(flight);
+                          Console.WriteLine("flightCapacity is  updated successfully");
+                          break;
+                      case 4:
+                          Console.WriteLine("Enter Your Luggage Weightage:");
+                          flight.luggageWeightage = Convert.ToInt64(System.Console.ReadLine());
+                          Console.WriteLine("Enter New Luggage weighhtage:");
+                          flight.luggageWeightage = Convert.ToInt64(Console.ReadLine());
+                          flightBusinessLogicLayer.UpdateFlights(flight);
+                          Console.WriteLine("luggage weight is updated successfully ");
+                          break;
+                      default: Console.WriteLine("enter valid option:"); break;
+                  }
+
+              } while (choice != 5);
+
+          }*/
+            public static void ViewFlights()
         {
             IFlightBusinessLogicLayer flightBusinessLogicLayer = new FlightBusinessLogicLayer();
             List<Flight> f = flightBusinessLogicLayer.GetFlights();
