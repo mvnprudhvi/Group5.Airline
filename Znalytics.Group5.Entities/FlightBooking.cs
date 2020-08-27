@@ -15,7 +15,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
     {
         //  represents the private fields
         private string FlightName;
-  
+
         private int FlightID;
         private string Source;
         private string Destination;
