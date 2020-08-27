@@ -16,7 +16,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     class TicketCancellationPresentation
     {
         /// <summary>
-        /// Main Method
+        ///represents Main Method
         /// </summary>
         static void Main()
         {
@@ -34,7 +34,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             do
             {
                 Console.WriteLine("=======FLIGHT DETAILS=====");
-                Console.WriteLine("1. Add FlightNames");
+                Console.WriteLine("1. Add bookingId");
                 Console.WriteLine("2. View FlightNames");
                 Console.WriteLine("3. Update FlightNames");
                 Console.WriteLine("4. Exit");
