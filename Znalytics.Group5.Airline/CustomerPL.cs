@@ -1,10 +1,9 @@
 ﻿//....MVN Prudhvi........
 
 using System;
-using System.Collections.Generic;
-using System.Xml.Schema;
-using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.BusinessLogicLayer;
+using System.Collections.Generic;
 
 //Represents Presentation Layer
 
@@ -15,9 +14,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     {
         static void Main()
         {
-            int Type;
+            
 
-            CustomerPL c = new CustomerPL();
+            Customer c = new Customer();
             CustomerBusinessLogicLayer bll = new CustomerBusinessLogicLayer();
 
             Console.WriteLine("-----------------ONLINE AIRLINE RESERVATION SYSTEM----------------------:");
@@ -27,46 +26,43 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             //customer user name
             Console.WriteLine("enter your user name:");
-            string username = Console.ReadLine();
+             c.UserName = Console.ReadLine();
 
 
             //customer email
             Console.WriteLine("enter your email:");
-            string email = Console.ReadLine();
+            c.Email = Console.ReadLine();
 
             //customer password
             Console.WriteLine("enter your password:");
-            string password = Console.ReadLine();
+            c.Password = Console.ReadLine();
 
             //customer mobile number
             Console.WriteLine("enter your mobile number:");
-            long mobilenumber = Convert.ToInt64(Console.ReadLine());
+            c.MobileNumber = Convert.ToInt64(Console.ReadLine());
 
             //customer aadhar card number
             Console.WriteLine("enter your aadhar card number:");
-            int aadharnumber = Convert.ToInt32(Console.ReadLine());
+            c.AadharNumber = Convert.ToInt32(Console.ReadLine());
 
             //customer pan card number
             Console.WriteLine("enter your pan card number:");
-            string pancardnumber = Console.ReadLine();
+            c.PanCardNumber = Console.ReadLine();
 
             Console.WriteLine("Enter your Gender Male  or Female :");
-            bool gender = int.TryParse(Console.ReadLine(), out Type);
-            if (gender)
-            {
-
-            }
+            c._gender = Console.ReadLine();
+             
 
 
 
 
-            System.Console.WriteLine("userName:" + username);
-            System.Console.WriteLine("email:" + email);
-            System.Console.WriteLine("password:" + password);
-            System.Console.WriteLine("mobilenumber:" + mobilenumber);
-            System.Console.WriteLine("aadharnumber:" + aadharnumber);
-            System.Console.WriteLine("pancardnumber:" + pancardnumber);
-            System.Console.WriteLine("Gender:" + gender);
+            System.Console.WriteLine("userName:" + c.UserName);
+            System.Console.WriteLine("email:" + c.Email);
+            System.Console.WriteLine("password:" + c.Password);
+            System.Console.WriteLine("mobilenumber:" + c.MobileNumber);
+            System.Console.WriteLine("aadharnumber:" + c.AadharNumber);
+            System.Console.WriteLine("pancardnumber:" + c.PanCardNumber);
+            System.Console.WriteLine("Gender:" + c._gender);
 
 
             //Login form
@@ -77,7 +73,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.Write("Password:");
             string Password = Console.ReadLine();
 
-            if (userName == "," && password == ",")
+            if (userName == "," && Password == ",")
             {
                 Menu();
                 Console.ReadKey();
