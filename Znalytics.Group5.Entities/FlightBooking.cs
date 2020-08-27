@@ -10,33 +10,49 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
 {
 
     // A class of flightbooking
-    public class FlightBooking
+
+    public class FlightBooking 
     {
-        // private fields
-        private string _flightName { set; get; }
-        private int _flightNumber { set; get; }
-        private string _source { set; get; }
-        private string _destination { set; get; }
-        private string _departureTiming { set; get; }
-        private string _arrivalTiming { set; get; }
-        private string _passengerName { set; get; }
-        private int _bookingId { set; get; }
-        private int _seatNumber { set; get; }
+        //  represents the private fields
+        private string FlightName;
 
+        private int FlightID;
+        private string Source;
+        private string Destination;
+        private string DepartureTiming;
+        private string ArrivalTiming;
+        private string PassengerName;
+        private int  CustomerID;
+        private int BookingID;
+        private int   SeatNumber;
 
+        /// <summary>
+        /// creating constructor
+        /// </summary>
+        /// <param name="flightName">represents the name of the flight</param>
+        /// <param name="flightID">represents the id of the flight </param>
+        /// <param name="source"> represents the FROM location of the flight </param>
+        ///  <param name="destination">represents the TO location of the flight </param>
+        /// <param name="departureTiming">represents the departure time of the flight</param>
+        /// <param name="arrivalTiming">represents the arrving time of the  flight</param>
+        /// <param name="passengerName">represents the name of the passenger/param>
+        /// <param name="customerID">represents the id of the customer</param>
+        /// <param name="bookingID">represents the id of the booking</param>
+        /// <param name="seatNumber">represents the seatNumber</param>
 
         // constructor
-        public FlightBooking(string flightName, int flightNumber, string source, string destination, string departureTiming, string arrivalTiming, string passengerName, int bookingId, int seatNumber,)
+        public FlightBooking(string flightName, int flightID, string source, string destination, string departureTiming, string arrivalTiming, string passengerName, int customerID, int  bookingID, int seatNumber)
         {
-            _flightName = flightName;
-            _flightNumber = flightNumber;
-            _source = source;
-            _destination = destination;
-            _departureTiming = departureTiming;
-            _arrivalTiming = arrivalTiming;
-            _passengerName = passengerName;
-            _bookingId = bookingId;
-            _seatNumber = seatNumber;
+           this.FlightName = flightName;
+           this.FlightID = flightID;
+            this.Source = source;
+            this.Destination = destination;
+           this. DepartureTiming = departureTiming;
+            this.ArrivalTiming = arrivalTiming;
+            this.PassengerName = passengerName;
+            this.CustomerID = customerID;
+           this. BookingID = bookingID;
+            this.SeatNumber = seatNumber;
         }
 
 
@@ -46,28 +62,28 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // set the value
             set
             {
-                _flightName = value;
+                flightName = value;
             }
             // get the value
             get
             {
-                return _flightName;
+                return flightName;
             }
         }
 
-        public int flightNumber
+        public string flightID
         {
             // set the value
 
 
             set
             {
-                _flightNumber = value;
+                flightID= value;
             }
             // get the value
             get
             {
-                return _flightNumber;
+                return flightID;
 
             }
         }
@@ -76,9 +92,9 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             set
             {
 
-                _source = value;
+                source = value;
             }
-            get { return _source; }
+            get { return source; }
         }
 
 
@@ -87,9 +103,9 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             set
             {
 
-                _destination = value;
+                destination = value;
             }
-            get { return _destination; }
+            get { return destination; }
         }
 
 
@@ -97,9 +113,9 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         {
             set
             {
-                _departureTiming = value;
+                departureTiming = value;
             }
-            get { return _departureTiming; }
+            get { return departureTiming; }
         }
 
 
@@ -107,9 +123,9 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         {
             set
             {
-                _arrivalTiming = value;
+                arrivalTiming = value;
             }
-            get { return _arrivalTiming; }
+            get { return arrivalTiming; }
         }
 
         public string passengerName
@@ -118,41 +134,41 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
 
             set
             {
-                _passengerName = value;
+                passengerName = value;
             }
             // get the value
             get
             {
-                return _passengerName;
+                return passengerName;
             }
         }
 
 
 
-        public int bookingId
+        public string bookingID
         {
             set
             {
 
-                _bookingId = value;
+                bookingID= value;
             }
             get
             {
-                return _bookingId;
+                return bookingID;
             }
         }
-        public int seatNumber
+        public string seatNumber
         {
             // set the value
 
             set
             {
-                _seatNumber = value;
+                seatNumber = value;
             }
             // get the value
             get
             {
-                return _seatNumber;
+                return seatNumber;
             }
         }
 

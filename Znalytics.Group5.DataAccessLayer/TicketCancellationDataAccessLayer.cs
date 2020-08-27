@@ -1,6 +1,7 @@
 ﻿//created by Madhumitha.....
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Znalytics.Group5.Airline.Entities;
 /// <summary>
 /// represents dataAccessLayer of Ticketcancellation
@@ -9,20 +10,45 @@ using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
-    class TicketCancellationDataAccessLayer
+    /// <summary>
+    /// Represents Business logic layer of the customer personal details
+    /// </summary>
+    class TicketCancellationDataAccessLayer:ITicketCancellationDataAccessLayer
     {
-
-        // create list
+        // creating list
         private static List<TicketCancellation> _flights = new List<TicketCancellation>();
 
-        //represents adding booking id
-        public void AddbookingId(TicketCancellation bookingId)
+        //represents adding ticket cancellation
+        public void AddTicketCancellation(TicketCancellation ticketCancellation)
         {
-            _flights.Add(bookingId);
+            _flights.Add(ticketCancellation);
+        }
+        //Updation of  ticket cancellation
+        public void UpdateTicketCancellation(TicketCancellation CustomerID)
+        {
+            //Get matching ticket cancellation based on CustomerId
+            TicketCancellation tc = TicketCancellation.Find(temp => temp.CustomerID == customer.CustomerID);
+            if (CustomerID != null)
+            {
+                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
+            }
+        }
+        public TicketCancellation GetTicketCancellationsByCustomerID(int CustomerID)
+        {
+
+        }
+        public TicketCancellation GetTicketCancellationsByBookingID(int CustomerID)
+        {
+
+        }
+        public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
+        {
+
         }
 
-        //represents Get  bookingid
-        public List<TicketCancellation> GetbookingId()
+
+           /* //represents Get  bookingid
+            public List<TicketCancellation> GetbookingId()
         {
             return _flights;
         }
@@ -46,7 +72,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }
        }
 
-}
+}*/
 
 
 
@@ -55,23 +81,23 @@ namespace Znalytics.Group5.DataAccessLayer
 
 
 
-    /*using System.Collections.Generic;
-    using Znalytics.Group5.AirLine.CancellationModule.Entities;
+/*using System.Collections.Generic;
+using Znalytics.Group5.AirLine.CancellationModule.Entities;
 
-    namespace Znalytics.Group5.AirLine.CancellationDataAccessLayer
+namespace Znalytics.Group5.AirLine.CancellationDataAccessLayer
+{
+    public class FlightCancellationDataAccessLayer : CancellationDataAccessLayer
     {
-        public class FlightCancellationDataAccessLayer : CancellationDataAccessLayer
+        //create list
+        List<FlightName> FlightName = new List<FlightName>();
+
+        public void AddFlightName(FlightName FlightName)
         {
-            //create list
-            List<FlightName> FlightName = new List<FlightName>();
+            ////flight generating 
 
-            public void AddFlightName(FlightName FlightName)
-            {
-                ////flight generating 
+            //flight.Add(flight);
 
-                //flight.Add(flight);
-
-                //not done
-            }
+            //not done
         }
-    }*/
+    }
+}*/
