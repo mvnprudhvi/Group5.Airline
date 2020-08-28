@@ -11,20 +11,25 @@ namespace Znalytics.Group5.Airline.Entities
     {
 
         //private fields
-        private string _userName;
-        private string _email;
-        private string _password;
-        private long _mobileNumber;
-        private int _aadharNumber;
-        private string _pancardNumber;
-        public string _gender;
+        private int _customerid;
+        private string _customeruserName;
+        private string _customerEmail;
+        private string _customerPassword;
+        private string _customermobileNumber;
+        private string _customeraadharNumber;
+        private string _customerpancardNumber;
+        private string _customerGender;
 
 
         /// <summary>
         /// constructors thst initializes deatails of customer
         /// </summary>
+        public Customer()
+        {
 
-        public Customer(string userName, string email, string password, long mobileNumber, int aadharNumber, string pancardnumber, string gender)
+        }
+
+        public Customer(int custid, string custusername, string custemail, string custpassword, string custmobileNumber, string custaadharNumber, string custpancardnumber, string custgender)
         {
 
             /// <param name="email"></param> email of customer
@@ -33,68 +38,87 @@ namespace Znalytics.Group5.Airline.Entities
             /// <param name="aadharNumber"></param> aadhar number of customer
             /// <param name="pancardnumber"></param> pan card number of customer
 
-            _userName = userName;
-            _email = email;
-            _password = password;
-            _mobileNumber = mobileNumber;
-            _aadharNumber = aadharNumber;
-            _pancardNumber = pancardnumber;
-            _gender = gender;
+            this._customerid = custid;
+            this._customeruserName = custusername;
+            this._customerEmail = custemail;
+            this._customerPassword = custpassword;
+            this._customermobileNumber = custmobileNumber;
+            this._customeraadharNumber = custaadharNumber;
+            this._customerpancardNumber = custpancardnumber;
+            this._customerGender = custgender;
         }
-        /// <summary>
-        /// represents email of the customer
-        /// </summary>
-        public string UserName
+        //represents customer id
+        public int CustomerId
         {
             set
             {
-                if (value.Length <= 10)
-                    UserName = value;
+                if (value >= 0 && value <= 9)
+                {
+                   CustomerId = value;
+                }
             }
             get
             {
-                return _userName;
+                return CustomerId;
+
             }
         }
 
-        public string Email
+        // represents customer username
+        public string CustomerUserName
         {
             set
             {
                 if (value.Length <= 20)
-                    Email = value;
+                    CustomerUserName = value;
             }
             get
             {
-                return _email;
+                return CustomerUserName;
             }
         }
-        /// <summary>
-        /// represents password of the customer 
-        /// </summary>
-        public string Password
+        //represents customer email
+        public string CustomerEmail
+        {
+            set
+            {
+                if (value.Length <= 20)
+                {
+                    CustomerEmail = value;
+                }
+                else
+                {
+                    throw new Exception("enter valid email Id:");
+            }
+        }
+            get
+            { 
+
+               return CustomerEmail;
+        }
+    }
+        // represents password of the customer 
+        public string CustomerPassword
         {
             set
             {
                 if (value.Length <= 10)
-                    Password = value;
+                    CustomerPassword = value;
             }
             get
             {
-                return _password;
+                return CustomerPassword;
             }
         }
-        /// <summary>
-        /// represents number of the customer
-        /// </summary>
-        public long MobileNumber
+        // represents number of the customer
+        public string CustomerMobileNumber
         {
             set
             {
                 //mobile number should contain 10 digits only
-                if (value <= 9999999999 && value > 1111111111)
+                if (value.Length == 10 && value[0] != 0)
                 {
-                    MobileNumber = value;
+                    CustomerMobileNumber = value;
                 }
                 else
                 {
@@ -103,47 +127,43 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return MobileNumber;
+                return CustomerMobileNumber;
             }
         }
 
-        /// <summary>
-        /// represents aadhar card number of customer
-        /// </summary>
-        public int AadharNumber
+        // represents aadhar card number of customer
+        public string CustomerAadharNumber
         {
             set
             {
-                if (value == 12)
-                    AadharNumber = value;
+                if (value.Length == 12)
+                    CustomerAadharNumber = value;
             }
             get
             {
-                return AadharNumber;
+                return CustomerAadharNumber;
             }
         }
-        /// <summary>
-        /// represents pan card number of customer
-        /// </summary>
-        public string PanCardNumber
+        // represents pan card number of customer
+        public string CustomerPanCardNumber
         {
             set
             {
                 if (value.Length == 10)
-                    PanCardNumber = value;
+                    CustomerPanCardNumber = value;
             }
             get
             {
-                return PanCardNumber;
+                return CustomerPanCardNumber;
             }
         }
-        public string Gender 
+        public string CustomerGender
         {
             set
             {
                 if (value.Length == male && value.Length == female)
                 {
-                    Gender = value;
+                    CustomerGender = value;
                 }
                 else
                 {
@@ -152,7 +172,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return Gender;
+                return CustomerGender;
             }
         }
     }
