@@ -50,6 +50,7 @@
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
     <Compile Include="IFlightScheduleBusinessLogic.cs" />
+    <Compile Include="ITicketCancellationBusinessLogicLayer.cs" />
     <Compile Include="PriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCancellationBusinessLogicLayer.cs" />

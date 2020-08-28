@@ -16,7 +16,6 @@ namespace Znalytics.Group5.Airline.Entities
         private double _priceForEconomyClassSeat;
         private double _weekendPriceHikePercentage;
 
-
         //Using Properties For all Fields
         public int BeforeDays
         {
@@ -28,7 +27,7 @@ namespace Znalytics.Group5.Airline.Entities
             {
                 return _beforeDays;
             }
-        }*/
+        }
         public double PriceForEconomyClassSeat
         {
             set

@@ -1,4 +1,5 @@
 ﻿//created by Madhumitha.....
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -13,15 +14,15 @@ namespace Znalytics.Group5.DataAccessLayer
     /// <summary>
     /// Represents Business logic layer of the customer personal details
     /// </summary>
-    class TicketCancellationDataAccessLayer:ITicketCancellationDataAccessLayer
+    class TicketCancellationDataAccessLayer : ITicketCancellationDataAccessLayer
     {
         // creating list
-        private static List<TicketCancellation> _flights = new List<TicketCancellation>();
+        private static List<TicketCancellation> _TicketCancellation = new List<TicketCancellation>();
 
         //represents adding ticket cancellation
         public void AddTicketCancellation(TicketCancellation ticketCancellation)
         {
-            _flights.Add(ticketCancellation);
+            _TicketCancellation = Add(ticketCancellation);
         }
         //Updation of  ticket cancellation
         public void UpdateTicketCancellation(TicketCancellation CustomerID)
@@ -33,10 +34,32 @@ namespace Znalytics.Group5.DataAccessLayer
                 TicketCancellation.CustomerID = TicketCancellation.CustomerID;
             }
         }
-       
+        public TicketCancellation GetTicketCancellationsByCustomerID(int CustomerID)
+        {
+            //get ticket cancellation by customer id
+            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.CustomerID == customer.CustomerID);
+            if (CustomerID != null)
+            {
+                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
+            }
+        }
+        public TicketCancellation GetTicketCancellationsByBookingID(int BookingID)
+        {
+            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.BookingID == CustomerID);
+            if (CustomerID != null)
+            {
+                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
+            }
+        }
+    }
+
+    public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
+        {
+
+        }
+
 
            /* //represents Get  bookingid
-
             public List<TicketCancellation> GetbookingId()
         {
             return _flights;
