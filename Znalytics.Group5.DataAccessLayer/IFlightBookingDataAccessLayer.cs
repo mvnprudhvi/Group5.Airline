@@ -11,13 +11,8 @@ namespace Znalytics.Group5.DataAccessLayer
 {
     internal interface IFlightBookingDataAccessLayer
     {
-        public void AddFlightBooking(FlightBooking bookingID)
-        {
+        void AddFlightBooking(FlightBooking bookingID);
 
-        }
-        public void UpdateFlightBooking(FlightBooking CustomerID)
-        {
-
-        }
-
+        void UpdateFlightBooking(FlightBooking CustomerID);
+        
     }
