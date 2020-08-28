@@ -1,5 +1,7 @@
-﻿// created by Reshma
-
+﻿
+// created by Reshma
+//Entities
+//module:FlightBooking
 
 
 using System;
@@ -8,10 +10,11 @@ using System.Collections.Generic;
 
 namespace Znalytics.Group5.Airline.FlightBooking.Entities
 {
+    /// <summary>
+    /// Represents  class of flightbooking
+    /// </summary>
 
-    // A class of flightbooking
-
-    public class FlightBooking 
+    public class FlightBooking
     {
         //  represents the private fields
         private string FlightName;
@@ -22,9 +25,11 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         private string DepartureTiming;
         private string ArrivalTiming;
         private string PassengerName;
-        private int  CustomerID;
+        private int CustomerID;
         private int BookingID;
-        private int   SeatNumber;
+        private int SeatNumber;
+        private double price;
+
 
         /// <summary>
         /// creating constructor
@@ -40,19 +45,20 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         /// <param name="bookingID">represents the id of the booking</param>
         /// <param name="seatNumber">represents the seatNumber</param>
 
-        // constructor
-        public FlightBooking(string flightName, int flightID, string source, string destination, string departureTiming, string arrivalTiming, string passengerName, int customerID, int  bookingID, int seatNumber)
+        // represents constructor
+        public FlightBooking(string flightName, int flightID, string source, string destination, string departureTiming, string arrivalTiming, string passengerName, int customerID, int bookingID, int seatNumber, double price)
         {
-           this.FlightName = flightName;
-           this.FlightID = flightID;
+            this.FlightName = flightName;
+            this.FlightID = flightID;
             this.Source = source;
             this.Destination = destination;
-           this. DepartureTiming = departureTiming;
+            this.DepartureTiming = departureTiming;
             this.ArrivalTiming = arrivalTiming;
             this.PassengerName = passengerName;
             this.CustomerID = customerID;
-           this. BookingID = bookingID;
+            this.BookingID = bookingID;
             this.SeatNumber = seatNumber;
+            this.price = price;
         }
 
 
@@ -62,23 +68,44 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // set the value
             set
             {
-                flightName = value;
+                //Name should be less than 20 string characters
+                if (value.Length <= 20)
+                {
+                    flightName = value;
+                }
+
+                else
+                {
+                    //throws exception that flightname shuold be 5 digits only
+                    throw new Exception("name should not be null");
+                }
             }
-            // get the value
             get
             {
                 return flightName;
             }
-        }
 
-        public string flightID
+        }
+        // get the value
+
+        public int flightID
         {
             // set the value
 
 
             set
             {
-                flightID= value;
+                // id of the store should be 5 digits
+                if (value <= 5)
+                {
+                    flightID = value;
+
+                }
+                else
+                {
+                    throw new Exception(" entered id is invalid id because it should not exceed  5 digits");
+                }
+
             }
             // get the value
             get
@@ -134,7 +161,16 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
 
             set
             {
-                passengerName = value;
+                //Name should be less than 20 string characters
+                if (value.Length <= 20)
+                {
+                    passengerName = value;
+                }
+                else
+                {
+                    //throws exception that bookingid shuold be 5 digits only
+                    throw new Exception("passenger  should not exceed 5 digits and it  should not be null");
+                }
             }
             // get the value
             get
@@ -143,36 +179,90 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             }
         }
 
-
-
-        public string bookingID
+        public int customerID
         {
             set
             {
-
-                bookingID= value;
+                //id of the customerId should be 5 digits 
+                if (value <= 5)
+                {
+                    customerID = value;
+                }
+                else
+                {
+                    throw new Exception("customer id should not exceed 5 digits");
+                }
             }
+            get
+            {
+                return customerID;
+            }
+        }
+
+        public int bookingID
+        {
+            set
+            {
+                // id of the store should be 5 digits
+                if (value <= 5)
+                {
+
+                    bookingID = value;
+                }
+
+                else
+                {
+                    //throws exception that bookingid shuold be 5 digits only
+                    throw new Exception("bookingid should not exceed 5 digits");
+                }
+            }
+
+            // get the value
             get
             {
                 return bookingID;
             }
         }
-        public string seatNumber
+        public int seatNumber
         {
             // set the value
 
             set
             {
-                seatNumber = value;
+                // id of the store should be 5 digits
+                if (value <= 5)
+                {
+                    seatNumber = value;
+                }
+
+                // get the value
+                else
+                {
+                    //throws exception that seatNumber shuold be 5 digits only
+                    throw new Exception("seatNumber should not exceed 5 digits and it should not be empty");
+                }
             }
-            // get the value
             get
             {
+
                 return seatNumber;
             }
         }
+        private double Price
+        {
+            // set the value
+            set
+            {
+                price = value;
+            }
+            get
+            {
+                return price;
+            }
 
+        }
     }
+
 
 }
 

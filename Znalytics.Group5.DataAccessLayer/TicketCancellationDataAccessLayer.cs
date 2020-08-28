@@ -33,21 +33,10 @@ namespace Znalytics.Group5.DataAccessLayer
                 TicketCancellation.CustomerID = TicketCancellation.CustomerID;
             }
         }
-        public TicketCancellation GetTicketCancellationsByCustomerID(int CustomerID)
-        {
-
-        }
-        public TicketCancellation GetTicketCancellationsByBookingID(int CustomerID)
-        {
-
-        }
-        public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
-        {
-
-        }
-
+       
 
            /* //represents Get  bookingid
+
             public List<TicketCancellation> GetbookingId()
         {
             return _flights;
