@@ -76,7 +76,7 @@ using System;
 
                     //create another list in the collection called  "flightbooking1"
                     List<TicketCancellation> flightBooking1 = new List<TicketCancellation>() {
-                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { BookingID ="1234",SeatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},

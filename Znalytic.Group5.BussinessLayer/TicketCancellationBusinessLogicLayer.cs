@@ -21,11 +21,12 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// This Method Represents AddTicketCancellation 
         /// </summary>
         /// <param name="bookingID"></param>
-        public void AddTicketCancellation(TicketCancellation ticketCancellation)
-        {
+        
+        public void AddTicketCancellation(TicketCancellation BookingID)
+        { 
             if (TicketCancellation.BookingID != null)
             {
-                _tcdal.AddTicketCancellation(BookingID);
+                tcdal.AddTicketCancellation(BookingID);
             }
             else
             {
@@ -37,18 +38,25 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// This Method Represents Update ticket cancellation
         /// </summary>
         /// <param name="bookingid"></param>
-        public void UpdateTicketCancellation(TicketCancellation ticketCancellation)
+        public void UpdateTicketCancellation(TicketCancellation bookingID)
         {
             if (TicketCancellation.BookingID != null)
             {
-                _TicketCancellationDataAccessLayer.UpdateTiketCancellation(bookingId);
-                else
-                {
-                    throw new Exception("bookingId can't be null");
-                }
+                tcdal.UpdateTiketCancellation(bookingID);
+            }
+            else
+            {
+                throw new Exception("customerid can't be null");
             }
         }
+        //method to get ticket cancellation by ticket customer id
+        public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
+        {
+            return TicketCancellation;
+        }
+
     }
+}
 
     /// <summary>
     /// This Method Represents GetbookingId 
@@ -56,9 +64,8 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// <returns>TicketCancellationDataAccessLayer</returns>
     public List<TicketCancellation> GetTicketCancellation()
     {
-        return TicketCancellationDataAccessLayer.GetTicketCancellation();
+        return tcdal.GetTicketCancellation();
     }
-}
 
 
 
