@@ -8,63 +8,64 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// <summary>
     /// This Class Represents Business Logic Layer Of ticket cancellation
     /// </summary>
-    public class TicketCancellation
+    public class TicketCancellationBusinessLogicLayer : ITicketCancellationBusinessLogicLayer
     {
-        TicketCancellationDataAccessLayer _TicketCancellationDataAccessLayer;//Reference Variable Of Ticket cancellaation Data Access Layer
-
+        private ITicketCancellationDataAccessLayer tcdal = null;
         //Constructor for Business Logic Layer
-        public  void TicketCancellationBussinessLogicLayer()
+        public TicketCancellationBusinessLogicLayer()
         {
-            _TicketCancellationDataAccessLayer = new TicketCancellationDataAccessLayer();//Creating Object for ticket cancellation Data Access Layer
+            tcdal = new TicketCancellationDataAccessLayer();//Creating Object for ticket cancellation Data Access Layer
         }
 
         /// <summary>
-        /// This Method Represents AddBookingId 
+        /// This Method Represents AddTicketCancellation 
         /// </summary>
         /// <param name="bookingID"></param>
-        public void AddbookingId(TicketCancellation bookingId)
-        {
-            if (TicketCancellation.bookingId != null)
+        
+        public void AddTicketCancellation(TicketCancellation BookingID)
+        { 
+            if (TicketCancellation.BookingID != null)
             {
-                _TicketCancellationDataAccessLayer.AddbookingId(bookingId);
+                tcdal.AddTicketCancellation(BookingID);
             }
             else
             {
                 throw new Exception("bookingId can't be null");
             }
         }
-        public void DeletebookingId(bookingId)
-        {
-            _TicketCancellationDataAccessLayer.DeletebookingId(BookingID);
-
-        }
 
         /// <summary>
         /// This Method Represents Update ticket cancellation
         /// </summary>
         /// <param name="bookingid"></param>
-        public void UpdatebookingId(TicketCancellation bookingId)
+        public void UpdateTicketCancellation(TicketCancellation bookingID)
         {
-            if (TicketCancellation.bookingId != null)
+            if (TicketCancellation.BookingID != null)
             {
-                _TicketCancellationDataAccessLayer.UpdatebookingId(bookingId);
+                tcdal.UpdateTiketCancellation(bookingID);
+            }
+            else
+            {
+                throw new Exception("customerid can't be null");
             }
         }
+        //method to get ticket cancellation by ticket customer id
+        public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
+        {
+            return TicketCancellation;
+        }
 
-        /// <summary>
-        /// This Method Represents GetbookingId 
-        /// </summary>
-        /// <returns>TicketCancellationDataAccessLayer</returns>
-        public List<TicketCancellation> GetbookingId()
-        {
-            return _TicketCancellationDataAccessLayer.GetbookingId();
-        }
-        public List<TicketCancellation> Getdate()
-        {
-            return _TicketCancellationDataAccessLayer.Getdate();
-        }
     }
 }
+
+    /// <summary>
+    /// This Method Represents GetbookingId 
+    /// </summary>
+    /// <returns>TicketCancellationDataAccessLayer</returns>
+    public List<TicketCancellation> GetTicketCancellation()
+    {
+        return tcdal.GetTicketCancellation();
+    }
 
 
 

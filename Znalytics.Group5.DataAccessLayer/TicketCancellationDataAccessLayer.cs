@@ -1,4 +1,6 @@
 ﻿//created by Madhumitha.....
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -13,15 +15,91 @@ namespace Znalytics.Group5.DataAccessLayer
     /// <summary>
     /// Represents Business logic layer of the customer personal details
     /// </summary>
-    class TicketCancellationDataAccessLayer:ITicketCancellationDataAccessLayer
+    class TicketCancellationDataAccessLayer : ITicketCancellationDataAccessLayer
     {
-        // creating list
-        private static List<TicketCancellation> _flights = new List<TicketCancellation>();
+        private static List<TicketCancellation> CancellationID
+        {
+            set;
+            get;
+        }
+        //constructor
+
+        static TicketCancellationDataAccessLayer()
+        {
+
+            CancellationID = new List<TicketCancellation>()
+            {
+
+           new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
+          new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
+          new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 }
+            };
+        }
+        //methods to add ticket cancellation
+        public void AddTicketCancellations(TicketCancellation bookingId)
+        {
+            if (CancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
+            {
+                bookingId.CancellationID = bookingId.CustomerID+45;
+                CancellationID.Add(bookingId);
+            }
+            else
+            {
+                //throws exception that booking id doesnot exist
+                throw new Exception("bookingId doesnot exists");
+            }
+        }
+        //methods to update ticket cancellation
+        public void UpdateTicketCancellations(TicketCancellation bookingId)
+        {
+            if (CancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
+            {
+                CancellationID.update(bookingId);
+            }
+            else
+            {
+                //throws exception that booking id doesnot exist
+                throw new Exception("bookingId doesnot exists");
+            }
+        }
+        //method to get ticket cancellation by ticket cancellation id
+        public TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID)
+        {
+            return CancellationID.Find(temp => temp.CancellationID == cancellationID);
+        }
+        //method to get ticket cancellation by ticket customer id
+        public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
+        {
+            return CancellationID.Find(temp => temp.CancellationID == customerID);
+        }
+        //method to get ticket cancellation by ticket booking id
+        public TicketCancellation GetTicketCancellationsByBookingID(int bookingID)
+        {
+            return CancellationID.Find(temp => temp.CancellationID == bookingID);
+        }
+    }
+}
+
+
+
+        /*//method to display the added booking id
+        public List<TicketCancellation> GetTicketCancellations()
+        {
+            return TicketCancellationDataAccessLayer.CancellationID();
+        }
+        //method to display ticket cancellation by ticket cancellation id
+        public TicketCancellation GetTicketCancellationByCancellationID(int customerId)
+        {
+            return TicketCancellationDataAccessLayer.GetTicketCancellationByCancellationID(CancellationID);
+        }
+    }
+}
+
 
         //represents adding ticket cancellation
         public void AddTicketCancellation(TicketCancellation ticketCancellation)
         {
-            _flights.Add(ticketCancellation);
+            _TicketCancellation = Add(ticketCancellation);
         }
         //Updation of  ticket cancellation
         public void UpdateTicketCancellation(TicketCancellation CustomerID)
@@ -35,13 +113,24 @@ namespace Znalytics.Group5.DataAccessLayer
         }
         public TicketCancellation GetTicketCancellationsByCustomerID(int CustomerID)
         {
-
+            //get ticket cancellation by customer id
+            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.CustomerID == customer.CustomerID);
+            if (CustomerID != null)
+            {
+                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
+            }
         }
-        public TicketCancellation GetTicketCancellationsByBookingID(int CustomerID)
+        public TicketCancellation GetTicketCancellationsByBookingID(int BookingID)
         {
-
+            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.BookingID == CustomerID);
+            if (CustomerID != null)
+            {
+                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
+            }
         }
-        public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
+    }
+
+    public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
         {
 
         }

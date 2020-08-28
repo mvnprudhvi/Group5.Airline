@@ -13,37 +13,46 @@ namespace Znalytics.Group5.Airline.Entities
 
     {
         //represents Private Fields...
-        private int CustomerID;
-        private int BookingID;
-        private int SeatNumber;
-        private DateTime Date;
+        private int _customerID;
+        private int _bookingID;
+        private int _flightID;
+        private int _seatNumber;
+        private DateTime _date;
+        private int _cancellationID;
+
+        public TicketCancellation()
+        {
+        }
+
         //private string _flightName { set; get; }
         //private int _price { set; get; }
         // private string _arrivalTiming { set; get; }
         /// <summary>
-        /// Constructor that initializes details of FoodStore
+        /// Constructor that initializes details of ticketcancellation
         /// </summary>
         /// <param name="customerId">Represents id of the store</param>
         /// <param name="bookingId">Represents name of the store</param>
         /// <param name="seatNumber">Represents location of the store</param>
         /// <param name="date">Represents phone number of the store</param>
-        public TicketCancellation(int customerId, int bookingId, int seatNumber, DateTime date)
+        public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date, int cancellationId)
         {
-            this.CustomerID = customerId;
-            this.BookingID = bookingId;
-            this.SeatNumber = seatNumber;
-            this.Date = date;
+            _customerID = customerId;
+            _bookingID = bookingId;
+            _flightID = flightId;
+            _seatNumber = seatNumber;
+            _date = date;
+            _cancellationID = cancellationId;
         }
 
 
-        public int customerID
+        public int CustomerID
         {
             set
             {
                 //id of the customerId should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
-                    customerID = value;
+                    _customerID = value;
                 }
                 else
                 {
@@ -52,17 +61,36 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return customerID;
+                return _customerID;
             }
         }
-        public int bookingID
+        public int FlightID
         {
             set
             {
                 //id of the customerId should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
-                    bookingID = value;
+                    _flightID = value;
+                }
+                else
+                {
+                    throw new Exception("flight id should not exceed 5 digits");
+                }
+            }
+            get
+            {
+                return _flightID;
+            }
+        }
+        public int BookingID
+        {
+            set
+            {
+                //id of the customerId should be 5 digits 
+                if (value <= 5)
+                {
+                    BookingID = value;
                 }
                 else
                 {
@@ -72,17 +100,17 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return bookingID;
+                return BookingID;
             }
         }
-        public int seatNumber
+        public int SeatNumber
         {
             set
             {
                 //id of the seatNumber should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
-                    seatNumber = value;
+                    _seatNumber = value;
                 }
                 else
                 {
@@ -92,22 +120,53 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return seatNumber;
+                return _seatNumber;
             }
         }
-        public DateTime date
+        public DateTime Date
 
         {
             set
             {
-                date = value;
+                _date = value;
             }
             get
             {
-                return date;
+                return _date;
+            }
+        }
+        public int CancellationID
+        {
+            set
+            {
+                //id of the customerId should be 5 digits 
+                if (value <= 5)
+                {
+                    _cancellationID = value;
+                }
+                else
+                {
+                    //throws exception that booking id shuold be 5 digits only
+                    throw new Exception("booking id should not exceed 5 digits");
+                }
+            }
+            get
+            {
+                return _cancellationID;
             }
         }
     }
+}
+
+
+
+
+
+
+
+
+
+
 
 
         /*public int price

@@ -42,10 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDataAccessLayer.cs" />
-    <Compile Include="FlightBookingDataAcessLayer.cs" />
+    <Compile Include="FlightBookingDataAccessLayer.cs" />
     <Compile Include="FlightDataAccessLayer.cs" />
     <Compile Include="FlightScheduleDataAccessLayer.cs" />
     <Compile Include="FlightSearchingDataAcessLayer.cs" />
+    <Compile Include="IFlightBookingDataAccessLayer.cs" />
     <Compile Include="IFlightDataAccessLayer.cs" />
     <Compile Include="IFlightScheduleDataAccessLayer.cs" />
     <Compile Include="ITicketCancellationDataAccessLayer.cs" />
