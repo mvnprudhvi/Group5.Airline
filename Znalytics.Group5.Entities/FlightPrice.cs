@@ -28,7 +28,7 @@ namespace Znalytics.Group5.Airline.Entities
             {
                 return _beforeDays;
             }
-        }*/
+        }
         public double PriceForEconomyClassSeat
         {
             set
