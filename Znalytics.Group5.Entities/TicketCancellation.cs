@@ -1,5 +1,8 @@
 ﻿//created by Madhumitha
 //Entities
+//module:Ticketcancellation
+using System;
+
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
@@ -9,72 +12,104 @@ namespace Znalytics.Group5.Airline.Entities
     public class TicketCancellation
 
     {
-        //Private Fields
-        //represeents auto implemented properties
-        private int _bookingId { set; get; }
+        //represents Private Fields...
+        private int CustomerID;
+        private int BookingID;
+        private int SeatNumber;
+        private DateTime Date;
         //private string _flightName { set; get; }
-
-        private int _seatNumber { set; get; }
-
         //private int _price { set; get; }
-        private string _date { set; get; }
         // private string _arrivalTiming { set; get; }
-
-        //constructor
-        public TicketCancellation(int bookingId, int seatNumber,  string date)
+        /// <summary>
+        /// Constructor that initializes details of FoodStore
+        /// </summary>
+        /// <param name="customerId">Represents id of the store</param>
+        /// <param name="bookingId">Represents name of the store</param>
+        /// <param name="seatNumber">Represents location of the store</param>
+        /// <param name="date">Represents phone number of the store</param>
+        public TicketCancellation(int customerId, int bookingId, int seatNumber, DateTime date)
         {
-            // _flightName = flightName;
-            //_flightId = flightId;
-            _bookingId = bookingId;
-            _seatNumber = seatNumber;
-            //_price = price;
-            _date = date;
-            // _arrivalTiming = arrivalTiming;
-        }
-
-        //properties
-        /*public string flightName
-        {
-            set
-            //set the value
-            {
-
-                _flightName = value;
-            }
-            get { return _flightName; } // get the value
+            this.CustomerID = customerId;
+            this.BookingID = bookingId;
+            this.SeatNumber = seatNumber;
+            this.Date = date;
         }
 
 
-        public int flightId
+        public int customerID
         {
             set
             {
-
-                _flightId = value;
+                //id of the customerId should be 5 digits 
+                if (value >= 5)
+                {
+                    customerID = value;
+                }
+                else
+                {
+                    throw new Exception("customer id should not exceed 5 digits");
+                }
             }
-            get { return _flightId; }
-        }*/
-
-        public int bookingid
-        {
-            set
+            get
             {
-
-                _bookingId = value;
+                return customerID;
             }
-            get { return _bookingId; }
         }
-
-
+        public int bookingID
+        {
+            set
+            {
+                //id of the customerId should be 5 digits 
+                if (value >= 5)
+                {
+                    bookingID = value;
+                }
+                else
+                {
+                    //throws exception that booking id shuold be 5 digits only
+                    throw new Exception("booking id should not exceed 5 digits");
+                }
+            }
+            get
+            {
+                return bookingID;
+            }
+        }
         public int seatNumber
         {
             set
             {
-
-                _seatNumber = value;
+                //id of the seatNumber should be 5 digits 
+                if (value >= 5)
+                {
+                    seatNumber = value;
+                }
+                else
+                {
+                    //throws exception that seatNumber shuold be 5 digits only
+                    throw new Exception("seatNumber should not exceed 5 digits");
+                }
             }
-            get { return _seatNumber; }
+            get
+            {
+                return seatNumber;
+            }
         }
+        public DateTime date
+
+        {
+            set
+            {
+                date = value;
+            }
+            get
+            {
+                return date;
+            }
+        }
+    }
+
+
         /*public int price
        {
            set
@@ -83,9 +118,9 @@ namespace Znalytics.Group5.Airline.Entities
                 _price = value;
             }
             get { return _price; }
-        }*/
+        }
 
-        public string date
+        /*public string date
         {
             set
             {

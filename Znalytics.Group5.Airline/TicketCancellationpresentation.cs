@@ -16,15 +16,15 @@ using System;
                 Console.Write("enter bookingId:");
                 int bookingId = int.Parse(Console.ReadLine());
 
-                Console.Write("enter date:");
-                int date = int.Parse(Console.ReadLine());
-
                 Console.Write("enter seatNumber:");
-                int seatNumber =int.Parse (Console.ReadLine());
+                int seatNumber = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("BookingID:" + flight.bookingId);
-            Console.WriteLine("SeatNumber:" + flight.seatNumber);
-            Console.WriteLine("Date:" + flight.Date);
+                Console.Write("enter date:");
+                int date =int.Parse (Console.ReadLine());
+
+            Console.WriteLine("BookingID:" + TicketCancellation.bookingId);
+            Console.WriteLine("SeatNumber:" + TicketCancellation.seatNumber);
+            Console.WriteLine("Date:" + TicketCancellation.date);
 
 
             //Random class generates pseudo Random numbers
@@ -76,10 +76,10 @@ using System;
 
                     //create another list in the collection called  "flightbooking1"
                     List<TicketCancellation> flightBooking1 = new List<TicketCancellation>() {
-                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", time = "2020-08-29 7:30:00 AM"},
-                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", time = "2020-08-29 7:30:00 AM"},
-                 new TicketCancellation() { bookingId ="1234",SeatNumber = "01", Time = "2020-08-29 7:30:00 AM"},
-                 new TicketCancellation() { bookingId ="1234",SeatNumber = "01", Time = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  };
 
                     // add all the elements of "flightSchedule1" collection at the end of "flightschedule" colletion
