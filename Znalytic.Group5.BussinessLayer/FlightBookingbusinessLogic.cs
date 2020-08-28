@@ -19,56 +19,63 @@ using System.Threading.Tasks;
 
 namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
 {
-   
-        public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer();
-            {
-            private FlightBookingDataAccessLayer _fbdal = null;
+    /// <summary>
+    /// This Class Represents Business Logic Layer Of FlightBooking
+    /// </summary>     
 
-            public FlightBookingbusinessLogicLayer()
-            {
-                _fbdal = new FlightBookingDataAccessLayer();
-            }
 
-            
-            public void  AddBookingId(FlightBooking BookingId)
+    public class FlightBookingbusinessLogic : IFlightBookingbusinessLogic();
             {
-                if (FlightBooking.bookingId != null)
-                {
-                _fbdal.AddBooking(BookingId);
-                }
-                else
-                {
-                    throw new Exception("booking id can't be null");
-                }
-            }
-        public List<FlightBooking> GetBookings()
+        //Constructor for Business Logic Layer
+        private IFlightBookingDataAccessLayer _fbdal = null;
+
+        public FlightBookingbusinessLogic()
         {
-            return _bookings;
+            _fbdal = new FlightBookingDataAccessLayer();//Creating Object for FlightBooking Data Access Layer
         }
 
-        public void UpdateFlightBooking(FlightBooking CustomerID)
+        /// <summary>
+        /// This Method Represents Adding bookingid for flightbooking
+        /// </summary>
+        /// <param name="bookingID"></param>
+        public void AddFlightBooking(FlightBooking bookingID)
         {
+            if (FlightBooking.bookingID != null)
             {
-                //Get matching FlightBooking based on CustomerId
-                FlightBooking fb = FlightBooking.Find(temp => temp.CustomerID == customer.CustomerID);
-                if (CustomerID != null)
-
-                    FlightBooking.CustomerID = FlightBooking.CustomerID;
+                _fbdal.AddFlightBooking(bookingID);
+            }
+            else
+            {
+                throw new Exception("bookingId can't be null");
             }
         }
 
-        public FlightBooking GetFlightBookingsByFlightBookingID(int FlightBookingID)
+        public void UpdateFlightBooking(FlightBooking bookingID)
         {
+            if (FlightBooking.BookingID != null)
+            {
+                _fbdal.UpdateFlightBooking(bookingID);
+            }
+            else
+            {
+                throw new Exception("customerid can't be null");
+            }
+        }
+        //method to get FlightBooking by customer id
+        public FlightBooking GetFlightBookingsByCustomerID(int customerID)
+        {
+            return customerID;
+        }
+
+
+        public FlightBooking GetFlightBookingsByFlightBookingID(int BookingID)
+        {
+            return BookingID;
 
         }
         public FlightBooking GetFlightBookingsByFlightID(int FlightID)
         {
-
+            return FlightID;
         }
-
-
-
-
-
     }
 }
