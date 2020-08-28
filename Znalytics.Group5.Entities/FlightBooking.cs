@@ -17,18 +17,18 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
     public class FlightBooking
     {
         //  represents the private fields
-        private string FlightName;
+        private string _flightName;
 
-        private int FlightID;
-        private string Source;
-        private string Destination;
-        private string DepartureTiming;
-        private string ArrivalTiming;
-        private string PassengerName;
-        private int CustomerID;
-        private int BookingID;
-        private int SeatNumber;
-        private double price;
+        private int _flightID;
+        private string _source;
+        private string _destination;
+        private string _departureTiming;
+        private string -arrivalTiming;
+        private string -passengerName;
+        private int _customerID;
+        private int _bookingID;
+        private int _seatNumber;
+        private double _price;
 
 
         /// <summary>
@@ -48,22 +48,22 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         // represents constructor
         public FlightBooking(string flightName, int flightID, string source, string destination, string departureTiming, string arrivalTiming, string passengerName, int customerID, int bookingID, int seatNumber, double price)
         {
-            this.FlightName = flightName;
-            this.FlightID = flightID;
-            this.Source = source;
-            this.Destination = destination;
-            this.DepartureTiming = departureTiming;
-            this.ArrivalTiming = arrivalTiming;
-            this.PassengerName = passengerName;
-            this.CustomerID = customerID;
-            this.BookingID = bookingID;
-            this.SeatNumber = seatNumber;
-            this.price = price;
+           _flightName = flightName;
+           _flightID = flightID;
+            _source = source;
+           _destination = destination;
+            _departureTiming = departureTiming;
+            _arrivalTiming = arrivalTiming;
+            _passengerName = passengerName;
+            _customerID = customerID;
+            _bookingID = bookingID;
+            _seatNumber = seatNumber;
+            _price = price;
         }
 
 
         // properties
-        public string flightName
+        public string  FlightName
         {
             // set the value
             set
@@ -71,7 +71,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 //Name should be less than 20 string characters
                 if (value.Length <= 20)
                 {
-                    flightName = value;
+                    _flightName = value;
                 }
 
                 else
@@ -82,13 +82,13 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             }
             get
             {
-                return flightName;
+                return _flightName;
             }
 
         }
         // get the value
 
-        public int flightID
+        public int FlightID
         {
             // set the value
 
@@ -98,7 +98,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 // id of the store should be 5 digits
                 if (value <= 5)
                 {
-                    flightID = value;
+                    _flightID = value;
 
                 }
                 else
@@ -110,52 +110,52 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // get the value
             get
             {
-                return flightID;
+                return _flightID;
 
             }
         }
-        public string source
+        public string Source
         {
             set
             {
 
-                source = value;
+                _source = value;
             }
-            get { return source; }
+            get { return _source; }
         }
 
 
-        public string destination
+        public string Destination
         {
             set
             {
 
-                destination = value;
+                _destination = value;
             }
-            get { return destination; }
+            get { return _destination; }
         }
 
 
-        public string departureTiming
+        public string DepartureTiming
         {
             set
             {
-                departureTiming = value;
+                _departureTiming = value;
             }
-            get { return departureTiming; }
+            get { return _departureTiming; }
         }
 
 
-        public string arrivalTiming
+        public string ArrivalTiming
         {
             set
             {
-                arrivalTiming = value;
+                _arrivalTiming = value;
             }
-            get { return arrivalTiming; }
+            get { return _arrivalTiming; }
         }
 
-        public string passengerName
+        public string PassengerName
         {
             // set the value
 
@@ -164,7 +164,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 //Name should be less than 20 string characters
                 if (value.Length <= 20)
                 {
-                    passengerName = value;
+                    _passengerName = value;
                 }
                 else
                 {
@@ -175,18 +175,19 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // get the value
             get
             {
-                return passengerName;
+                return _passengerName;
+                    ;
             }
         }
 
-        public int customerID
+        public int CustomerID
         {
             set
             {
                 //id of the customerId should be 5 digits 
                 if (value <= 5)
                 {
-                    customerID = value;
+                    _customerID = value;
                 }
                 else
                 {
@@ -195,11 +196,11 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             }
             get
             {
-                return customerID;
+                return _customerID;
             }
         }
 
-        public int bookingID
+        public int BookingID
         {
             set
             {
@@ -207,7 +208,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 if (value <= 5)
                 {
 
-                    bookingID = value;
+                    _bookingID = value;
                 }
 
                 else
@@ -220,10 +221,10 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // get the value
             get
             {
-                return bookingID;
+                return _bookingID;
             }
         }
-        public int seatNumber
+        public int SeatNumber
         {
             // set the value
 
@@ -232,7 +233,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 // id of the store should be 5 digits
                 if (value <= 5)
                 {
-                    seatNumber = value;
+                    _seatNumber = value;
                 }
 
                 // get the value
@@ -245,7 +246,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             get
             {
 
-                return seatNumber;
+                return _seatNumber;
             }
         }
         private double Price
@@ -253,11 +254,11 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             // set the value
             set
             {
-                price = value;
+                _price = value;
             }
             get
             {
-                return price;
+                return _price;
             }
 
         }

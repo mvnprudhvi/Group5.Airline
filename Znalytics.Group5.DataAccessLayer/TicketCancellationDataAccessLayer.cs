@@ -36,30 +36,18 @@ namespace Znalytics.Group5.DataAccessLayer
         }
         public TicketCancellation GetTicketCancellationsByCustomerID(int CustomerID)
         {
-            //get ticket cancellation by customer id
-            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.CustomerID == customer.CustomerID);
-            if (CustomerID != null)
-            {
-                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
-            }
-        }
-        public TicketCancellation GetTicketCancellationsByBookingID(int BookingID)
-        {
-            TicketCancellation tc = TicketCancellation.FindAll(temp => temp.BookingID == CustomerID);
-            if (CustomerID != null)
-            {
-                TicketCancellation.CustomerID = TicketCancellation.CustomerID;
-            }
-        }
-    }
 
-    public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
+        }
+        public TicketCancellation GetTicketCancellationsByBookingID(int CustomerID)
+        {
+
+        }
+        public TicketCancellation GetTicketCancellationsByCancellationID(int CustomerID)
         {
 
         }
 
 
-           /* //represents Get  bookingid
             public List<TicketCancellation> GetbookingId()
         {
             return _flights;

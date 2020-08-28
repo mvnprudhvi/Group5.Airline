@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System;
-    namespace FlightBooking
+    namespace TicketCancellation
     {
         public class TicketCancellation
         {
@@ -22,13 +22,13 @@ using System;
                 Console.Write("enter date:");
                 int date =int.Parse (Console.ReadLine());
 
-            Console.WriteLine("BookingID:" + TicketCancellation.bookingId);
-            Console.WriteLine("SeatNumber:" + TicketCancellation.seatNumber);
-            Console.WriteLine("Date:" + TicketCancellation.date);
+            Console.WriteLine("BookingID:" + TicketCancellation.BookingID);
+            Console.WriteLine("SeatNumber:" + TicketCancellation.SeatNumber);
+            Console.WriteLine("Date:" + TicketCancellation.Date);
 
 
             //Random class generates pseudo Random numbers
-            var random = new Random();
+                var random = new Random();
                 int RandomNo = random.Next();
                 int SeatNumber = RandomNo;
 
@@ -76,7 +76,7 @@ using System;
 
                     //create another list in the collection called  "flightbooking1"
                     List<TicketCancellation> flightBooking1 = new List<TicketCancellation>() {
-                 new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
+                 new TicketCancellation() { BookingID ="1234",SeatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { BookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
                  new TicketCancellation() { bookingId ="1234",seatNumber = "01", date = "2020-08-29 7:30:00 AM"},
