@@ -15,6 +15,7 @@ namespace Znalytics.Group5.Airline.Entities
         //represents Private Fields...
         private int CustomerID;
         private int BookingID;
+        private int FlightID;
         private int SeatNumber;
         private DateTime Date;
         //private string _flightName { set; get; }
@@ -27,10 +28,11 @@ namespace Znalytics.Group5.Airline.Entities
         /// <param name="bookingId">Represents name of the store</param>
         /// <param name="seatNumber">Represents location of the store</param>
         /// <param name="date">Represents phone number of the store</param>
-        public TicketCancellation(int customerId, int bookingId, int seatNumber, DateTime date)
+        public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date)
         {
             this.CustomerID = customerId;
             this.BookingID = bookingId;
+            this.FlightID = flightId;
             this.SeatNumber = seatNumber;
             this.Date = date;
         }
@@ -41,7 +43,7 @@ namespace Znalytics.Group5.Airline.Entities
             set
             {
                 //id of the customerId should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
                     customerID = value;
                 }
@@ -55,12 +57,31 @@ namespace Znalytics.Group5.Airline.Entities
                 return customerID;
             }
         }
+        public int flightID
+        {
+            set
+            {
+                //id of the customerId should be 5 digits 
+                if (value <= 5)
+                {
+                    flightID = value;
+                }
+                else
+                {
+                    throw new Exception("flight id should not exceed 5 digits");
+                }
+            }
+            get
+            {
+                return customerID;
+            }
+        }
         public int bookingID
         {
             set
             {
                 //id of the customerId should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
                     bookingID = value;
                 }
@@ -80,7 +101,7 @@ namespace Znalytics.Group5.Airline.Entities
             set
             {
                 //id of the seatNumber should be 5 digits 
-                if (value >= 5)
+                if (value <= 5)
                 {
                     seatNumber = value;
                 }

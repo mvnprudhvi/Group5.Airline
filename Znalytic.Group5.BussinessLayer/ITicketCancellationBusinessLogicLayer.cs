@@ -2,6 +2,5 @@
 {
     public interface ITicketCancellationBusinessLogicLayer
     {
-        void Add(TicketCancellation bookingId)
     }
 }
