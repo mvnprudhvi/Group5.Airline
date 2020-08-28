@@ -32,12 +32,17 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             {
                 return _customerDataAccessLayer.GetCustomer();
             }
-            public void UpdateCustomer(Customer customer)
+        public void UpdateCustomer(Customer customer)
+        {
+            if ((customer.CustomerUserName != null) || (customer.CustomerEmail != null) || (customer.CustomerPassword != null) || (customer.CustomerMobileNumber != null) || (customer.CustomerAadharNumber != null) || (customer.CustomerPanCardNumber != null) || (customer.CustomerGender != null))
             {
-                if ( (customer.CustomerUserName != null) || (customer.CustomerEmail != null) || (customer.CustomerPassword != null) || (customer.CustomerMobileNumber != null) || (customer.CustomerAadharNumber != null) || (customer.CustomerPanCardNumber != null) || (customer.CustomerGender != null))
+                _customerDataAccessLayer.UpdateCustomer(customer);
+            }
+        }
+            public Customer GetCustomerByCustomerId(int CustomerId)
             {
-                    _customerDataAccessLayer.UpdateCustomer(customer);
-                }
+                return _customerDataAccessLayer.GetCustomerByCustomerId(CustomerId);
+
             }
         }
     }
