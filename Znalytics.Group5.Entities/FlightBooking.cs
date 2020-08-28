@@ -28,7 +28,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         private int CustomerID;
         private int BookingID;
         private int SeatNumber;
-        private double price;
+        private double Price;
 
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
             this.CustomerID = customerID;
             this.BookingID = bookingID;
             this.SeatNumber = seatNumber;
-            this.price = price;
+            this.Price = price;
         }
 
 
@@ -248,7 +248,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
                 return seatNumber;
             }
         }
-        private double Price
+        private double price
         {
             // set the value
             set
