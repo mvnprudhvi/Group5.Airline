@@ -1,6 +1,6 @@
 ﻿/// <summary>
 /// Created By Dinesh
-/// Module Name is Price
+/// Module Name is Flight Price
 /// </summary>
 
 using System.Collections.Generic;
@@ -37,9 +37,8 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="price"></param>
         public void DeleteFlightPrice(FlightPrice price)
         {
-            //Based on Flight Name the Price Will be deleted 
+            //Based on  ScheduleID the Price Will be deleted 
             _flightPrices.Remove(temp => temp.ScheduleNumber==price.ScheduleNumber);
-
         }
 
         /// <summary>
@@ -48,8 +47,8 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="price"></param>
         public void UpdateFlightPrice(FlightPrice price)
         {
-            //Based on Flight Name the Price Will be Updated 
-                 Price pri = _flightPrices.Find(temp => temp.ScheduleNumber == price.ScheduleNumber);
+            //Based on ScheduleID the Price Will be Updated 
+                 FlightPrice pri = _flightPrices.Find(temp => temp.ScheduleNumber == price.ScheduleNumber);
                 pri.Price = price.Price;
         }
 

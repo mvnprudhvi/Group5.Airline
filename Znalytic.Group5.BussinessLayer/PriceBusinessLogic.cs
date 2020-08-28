@@ -1,6 +1,6 @@
 ﻿/// <summary>
 /// Created By Dinesh
-/// Module Name is Price
+/// Module Name is Flight Price
 /// </summary>
 
 using Znalytics.Group5.Airline.Entities;

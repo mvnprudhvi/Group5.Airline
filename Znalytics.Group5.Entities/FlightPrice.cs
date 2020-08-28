@@ -10,18 +10,56 @@ namespace Znalytics.Group5.Airline.Entities
     /// </summary>
     public class FlightPrice
     {
-        //Using Automatic Implemented properties
-        public double Price{ get; set; }
+        //Private Fields
+        private int _beforeDays;
+        private double _priceForBusinessClassSeat;
+        private double _priceForEconomyClassSeat;
+        private double _weekendPriceHikePercentage;
 
-        //Using Parameterised Constructor
-        public FlightPrice(double Price)
+        //Using Properties For all Fields
+        public int BeforeDays
         {
-            this.Price = Price;
+            set
+            {
+                _beforeDays = value;
+            }
+            get
+            {
+                return _beforeDays;
+            }
         }
-
-        //Default Constructor Which is Parameter Less
-        public FlightPrice()
+        public double PriceForEconomyClassSeat
         {
+            set
+            {
+                _priceForEconomyClassSeat = value;
+            }
+            get
+            {
+                return _priceForEconomyClassSeat;
+            }
+        }
+        public double PriceForBusinessClassSeat
+        {
+            set
+            {
+                _priceForBusinessClassSeat = value;
+            }
+            get
+            {
+                return _priceForBusinessClassSeat;
+            }
+        }
+        public double WeekendPriceHikePercentage
+        {
+            set
+            {
+                _weekendPriceHikePercentage = value;
+            }
+            get
+            {
+                return _weekendPriceHikePercentage;
+            }
         }
     }
 }
