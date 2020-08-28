@@ -11,13 +11,13 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     /// <summary>
     /// This Class Represents Data Access Layer Of Price
     /// </summary>
-    public class PriceDataAccessLayer
+    public class FlightPriceDataAccessLayer
     {
         //private Field of price Collection
         private static List<FlightPrice> _flightPrices;
 
         //constructor for  Data Access Layer
-        static PriceDataAccessLayer()
+        static FlightPriceDataAccessLayer()
         {
             _flightPrices = new List<FlightPrice>();
         }
@@ -49,7 +49,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         {
             //Based on ScheduleID the Price Will be Updated 
                  FlightPrice pri = _flightPrices.Find(temp => temp.ScheduleNumber == price.ScheduleNumber);
-                pri.Price = price.Price;
+            pri.FlightPrice = price.FlightPrice;
         }
 
         /// <summary>
