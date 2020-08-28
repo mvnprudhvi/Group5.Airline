@@ -6,62 +6,39 @@ using Znalytics.Group5.Airline.DataAccessLayer;
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
     //represents customer business logic layer 
-    public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
+    public class CustomerBusinessLogicLayer
     {
-        CustomerDataAccessLayer _CustomerDataAccessLayer;
+        CustomerDataAccessLayer  _customerDataAccessLayer;
+
         public CustomerBusinessLogicLayer()
         {
-            _CustomerDataAccessLayer = new CustomerDataAccessLayer();
-        }
-       /// <summary>
-       /// validating User Name
-       /// </summary>
-       /// <param name="customer"></param>
-        public void AddUserName(Customer customer)
-        {
-            if (customer.UserName != null)
+            _customerDataAccessLayer  = new CustomerDataAccessLayer();
+                }
+        public void AddCustomer(Customer customer)
             {
-                _CustomerDataAccessLayer.Add(customer);
+                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+                {
+                    _customerDataAccessLayer.AddCustomer(customer);
+                }
             }
-            else
+            public void DeleteCustomer(Customer customer)
             {
-                throw new Exception("Username can't be null");
+                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+                {
+                    _customerDataAccessLayer.DeleteCustomer(customer);
+                }
             }
-        }
-
-        /// <summary>
-        /// validating Mobile numbber
-        /// </summary>
-        /// <param name="customer"></param>
-        public void AddmobileNumber(Customer customer)
-        {
-            if (customer.MobileNumber <= 10)
+            public List<Customer> GetCustomer()
             {
-                _CustomerDataAccessLayer.Add(customer);
+                return _customerDataAccessLayer.GetCustomer();
             }
-            else
+            public void UpdateCustomer(Customer customer)
             {
-                Console.WriteLine(" Invalid Mobile Number ");
-            }
-        }
-
-        //get customer
-        public List<Customer> GetCustomers()
-        {
-            return _CustomerDataAccessLayer.GetCustomer();
-        }
-        
-
-        /// <summary>
-        /// update existing password
-        /// </summary>
-        /// <param name="customer"></param>
-        public void UpdateExistingCustomer(Customer customer)
-        {
-            if (customer.Password != null)
+                if ( (customer.CustomerUserName != null) || (customer.CustomerEmail != null) || (customer.CustomerPassword != null) || (customer.CustomerMobileNumber != null) || (customer.CustomerAadharNumber != null) || (customer.CustomerPanCardNumber != null) || (customer.CustomerGender != null))
             {
-                _CustomerDataAccessLayer.UpdateCustomer(customer);
+                    _customerDataAccessLayer.UpdateCustomer(customer);
+                }
             }
         }
     }
-}
+        

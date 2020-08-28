@@ -1,5 +1,7 @@
-﻿using System;
-using System.Xml.Schema;
+﻿
+using System;
+using System.Collections.Generic; 
+using System.Text.RegularExpressions;
 
 namespace Znalytics.Group5.Airline.Entities
 {
@@ -69,88 +71,128 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                if (value.Length <= 20)
+                Regex r = new Regex(@"^[a - zA - Z0 - 9] + ([._]?[a - zA - Z0 - 9] +) *$");
+                if (r.IsMatch(value)==true)
+                {
                     CustomerUserName = value;
+                }
+                else
+                {
+                    throw new Exception("user name must contain alpha numeric characters,underscore and dot:");
+                }
             }
-            get
+                get
             {
-                return CustomerUserName;
+                    return CustomerUserName;
+                }
             }
-        }
+
         //represents customer email
         public string CustomerEmail
         {
             set
             {
-                if (value.Length <= 20)
+                Regex r = new Regex("^[a-zA-Z0-9@.]*$");
+
+                if (r.IsMatch(value)== true)
                 {
                     CustomerEmail = value;
                 }
                 else
                 {
-                    throw new Exception("enter valid email Id:");
+                    throw new Exception("email Id must not contain spaces and should have @ symbol");
+                }
             }
-        }
             get
-            { 
+            {
 
-               return CustomerEmail;
-        }
+                return CustomerEmail;
+            }
+        
     }
+
         // represents password of the customer 
         public string CustomerPassword
         {
             set
             {
-                if (value.Length <= 10)
+                Regex r = new Regex(@"^(?=.*\d)(?=.*[a - z])(?=.*[A - Z]).{ 4,8}$");
+                if (r.IsMatch(value) == true)
+                {
                     CustomerPassword = value;
+                }
+
+                else
+                {
+                    throw new Exception("Password must be atleast 4-8 characters and must contain 1 upper case,1 lower case,1 number");
+                }
             }
-            get
+                get
             {
-                return CustomerPassword;
+                    return CustomerPassword;
+                }
             }
-        }
+        
+
         // represents number of the customer
         public string CustomerMobileNumber
         {
             set
             {
-                //mobile number should contain 10 digits only
-                if (value.Length == 10 && value[0] != 0)
-                {
-                    CustomerMobileNumber = value;
-                }
-                else
-                {
-                    throw new Exception("Mobile number should contain 10 digits only");
-                }
+                Regex r = new Regex(@"^((\+)?(\d{2}[-]))?(\d{10}){1}?$");
+
+            if (r.IsMatch(value) == true)
+            {
+                CustomerMobileNumber = value;
             }
+            else
+                    {
+                        throw new Exception("Mobile number must only contain 10 digits");
+                    }
+                }
+            
             get
             {
                 return CustomerMobileNumber;
             }
         }
 
-        // represents aadhar card number of customer
-        public string CustomerAadharNumber
+
+    // represents aadhar card number of customer
+    public string CustomerAadharNumber
         {
             set
             {
-                if (value.Length == 12)
+                Regex r = new Regex(@"^\d{4}\s\d{4}\s\d{4}$");
+                if (r.IsMatch(value) == true)
+                {
                     CustomerAadharNumber = value;
+                }
+                else
+                {
+                    throw new Exception("Aadhar card number must be in 1111 1111 1111 1111 format only");
+                }
             }
             get
             {
                 return CustomerAadharNumber;
             }
         }
+
         // represents pan card number of customer
         public string CustomerPanCardNumber
         {
             set
             {
-                if (value.Length == 10)
+                Regex r = new Regex(@"[A-Z]{5}[0-9]{4}[A-Z]{1}");
+                if (r.IsMatch(value) == true)
+                {
                     CustomerPanCardNumber = value;
+                }
+                else
+                {
+                    throw new Exception("Pan card number must contin only 9 characters");
+                }
             }
             get
             {
@@ -161,7 +203,8 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                if (value.Length == male && value.Length == female)
+                Regex r = new Regex(@"^(?:m|M|male|Male|f|F|female|Female)$");
+                if (r.IsMatch(value)== true)
                 {
                     CustomerGender = value;
                 }

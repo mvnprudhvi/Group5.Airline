@@ -17,7 +17,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             
 
             Customer c = new Customer();
-            CustomerBusinessLogicLayer bll = new CustomerBusinessLogicLayer();
+            CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
 
             Console.WriteLine("-----------------ONLINE AIRLINE RESERVATION SYSTEM----------------------:");
 
