@@ -23,13 +23,13 @@ namespace Znalytics.Group5.DataAccessLayer
         // creating  list
         private static List<FlightBooking> _FlightBooking = new List<FlightBooking>();
 
-        //add booking id
+        //adding  bookingid
         public void AddFlightBooking(FlightBooking bookingID)
         {
             _FlightBooking.Add(bookingID);
         }
-
-        // get bookings
+       
+        // get  all bookings
         public List<FlightBooking> GetBookings()
         {
             return _bookings;
