@@ -38,7 +38,7 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         /// This Method Represents Adding bookingid for flightbooking
         /// </summary>
         /// <param name="bookingID"></param>
-        public void AddFlightBooking(FlightBooking bookingID)
+        public void AddFlightBooking(int bookingID)
         {
             if (FlightBooking.bookingID != null)
             {
@@ -50,7 +50,7 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
             }
         }
 
-        public void UpdateFlightBooking(FlightBooking bookingID)
+        public void UpdateFlightBooking(int  bookingID)
         {
             if (FlightBooking.BookingID != null)
             {
@@ -64,18 +64,18 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         //method to get FlightBooking by customer id
         public FlightBooking GetFlightBookingsByCustomerID(int customerID)
         {
-            return customerID;
         }
 
 
         public FlightBooking GetFlightBookingsByFlightBookingID(int BookingID)
         {
-            return BookingID;
+            
 
         }
         public FlightBooking GetFlightBookingsByFlightID(int FlightID)
         {
-            return FlightID;
+           
         }
+
     }
 }
