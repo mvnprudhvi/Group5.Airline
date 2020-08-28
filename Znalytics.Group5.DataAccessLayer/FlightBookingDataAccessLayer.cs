@@ -35,9 +35,9 @@ namespace Znalytics.Group5.DataAccessLayer
             BookingID = new List<FlightBooking>()
             {
 
-           new FlightBooking() { flightID = 12, customerID = 12345, bookingID = 67890, seatNumber = 01},
-          new FlightBooking() { flightID = 13, customerID = 5678, bookingID  = 78901, seatNumber = 02 },
-          new FlightBooking() { flightID = 14,  customerID = 8901, bookingID  = 8760, seatNumber = 03 }
+           new FlightBooking() { flightID = 12, customerID = 12345, bookingID = 67890, seatNumber = 01, source = "hyderabad", destination  = "Mumbai"},
+          new FlightBooking() { flightID = 13, customerID = 5678, bookingID  = 78901, seatNumber = 02, source = "Mumbai", destination  = "chennai"},
+          new FlightBooking() { flightID = 14,  customerID = 8901, bookingID  = 8760, seatNumber = 03,source = "pune", destination  = "Hyderabad" }
             };
         }
         //methods to add FlightBooking
