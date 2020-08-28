@@ -1,8 +1,8 @@
 ﻿/// <summary>
 /// Created By Dinesh
-/// Module Name is Price
+/// Module Name is Flight Price
 /// </summary>
-/// 
+
 using static System.Console;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
@@ -16,6 +16,8 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     class PricePL
     {
         private static PriceBusinessLogic _priceBusinessLogic;//Reference Variable Of Price Business Logic Layer
+        private static IEnumerable<FlightPrice> _flightPrices;
+
         /// <summary>
         /// Main Method
         /// </summary>
@@ -60,13 +62,16 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
             FlightPrice fp = new FlightPrice();
 
-            Write("Enter Schedule Number: ");
+            Write("Enter the Schedule Number: ");
             fp.ScheduleNumber = int.Parse(ReadLine());
 
-            Write("Enter Flight Price: ");
-            fp.Price = double.Parse(ReadLine());
+            Write("Enter the Price For Business Class Seats: ");
+            fp.PriceForBusinessClassSeat = double.Parse(ReadLine());
 
-            _priceBusinessLogic.AddFlightPrice(price);
+            Write("Enter the Price For Economy Class Seats: ");
+            fp.PriceForEconomyClassSeat = double.Parse(ReadLine());
+
+            _priceBusinessLogic.AddFlightPrice(fp);
 
             WriteLine("The Details of Price is Successfully Added \n");
         }
@@ -92,10 +97,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             FlightPrice fpri = new FlightPrice();
 
             Write("Enter Existing Flight Schedule Number: ");
-            fpri.ScheduleNumber = ReadLine();
+            fpri.ScheduleNumber =int.Parse(ReadLine());
 
-            Write("Enter New Flight Price: ");
-            fpri.SceduleNumber = double.Parse(ReadLine());
+            Write("Enter the Price For Business Class Seats: ");
+            fpri.PriceForBusinessClassSeat = double.Parse(ReadLine());
+
+            Write("Enter the Price For Economy Class Seats: ");
+            fpri.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
             _priceBusinessLogic.UpdateFlightPrice(fpri);
             WriteLine("The Price of Flight is Updated Successfully \n");
@@ -109,10 +117,11 @@ namespace Znalytics.Group5.Airline.PresentationLayer
           
             List<FlightPrice> pric = _priceBusinessLogic.GetFlightPrices();
 
-            foreach (Price pri in _flightPrices)
+            foreach (FlightPrice pri in _flightPrices)
             {
                 Write("=====The Flight Prices are Below=====");
-                WriteLine(pri.FlightName + "=" + pri.FlightPrice);
+                WriteLine("The Price of Business Class Seats "+pri.PriceForBusinessClassSeat);
+                WriteLine("The Price of Economy Class Seats "+pri.PriceForEconomyClassSeat);
             }
         }
     }
