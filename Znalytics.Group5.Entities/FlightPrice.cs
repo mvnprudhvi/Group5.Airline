@@ -16,11 +16,12 @@ namespace Znalytics.Group5.Airline.Entities
         private double _priceForEconomyClassSeat;
         private double _weekendPriceHikePercentage;
 
-        //Using Properties For all Fields
+        //Property For Before Days
         public int BeforeDays
         {
             set
             {
+               
                 _beforeDays = value;
             }
             get
@@ -28,17 +29,7 @@ namespace Znalytics.Group5.Airline.Entities
                 return _beforeDays;
             }
         }
-        public double PriceForEconomyClassSeat
-        {
-            set
-            {
-                _priceForEconomyClassSeat = value;
-            }
-            get
-            {
-                return _priceForEconomyClassSeat;
-            }
-        }
+        //Property For Business class seat
         public double PriceForBusinessClassSeat
         {
             set
@@ -50,6 +41,19 @@ namespace Znalytics.Group5.Airline.Entities
                 return _priceForBusinessClassSeat;
             }
         }
+        //Property For Price Economy Class Seat
+        public double PriceForEconomyClassSeat
+        {
+            set
+            {
+                _priceForEconomyClassSeat = value;
+            }
+            get
+            {
+                return _priceForEconomyClassSeat;
+            }
+        }
+        //Property For Weekend Hike Percentage
         public double WeekendPriceHikePercentage
         {
             set
