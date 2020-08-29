@@ -1,5 +1,7 @@
 ﻿
 // created by reshma
+// BusinessLogicLayer
+// Module:FlightBooking
 
 using System;
 using System.Collections.Generic;
@@ -14,13 +16,13 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// </summary>
     public class FlightBookingBusinessLogicLayer : IFlightBookingBusinessLogicLayer
     {
-        private IFlightBookingBusinessLogicLayer _fbal = null;
+        private IFlightBookingBusinessLogicLayer _fbbl = null;
 
         //Constructor for Business Logic Layer
         public FlightBookingBusinessLogicLayer()
         {
             //Creating Object for FlightBookingData Access Layer
-            _fbdal = new IFlightBookingDataAccessLayer();
+            _fbbl = new IFlightBookingDataAccessLayer();
 
         }
 
@@ -33,7 +35,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         {
             if (FlightBooking.bookingID != null)
             {
-                _fbdal.AddFlightBooking(bookingID);
+                _fbbl.AddFlightBooking(bookingID);
             }
             else
             {
@@ -49,37 +51,52 @@ namespace Znalytic.Group5.BussinessLogicLayer
         {
             if (FlightBooking.bookingID != null)
             {
-                _fbdal.UpdateFlightBooking(bookingID);
+                _fbbl.UpdateFlightBooking(bookingID);
             }
             else
             {
                 throw new Exception("booking id can't be null");
             }
         }
-        //method to get ticket cancellation by  customer id
-        public FlightBooking GetFlightBookingsByCustomerID(int _customerID)
-        {
-            return _fbdal.GetcustomerID();
 
-        }
 
-        public void DeleteFlightBooking(FlightBooking tc)
+        public void DeleteFlightBooking(FlightBooking fb)
         {
             throw new NotImplementedException();
         }
-    }
+        //method to get FlightBooking by  bookingid
+        public FlightBooking GetFlightBookingsByBookingID(int BookingID)
+        {
+            return _fbbl.GetBookingID();
 
-    /// <summary>
-    /// This Method Represents GetbookingId 
-    /// </summary>
-    /// <returns>FlightBookingDataAccessLayer</returns>
-    public List<FlightBooking> GetFlightBooking()
-    {
-        return _fbdal.GetFlightBooking();
+        }
+        //method to get FlightBooking by  customerid
+        public FlightBooking GetFlightBookingsByCustomerID(int CustomerID)
+        {
+            return _fbbl.GetCustomerID();
+
+        }
+
+
+        //method to get FlightBooking by  flightid
+        public FlightBooking GetFlightBookingsByFlightID(int flightID)
+        {
+            return _fbbl.GetFlightID();
+
+        }
+
+        /// <summary>
+        /// This Method Represents GetbookingId 
+        /// </summary>
+        /// <returns>FlightBookingDataAccessLayer</returns>
+        public List<FlightBooking> GetFlightBooking()
+        {
+            return _fbbl.GetFlightBooking();
+        }
+
     }
 
 }
-
 
 
 
