@@ -321,7 +321,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
             List<FlightSchedule> ScheduleList = fsbl.GetSchedule();
 
-            Console.WriteLine("===============   Flight Details=============");
+            Console.WriteLine("==========================  Flight Details=====================================================");
             Console.WriteLine("flightscheduleId" + "   " + "source" + "  " + "destination" + "  " + "departureTiming" + "  " + "arrivalTiming");
             Console.WriteLine("-----------------------------------------------------------------------");
 
@@ -421,7 +421,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     Console.WriteLine("Enter Existing flightSchedule ID");
                     schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(schedule1);
+                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(schedule);
                     if (schedule1 != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");
@@ -445,13 +445,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     Console.WriteLine("Enter Existing flight Schedule ID");
                     schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(schedule1);
+                    FlightSchedule schedule1 = fsbl.GetDestinationByFlightScheduleId(schedule);
                     if (schedule1 != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");
                         schedule.Destination = Console.ReadLine();
 
-                        fsbl.UpdateSource(schedule);
+                        fsbl.UpdateDestination(schedule);
                         Console.WriteLine("Destination Updated Sucessfully");
                     }
                 }

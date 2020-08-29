@@ -106,11 +106,11 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
         //Method to REMOVE flight by flightId
-        public void RemoveFlightByFlightId(string flightId)
+        public void RemoveFlightScheduleByFlightId(string flightId)
         {
             if (flightId != null)
             {
-                fsdl.RemoveFlightByFlightId(flightId);
+                fsdl.RemoveFlightScheduleByFlightId(flightId);
             }
         }
 

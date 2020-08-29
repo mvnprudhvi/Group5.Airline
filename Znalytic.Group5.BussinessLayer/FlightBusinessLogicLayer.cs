@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using  Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-using Znalytic.Group5.Airline.FlightModule.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 
 //Created a namespace for BusinessLayer of flight module
@@ -112,7 +111,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-        //Method to UPDATE flightName
+        //Method to UPDATE flight by flightName
         public void UpdateFlightByFlightName(Flight flight)
         {
 
@@ -130,7 +129,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-        //Method to UPDATE flightId
+        //Method to UPDATE flight by flightId
         public void UpdateFlightByFlightId(Flight flight)// update flightid
         {
 
