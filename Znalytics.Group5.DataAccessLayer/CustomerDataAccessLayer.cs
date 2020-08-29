@@ -33,6 +33,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
             Customer abc = _customer.Find(temp => temp.CustomerId == customer.CustomerId && temp.CustomerUserName == customer.CustomerUserName && temp.CustomerEmail == customer.CustomerEmail && temp.CustomerPassword == customer.CustomerPassword && temp.CustomerMobileNumber == customer.CustomerMobileNumber && temp.CustomerAadharNumber == customer.CustomerAadharNumber && temp.CustomerPanCardNumber == customer.CustomerPanCardNumber && temp.CustomerGender == customer.CustomerUserName);
             if (abc != null)
             {
+                abc.CustomerId = customer.CustomerId;
                 abc.CustomerUserName = customer.CustomerUserName;
                 abc.CustomerEmail = customer.CustomerEmail;
                 abc.CustomerPassword = customer.CustomerPassword;

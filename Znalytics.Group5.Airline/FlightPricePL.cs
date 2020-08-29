@@ -13,9 +13,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     /// <summary>
     /// This Class Represents Presentation Layer Of Price
     /// </summary>
-    class PricePL
+    class FlightPricePL
     {
-        private static PriceBusinessLogic _priceBusinessLogic;//Reference Variable Of Price Business Logic Layer
+        private static FlightPriceBusinessLogic _flightPriceBusinessLogic;//Reference Variable Of Price Business Logic Layer
         private static IEnumerable<FlightPrice> _flightPrices;
 
         /// <summary>
@@ -23,8 +23,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void Main()
         {
-            _priceBusinessLogic = new PriceBusinessLogic();
-            PricesMenu();//Calling Menu Method For List Of Menus
+            _flightPriceBusinessLogic = new FlightPriceBusinessLogic();
+            //Calling Menu Method For List Of Menus
+            PricesMenu(); 
             ReadKey();
         }
 
@@ -71,7 +72,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             Write("Enter the Price For Economy Class Seats: ");
             fp.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
-            _priceBusinessLogic.AddFlightPrice(fp);
+            _flightPriceBusinessLogic.AddFlightPrice(fp);
 
             WriteLine("The Details of Price is Successfully Added \n");
         }
@@ -97,7 +98,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             FlightPrice fpri = new FlightPrice();
 
             Write("Enter Existing Flight Schedule Number: ");
-            fpri.ScheduleNumber =int.Parse(ReadLine());
+            fpri.ScheduleId =int.Parse(ReadLine());
 
             Write("Enter the Price For Business Class Seats: ");
             fpri.PriceForBusinessClassSeat = double.Parse(ReadLine());

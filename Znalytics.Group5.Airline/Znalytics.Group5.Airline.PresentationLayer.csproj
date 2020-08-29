@@ -9,6 +9,7 @@
     <RootNamespace>Znalytics.Group5.Airline</RootNamespace>
     <AssemblyName>Znalytics.Group5.Airline</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -47,7 +48,7 @@
     <Compile Include="CustomerPL.cs" />
     <Compile Include="FlightBookingPL.cs" />
     <Compile Include="FlightPresentation.cs" />
-    <Compile Include="PricePL.cs" />
+    <Compile Include="FlightPricePL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

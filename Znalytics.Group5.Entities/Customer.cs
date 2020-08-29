@@ -6,12 +6,10 @@ using System.Text.RegularExpressions;
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
-    /// Represents Customer
+    /// Class That Represents Customer Module in Online Airline Reservation System Project
     /// </summary>
-
     public class Customer
     {
-
         //private fields
         private int _customerid;
         private string _customeruserName;
@@ -22,34 +20,38 @@ namespace Znalytics.Group5.Airline.Entities
         private string _customerpancardNumber;
         private string _customerGender;
 
+        /// <summary>
+        /// Constructor That Initializes Fields
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>  
+        /// <param name="email"></param>  
+        /// <param name="password"></param>  
+        /// <param name="mobileNumber"></param>  
+        /// <param name="aadharNumber"></param>  
+        /// <param name="pancardnumber"></param>
+        /// <param name="gender"></param>  
+        public Customer(int custid, string custusername, string custemail, string custpassword, string custmobileNumber, string custaadharNumber, string custpancardnumber, string custgender)
+        {
+             _customerid = custid;
+             _customeruserName = custusername;
+             _customerEmail = custemail;
+             _customerPassword = custpassword;
+             _customermobileNumber = custmobileNumber;
+             _customeraadharNumber = custaadharNumber;
+             _customerpancardNumber = custpancardnumber;
+             _customerGender = custgender;
+        }
 
         /// <summary>
-        /// constructors thst initializes deatails of customer
+        /// Default Constructor
         /// </summary>
         public Customer()
         {
 
         }
 
-        public Customer(int custid, string custusername, string custemail, string custpassword, string custmobileNumber, string custaadharNumber, string custpancardnumber, string custgender)
-        {
-
-            /// <param name="email"></param> email of customer
-            /// <param name="password"></param> password of customer
-            /// <param name="mobileNumber"></param> mobile number of customer
-            /// <param name="aadharNumber"></param> aadhar number of customer
-            /// <param name="pancardnumber"></param> pan card number of customer
-
-            this._customerid = custid;
-            this._customeruserName = custusername;
-            this._customerEmail = custemail;
-            this._customerPassword = custpassword;
-            this._customermobileNumber = custmobileNumber;
-            this._customeraadharNumber = custaadharNumber;
-            this._customerpancardNumber = custpancardnumber;
-            this._customerGender = custgender;
-        }
-        //represents customer id
+        // Property for setting values to CustomerId field and Getting The value of the Field
         public int CustomerId
         {
             set
@@ -66,7 +68,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
         }
 
-        // represents customer username
+        // Property for setting values to Customer UserName field and Getting The value of the Field
         public string CustomerUserName
         {
             set
@@ -87,7 +89,7 @@ namespace Znalytics.Group5.Airline.Entities
                 }
             }
 
-        //represents customer email
+        // Property for setting values to Customer Email field and Getting The value of the Field
         public string CustomerEmail
         {
             set
@@ -111,7 +113,7 @@ namespace Znalytics.Group5.Airline.Entities
         
     }
 
-        // represents password of the customer 
+        // Property for setting values to Customer Password field and Getting The value of the Field
         public string CustomerPassword
         {
             set
@@ -132,9 +134,9 @@ namespace Znalytics.Group5.Airline.Entities
                     return CustomerPassword;
                 }
             }
-        
 
-        // represents number of the customer
+
+        // Property for setting values to Customer Mobile Number field and Getting The value of the Field
         public string CustomerMobileNumber
         {
             set
@@ -158,8 +160,8 @@ namespace Znalytics.Group5.Airline.Entities
         }
 
 
-    // represents aadhar card number of customer
-    public string CustomerAadharNumber
+        //  Property for setting values to Customer Aadhar Number field and Getting The value of the Field
+        public string CustomerAadharNumber
         {
             set
             {
@@ -179,7 +181,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
         }
 
-        // represents pan card number of customer
+        //  Property for setting values to Customer Pan Card Number field and Getting The value of the Field
         public string CustomerPanCardNumber
         {
             set
@@ -199,6 +201,8 @@ namespace Znalytics.Group5.Airline.Entities
                 return CustomerPanCardNumber;
             }
         }
+
+        //Property for setting values to Customer Gender field and Getting The value of the Field
         public string CustomerGender
         {
             set

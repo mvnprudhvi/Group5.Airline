@@ -9,6 +9,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
     public class FlightScheduleBusinessLogicLayer : IFlightScheduleBusinessLogicLayer
     {
 
+
         FlightScheduleDataAccessLayer _fdal;
 
         public FlightScheduleBusinessLogicLayer()

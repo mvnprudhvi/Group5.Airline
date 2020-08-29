@@ -12,14 +12,14 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     /// <summary>
     /// This Class Represents Business Logic Layer Of Price
     /// </summary>
-    public class PriceBusinessLogic
+    public class FlightPriceBusinessLogic
     {
-        PriceDataAccessLayer _priceDataAccessLayer;//Reference Variable Of Price Data Access Layer
+        FlightPriceBusinessLogic _flightPriceDataAccessLayer;//Reference Variable Of Price Data Access Layer
 
         //Constructor for Business Logic Layer
-        public PriceBusinessLogic()
+        public FlightPriceBusinessLogic()
         {
-            _priceDataAccessLayer = new PriceDataAccessLayer();//Creating Object for Price Data Access Layer
+            _flightPriceDataAccessLayer = new FlightPriceBusinessLogic();//Creating Object for Price Data Access Layer
         }
 
         /// <summary>
@@ -28,12 +28,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <param name="price"></param>
         public void AddFlightPrice(FlightPrice price)
         {
-            _priceDataAccessLayer.AddFlightPrice(price);
+            _flightPriceDataAccessLayer.AddFlightPrice(price);
         }
         
         public void DeleteFlightPrice(FlightPrice price)
         {
-            _priceDataAccessLayer.DeleteFlightPrice(price);
+            _flightPriceDataAccessLayer.DeleteFlightPrice(price);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <param name="price"></param>
         public void UpdateFlightPrice(FlightPrice price)
         {
-           _priceDataAccessLayer.UpdateFlightPrice(price);
+            _flightPriceDataAccessLayer.UpdateFlightPrice(price);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// <returns>_priceDataAccessLayer</returns>
         public List<FlightPrice> GetFlightPrices()
         {
-            return _priceDataAccessLayer.GetFlightPrices();
+            return _flightPriceDataAccessLayer.GetFlightPrices();
         }
     }
 }

@@ -1,9 +1,17 @@
-﻿using Znalytics.Group5.Airline.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytics.Group5.Airline.BusinessLogicLayer
+namespace Znalytics.Group5.AirLine.IBusinessLogicLayer
 {
-    public interface ICustomerBusinessLogicLayer
+    interface ICustomerBusinessLogicLayer
     {
-        void Add(Customer customer);
+        void AddCustomer(Customer c);
+        void UpdateCustomer(Customer c);
+        void DelCustomer(Customer c);
+        Customer GetCustomerById(int CustomerId);
     }
 }
