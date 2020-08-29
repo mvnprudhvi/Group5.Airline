@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.DataAccessLayer;
 
 //Created a namespace for DataAccess Layer of flight Module
 namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
@@ -21,6 +23,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             set;
             get;
         }
+        public string FlightName { get; private set; }
 
 
         //static constructor
@@ -38,31 +41,31 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 
         public string FlightId()
         {
-            int flightId = _flightList.Max(temp =>temp.flightId);
-            return flightId++;
+            int flightId = _flightList.Max(temp => temp.FlightId);
+            return FlightId++;
         }
 
         //Method to ADD details to the list
         public void AddFlight(Flight flight)
         {
             
-                if (!_flightList.Exists(temp => temp.flightId == flight.flightId))
+                if (!_flightList.Exists(temp => temp.FlightId == flight.FlightId))
                 {
                     _flightList.Add(flight);
                 }
             
             else
             {
-                throw new Exception("flight id already exists");
+                throw new FlightException("flight id already exists");
             }
 
 
         }
 
         // Method to GET the added details
-        public List<Flight> Getflights()
+        public List<Flight> GetFlights()
         {
-            return _flightList;
+            return GetFlights();
         }
 
         //Method to GET the Flight by flightId
@@ -85,10 +88,10 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             _flightList.RemoveAll(temp => temp.FlightName == Flight.flightName);
         }
 
-        // Method to UPDATE the flight Name 
-        public void UpdateFlightName(Flight flightId)
+        // Method to UPDATE the flight  By flightName
+        public void UpdateFlightByFlightName(Flight flight)
         {
-            Flight f = _flightList.Find(temp => temp.FlightId == flightId);
+            Flight f = _flightList.Find(temp => temp.FlightName == flight.FlightName);
             if (f != null)
             {
                 f.FlightName = Flight.flightName;
@@ -99,9 +102,9 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         }
 
         // Method to UPDATE the flight id
-        public void UpdateFlightId(Flight flight)
+        public void UpdateFlightByFlightId(Flight flight)
         {
-            Flight f = _flightList.Find(temp => temp.flightId == flight.flightId);
+            Flight f = _flightList.Find(temp => temp.FlightId == flight.FlightId);
             if (f != null)
             {
                 f.FlightId = flight.FlightId;

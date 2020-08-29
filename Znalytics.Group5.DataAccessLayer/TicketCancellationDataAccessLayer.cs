@@ -8,8 +8,6 @@ using Znalytics.Group5.Airline.Entities;
 /// <summary>
 /// represents dataAccessLayer of Ticketcancellation
 /// </summary>
-
-
 namespace Znalytics.Group5.DataAccessLayer
 {
     /// <summary>

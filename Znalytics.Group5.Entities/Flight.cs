@@ -5,6 +5,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
     public class Flight
     {
         public static string flightName;
+        public static string flightId;
 
         //Instance (or) non.staticfields
         private string _flightName { set; get; }
