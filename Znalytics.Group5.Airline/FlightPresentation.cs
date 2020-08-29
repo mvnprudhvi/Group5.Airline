@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 
 
 //Represents Presentation Layer
@@ -226,32 +227,32 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 switch (choice)
                 {
                     case 1:
-                        UpdateFlightName(); break;
+                        UpdateFlightByFlightName(); break;
                     case 2:
-                        UpdateFlightId(); break;
+                        UpdateFlightByFlightId(); break;
                     default: Console.WriteLine("Enter correct option"); break;
 
                 }
             }
-            void UpdateFlightName()
+            void UpdateFlightByFlightName()
             {
 
-                Console.WriteLine("Enter Existing flight ID");
+                Console.WriteLine("Enter Existing flight Name");
                  int FlightId =int.Parse( Console.ReadLine());
                 Console.WriteLine("Enter new name for Flight");
                 f.FlightName = Console.ReadLine();
-                fbl.UpdateFlightName(f);
+                fbl.UpdateFlightByFlightName(f);
                 Console.WriteLine("flight Name Updated Sucessfully!!!");
 
             }
-            void UpdateFlightId()
+            void UpdateFlightByFlightId()
             {
-                Console.WriteLine("Enter Existing WareHouse ID");
-                f.FlightName = Console.ReadLine();
+                Console.WriteLine("Enter Existing Flight ID");
+                f.FlightId = Console.ReadLine();
                 Console.WriteLine("Enter new flight id");
                 f.FlightId = Console.ReadLine();
 
-                fbl.UpdateFlightId(f);
+                fbl.UpdateFlightByFlightId(f);
                 Console.WriteLine("flightId is Updated Sucessfully!!!");
             }
         }
@@ -310,7 +311,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             fs.ArrivalTiming = DateTime.Parse(Console.ReadLine());
             Console.WriteLine(fs.ArrivalTiming.ToString("dd/MM/yyyy hh:mm:s"));
 
-            fbl.AddSchedule(fs);
+            fsbl.AddSchedule(fs);
 
             Console.WriteLine("schedule is  added successfully");
 
@@ -326,7 +327,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             foreach (FlightSchedule item in ScheduleList)
             {
-                Console.WriteLine(item.flightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming);// Displaying the products
+                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming);// Displaying the products
             }
 
         }
@@ -336,7 +337,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.WriteLine("Enter the existing flight  Id");
             string flightId = Console.ReadLine();
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleByScheduleId(flightId);
+            List<FlightSchedule> scheduleList = fsbl.GetScheduleByFlightId(flightId);
             foreach (FlightSchedule item in scheduleList)
             {
                 Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules

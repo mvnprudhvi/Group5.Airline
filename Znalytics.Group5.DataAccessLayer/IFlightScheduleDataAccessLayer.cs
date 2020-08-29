@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 
-namespace Znalytics.Group5.DataAccessLayer
+namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     interface IFlightScheduleDataAccessLayer
     {
-        void Addchedule(FlightSchedule fs);
+        void AddSchedule(FlightSchedule schedule);
         void RemoveFlightScheduleByFlightId(FlightSchedule fs);
         int GetSchedule(FlightSchedule fs);
 

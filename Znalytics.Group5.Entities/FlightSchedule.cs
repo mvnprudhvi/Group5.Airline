@@ -2,6 +2,7 @@
 
 //Entities
 using System;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 {
@@ -11,7 +12,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
     {
         //Private Fields
-        private int _flightScheduleId { set; get; }
+        private string _flightScheduleId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private DateTime _departureTiming { set; get; }

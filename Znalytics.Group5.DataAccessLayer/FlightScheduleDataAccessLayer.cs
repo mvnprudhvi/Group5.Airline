@@ -6,8 +6,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
-
-
+using Znalytics.Group5.Airline.DataAccessLayer;
 /// <summary>
 /// represents dataAccessLayer of Flight
 /// </summary>
@@ -68,6 +67,13 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
         }
 
+        //Method to GET the Schedules by flightId
+        public List<FlightSchedule> GetScheduleByFlightId(string flightId)
+        {
+
+            return _scheduleList.FindAll(temp => temp.FlightId == flightId);
+
+        }
 
 
         //Method to GET schedules  by Source
