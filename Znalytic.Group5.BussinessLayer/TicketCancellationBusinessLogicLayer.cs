@@ -42,11 +42,11 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// This Method Represents Update ticket cancellation
         /// </summary>
         /// <param name="bookingid"></param>
-        public void UpdateTicketCancellation(TicketCancellation bookingID)
+        public void UpdateTicketCancellations(TicketCancellation bookingID)
         {
             if (TicketCancellation.bookingID != null)
             {
-                _tcdal.UpdateTiketCancellation(bookingID);
+                _tcdal.UpdateTicketCancellation(bookingID);
             }
             else
             {
@@ -54,12 +54,16 @@ namespace Znalytic.Group5.BussinessLogicLayer
             }
         }
         //method to get ticket cancellation by ticket customer id
-        public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
+        public TicketCancellation GetTicketCancellationsByCustomerID(int _customerID)
         {
-            return _tcdal.GetTicketCancellations();
+            return _tcdal.GetcustomerID ();
 
         }
 
+        public void DeleteTicketCancellation(TicketCancellation tc)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>
