@@ -88,7 +88,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         //Method to UPDATE source of Flight
         public void UpdateSource(FlightSchedule schedule)// update source of a flight
         {
-            FlightSchedule fs = _scheduleList.Find(temp => temp.flightScheduleId == schedule.flightScheduleId);
+            FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
             if (fs != null)
             {
                 fs.Source = schedule.Source;
@@ -100,7 +100,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         //Method to UPDATE Destinantion of Flight
         public void UpdateDestination(FlightSchedule schedule)// update Destination of flight
         {
-            FlightSchedule fs = _scheduleList.Find(temp => temp.flightScheduleId == schedule.flightScheduleId);
+            FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
             if (fs != null)
             {
                 fs.Destination = schedule.Destination;
@@ -112,7 +112,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         //method to UPDATE DepartureTiming of flight
         public void UpdateDepartureTiming(FlightSchedule schedule)// update Destination of flight
         {
-            FlightSchedule fs = _scheduleList.Find(temp => temp.flightScheduleId == schedule.flightScheduleId);
+            FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
             if (fs != null)
             {
                 fs.DepartureTiming = schedule.DepartureTiming;
