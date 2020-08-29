@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
-
+using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 //Created a namespace for BusinessLogicLayer of FlightSchedule module
-namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
+namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 {
     /// <summary>
     /// Represents BusinessLogic class of FlightSchedule
@@ -43,17 +43,20 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
             return fsdl.GetSchedule();
         }
 
-        //Method to GET flightSchedule by scheduleId
-        public List<FlightSchedule> GetScheduleByFlightId(string flightScheduleId)
+
+        //Method to GET flight Schedule by flightScheduleId
+        public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightScheduleId)
         {
-            return fsdl.GetScheduleByFlightId(flightScheduleId);
+            return fsdl.GetScheduleByFlightScheduleId(flightScheduleId);
         }
 
-        //Method to GET flight Schedule by flightId
-        public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightId)
+        //Method to GET flightSchedule by scheduleId
+        public List<FlightSchedule> GetScheduleByFlightId(string flightId)
         {
-            return fsdl.GetScheduleByFlightScheduleId(flightId);
+            return fsdl.GetScheduleByFlightId(flightId);
         }
+
+       
         //Method to GET FlightSchedule by Source
         public List<FlightSchedule> GetScheduleBySource(string source)
         {

@@ -5,17 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group5.Entities
+namespace Znalytics.Group5.Airline.Entities
 {
-    internal class FlightException : ApplicationException
+    public class FlightException : ApplicationException
     {
-        /// <summary>
-        /// exception calls parent exception
-        /// </summary>
-        public FlightException() :base()
-        {
-
-        }
         /// <summary>
         /// exception is displayed with user defined message
         /// </summary>

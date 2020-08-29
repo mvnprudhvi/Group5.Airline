@@ -2,6 +2,7 @@
 
 //Entities
 using System;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 {
@@ -11,7 +12,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
     {
         //Private Fields
-        private int _flightScheduleId { set; get; }
+        private string _flightScheduleId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private DateTime _departureTiming { set; get; }
@@ -58,15 +59,17 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
                     {
                         _flightScheduleId = value;
                     }
-                }
-                else
 
-                {
-                    throw new System.Exception("invalid flightScheduleid");
+                    else
+
+                    {
+                        throw new FlightException("invalid flightScheduleid");
+                    }
                 }
             }
-            get { return _flightScheduleId; }
+                get { return _flightScheduleId; }
         }
+        
 
 
         /// <summary>
@@ -113,5 +116,6 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
             get { return _arrivalTiming; }
         }
 
+        public string FlightId { get; set; }
     }
 }

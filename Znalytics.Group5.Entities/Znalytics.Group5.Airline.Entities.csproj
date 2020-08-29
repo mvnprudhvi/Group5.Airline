@@ -47,12 +47,13 @@
     <Compile Include="FlightBooking.cs" />
     <Compile Include="FlightBookingException.cs" />
     <Compile Include="FlightException.cs" />
+    <Compile Include="FlightPriceException.cs" />
     <Compile Include="FlightSchedule.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="FlightPrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCancellation.cs" />
-    <Compile Include="TicketException.cs" />
+    <Compile Include="TicketCancellationException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
