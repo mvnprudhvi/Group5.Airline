@@ -29,6 +29,7 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         private int _bookingID;
         private int _seatNumber;
         private double _price;
+        public int seatNumber;
 
 
         /// <summary>
