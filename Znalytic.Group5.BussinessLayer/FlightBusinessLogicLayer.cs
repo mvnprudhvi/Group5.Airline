@@ -33,7 +33,7 @@ public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
             try
             {
                 //flight Id should not be null 
-                if (Flight.flightId != null)
+                if (flight.FlightId != null)
                 {
 
                     fdal.AddFlight(flight);

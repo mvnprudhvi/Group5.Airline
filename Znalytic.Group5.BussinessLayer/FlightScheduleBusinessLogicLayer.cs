@@ -79,7 +79,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateDestination(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateDestination(schedule);//UpdateDepartureTiming
             }
@@ -88,7 +88,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateDepartureTiming(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateDepartureTiming(schedule);
             }
@@ -97,7 +97,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateArrivalTiming(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateArrivalTiming(schedule);
             }
@@ -121,3 +121,4 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         }
 
     }
+}
