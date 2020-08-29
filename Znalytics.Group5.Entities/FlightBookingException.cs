@@ -14,7 +14,8 @@ namespace Znalytics.Group5.Entities
         /// exception is displayed with user defined message
         /// </summary>
         /// <param name="message"></param>
-        public TickeCancellationException(string message) : base(message)
+       
+        public FlightBookingException(string message) : base(message)
         {
 
         }
@@ -23,7 +24,7 @@ namespace Znalytics.Group5.Entities
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public TickeCancellationException(string message, Exception innerException) : base(message, innerException)
+        public FlightBookingException(string message, Exception innerException) : base(message, innerException)
         {
         }
 
