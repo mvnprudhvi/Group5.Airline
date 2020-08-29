@@ -1,10 +1,6 @@
 ﻿
 // created by reshma
 
-
-
-
-
 using System;
 using System.Collections.Generic;
 using Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer;
@@ -14,17 +10,17 @@ using Znalytics.Group5.Airline.Entities;
 namespace Znalytic.Group5.BussinessLogicLayer
 {
     /// <summary>
-    /// This Class Represents Business Logic Layer Of ticket cancellation
+    /// This Class Represents Business Logic Layer Of FlightBooking
     /// </summary>
     public class FlightBookingBusinessLogicLayer : IFlightBookingBusinessLogicLayer
     {
-        private IFlightBookingBusinessLogicLayer _fb = null;
+        private IFlightBookingBusinessLogicLayer _fbal = null;
 
         //Constructor for Business Logic Layer
-        public FlightBooking()
+        public FlightBookingBusinessLogicLayer()
         {
-            //Creating Object forFlightBooking Data Access Layer
-            _fb = new IFlightBookingFlightBookingDataAccessLayer();
+            //Creating Object for FlightBookingData Access Layer
+            _fbdal = new IFlightBookingDataAccessLayer();
 
         }
 
@@ -37,7 +33,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         {
             if (FlightBooking.bookingID != null)
             {
-                _tcdal.AddFlightBooking(bookingID);
+                _fbdal.AddFlightBooking(bookingID);
             }
             else
             {
@@ -49,25 +45,25 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// This Method Represents Update FlightBooking
         /// </summary>
         /// <param name="bookingid"></param>
-        public void UpdateFlightBooking(FlightBooking bookingID)
+        public void UpdateFlightBookings(FlightBooking bookingID)
         {
             if (FlightBooking.bookingID != null)
             {
-                _fb.UpdateFlightBooking(bookingID);
+                _fbdal.UpdateFlightBooking(bookingID);
             }
             else
             {
                 throw new Exception("booking id can't be null");
             }
         }
-        //method to get FlightBooking bycustomer id
-        public FlightBooking GetFlightBookingByCustomerID(int _customerID)
+        //method to get ticket cancellation by  customer id
+        public FlightBooking GetFlightBookingsByCustomerID(int _customerID)
         {
-            return _fb.GetcustomerID();
+            return _fbdal.GetcustomerID();
 
         }
 
-        public void DeleteFlightBooking(FlightBooking fb)
+        public void DeleteFlightBooking(FlightBooking tc)
         {
             throw new NotImplementedException();
         }
@@ -79,9 +75,11 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// <returns>FlightBookingDataAccessLayer</returns>
     public List<FlightBooking> GetFlightBooking()
     {
-        return _fb.GetFlightBooking();
+        return _fbdal.GetFlightBooking();
     }
 
 }
 
- 
+
+
+
