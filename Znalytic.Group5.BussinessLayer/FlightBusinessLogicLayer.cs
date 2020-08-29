@@ -1,28 +1,29 @@
 ﻿//Importing Statements
 using System.Collections.Generic;
-using  Znalytics.Group5.Airline.Flight.DataAccessLayer;
+using  Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytic.Group5.Airline.FlightModule.BussinessLogicLayer;
 
 //Created a namespace for BusinessLayer of flight module
 namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
-{
+{ 
 
     /// <summary>
     /// Represents BusinessLogic class of flight and Implementing an interface
     /// </summary>
 
-    public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
-    {
-
+public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
+{
+    
+         FlightDataAccessLayer fdal;
 
         /// <summary>
         /// Default Constructor
         /// </summary>
         public FlightBusinessLogicLayer()
         {
-
-            // fdal = new FlightDataAccessLayer();
+       //Creating object for DataAcessLayer and storing  in reference variable
+        fdal = new FlightDataAccessLayer();
         }
 
         //Method to ADD FlightDetails to the list
@@ -31,11 +32,11 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
 
             try
             {
-                //WareHouse Id should not be null 
-                if (flight.flightId != null)
+                //flight Id should not be null 
+                if (Flight.flightId != null)
                 {
 
-                    FlightDataAccessLayer.AddFlight(flight);
+                    fdal.AddFlight(flight);
                 }
             }
             catch (FlightException ex)
@@ -45,9 +46,9 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         }
 
         // Method to GET the added details
-        public List<Flight> Getflights()
+        public List<Flight> GetFlights()
         {
-            return FlightDataAccessLayer.Getflights();
+            return fdal.Getflights();
         }
 
         //Method to GET flightDetails by flightId
@@ -58,7 +59,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Id should not be null
                 if (flightId != null)
                 {
-                    return FlightDataAccessLayer.GetFlightByFlightId(flightId);
+                    return fdal.GetFlightByFlightId(flightId);
                 }
                 else
                 {
@@ -79,7 +80,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Id should not be null
                 if (flightId != null)
                 {
-                    FlightDataAccessLayer.RemovetFlightByFlightId(flightId);
+                    fdal.RemovetFlightByFlightId(flightId);
                 }
             }
             catch (FlightException ex)
@@ -97,7 +98,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Name should not be null
                 if (flightName != null)
                 {
-                    FlightDataAccessLayer.RemoveFlightByFlightName(flightName);
+                    fdal.RemoveFlightByFlightName(flightName);
                 }
             }
             catch (FlightException ex)
@@ -107,7 +108,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         }
 
         //Method to UPDATE flightName
-        public void UpdateflightName(Flight flight)// update flight Name
+        public void UpdateFlightNameByFlightId(Flight flight)// update flight Name
         {
 
             try
@@ -115,7 +116,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Id should not be null
                 if (Flight.flightId != null)
                 {
-                    FlightDataAccessLayer.UpdateflightName(flight);
+                    fdal.UpdateFlightName(flight);
                 }
             }
             catch (FlightException ex)
@@ -125,7 +126,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         }
 
         //Method to UPDATE flightId
-        public void UpdateflightId(Flight flight)// update flightid
+        public void UpdateFlightId(Flight flight)// update flightid
         {
 
             try
@@ -133,7 +134,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             {
                 if (Flight.flightId != null)
                 {
-                    FlightDataAccessLayer.UpdateflightId(flight);
+                    fdal.UpdateFlightId(flight);
                 }
             }
             catch (FlightException ex)
@@ -143,6 +144,5 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         }
 
 
-
     }
-}
+    }

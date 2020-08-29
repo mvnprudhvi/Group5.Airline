@@ -21,13 +21,13 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         public string flightId;
 
         //constructor
-        public FlightSchedule(string FlightScheduleId, string Source, string Destination, DateTime DepartureTiming, DateTime ArrivalTiming)
+        public FlightSchedule(string flightScheduleId, string source, string destination, DateTime departureTiming, DateTime arrivalTiming)
         {
             _flightScheduleId = flightScheduleId;
-            _source = Source;
-            _destination = Destination;
-            _departureTiming = DepartureTiming;
-            _arrivalTiming = ArrivalTiming;
+            _source = source;
+            _destination = destination;
+            _departureTiming = departureTiming;
+            _arrivalTiming = arrivalTiming;
         }
 
         //properties
@@ -44,7 +44,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         /// <summary>
         /// SHedule id of Flight
         /// </summary>
-        public string flightScheduleId
+        public string FlightScheduleId
         {
             set
             {
