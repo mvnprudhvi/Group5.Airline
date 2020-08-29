@@ -11,16 +11,19 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
     {
         //Private Fields
-        private int _scheduleNumber { set; get; }
+        private string _flightScheduleId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private DateTime _departureTiming { set; get; }
         private DateTime _arrivalTiming { set; get; }
 
+        //flightId Property
+        public string flightId;
+
         //constructor
-        public FlightSchedule( int ScheduleNumber, string Source, string Destination, DateTime DepartureTiming, DateTime ArrivalTiming)
+        public FlightSchedule(string FlightScheduleId, string Source, string Destination, DateTime DepartureTiming, DateTime ArrivalTiming)
         {
-            _scheduleNumber = ScheduleNumber;
+            _flightScheduleId = flightScheduleId;
             _source = Source;
             _destination = Destination;
             _departureTiming = DepartureTiming;
@@ -28,22 +31,47 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         }
 
         //properties
-        public int ScheduleNumber
+
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public FlightSchedule()
+        {
+
+        }
+
+        /// <summary>
+        /// SHedule id of Flight
+        /// </summary>
+        public string flightScheduleId
         {
             set
             {
-                if (ScheduleNumber != 0)
+                if (!string.IsNullOrEmpty(value))
                 {
-                    _scheduleNumber = value;
+
+                    bool spaceFound = value.Contains(" ");
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 4)
+                    {
+                        _flightScheduleId = value;
+                    }
                 }
                 else
+
                 {
-                    Console.WriteLine("schedule number can't be null");
+                    throw new System.Exception("invalid flightScheduleid");
                 }
             }
-            get { return _scheduleNumber; }
+            get { return _flightScheduleId; }
         }
 
+
+        /// <summary>
+        /// from adress of flight i.e., Source
+        /// </summary>
         public string Source
         {
             set
