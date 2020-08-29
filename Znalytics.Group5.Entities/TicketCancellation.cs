@@ -12,6 +12,8 @@ namespace Znalytics.Group5.Airline.Entities
     public class TicketCancellation
 
     {
+        public static object bookingID;
+
         //represents Private Fields...
         private int _customerID;
         private int _bookingID;
