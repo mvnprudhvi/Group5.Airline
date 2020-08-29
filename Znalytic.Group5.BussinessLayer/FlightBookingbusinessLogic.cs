@@ -1,44 +1,35 @@
 ﻿
-
-// created by Reshma
-// BusinessLogicLayer
-// module:  FlightBooking
-
-
+// created by reshma
 
 using System;
-
-
-
 using System.Collections.Generic;
-using System.Linq;
+using Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer;
+using Znalytics.Group5.Airline.DataAccessLayer;
+using Znalytics.Group5.Airline.Entities;
 
-
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
+namespace Znalytic.Group5.BussinessLogicLayer
 {
     /// <summary>
     /// This Class Represents Business Logic Layer Of FlightBooking
-    /// </summary>     
+    /// </summary>
+    public class FlightBookingBusinessLogicLayer : IFlightBookingBusinessLogicLayer
+    {
+        private IFlightBookingBusinessLogicLayer _fbal = null;
 
-
-    public class FlightBookingbusinessLogic : IFlightBookingbusinessLogic();
-            {
         //Constructor for Business Logic Layer
-        private IFlightBookingDataAccessLayer _fbdal = null;
-
-        public FlightBookingbusinessLogic()
+        public FlightBookingBusinessLogicLayer()
         {
-            _fbdal = new FlightBookingDataAccessLayer();//Creating Object for FlightBooking Data Access Layer
+            //Creating Object for FlightBookingData Access Layer
+            _fbdal = new IFlightBookingDataAccessLayer();
+
         }
 
         /// <summary>
-        /// This Method Represents Adding bookingid for flightbooking
+        /// This Method Represents AddFlightBooking
         /// </summary>
         /// <param name="bookingID"></param>
-        public void AddFlightBooking(int bookingID)
+
+        public void AddFlightBooking(FlightBooking bookingID)
         {
             if (FlightBooking.bookingID != null)
             {
@@ -50,34 +41,45 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
             }
         }
 
-        public void UpdateFlightBooking(int  bookingID)
+        /// <summary>
+        /// This Method Represents Update FlightBooking
+        /// </summary>
+        /// <param name="bookingid"></param>
+        public void UpdateFlightBookings(FlightBooking bookingID)
         {
-            if (FlightBooking.BookingID != null)
+            if (FlightBooking.bookingID != null)
             {
                 _fbdal.UpdateFlightBooking(bookingID);
             }
             else
             {
-                throw new Exception("customerid can't be null");
+                throw new Exception("booking id can't be null");
             }
         }
-        //method to get FlightBooking by customer id
-        public FlightBooking GetFlightBookingsByCustomerID(int customerID)
+        //method to get ticket cancellation by  customer id
+        public FlightBooking GetFlightBookingsByCustomerID(int _customerID)
         {
-
+            return _fbdal.GetcustomerID();
 
         }
 
-
-        public FlightBooking GetFlightBookingsByFlightBookingID(int BookingID)
+        public void DeleteFlightBooking(FlightBooking tc)
         {
-            
-
+            throw new NotImplementedException();
         }
-        public FlightBooking GetFlightBookingsByFlightID(int FlightID)
-        {
-           
-        }
-
     }
+
+    /// <summary>
+    /// This Method Represents GetbookingId 
+    /// </summary>
+    /// <returns>FlightBookingDataAccessLayer</returns>
+    public List<FlightBooking> GetFlightBooking()
+    {
+        return _fbdal.GetFlightBooking();
+    }
+
 }
+
+
+
+

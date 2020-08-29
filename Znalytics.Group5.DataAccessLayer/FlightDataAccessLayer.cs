@@ -1,143 +1,113 @@
-﻿using System;
+﻿
+//using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 
-
-namespace Znalytics.Group5.DataAccessLayer
+//Created a namespace for DataAccess Layer of flight Module
+namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
 {
-   public class FlightDataAccessLayer : IFlightDataAccessLayer
+    /// <summary>
+    /// Represents the class for flight Data
+    /// </summary>
+    public class FlightDataAccessLayer : IFlightDataAccessLayer
     {
-        //create list
-        private static List<Flight> flights;
+        //create a list of Flight
+        private static List<Flight> _flightList
+        {
+            set;
+            get;
+        }
 
-        //constructor
+
+        //static constructor
         static FlightDataAccessLayer()
         {
-            flights = new List<Flight>()
+            _flightList = new List<Flight>()
             {
-                new Flight() {flightNumber = 1011 , flightName = "AIRINDIA" , flightCapacity = 250 , LuggageWeightage =20 },
-                new Flight() {flightNumber = 1022 , flightName = "INDIGO" , flightCapacity = 225 , LuggageWeightage =15 },
-                new Flight() {flightNumber = 1033 , flightName = "GOAIR" , flightCapacity = 250 , LuggageWeightage =20 },
-                new Flight() {flightNumber = 1011 , flightName = "JETBLUE" , flightCapacity = 100 , LuggageWeightage =15 },
-
+                new Flight() { FlightId = "FID1011", FlightName = "AIRINDIA", FlightTpe = "EconomySeats(or)BusinessSeats", LuggageWeightage ="30kgs",NoOfEconomySeats = 200 ,NoOfBusinessSeats = 20},
+                new Flight() { FlightId = "FID1022", FlightName = "INDIGO", FlightTpe = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="25kgs", NoOfEconomySeats =150 , NoOfBusinessSeats = 10},
+                new Flight() { FlightId = "FID1033", FlightName = "AIRGO", FlightTpe = "EconomySeats(or)BusinessSeats",LuggageWeightage ="30kgs" , NoOfEconomySeats = 220 , NoOfBusinessSeats = 25},
+                new Flight() { FlightId = "FID1044", FlightName = "JETBLUE", FlightTpe = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="20kgs",NoOfEconomySeats = 200 ,NoOfBusinessSeats = 20}
             };
-        }
-        public void AddFlights(Flight flight)
-        {
-            flights.Add(flight);
+
         }
 
-       public void UpdateFlightNameByFlightId(Flight flight)
+        public string FlightId()
         {
-            flights.Update(flight);
+            int flightId = _flightList.Max(temp =>temp.flightId);
+            return flightId++;
         }
+
+        //Method to ADD details to the list
+        public void AddFlight(Flight flightDetails)
+        {
+            
+                if (!_flightList.Exists(temp => temp.flightId == flightDetails.flightId))
+                {
+                    _flightList.Add(flightDetails);
+                }
+            
+            else
+            {
+                throw new Exception("flight id already exists");
+            }
+
+
+        }
+
+        // Method to GET the added details
+        public List<Flight> Getflights()
+        {
+            return _flightList;
+        }
+
+        //Method to GET the Flight by flightId
+        public Flight GetFlightByFlightId(string flightId)
+        {
+            Flight f = _flightList.Find(temp => temp.flightId == Flight.lightId);
+            return f;
+        }
+
+        //Method to REMOVE Flight by FlightId
+        public void RemoveFlightByFlightId(string flightId)
+        {
+            _flightList.RemoveAll(temp => temp.flightId == Flight.flightId);
+
+        }
+
+        //Method to REMOVE Flight by flight Name
+        public void RemoveFlightByFlightName(string flightName)
+        {
+            _flightList.RemoveAll(temp => temp.flightName == Flight.flightName);
+        }
+
+        // Method to UPDATE the flight Name 
+        public void UpdateFlightName(Flight flight)
+        {
+            Flight f = _flightList.Find(temp => temp.FlightId == flightId);
+            if (f != null)
+            {
+                f.FlightName = flight.FlightName;
+
+
+            }
+
+        }
+
+        // Method to UPDATE the flight id
+        public void UpdateFlightId(Flight flight)
+        {
+            Flight f = _flightList.Find(temp => temp.flightId == flight.flightId);
+            if (f != null)
+            {
+                f.FlightId = flight.FlightId;
+            }
+        }
+
+       
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,64 +2,118 @@
 
 namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
-    class Flight
+    public class Flight
     {
         //Instance (or) non.staticfields
         private string _flightName { set; get; }
-        private int _flightNumber { set; get; }
+        private string _flightId { set; get; }
         private string _flightType { set; get; }
-        private int _flightCapacity { set; get; }
-        private int  _luggageWeightage { set; get; }
+        private string _luggageWeightage { set; get; }
+        private string _noOfEconomySeats { set; get; }
+        private string _noOfBusinessSeats { set; get; }
+
 
         //Constructor
-        public Flight( string FlightName , int FlightNumber,string FlightType, int FlightCapacity, int LuggageWeightage)
+        public Flight(string FlightName, string FlightId, string FlightType, string luggageWeightage, string NoOfEconomySeats, string NoOfBusinessSeats)
         {
-            
+
             _flightName = FlightName;
-            _flightNumber = FlightNumber;
+            _flightId = FlightId;
             _flightType = FlightType;
-            _flightCapacity = FlightCapacity;
-            _luggageWeightage = LuggageWeightage;      
+            _luggageWeightage = LuggageWeightage;
+            _noOfEconomySeats = NoOfEconomySeats;
+            _noOfBusinessSeats = NoOfBusinessSeats;
         }
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Flight()
         {
+
         }
 
+
+        /// <summary>
+        /// propery for  flightName
+        /// </summary>
         public string FlightName
         {
             set
             {
-                if(FlightType.Length <= 10)
+                if (!string.IsNullOrEmpty(value))
                 {
-                    _flightName = value;
-                }
-                else
-                {
-                    throw new Exception("FlightType should be less than 10");
+
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!atFound && !commaFound && value.Length <= 10)
+                    {
+                        _flightName = value;
+                    }
+
+
+                    else
+                    {
+                        throw new Exception("Invalid flightName name");
+                    }
                 }
             }
             get
             {
-                return   _flightType;
+                return _flightName;
             }
         }
-         public int FlightNumber
-         {
+
+        /// <summary>
+        /// property for flightId
+        /// </summary>
+        public string FlightId
+        {
             set
             {
-                _flightNumber = value;
+                if (!string.IsNullOrEmpty(value))
+                {
+
+                    bool spaceFound = value.Contains(" ");
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 4)
+                    {
+                        _flightId = value;
+                    }
+
+
+                    else
+                    {
+                        throw new Exception("Enter valid flightId");
+                    }
+                }
             }
             get
             {
-                return _flightNumber;
+                return _flightId;
             }
-         }
+        }
+
+        /// <summary>
+        /// proprty for flightType
+        /// </summary>
         public string FlightType
         {
             set
             {
-                _flightType = value;
+                bool atFound = value.Contains("@");
+                bool commaFound = value.Contains(",");
+                if (!atFound && !commaFound && value.Length <= 10)
+                {
+                    _flightType = value;
+                }
+                else
+
+                {
+                    throw new Exception("Invalid flightType name");
+                }
+
             }
             get
             {
@@ -67,43 +121,96 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
             }
         }
 
-        public int  FlightCapacity
+        /// <summary>
+        /// property for weight of a luggage
+        /// </summary>
+        public string LuggageWeightage
         {
             set
             {
-                if( FlightCapacity  <= 250 )
+                if (string.IsNullOrEmpty(value))
                 {
-                    _flightCapacity = value;
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!atFound && !commaFound && value.EndsWith("kgs") && value.Length <= 4)
+                    {
+                        _luggageWeightage = value;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Flight Capacity should not exceed 250");
+                    throw new Exception(" weight should be only  in kgs");
                 }
             }
-            get
-            {
-                return _flightCapacity;
-            }
-        }
 
-        public int LuggageWeightage
-        {
-            set
-            {
-                  if(LuggageWeightage <= 30)
-                {
-                    _luggageWeightage = value;
-                }
-                else
-                {
-                    Console.WriteLine(" Luggage Weightage should not exceed 30kgs ");
-                }
-               
-            }
             get
             {
                 return _luggageWeightage;
             }
         }
+
+        /// <summary>
+        /// property for noof EconomySeats
+        /// </summary>
+        public string NoOfEconomySeats
+        {
+            set
+            {
+
+                bool characterFound = value.Contains(" ");
+                bool atFound = value.Contains("@");
+                bool commaFound = value.Contains(",");
+                bool specialcharacterFound = value.Contains(":,_,+");
+                if (!characterFound && !atFound && !commaFound && !specialcharacterFound && value.Length <= 280)
+                {
+                    _noOfEconomySeats = value;
+                }
+
+
+                else
+                {
+                    throw new Exception("Enter valid flightId");
+                }
+            }
+            get
+            {
+                return _noOfEconomySeats;
+            }
+        }
+
+        /// <summary>
+        /// property for noOfBusinesssSeats
+        /// </summary>
+
+        public string NoOfBusinessSeats
+        {
+            set
+            {
+
+                bool characterFound = value.Contains(" ");
+                bool atFound = value.Contains("@");
+                bool commaFound = value.Contains(",");
+                bool specialcharacterFound = value.Contains(":,_,+");
+                if (!characterFound && !atFound && !commaFound && !specialcharacterFound && value.Length <= 30)
+                {
+                    _noOfBusinessSeats = value;
+                }
+
+
+                else
+                {
+                    throw new Exception("Enter valid flightId");
+                }
+            }
+            get
+            {
+                return _noOfBusinessSeats;
+            }
+        }
+
+
+
+
     }
 }
+

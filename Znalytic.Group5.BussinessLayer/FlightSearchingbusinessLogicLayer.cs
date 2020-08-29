@@ -7,6 +7,7 @@ using Znalytics.Group5.Airline.Flightsearching.Entities;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Znalytics.Group5.Airline.FlightSearchingDataAcessLayer;
 
 namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
@@ -17,7 +18,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
              
 
     
-            private IFlightSearchingDataAccessLayer fdal = null;
+            private FlightSearchingDataAccessLayer fdal = null;
 
             public FlightSearchingbusinessLogicLayer()
             {
@@ -36,6 +37,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
                 }
             }
 
+
             //GetAllflightNames
             public List<FlightSearchingbusinessLogicLayer> GetFlightSearchings()
             {
@@ -49,7 +51,11 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
                     _FlightSearchingDataAccessLayer.UpdateFlightName(FlightName);
                 }
             }
-        }
+        public FlightSearching GetFlightSearchinsByFlightID(int FlightID)
+        {
+        return _FlightID;
+       }
+}
     
 
 

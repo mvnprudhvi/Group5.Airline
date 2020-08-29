@@ -14,12 +14,16 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     /// </summary>
     public class FlightPriceBusinessLogic
     {
-        FlightPriceBusinessLogic _flightPriceDataAccessLayer;//Reference Variable Of Price Data Access Layer
+        //Reference Variable Of Price Data Access Layer
+        FlightPriceBusinessLogic _flightPriceDataAccessLayer;
 
-        //Constructor for Business Logic Layer
+        /// <summary>
+        /// Constructor For Business Logic Layer
+        /// </summary>
         public FlightPriceBusinessLogic()
         {
-            _flightPriceDataAccessLayer = new FlightPriceBusinessLogic();//Creating Object for Price Data Access Layer
+            //Creating Object for Price Data Access Layer
+            _flightPriceDataAccessLayer = new FlightPriceBusinessLogic();
         }
 
         /// <summary>

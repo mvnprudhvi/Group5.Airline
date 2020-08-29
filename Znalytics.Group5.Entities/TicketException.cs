@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Znalytics.Group5.Entities
 {
-    class TicketException
+    class TicketException:ApplicationException
     {
+        ///<summary>
+        ///Exception
+        ///</summary>
     }
 }
