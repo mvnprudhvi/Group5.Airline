@@ -1,70 +1,124 @@
 ﻿//........KEERTHANA....
 using System;
 using System.Collections.Generic;
-using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.Flight.DataAccessLayer;
+
+//Created a namespace for BusinessLogicLayer of FlightSchedule module
 namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
 {
+    /// <summary>
+    /// Represents BusinessLogic class of FlightSchedule
+    /// </summary>
     public class FlightScheduleBusinessLogicLayer : IFlightScheduleBusinessLogicLayer
     {
 
+        //Created an object for DataAccessLayer and strore the object in reference variable
+        FlightScheduleDataAccessLayer fsdl = new FlightScheduleDataAccessLayer();
 
-        FlightScheduleDataAccessLayer _fdal;
-
-        public FlightScheduleBusinessLogicLayer()
+        //Method to ADD Flights Schedule to the list
+        public void AddSchedule(FlightSchedule schedule)
         {
-            _fdal = new FlightScheduleDataAccessLayer();
-        }
 
-       /// <summary>
-       /// validating Source
-       /// </summary>
-       /// <param name="flightSchedule"></param>
-        public void AddSchedule(FlightSchedule flightSchedule)
-        {
-            if(flightSchedule.Source != null )
+            try
             {
-                _fdal.AddSchedule(flightSchedule);
-            }
-            else
-            {
-                Console.WriteLine("Source can't be Null");
-            }
-        }
+                //flightScheduleIdId should not be null
+                if (schedule.flightScheduleId != null)
+                {
 
-        /// <summary>
-        /// methods for validating FlightId
-        /// </summary>
-        /// <param name="fd"></param>
-        public void AddflightId(FlightSchedule fs)
-        {
-            if (fs.flightId < 10)
-            {
-                _fDal.AddflightId(fs.flightId);
+
+                    fsdl.AddSchedule(schedule);
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("flightId can't be Null");
+                throw new Exception("flightScheduleId already exists");
             }
         }
-        //GetAll Flights
-        public List<FlightSchedule> GetFlightSchedule
+        // Method to GET the added  Schedules 
+        public List<FlightSchedule> GetSchedule()
         {
-            get
+            return fsdl.GetSchedule();
+        }
+
+        //Method to GET flightSchedule by scheduleId
+        public List<FlightSchedule> GetScheduleByFlightId(string flightScheduleId)
+        {
+            return fsdl.GetScheduleByFlightId(flightScheduleId);
+        }
+
+        //Method to GET flight Schedule by flightId
+        public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightId)
+        {
+            return fsdl.GetScheduleByFlightScheduleId(flightId);
+        }
+        //Method to GET FlightSchedule by Source
+        public List<FlightSchedule> GetScheduleBySource(string source)
+        {
+            return fsdl.GetScheduleBySource(source);
+        }
+        //Method to GET FlightSchedule by Destination
+        public List<FlightSchedule> GetScheduleByDestination(string source)
+        {
+            return fsdl.GetScheduleByDestination(source);
+        }
+
+        //Method to UPDATE source of flightSchedule
+        public void UpdateSource(FlightSchedule schedule)
+        {
+
+            if (schedule.flightScheduleId != null)
             {
-                return _fDal.GetFlightSchedule();
+                fsdl.UpdateSource(schedule);
             }
         }
 
-        public void UpdateExistingFlightSchedule(FlightSchedule fs)
+        //Method to UPDATE Destination of flightSchedule
+        public void UpdateDestination(FlightSchedule schedule)
         {
-           
+
+            if (schedule.flightScheduleId != null)
+            {
+                fsdl.UpdateDestination(schedule);//UpdateDepartureTiming
+            }
         }
+        //Method to UPDATE DepartureTiming of flightSchedule
+        public void UpdateDepartureTiming(FlightSchedule schedule)
+        {
+
+            if (schedule.flightScheduleId != null)
+            {
+                fsdl.UpdateDepartureTiming(schedule);
+            }
+        }
+
+        public void UpdateArrivalTiming(FlightSchedule schedule)
+        {
+
+            if (schedule.flightScheduleId != null)
+            {
+                fsdl.UpdateArrivalTiming(schedule);
+            }
+        }
+        //Method to REMOVE flight by flightId
+        public void RemoveFlightByFlightId(string flightId)
+        {
+            if (flightId != null)
+            {
+                fsdl.RemoveFlightByFlightId(flightId);
+            }
+        }
+
+        //Method to REMOVE an schedule of flight by flightScheduleId
+        public void RemoveFlightByFlightScheduleId(string flightScheduleId)
+        {
+            if (flightScheduleId != null)
+            {
+                fsdl.RemoveFlightByFlightScheduleId(flightScheduleId);
+            }
+        }
+
     }
-}
-
-
-
-
-
