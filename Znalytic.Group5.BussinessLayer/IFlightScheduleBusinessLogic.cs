@@ -1,13 +1,16 @@
 ﻿////........KEERTHANA....
 using System;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-namespace Znalytic.Group5.Airline.FlightSchedule.BussinessLogicLayer
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
+
+namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
 {
     public interface IFlightScheduleBusinessLogicLayer
     {
 
         //Method to add flightSchedule to the list
-        void AddSchedule(FlightSchedule b);
+       public void AddSchedule(FlightSchedule b);
 
         // Method to display the added flightsSchedule
         List<FlightSchedule> GetSchedule();

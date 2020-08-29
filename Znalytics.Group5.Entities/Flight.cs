@@ -210,9 +210,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
             }
         }
 
-
-
-
+        public string FlightCapacity { get; set; }
     }
 }
 
