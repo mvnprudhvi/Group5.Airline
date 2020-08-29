@@ -9,8 +9,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         void AddFlight(Flight flight);
         List<Flight> GetFlights();
 
-        void UpdateFlights(Flight flight);
-        void DeleteFlight(Flight flight);
+        void UpdateFlightByFlightId(Flight flight);
+        void UpdateFlightByFlightName(Flight flight);
+        void RemovetFlightByFlightId(string flightId);
+        void RemoveFlightByFlightName(string flightName);
+       
         Flight GetFlightByFlightId(string flightId);
 
 
