@@ -2,48 +2,67 @@
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
+using Znalytics.Group5.AirLine.ICustomerBusinessLogicLayer;
 
+//Created a Namespace For Business Layer of Customer Module
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
-    //represents customer business logic layer 
-    public class CustomerBusinessLogicLayer
+    /// <summary>
+    /// Represents BusinessLogic class of Customer and Implementing an interface
+    /// </summary> 
+    public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
     {
-        CustomerDataAccessLayer  _customerDataAccessLayer;
+        private ICustomerBusinessLogicLayer cdal;
 
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public CustomerBusinessLogicLayer()
         {
-            _customerDataAccessLayer  = new CustomerDataAccessLayer();
-                }
+            CustomerDataAccessLayer cdal = new CustomerDataAccessLayer();
+        }
+
+        //Method to ADD Customer Details To The List
         public void AddCustomer(Customer customer)
+        {
+            if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
             {
-                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
-                {
-                    _customerDataAccessLayer.AddCustomer(customer);
-                }
+                cdal.AddCustomer(customer);
             }
-            public void DeleteCustomer(Customer customer)
+        }
+
+        //Method to Delete Customer Details To The List
+        public void DeleteCustomer(Customer customer)
+        {
+            if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
             {
-                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
-                {
-                    _customerDataAccessLayer.DeleteCustomer(customer);
-                }
+                cdal.DeleteCustomer(customer);
             }
-            public List<Customer> GetCustomer()
-            {
-                return _customerDataAccessLayer.GetCustomer();
-            }
+        }
+
+
+        //Method to Update Customer Details To The List
         public void UpdateCustomer(Customer customer)
         {
             if ((customer.CustomerUserName != null) || (customer.CustomerEmail != null) || (customer.CustomerPassword != null) || (customer.CustomerMobileNumber != null) || (customer.CustomerAadharNumber != null) || (customer.CustomerPanCardNumber != null) || (customer.CustomerGender != null))
             {
-                _customerDataAccessLayer.UpdateCustomer(customer);
+                cdal.UpdateCustomer(customer);
             }
         }
-            public Customer GetCustomerByCustomerId(int CustomerId)
-            {
-                return _customerDataAccessLayer.GetCustomerByCustomerId(CustomerId);
 
+        //Method to Get Customer By Customer ID Details To The List
+        public List<Customer> GetCustomer()
+        {
+            return cdal.GetCustomer();
+        }
+
+            public List<Customer> GetCustomerByCustomerId(string Customer);
+            {
+                return cdal.GetCustomerByCustomerId(Customer);
             }
         }
     }
+}
+
         

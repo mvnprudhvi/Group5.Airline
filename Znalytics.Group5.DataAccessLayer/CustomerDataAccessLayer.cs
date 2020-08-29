@@ -24,7 +24,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         {
             _customer.Remove(customer);
         }
-        public List<Customer> GetCustomer()
+        public List<Customer> GetCustomerByCustomerId(int CustomerId)
         {
             return _customer;
         }
