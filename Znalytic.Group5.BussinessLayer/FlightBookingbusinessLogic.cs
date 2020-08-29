@@ -23,13 +23,13 @@ namespace Znalytic.Group5.BussinessLogicLayer
         //Constructor for Business Logic Layer
         public FlightBooking()
         {
-            //Creating Object for ticket cancellation Data Access Layer
+            //Creating Object forFlightBooking Data Access Layer
             _fb = new IFlightBookingFlightBookingDataAccessLayer();
 
         }
 
         /// <summary>
-        /// This Method Represents AddTicketCancellation 
+        /// This Method Represents AddFlightBooking
         /// </summary>
         /// <param name="bookingID"></param>
 
@@ -46,7 +46,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         }
 
         /// <summary>
-        /// This Method Represents Update ticket cancellation
+        /// This Method Represents Update FlightBooking
         /// </summary>
         /// <param name="bookingid"></param>
         public void UpdateFlightBooking(FlightBooking bookingID)
@@ -60,7 +60,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
                 throw new Exception("booking id can't be null");
             }
         }
-        //method to get ticket cancellation by ticket customer id
+        //method to get FlightBooking bycustomer id
         public FlightBooking GetFlightBookingByCustomerID(int _customerID)
         {
             return _fb.GetcustomerID();
@@ -76,7 +76,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// <summary>
     /// This Method Represents GetbookingId 
     /// </summary>
-    /// <returns>TicketCancellationDataAccessLayer</returns>
+    /// <returns>FlightBookingDataAccessLayer</returns>
     public List<FlightBooking> GetFlightBooking()
     {
         return _fb.GetFlightBooking();
