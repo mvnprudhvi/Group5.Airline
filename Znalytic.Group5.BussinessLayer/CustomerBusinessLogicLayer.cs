@@ -58,8 +58,8 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
             public List<Customer> GetCustomerByCustomerId(string Customer);
-            {
-                return cdal.GetCustomerByCustomerId(Customer);
+        {    
+                return cdal.GetCustomerByCustomerId(string Customer);
             }
         }
     }

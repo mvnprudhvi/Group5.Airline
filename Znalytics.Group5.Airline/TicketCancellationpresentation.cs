@@ -12,8 +12,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     /// </summary>
     class TicketCancellationPresentation
     {
-        //Reference Variable Of ticket cancellation Business Logic Layer
-
+       
         private static TicketCancellationBusinessLogicLayer _ticketCancellationBusinessLogicLayer;     
         private static IEnumerable<TicketCancellation> _ticketCancellation;
 
@@ -28,7 +27,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             Console.ReadKey();
         }
 
-        /// <summary>
+        /// <summary> 
         /// This Method Represents PriceMenu To View Operations Of Price
         /// </summary>
         static void TicketCancellationMenu()
