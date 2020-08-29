@@ -82,6 +82,6 @@ namespace Znalytic.Group5.BussinessLogicLayer
         return _fb.GetFlightBooking();
     }
 
-
+}
 
  
