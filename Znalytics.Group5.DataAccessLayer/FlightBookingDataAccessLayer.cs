@@ -76,12 +76,12 @@ namespace Znalytics.Group5.DataAccessLayer
         //method to get  FlightBooking by  customer id
         public FlightBooking GetFlightBookingsByFlightCustomerID(int CustomerID)
         {
-            return _CustomerID.Find(temp => temp.CustomerID == CustomerID);
+            return _CustomerID.Find(temp => temp.customerID == CustomerID);
         }
         //method to get  FlightBookinging by  flightid
-        public FlightBooking GetFlightBookingsByFlightID(int FlightID)
+        public FlightBooking GetFlightBookingsByFlightID(int flightID)
         {
-            return _FlightID.Find(temp => temp.FlightID == FlightID);
+            return _flightID.Find(temp => temp.FlightID == FlightID);
         }
     }
 }

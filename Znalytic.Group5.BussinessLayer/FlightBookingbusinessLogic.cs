@@ -15,12 +15,12 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
     /// <summary>
     /// This Class Represents Business Logic Layer Of FlightBooking
     /// </summary>
-    public class FlightBookingBusinessLogicLayer : IFlightBookingBusinessLogicLayer
+    public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer
     {
-        private IFlightBookingBusinessLogicLayer _fbbl = null;
+        private IFlightBookingbusinessLogicLayer _fbbl = null;
 
         //Constructor for Business Logic Layer
-        public FlightBookingBusinessLogicLayer()
+        public FlightBookingbusinessLogicLayer()
         {
             //Creating Object for FlightBookingDataAccessLayer
             _fbbl = new IFlightBookingDataAccessLayer();

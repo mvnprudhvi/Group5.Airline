@@ -3,7 +3,7 @@
     public interface IFlightBookingBusinessLogicLayer
     {
         /this method represents add FlightBooking
-        public void FlightBooking(FlightBooking FlightBooking);
+        public void AddFlightBooking(FlightBooking FlightBooking);
 
         //this method represents update FinglightBooking
         public void UpdateFlightBooking(FlightBooking FlightBooking);
