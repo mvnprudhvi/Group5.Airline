@@ -6,10 +6,11 @@
 using System;
 using System.Collections.Generic;
 using Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer;
+using Znalytic.Group5.BussinessLogicLayer;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytic.Group5.BussinessLogicLayer
+namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
 {
     /// <summary>
     /// This Class Represents Business Logic Layer Of FlightBooking
@@ -21,7 +22,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         //Constructor for Business Logic Layer
         public FlightBookingBusinessLogicLayer()
         {
-            //Creating Object for FlightBookingData Access Layer
+            //Creating Object for FlightBookingDataAccessLayer
             _fbbl = new IFlightBookingDataAccessLayer();
 
         }
@@ -44,7 +45,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         }
 
         /// <summary>
-        /// This Method Represents Update FlightBooking
+        /// This Method Represents Updatation FlightBooking
         /// </summary>
         /// <param name="bookingid"></param>
         public void UpdateFlightBookings(FlightBooking bookingID)
@@ -58,7 +59,10 @@ namespace Znalytic.Group5.BussinessLogicLayer
                 throw new Exception("booking id can't be null");
             }
         }
-
+        /// <summary>
+        /// this Method Represents deletion of flightbooking
+        /// </summary>
+        /// <param name="fb"></param>
 
         public void DeleteFlightBooking(FlightBooking fb)
         {
