@@ -1,4 +1,10 @@
-﻿using System;
+﻿// Created by Reshma
+// Presentation Layer
+// module: FlightBooking
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,120 +15,278 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 
-namespace FlightBooking
+namespace Znalytics.Group5.Airline.PresentationLayer
 {
-    class FlightBooking
+    /// <summary>
+    /// This Class Represents Presentation Layer Of Price
+    /// </summary>
+    class FlightBookingPresentation
     {
-        static void Main(string[] args)
+
+        private static FlightBookingbusinessLogic  _flightBookingbusinessLogic;
+        private static IEnumerable<FlightBooking> _flightBooking;
+
+        /// <summary>
+        /// Main Method
+        /// </summary>
+        static void Main()
         {
-            Console.Write("enter flightName:");
-            string flightName = Console.ReadLine();
+            _flightBookingbusinessLogic = new FlightBookingbusinessLogic();
+            //Calling Menu Method For List Of Menus
+            FlightBookingMenu();
+            Console.ReadKey();
+        }
 
-            Console.Write("enter flight Id:");
-            int flightId = int.Parse(Console.ReadLine());
-
-            Console.Write("enter passengerName:");
-            string passengerName = Console.ReadLine();
-            Console.Write("enter booking id:");
-            int bookingId = int.Parse(Console.ReadLine());
-            Console.Write("enter seatNumber:");
-            //Random class generates pseudo Randon numbers
-
-            var random = new Random();
-            int RandomNo = random.Next();
-            int SeatNumber = RandomNo;
-            int seatNumber = int.Parse(Console.ReadLine());
-
-
-            Console.WriteLine("================== FlightBooking ==========================");
-            Console.WriteLine(" flightName :" + flightName);
-            Console.WriteLine(" flightId :" + flightId);
-            Console.WriteLine(" passengerName :" + passengerName);
-            Console.WriteLine("bookingId:" + bookingId);
-            Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
-
-            Console.WriteLine("============================================================");
-
-            Console.WriteLine(" flightName   flightId  passengerName Seat Number bookingId");
-            Console.WriteLine("-----------------------------------------------------");
-
-
-            static void FlightBookingMenu()
+        /// <summary> 
+        /// This Method Represents PriceMenu To View Operations Of Price
+        /// </summary>
+        static void FlightBookingMenu()
+        {
+            int choice = 0;
+            do
             {
-                int choice = 1;
-                do
+                Console.WriteLine(" ================== FLIGHT BOOKING========================== ");
+                Console.WriteLine("1. Add FlightBooking");
+                Console.WriteLine("2. Update FlightBooking");
+                Console.WriteLine("3. Delete FlightBooking");
+                Console.WriteLine("4. Get FlightBooking");
+                Console.WriteLine("5. Exit");
+                Console.Write("Enter Your choice: ");
+                choice = int.Parse(ReadLine());
+                //represents switch case
+                switch (choice)
                 {
-                    Console.WriteLine("========FLIGHTBOOKING MENU=========");
-                    Console.WriteLine("1. Add FlightBooking");
-                    Console.WriteLine("2. Update FlightBooking");
-                    Console.WriteLine("3. View FlightBooking");
-                    Console.WriteLine("4. Delete FlightBooking");
-                    Console.WriteLine("5. Exit");
-                    Console.Write("Enter choice: ");
-                    choice = int.Parse(Console.ReadLine());
+                    case 1: AddFlightBooking(); break;
+                    case 2: UpdateFlightBooking(); break;
+                    case 3: DeleteFlightBooking(); break;
+                    case 4: GetFlightBooking(); break;
+                }
+            } while (choice != 5);
+        }
 
-                    switch (choice)
-                    {
-                        case 1: AddNewFlightBooking(); break;
-                        case 2: ViewFlightBooking(); break;
-                        case 3: UpdateFlightBooking(); break;
-                        case 4: DeleteFlightBooking(); break;
+        private static string ReadLine()
+        {
+            throw new NotImplementedException();
+        }
 
-                    }
+        /// <summary>
+        /// This Method Represents adding of flight bookings
+        /// </summary>
+        static void AddFlightBooking()
+        {
+            FlightBooking fb= new FlightBooking();
 
-                } while (choice != 5);
-            }
+            Console.Write("Enter booking id: ");
+           fb.BookingID = int.Parse(ReadLine());
 
-            static void AddNewFlightBooking()
+            Console.Write("Enter customer id ");
+           fb.CustomerID = int.Parse(ReadLine());
+
+            _flightBookingbusinessLogic.AddFlightBooking(fb);
+
+            Console.WriteLine("The details of FlightBooking is Successfully Added \n");
+        }
+
+        /// <summary>
+        /// This Method Represents Delete ticket cancellation by booking
+        /// </summary>
+        static void DeleteFlightBooking()
+        {
+
+            FlightBooking fb = new FlightBooking();
+            Console.Write("Enter Existing booking id to Delete ticket cancellation ");
+            _flightBookingbusinessLogic.DeleteFlightBooking(fb);
+            Console.WriteLine("The FlightBooking is Deleted Successfully \n");
+        }
+
+        /// <summary>
+        /// This Method Represents Updatation of FlightBooking
+        /// </summary>
+        static void UpdateFlightBooking()
+        {
+
+            FlightBooking fb= new FlightBooking();
+
+            Console.Write("Enter Existing booking id: ");
+           fb.BookingID = int.Parse(ReadLine());
+
+            Console.Write("Enter existing customer id");
+            fb.CustomerID = int.Parse(ReadLine());
+
+            _flightBookingbusinessLogic.UpdateFlightBooking(fb);
+            Console.WriteLine("The booking of Flight is Updated Successfully \n");
+        }
+
+        /// <summary>
+        /// This Method Represents get Ticket Cancellation
+        /// </summary>
+        static void GetFlightBooking()
+        {
+
+            List<FlightBooking> 
+                fb = _flightBookingbusinessLogic.GetFlightBooking();
+
+            foreach (FlightBooking fb in _flightBooking)
             {
-
-                //create another list in the collection called  "flightbooking1"
-                List<FlightBooking> flightBooking1 = new List<FlightBooking>() 
-                {
-                    new FlightBooking() { flightName = "AirInia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "01", bookingId = "1234" },
-                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", seatNumber = "02", bookingId = "1234" },
-                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "03", bookingId = "3456" },
-                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "04", bookingId = "7891" },
-                    new FlightBooking() { flightName = "AirIndia", flightNumber = "101", source = "Hyderabad", destination = "Mumbai", departureTiming = "2020-08-29 7:30:00 AM", arrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = "05", bookingId = "6789" } };
-
-
-
-                static void ViewFlightBooking()
-                {
-                    
-                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                  
-                    foreach (FlightBooking item in fb)
-                    {
-                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb +.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
-
-                    }
-                }
-                static void updateFlightBooking()
-                {
-
-                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                    
-                    foreach (FlightBooking item in fb)
-                    {
-                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
-
-                    }
-                }
-
-                static void DeleteFlightBooking()
-                {
-
-                    List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
-                    
-                    foreach (FlightBooking item in fb)
-                    {
-                        Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
-
-                    }
-                }
+                Console.Write("=====The FlightBooking  are Below=====");
+                Console.WriteLine("The booking id is " + fb.BookingID);
+                Console.WriteLine("The customer id is " +fb.CustomerID);
             }
-
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*/// <summary>
+/// This Class Represents Presentation Layer Of Price
+/// </summary>
+class FlightBooking
+{
+    /// <summary>
+    /// represents the Main method
+    /// </summary>
+    /// <param name="args"></param>
+    static void Main(string[] args)
+    {
+        Console.Write("enter flightName:");
+        string flightName = Console.ReadLine();
+
+        Console.Write("enter flight Id:");
+        int flightId = int.Parse(Console.ReadLine());
+
+        Console.Write("enter passengerName:");
+        string passengerName = Console.ReadLine();
+        Console.Write("enter booking id:");
+        int bookingId = int.Parse(Console.ReadLine());
+        Console.Write("enter seatNumber:");
+        //Random class generates pseudo Randon numbers
+
+        var random = new Random();
+        int RandomNo = random.Next();
+        int SeatNumber = RandomNo;
+        int seatNumber = int.Parse(Console.ReadLine());
+
+
+        Console.WriteLine("================== FlightBooking ==========================");
+        Console.WriteLine(" flightName :" + flightName);
+        Console.WriteLine(" flightId :" + flightId);
+        Console.WriteLine(" passengerName :" + passengerName);
+        Console.WriteLine("bookingId:" + bookingId);
+        Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
+
+        Console.WriteLine("============================================================");
+
+        Console.WriteLine(" flightName   flightId  passengerName Seat Number bookingId");
+        Console.WriteLine("-----------------------------------------------------");
+
+
+        static void FlightBookingMenu()
+        {
+            int choice = 1;
+            do
+            {
+                Console.WriteLine("========FLIGHTBOOKING MENU=========");
+                Console.WriteLine("1. Add FlightBooking");
+                Console.WriteLine("2. Update FlightBooking");
+                Console.WriteLine("3. Delete FlightBooking");
+                Console.WriteLine("4. Get FlightBookings");
+                Console.WriteLine("5. Exit");
+                Console.Write("Enter choice: ");
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1: AddNewFlightBooking(); break;
+                    case 2: UpdateFlightBooking(); break;
+                    case 3 :DeleteFlightBooking(); break;
+                    case 4: GetFlightBooking(); break;
+
+                }
+
+            } while (choice != 5);
+        }
+
+        static void AddNewFlightBooking()
+        {
+
+            //create another list in the collection called  "flightbooking1"
+            List<FlightBooking> flightBooking1 = new List<FlightBooking>() 
+            {
+                new FlightBooking() { FlightName = "AirInia", FlightID = 101, Source = "Hyderabad", Destination = "Mumbai", DepartureTiming = 2020-08-29 7:30:00 AM, ArrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = 01, BookingID =1234 },
+                new FlightBooking() { FlightName = "AirIndia", FlightID = 101, Source = "Hyderabad", Destination = "Mumbai", DepartureTiming = 2020-08-29 7:30:00 AM, ArrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = 02, BookingID = 1234 },
+                new FlightBooking() { FlightName = "AirIndia", FlightID = 101, Source = "Hyderabad", Destination = "Mumbai", DepartureTiming = 2020-08-29 7:30:00 AM, ArrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = 03, BookingID = 3456 },
+                new FlightBooking() { FlightName = "AirIndia", FlightID = 101, Source = "Hyderabad", Destination = "Mumbai", DepartureTiming = 2020-08-29 7:30:00 AM, ArrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = 04, BookingID = 7891 },
+                new FlightBooking() { FlightName = "AirIndia", FlightID = 101, Source = "Hyderabad", Destination = "Mumbai", DepartureTiming = 2020-08-29 7:30:00 AM, ArrivalTiming = " 2020-08-29 7:30:00 Am", SeatNumber = 05, BookingID = 6789 } };
+
+
+
+            static void ViewFlightBooking()
+            {
+
+                List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+
+                foreach (FlightBooking item in fb)
+                {
+                    Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb +.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
+
+                }
+            }
+            static void updateFlightBooking()
+            {
+
+                List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+
+                foreach (FlightBooking item in fb)
+
+                    Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
+
+                }
+            }
+
+            static void DeleteFlightBooking()
+            {
+
+                List<FlightBooking> fb = FlightBookingbusinessLogic.GetFlightBooking();
+
+                foreach (FlightBooking item in fb)
+                {
+                    Console.WriteLine(fb.flightName + "," + fb.flightNumber + "," + fb.source + "," + fb.destination + "," + fb.arrivalTiming + "," + fb.departureTiming + "," + fb.seatNmuber + "," + fb.bookingId + ",");
+
+                }
+            }
+        }
+
+    }
+}
+}*/
