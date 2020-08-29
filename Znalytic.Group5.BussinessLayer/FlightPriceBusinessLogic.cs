@@ -57,5 +57,10 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             return _flightPriceDataAccessLayer.GetFlightPrices();
         }
+
+        public List<FlightPrice>  GetPriceByBeforeDays()
+        {
+            return _flightPriceDataAccessLayer.GetPriceByBeforeDays();
+        }
     }
 }

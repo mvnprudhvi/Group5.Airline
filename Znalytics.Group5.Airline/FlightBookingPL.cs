@@ -24,7 +24,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     {
 
         private static FlightBookingbusinessLogic  _flightBookingbusinessLogic;
-        private static IEnumerable<FlightBooking> _flightBooking;
+        private static IEnumerable<FlightBookingPresentation> _flightBooking;
 
         /// <summary>
         /// Main Method
@@ -74,10 +74,10 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void AddFlightBooking()
         {
-            FlightBooking fb= new FlightBooking();
+            _flightBooking fb= new _flightBooking();
 
-            Console.Write("Enter booking id: ");
-           fb.BookingID = int.Parse(ReadLine());
+            Console.Write("Enter flight id: ");
+           fb.FlightID = int.Parse(ReadLine());
 
             Console.Write("Enter customer id ");
            fb.CustomerID = int.Parse(ReadLine());
@@ -87,17 +87,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             Console.WriteLine("The details of FlightBooking is Successfully Added \n");
         }
 
-        /// <summary>
-        /// This Method Represents Delete ticket cancellation by booking
-        /// </summary>
-        static void DeleteFlightBooking()
-        {
-
-            FlightBooking fb = new FlightBooking();
-            Console.Write("Enter Existing booking id to Delete FlightBooking ");
-            _flightBookingbusinessLogic.DeleteFlightBooking(fb);
-            Console.WriteLine("The FlightBooking is Deleted Successfully \n");
-        }
+        
 
         /// <summary>
         /// This Method Represents Updatation of FlightBooking
@@ -105,17 +95,29 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void UpdateFlightBooking()
         {
 
-            FlightBooking fb= new FlightBooking();
+            _flightBooking fb= new _flightBooking();
 
-            Console.Write("Enter Existing booking id: ");
-           fb.BookingID = int.Parse(ReadLine());
+            Console.Write("Enter Existing flight id: ");
+           fb.flightID = int.Parse(ReadLine());
 
             Console.Write("Enter existing customer id");
-            fb.CustomerID = int.Parse(ReadLine());
+            fb.customerID = int.Parse(ReadLine());
 
             _flightBookingbusinessLogic.UpdateFlightBooking(fb);
             Console.WriteLine("The booking of Flight is Updated Successfully \n");
         }
+        /// <summary>
+        /// This Method Represents Delete FlightBooking by booking
+        /// </summary>
+        static void DeleteFlightBooking()
+        {
+
+            _flightBooking fb = new _flightBooking();
+            Console.Write("Enter Existing booking id to Delete FlightBooking ");
+            _flightBookingbusinessLogic.DeleteFlightBooking(fb);
+            Console.WriteLine("The FlightBooking is Deleted Successfully \n");
+        }
+
 
         /// <summary>
         /// This Method Represents getting all details of  FlightBooking
@@ -123,13 +125,14 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void GetFlightBooking()
         {
 
-            List<FlightBooking> fb = _flightBookingbusinessLogic.GetFlightBooking();
+            object _flightBookingbusinessLayer = null;
+            List<FlightBookingPresentation> fb = _flightBookingbusinessLayer.GetFlightBooking();
 
-            foreach (FlightBooking fb in _flightBooking)
+            foreach (_flightBooking fb in _flightBooking)
             {
                 Console.Write("=====The FlightBooking  are Below=====");
-                Console.WriteLine("The booking id is " + fb.BookingID);
-                Console.WriteLine("The customer id is " +fb.CustomerID);
+                Console.WriteLine("The booking id is " + fb.flightID);
+                Console.WriteLine("The customer id is " +fb.customerID);
             }
         }
     }

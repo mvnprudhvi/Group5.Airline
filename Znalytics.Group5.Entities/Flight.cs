@@ -53,8 +53,6 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                     {
                         _flightName = value;
                     }
-
-
                     else
                     {
                         throw new Exception("Invalid flightName name");

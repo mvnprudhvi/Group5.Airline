@@ -10,6 +10,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     {
         //private fields
         private static List<Customer> _customer;
+
         static CustomerDataAccessLayer()
         {
             _customer = new List<Customer>();
@@ -18,17 +19,31 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         //Add
         public void AddCustomer(Customer customer)
         {
-            if(_customer.Exists(temp => temp.CustomerUserName == customer.CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == customer.CustomerPassword)))
-              { 
                     _customer.Add(customer);
             }
                        
-        }
     
+        public void Login(Customer customer)
+        {
+            if (_customer.Exists(temp => temp.CustomerUserName == customer.CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == customer.CustomerPassword)))
+            
+            }
+
         public void DeleteCustomer(Customer customer)
         {
             _customer.Remove(customer);
         }
+
+        public List<Customer> RemoveCustomerByCustomerId(string CustomerId)
+        {
+            return _customer;
+        }
+
+        public List<Customer> RemoveCustomerByCustomerUserName(string CustomerUserName)
+        {
+            return _customer;
+        }
+
         public List<Customer> GetCustomerByCustomerId(string CustomerId)
         {
             return _customer;

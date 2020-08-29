@@ -47,6 +47,7 @@
     <Compile Include="FlightBooking.cs" />
     <Compile Include="FlightBookingException.cs" />
     <Compile Include="FlightException.cs" />
+    <Compile Include="FlightPriceException.cs" />
     <Compile Include="FlightSchedule.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="FlightPrice.cs" />

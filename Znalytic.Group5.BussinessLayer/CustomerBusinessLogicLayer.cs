@@ -47,7 +47,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method to GET flightDetails by flightId
-        public Customer GetCustomerByCustomerId(string CustomerId)
+        public Customer  GetCustomerByCustomerId(string CustomerId)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
                 //flight Id should not be null
                 if (CustomerUserName != null)
                 {
-                    return cdal.GetCustomerByCustomerUserName(CustomerUserName);
+                    return cdal.GetCustomerByCustomerUserName(string CustomerUserName);
                 }
                 else
                 {
@@ -86,6 +86,16 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             {
                 throw new CustomerException(ex.Message);
             }
+        }
+
+        public void DeleteCustomer(Customer customer)
+        {
+            cdal.DeleteCustomer(customer);
+        }
+
+        public void Login(Customer customer)
+        {
+             cdal.Login(customer);
         }
 
         //Method to Delete Customer Details To The List
@@ -106,7 +116,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method to REMOVE Customer  by flightName
-        public void RemovecustomerByCustomerUserName(string CustomerUserName)
+        public void RemoveCustomerByCustomerUserName(string CustomerUserName)
         {
 
             try
@@ -130,9 +140,9 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             try
             //WareHouse Id should not be null
             {
-                if (Customer.CustomerId != null)
+                if (customer.CustomerId != null) 
                 {
-                    cdal.UpdateCustomer(Customer);
+                    cdal.UpdateCustomer(customer);
                 }
             }
             catch (CustomerException ex)
