@@ -6,7 +6,7 @@ using Znalytics.Group5.Airline.Entities;
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     //represents customer data access layer
-    public class CustomerDataAccessLayer
+    public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
         //private fields
         private static List<Customer> _customer;
