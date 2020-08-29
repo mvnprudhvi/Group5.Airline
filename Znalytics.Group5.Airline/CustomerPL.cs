@@ -123,10 +123,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
             CustomersMenu();
             Console.ReadKey();
-
+        CustomersMenu:
             //represents customers menu
             static void CustomersMenu()
             {
+            
                 int choice2 = -1;
 
                 do
@@ -150,27 +151,28 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         }
                     }
                 } while (choice2 != 4);
-            }
+            
         
         //update customer details
         static void UpdateCustomer()
-        {
-                 
+            {
+                Customer c = new Customer();
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-               
+
                 int choice3;
-            
-            Console.WriteLine("Enter your option for updating Particular detail");
-            Console.WriteLine("For username enter 1");
-            Console.WriteLine("For email enter 2");
-            Console.WriteLine("For password enter 3");
-            Console.WriteLine("for mobile number Enter 4 ");
-            Console.WriteLine("For aadhar number Enter 5");
-            Console.WriteLine("For pan card number Enter 6");
-            Console.WriteLine("For gender Enter 7");
-            Console.WriteLine("To Finish Modifiying Enter 8");
-            bool c = int.TryParse (Console.ReadLine(), out choice3);
-                if (c == true)
+
+                Console.WriteLine("Enter your option for updating Particular detail");
+                Console.WriteLine("For username enter 1");
+                Console.WriteLine("For email enter 2");
+                Console.WriteLine("For password enter 3");
+                Console.WriteLine("for mobile number Enter 4 ");
+                Console.WriteLine("For aadhar number Enter 5");
+                Console.WriteLine("For pan card number Enter 6");
+                Console.WriteLine("For gender Enter 7");
+                Console.WriteLine("To Finish Modifiying Enter 8");
+                Console.WriteLine("To Exit Enter 9");
+                bool b = int.TryParse(Console.ReadLine(), out choice3);
+                if (b == true)
                 {
                     do
                     {
@@ -207,7 +209,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                                 break;
                             case 8:
                                 Console.WriteLine("---------Mofification are finished-------");
-
+                                break;
 
                             default:
                                 Console.WriteLine("Enter valid Option");
@@ -215,25 +217,28 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                         }
 
-                    } while (choice3 <= 8);
-                    
-                    }
+                    } while (choice3 <= 9);
 
+                }
+
+           
                 else
                 {
-                    goto UpdateCustomer()
-                        
+                    goto CustomersMenu;
+
+
                 }
+            }
         }
 
-    }
+    
 
             //view customer details
         static void GetCustomer()
         {
             Customer c = new Customer();
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
+            List<Customer> cust = customerBusinessLogicLayer.GetCustomerByCustomerId();
 
             foreach (Customer customer in cust)
             {
@@ -242,7 +247,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
         static void DeleteCustomer()
-        { 
-
-    }
+        {
+                Customer c = new Customer();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+            }
 }
