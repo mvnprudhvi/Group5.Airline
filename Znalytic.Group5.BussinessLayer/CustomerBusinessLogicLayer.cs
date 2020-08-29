@@ -12,7 +12,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     /// </summary> 
     public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
     {
-        private CustomerDataAccessLayer cdal;
+         CustomerDataAccessLayer cdal;
 
 
         /// <summary>
@@ -26,15 +26,25 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         //Method to ADD Customer Details To The List
         public void AddCustomer(Customer customer)
         {
-            if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+            try
             {
-                cdal.AddCustomer(customer);
+                if ((customer.CustomerId != null) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+                {
+                    cdal.AddCustomer(customer);
+                }
+            }
+            catch (CustomerExcepion ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
+
 
         //Method to Delete Customer Details To The List
         public void DeleteCustomer(Customer customer)
         {
+            try
+            {
             if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
             {
                 cdal.DeleteCustomer(customer);
