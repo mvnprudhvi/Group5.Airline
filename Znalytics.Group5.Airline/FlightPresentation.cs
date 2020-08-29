@@ -90,22 +90,19 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 flight.FlightName = System.Console.ReadLine();
 
                 System.Console.Write("Enter FlightId:"); // enter flight id
-                flight.FlightId = System.Console.ReadLine();
+                int FlightId = int.Parse(System.Console.ReadLine());
 
                 System.Console.Write("Enter FlightType:"); // enter flight type of the flight (i.e,Economy/Business)
                 flight.FlightType = System.Console.ReadLine();
-
-                System.Console.Write("Enter FlightCapacity:"); //no of seats present in particual flight
-                flight.FlightCapacity = System.Console.ReadLine();
 
                 System.Console.Write("Enter LuggageWeightage:"); //weight of the luggage carried by the passengers
                 flight.LuggageWeightage = System.Console.ReadLine();
 
                 System.Console.Write("Enter no of Business Seats:"); //Business seats in flight
-                flight.NoOfBusinessSeats = System.Console.ReadLine();
+                int NoOfBusinessSeats = int.Parse(System.Console.ReadLine());
 
                 System.Console.Write("Enter no of Economy seats:"); //weight of the luggage carried by the passengers
-                flight.NoOfEconomySeats = System.Console.ReadLine();
+                int NoOfEconomySeats = int.Parse(System.Console.ReadLine());
 
                 //creating object for Business logic layer 
                 FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();

@@ -1,8 +1,8 @@
 ﻿//Importing Statements
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using  Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-using Znalytic.Group5.Airline.FlightModule.BussinessLogicLayer;
 
 //Created a namespace for BusinessLayer of flight module
 namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
@@ -12,8 +12,8 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
     /// Represents BusinessLogic class of flight and Implementing an interface
     /// </summary>
 
-public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
-{
+   public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
+   {
     
          FlightDataAccessLayer fdal;
 
@@ -108,13 +108,13 @@ public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
         }
 
         //Method to UPDATE flightName
-        public void UpdateFlightNameByFlightId(Flight flight)// update flight Name
+        public void UpdateFlightNameByFlightId(Flight flight)
         {
 
             try
             {
                 //flight Id should not be null
-                if (Flight.flightId != null)
+                if (flight.FlightId != null)
                 {
                     fdal.UpdateFlightName(flight);
                 }
@@ -130,9 +130,9 @@ public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
         {
 
             try
-            //WareHouse Id should not be null
+            //flight Id should not be null
             {
-                if (Flight.flightId != null)
+                if (flight.FlightId != null)
                 {
                     fdal.UpdateFlightId(flight);
                 }
@@ -144,5 +144,5 @@ public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
         }
 
 
-    }
-    }
+   }
+}
