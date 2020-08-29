@@ -7,6 +7,8 @@ using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.DataAccessLayer;
+using Znalytics.Group5.Airline.Entities;
+
 /// <summary>
 /// represents dataAccessLayer of Flight
 /// </summary>
@@ -54,7 +56,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         }
 
         // Method to GET the added Schedules
-        public List<FlightSchedule> GetSchedule()
+        public  List<FlightSchedule> GetSchedule()
         {
             return _scheduleList;
         }
@@ -93,7 +95,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         }
 
         //Method to UPDATE source of Flight
-        public void UpdateSource(FlightSchedule schedule)// update source of a flight
+        public void UpdateSource(FlightSchedule schedule)
         {
             FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
             if (fs != null)
@@ -102,7 +104,13 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
 
             }
+            else
+            {
+              
+             throw new FlightException("FlightScheduleId doesn't exist");
+            }
         }
+        
 
         //Method to UPDATE Destinantion of Flight
         public void UpdateDestination(FlightSchedule schedule)// update Destination of flight
@@ -113,6 +121,11 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
                 fs.Destination = schedule.Destination;
 
 
+            }
+            else
+            {
+
+                throw new FlightException("FlightScheduleId doesn't exist");
             }
         }
 
@@ -126,9 +139,13 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
 
             }
+           
         }
 
-        //method to UPDATE ArrivalTiming of flight
+        /// <summary>
+        /// /method to UPDATE ArrivalTiming of flight
+        /// </summary>
+        /// <param name="schedule"></param>
         public void UpdateArrivalTiming(FlightSchedule schedule)// update Destination of flight
         {
             FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
@@ -140,26 +157,44 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             }
         }
 
-        //Method to REMOVE  schedule of the flight by flightId
+        
+        /// <summary>
+        // Method to REMOVE  schedule of the flight by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
         public void RemoveFlightScheduleByFlightId(string flightId)
         {
-
-            _scheduleList.RemoveAll(temp => temp.FlightId == flightId);
+            //Condition to check whether the flightId exists or not
+           if( _scheduleList.Exists(temp => temp.FlightId == flightId))
+            {
+                _scheduleList.RemoveAll(temp => temp.FlightId == flightId);
+            }
+           else
+            {
+                throw new FlightException("flight id doesn't exist");
+            }
 
         }
 
-        //Method to REMOVE schedule of the flight by flightScheduleId
+        /// <summary>
+        /// Method to REMOVE schedule of the flight by flightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
         public void RemoveFlightByFlightScheduleId(string flightScheduleId)
         {
-
-            _scheduleList.RemoveAll(temp => temp.FlightScheduleId == flightScheduleId);
+            //Condition to check whether the flightId exists or not
+           if( _scheduleList.Exists(temp => temp.FlightScheduleId == flightScheduleId))
+            {
+                _scheduleList.RemoveAll(temp => temp.FlightScheduleId == flightScheduleId);
+            }
+            else
+            {
+                throw new FlightException("flight id doesn't exist");
+            }
 
         }
     }
 }
-
-
-
 
 
 

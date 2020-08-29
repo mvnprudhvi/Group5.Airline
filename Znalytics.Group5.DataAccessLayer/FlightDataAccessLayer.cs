@@ -8,6 +8,7 @@ using System.Linq.Expressions;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
+using System;
 
 //Created a namespace for DataAccess Layer of flight Module
 namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
@@ -39,13 +40,18 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 
         }
 
-        public string FlightId()
-        {
-            int flightId = _flightList.Max(temp => temp.FlightId);
-            return FlightId++;
-        }
+        /* public string FlightId()
+         {
+             int flightId =System.Convert.ToInt32( _flightList.Max(temp => temp.FlightId));
+             return flightId++;
+         }*/
 
-        //Method to ADD details to the list
+
+
+        /// <summary>
+        /// Method to ADD details to the list
+        /// </summary>
+        /// <param name="flight"></param>
         public void AddFlight(Flight flight)
         {
             
@@ -62,33 +68,49 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 
         }
 
-        // Method to GET the added details
+        /// <summary>
+        /// Method to GET the added details
+        /// </summary>
+        /// <returns></returns>
         public List<Flight> GetFlights()
         {
             return GetFlights();
         }
 
-        //Method to GET the Flight by flightId
+        /// <summary>
+        /// Method to GET the Flight by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
         public Flight GetFlightByFlightId(string flightId)
         {
             Flight f = _flightList.Find(temp => temp.FlightId == Flight.flightId);
             return f;
         }
 
-        //Method to REMOVE Flight by FlightId
+        /// <summary>
+        /// Method to REMOVE Flight by FlightId
+        /// </summary>
+        /// <param name="flightId"></param>
         public void RemovetFlightByFlightId(string flightId)
         {
             _flightList.RemoveAll(temp => temp.FlightId == Flight.flightId);
 
         }
 
-        //Method to REMOVE Flight by flight Name
+        /// <summary>
+        /// Method to REMOVE Flight by flight Name
+        /// </summary>
+        /// <param name="flightName"></param>
         public void RemoveFlightByFlightName(string flightName)
         {
             _flightList.RemoveAll(temp => temp.FlightName == Flight.flightName);
         }
 
-        // Method to UPDATE the flight  By flightName
+        /// <summary>
+        /// Method to UPDATE the flight  By flightName
+        /// </summary>
+        /// <param name="flight"></param>
         public void UpdateFlightByFlightName(Flight flight)
         {
             Flight f = _flightList.Find(temp => temp.FlightName == flight.FlightName);
@@ -98,16 +120,27 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 
 
             }
+            else
+            {
+                throw new FlightException("flightName doesn't exist");
+            }
 
         }
 
-        // Method to UPDATE the flight id
+        /// <summary>
+        ///  Method to UPDATE the flight by flight id
+        /// </summary>
+        /// <param name="flight"></param>
         public void UpdateFlightByFlightId(Flight flight)
         {
             Flight f = _flightList.Find(temp => temp.FlightId == flight.FlightId);
             if (f != null)
             {
                 f.FlightId = flight.FlightId;
+            }
+            else
+            {
+                throw new FlightException("flightid doesn't exist");
             }
         }
 

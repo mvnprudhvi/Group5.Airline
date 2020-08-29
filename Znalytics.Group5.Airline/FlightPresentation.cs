@@ -350,7 +350,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.WriteLine("Enter the existing flightScheduleId ");
             string flightScheduleId = Console.ReadLine();
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleByscheduleId(flightScheduleId);
+            List<FlightSchedule> scheduleList = fsbl.GetScheduleByFlightScheduleId(flightScheduleId);
             foreach (FlightSchedule item in scheduleList)
             {
                 Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules

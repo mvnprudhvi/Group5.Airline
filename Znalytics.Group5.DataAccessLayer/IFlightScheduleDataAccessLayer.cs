@@ -10,8 +10,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     interface IFlightScheduleDataAccessLayer
     {
         void AddSchedule(FlightSchedule schedule);
-        void RemoveFlightScheduleByFlightId(FlightSchedule fs);
-        int GetSchedule(FlightSchedule fs);
+        
+        void RemoveFlightScheduleByFlightId(string flightId);
+        void RemoveFlightByFlightScheduleId(string flightScheduleId);
+        
+           
 
     }
 }
