@@ -2,6 +2,9 @@
 //using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 
 //Created a namespace for DataAccess Layer of flight Module
@@ -33,17 +36,24 @@ namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
 
         }
 
+        public string FlightId()
+        {
+            int flightId = _flightList.Max(temp =>temp.flightId);
+            return flightId++;
+        }
+
         //Method to ADD details to the list
         public void AddFlight(Flight flightDetails)
         {
-
-            if (!_flightList.Exists(temp => temp.flightId == flightDetails.flightId))
-            {
-                _flightList.Add(flightDetails);
-            }
+            
+                if (!_flightList.Exists(temp => temp.flightId == flightDetails.flightId))
+                {
+                    _flightList.Add(flightDetails);
+                }
+            
             else
             {
-                throw new Exception("Flight already exists");
+                throw new Exception("flight id already exists");
             }
 
 
@@ -58,7 +68,7 @@ namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
         //Method to GET the Flight by flightId
         public Flight GetFlightByFlightId(string flightId)
         {
-            Flight f = _flightList.Find(temp => temp.flightId == Flight.flightId);
+            Flight f = _flightList.Find(temp => temp.flightId == Flight.lightId);
             return f;
         }
 
@@ -97,5 +107,7 @@ namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
                 f.FlightId = flight.FlightId;
             }
         }
+
+       
     }
 }

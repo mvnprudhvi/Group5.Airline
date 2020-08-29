@@ -17,12 +17,12 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         public Flight(string FlightName, string FlightId, string FlightType, string luggageWeightage, string NoOfEconomySeats, string NoOfBusinessSeats)
         {
 
-            _flightName = flightName;
-            _flightId = flightId;
-            _flightType = flightType;
-            _luggageWeightage = luggageWeightage;
-            _noOfEconomySeats = noOfEconomySeats;
-            _noOfBusinessSeats = noOfBusinessSeats;
+            _flightName = FlightName;
+            _flightId = FlightId;
+            _flightType = FlightType;
+            _luggageWeightage = LuggageWeightage;
+            _noOfEconomySeats = NoOfEconomySeats;
+            _noOfBusinessSeats = NoOfBusinessSeats;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// propery for  flightName
         /// </summary>
-        public string flightName
+        public string FlightName
         {
             set
             {
@@ -67,7 +67,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// property for flightId
         /// </summary>
-        public string flightId
+        public string FlightId
         {
             set
             {
@@ -98,7 +98,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// proprty for flightType
         /// </summary>
-        public string flightType
+        public string FlightType
         {
             set
             {
@@ -124,7 +124,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// property for weight of a luggage
         /// </summary>
-        public string luggageWeightage
+        public string LuggageWeightage
         {
             set
             {
@@ -152,7 +152,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// property for noof EconomySeats
         /// </summary>
-        public string noOfEconomySeats
+        public string NoOfEconomySeats
         {
             set
             {
@@ -182,7 +182,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// property for noOfBusinesssSeats
         /// </summary>
 
-        public string noOfBusinessSeats
+        public string NoOfBusinessSeats
         {
             set
             {
