@@ -34,22 +34,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
             }
         }
 
-        /// <summary>
-        /// This Method Represents Update ticket cancellation
-        /// </summary>
-        /// <param name="bookingid"></param>
-        public void UpdateTicketCancellation(TicketCancellation bookingID)
-        {
-            if (TicketCancellation.BookingID != null)
-            {
-                tcdal.UpdateTiketCancellation(bookingID);
-            }
-            else
-            {
-                throw new Exception("customerid can't be null");
-            }
-        }
-        //method to get ticket cancellation by ticket customer id
+
         public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
         {
             return TicketCancellation;
