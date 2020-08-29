@@ -23,13 +23,13 @@ namespace Znalytics.Group5.Airline.FlightBooking.Entities
         private string _source;
         private string _destination;
         private string _departureTiming;
-        private string -arrivalTiming;
-        private string -passengerName;
+        private string _arrivalTiming;
+        private string _passengerName;
         private int _customerID;
         private int _bookingID;
         private int _seatNumber;
         private double _price;
-        public int seatNumber;
+       
 
 
         /// <summary>
