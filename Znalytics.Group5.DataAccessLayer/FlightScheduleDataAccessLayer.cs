@@ -135,7 +135,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         }
 
         //Method to REMOVE  schedule of the flight by flightId
-        public void RemoveFlightByFlightId(string flightId)
+        public void RemoveFlightScheduleByFlightId(string flightId)
         {
 
             _scheduleList.RemoveAll(temp => temp.FlightId == flightId);

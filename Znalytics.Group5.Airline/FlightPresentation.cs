@@ -26,7 +26,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
         static void Menu()
         {
-            int choice = 1;
+            int choice = 0;
 
             //using doWhile loop for Menu
             do
@@ -66,7 +66,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         case 1: AddFlight(); break;
                         case 2: UpdateFlight(); break;
                         case 3: Deleteflight(); break;
-                        case 4: Getflights(); break;
+                        case 4: GetFlights(); break;
                         case 5: Console.WriteLine("Exit"); break;
 
 
@@ -85,12 +85,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 //Creating object for Entity layer that is Flight class
                 Flight flight = new Flight();
 
+                System.Console.Write("Enter FlightId:"); // enter flight id
+                string FlightId = System.Console.ReadLine();
 
                 System.Console.Write("Enter FlightName:"); //name of particular flight
                 flight.FlightName = System.Console.ReadLine();
 
-                System.Console.Write("Enter FlightId:"); // enter flight id
-                int FlightId = int.Parse(System.Console.ReadLine());
 
                 System.Console.Write("Enter FlightType:"); // enter flight type of the flight (i.e,Economy/Business)
                 flight.FlightType = System.Console.ReadLine();
@@ -126,7 +126,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
         //View existing Flight Details
-        public static void Getflights()
+        public static void GetFlights()
         {
             //create object for Flight
             Flight flight = new Flight();
@@ -149,7 +149,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
-        public static void GetflightByflightId()
+        public static void GetfFlightByflightId()
         {
             Console.WriteLine("Enter exixting flightId");
             string flightId = Console.ReadLine();
@@ -237,7 +237,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
 
                 Console.WriteLine("Enter Existing flight ID");
-                 f.FlightId =int.Parse( Console.ReadLine());
+                 int FlightId =int.Parse( Console.ReadLine());
                 Console.WriteLine("Enter new name for Flight");
                 f.FlightName = Console.ReadLine();
                 fbl.UpdateFlightName(f);

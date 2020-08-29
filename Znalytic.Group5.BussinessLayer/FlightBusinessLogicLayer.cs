@@ -48,7 +48,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         // Method to GET the added details
         public List<Flight> GetFlights()
         {
-            return fdal.Getflights();
+            return fdal.GetFlights();
         }
 
         //Method to GET flightDetails by flightId
