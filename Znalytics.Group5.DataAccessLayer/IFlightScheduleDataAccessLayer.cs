@@ -9,24 +9,11 @@ namespace Znalytics.Group5.DataAccessLayer
 {
     interface IFlightScheduleDataAccessLayer
     {
+        void Addchedule(FlightSchedule fs);
+        void RemoveFlightScheduleByFlightId(FlightSchedule fs);
+        int GetSchedule(FlightSchedule fs);
 
-        /// <summary>
-        /// Represents the class for WareHouse Address
-        /// </summary>
-        public class FlightScheduleDataAccessLayer//: FlightScheduleDataAccessLayer
-        {
-            //Created a list for FlightSchedule 
-            private static List<FlightSchedue> _scheduleList
-            {
-                set;
-                get;
-            }
-
-            //Static Constructor
-            static FlightScheduleDataAccessLayer()
-            {
-                _scheduleList = new List<FlightSchedule>();
-
-            }
-        }
     }
+}
+
+        
