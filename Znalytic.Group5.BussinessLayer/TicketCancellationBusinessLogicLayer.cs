@@ -74,7 +74,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
     {
         return _tcdal.GetTicketCancellation();
     }
-
+}
 
 
 
