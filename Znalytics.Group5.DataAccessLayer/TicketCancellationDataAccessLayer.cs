@@ -30,9 +30,9 @@ namespace Znalytics.Group5.DataAccessLayer
             _cancellationID = new List<TicketCancellation>()
             {
 
-           new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
-          new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
-          new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 }
+           new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 0  },
+         new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 05  },
+          new TicketCancellation() { CustomerID = 12345, BookingID = 67340, SeatNumber = 05 }
             };
         }
         //methods to add ticket cancellation
