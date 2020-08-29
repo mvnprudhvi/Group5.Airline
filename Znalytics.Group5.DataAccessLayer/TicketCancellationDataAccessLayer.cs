@@ -31,7 +31,7 @@ namespace Znalytics.Group5.DataAccessLayer
             {
 
            new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
-          new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
+         new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
           new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 }
             };
         }

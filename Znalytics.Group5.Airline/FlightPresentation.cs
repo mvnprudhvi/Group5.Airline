@@ -509,7 +509,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 switch (choice)
                 {
-                    case 1: RemoveFlightByFlightId(); break;
+                    case 1: RemoveFlightScheduleByFlightId(); break;
                     case 2: RemoveFlightByFlightScheduleId(); break;
                     default: Console.WriteLine("Please Choose enter correct choice"); break;
 
@@ -520,12 +520,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 Console.WriteLine("the choice you entered is incorrect ..please ReEnter the choice ");
             }
-            void RemoveFlightByFlightId()
+            void RemoveFlightScheduleByFlightId()
             {
                 Console.Write("Enter the flightId:");
                 string flightId = Console.ReadLine();
 
-                fsbl.RemoveFlightByFlightId(flightId);
+                fsbl.RemoveFlightScheduleByFlightId(flightId);
                 Console.WriteLine("Schedule is Removed");
 
 

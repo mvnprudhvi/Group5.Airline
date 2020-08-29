@@ -10,12 +10,12 @@ using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 /// <summary>
 /// represents dataAccessLayer of Flight
 /// </summary>
-namespace Znalytics.Group5.Airline.FlighhtSchedule.DataAccessLayer
+namespace Znalytics.Group5.Airline.FlightSchedule.DataAccessLayer
 {
     /// <summary>
     /// Represents the class for Flight Schedule
     /// </summary>
-    public class FlightScheduleDataAccessLayer
+    public class FlightScheduleDataAccessLayer : IFlightScheduleDataAccessLayer
     {
         //Created a list for flight Schedule
         private static List<FlightSchedule> _scheduleList

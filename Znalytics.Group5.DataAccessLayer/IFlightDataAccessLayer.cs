@@ -1,7 +1,7 @@
 ﻿//using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-namespace Znalytics.Group5.DataAccessLayer
+namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     public interface IFlightDataAccessLayer
     {
@@ -15,3 +15,4 @@ namespace Znalytics.Group5.DataAccessLayer
 
     }
 }
+
