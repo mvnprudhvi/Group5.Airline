@@ -56,7 +56,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         //method to get ticket cancellation by ticket customer id
         public TicketCancellation GetTicketCancellationsByCustomerID(int _customerID)
         {
-            return _tcdal.GetcustomerID ();
+            return _tcdal.GetcustomerID();
 
         }
 
@@ -74,6 +74,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
     {
         return _tcdal.GetTicketCancellation();
     }
+}
 
 
 
