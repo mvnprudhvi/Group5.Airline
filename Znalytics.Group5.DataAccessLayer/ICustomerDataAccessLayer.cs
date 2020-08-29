@@ -13,8 +13,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         List<Customer> GetCustomer();
         void UpdateCustomer(Customer customer);
         void DeleteCustomer(Customer customer);
-       Customer GetCustomerByCustomerId(string CustomerId);
-        Customer GetCustomerByCustomerUserName(string CustomerUserName);
+        List<Customer> RemoveCustomerByCustomerId(string CustomerId);
+        List<Customer> RemoveCustomerByCustomerUserName(string CustomerUserName);
+        void Login(Customer customer);
+       List<Customer> GetCustomerByCustomerId(string CustomerId);
+        List<Customer> GetCustomerByCustomerUserName(string CustomerUserName);
 
 
 

@@ -173,63 +173,65 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("For gender Enter 7");
                 Console.WriteLine("To Finish Modifiying Enter 8");
                 Console.WriteLine("To Exit Enter 9");
-                bool b = int.TryParse(Console.ReadLine(), out choice3);
-                if (b == true)
-                {
-                    do
+                    customerBusinessLogicLayer.UpdateCustomer(c);
+                    Console.WriteLine("Customer details updated successfully");
+                    bool b = int.TryParse(Console.ReadLine(), out choice3);
+                    if (b == true)
                     {
-                        switch (choice3)
+                        do
                         {
-                            case 1:
-                                Console.WriteLine("Enter your new username:");
-                                c.CustomerUserName(Console.ReadLine());
-                                break;
+                            switch (choice3)
+                            {
+                                case 1:
+                                    Console.WriteLine("Enter your new username:");
+                                    c.CustomerUserName = Console.ReadLine();
+                                    break;
 
-                            case 2:
-                                Console.WriteLine("Enter Your new email:");
-                                c.CustomerEmail = Console.ReadLine();
-                                break;
-                            case 3:
-                                Console.WriteLine("Enter your new password:");
-                                c.CustomerPassword = Console.ReadLine();
-                                break;
-                            case 4:
-                                Console.WriteLine("Enter Your new mobile number:");
-                                c.CustomerMobileNumber = Console.ReadLine();
-                                break;
-                            case 5:
-                                Console.WriteLine("Enter your new aadhar Number:");
-                                c.CustomerAadharNumber = Console.ReadLine();
-                                break;
-                            case 6:
-                                Console.WriteLine("Enter Your new pan card number");
-                                c.CustomerPanCardNumber = Console.ReadLine();
-                                break;
-                            case 7:
-                                Console.WriteLine("Enter your gender:");
-                                c.CustomerGender = Console.ReadLine();
-                                break;
-                            case 8:
-                                Console.WriteLine("---------Mofification are finished-------");
-                                break;
+                                case 2:
+                                    Console.WriteLine("Enter Your new email:");
+                                    c.CustomerEmail = Console.ReadLine();
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Enter your new password:");
+                                    c.CustomerPassword = Console.ReadLine();
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Enter Your new mobile number:");
+                                    c.CustomerMobileNumber = Console.ReadLine();
+                                    break;
+                                case 5:
+                                    Console.WriteLine("Enter your new aadhar Number:");
+                                    c.CustomerAadharNumber = Console.ReadLine();
+                                    break;
+                                case 6:
+                                    Console.WriteLine("Enter Your new pan card number");
+                                    c.CustomerPanCardNumber = Console.ReadLine();
+                                    break;
+                                case 7:
+                                    Console.WriteLine("Enter your gender:");
+                                    c.CustomerGender = Console.ReadLine();
+                                    break;
+                                case 8:
+                                    Console.WriteLine("---------Mofification are finished-------");
+                                    break;
 
-                            default:
-                                Console.WriteLine("Enter valid Option");
-                                break;
+                                default:
+                                    Console.WriteLine("Enter valid Option");
+                                    break;
 
-                        }
+                            }
 
-                    } while (choice3 <= 9);
-
-                }
-
-           
-                else
-                {
-                    goto CustomersMenu;
+                        } while (choice3 <= 9);
+                    }
 
 
-                }
+
+                    else
+                    {
+                        goto CustomersMenu;
+
+
+                    }
             }
         }
 
@@ -237,18 +239,19 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             //view customer details
         static void GetCustomer()
-        {
-            Customer c = new Customer();
-            CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
-
-            foreach (Customer customer in cust)
             {
-                Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
-            }
-        }
+                Customer c = new Customer();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
 
-             static void GetCustomerByCustomerId()
+                foreach (Customer customer in cust)
+                {
+                    Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
+                }
+                Console.WriteLine("These Are Your Details");
+            }
+
+            static void GetCustomerByCustomerId()
             {
                 Customer c = new Customer();
                 Console.WriteLine("Enter existing Customer Id");
@@ -265,7 +268,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("Enter existing Customer User Name");
                 string CustomerUserName = Console.ReadLine();
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-                Customer customer = customerBusinessLogicLayer.GetCustomerByCustomerId(CustomerUserName);
+                Customer customer = customerBusinessLogicLayer.GetCustomerByCustomerUserName(CustomerUserName);
                 Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
             }
 
@@ -277,6 +280,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("select the Option based on which you want to remove the Customer Account ");
                 Console.WriteLine("Enter 1 by Customer Id");
                 Console.WriteLine("Enter 2 by Customer UserName");
+                customerBusinessLogicLayer.DeleteCustomer(c);
+                Console.WriteLine("Customer details Deleted successfully");
                 int choice;
                 bool b;
                 b = int.TryParse(Console.ReadLine(), out choice);
@@ -298,11 +303,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 }
                 void RemoveCustomerByCustomerId()
                 {
+                    
                     Console.Write("Enter the CustomerId:");
                     string CustomerId = Console.ReadLine();
-
-                    customerBusinessLogicLayer.RemoveCustomerScheduleByCustomerId(CustomerId);
-                    Console.WriteLine("Your Account is Delete");
+  
+                    customerBusinessLogicLayer.RemoveCustomerByCustomerId(CustomerId);
+                    Console.WriteLine("Your Account is Deleted");
 
 
                 }
