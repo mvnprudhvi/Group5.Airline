@@ -12,7 +12,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     /// </summary>
     class TicketCancellationPresentation
     {
-        private static TicketCancellationBusinessLogicLayer _ticketCancellationBusinessLogicLayer;//Reference Variable Of Price Business Logic Layer
+        //Reference Variable Of ticket cancellation Business Logic Layer
+
+        private static TicketCancellationBusinessLogicLayer _ticketCancellationBusinessLogicLayer;     
         private static IEnumerable<TicketCancellation> _ticketCancellation;
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter Your choice: ");
                 choice = int.Parse(ReadLine());
-
+                //represents switch case
                 switch (choice)
                 {
                     case 1: AddTicketCancellation(); break;
@@ -89,7 +91,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         }
 
         /// <summary>
-        /// This Method Represents Update Price to update Price of Flight
+        /// This Method Represents Update ticket cancellation
         /// </summary>
         static void UpdateTicketCancellation()
         {
