@@ -11,10 +11,41 @@ namespace Znalytics.Group5.Airline.Entities
     public class FlightPrice
     {
         //Private Fields
+        private int _flightid;
+        private int _flightScheduleId;
         private int _beforeDays;
         private double _priceForBusinessClassSeat;
         private double _priceForEconomyClassSeat;
         private double _weekendPriceHikePercentage;
+
+        //Property For Flight id
+        public int FlightId
+        {
+            set
+            {
+
+                _flightid = value;
+            }
+            get
+            {
+                return _flightid;
+            }
+        }
+
+        //Property For Flight Schedule Id
+        public int FlightScheduleId
+        {
+            set
+            {
+
+                _flightScheduleId = value;
+            }
+            get
+            {
+                return _flightScheduleId;
+            }
+        }
+
 
         //Property For Before Days
         public int BeforeDays
