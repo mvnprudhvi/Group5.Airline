@@ -54,6 +54,7 @@
     <Compile Include="IFlightBookingDataAccessLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
     <Compile Include="IFlightScheduleBusinessLogic.cs" />
+    <Compile Include="IFlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ITicketCancellationBusinessLogicLayer.cs" />
     <Compile Include="FlightPriceBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
