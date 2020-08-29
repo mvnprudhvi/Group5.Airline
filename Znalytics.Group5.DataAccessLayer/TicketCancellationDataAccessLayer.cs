@@ -8,8 +8,6 @@ using Znalytics.Group5.Airline.Entities;
 /// <summary>
 /// represents dataAccessLayer of Ticketcancellation
 /// </summary>
-
-
 namespace Znalytics.Group5.DataAccessLayer
 {
     /// <summary>
@@ -76,6 +74,11 @@ namespace Znalytics.Group5.DataAccessLayer
         public TicketCancellation GetTicketCancellationsByBookingID(int bookingID)
         {
             return _cancellationID.Find(temp => temp.CancellationID == bookingID);
+        }
+
+        public void AddTicketCancellation(TicketCancellation bookingId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

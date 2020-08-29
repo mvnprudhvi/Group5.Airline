@@ -112,7 +112,6 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void GetTicketCancellation()
         {
-
             List<TicketCancellation> _tc = _ticketCancellationBusinessLogicLayer.GetTicketCancellation();
 
             foreach (TicketCancellation tc in _ticketCancellation)
