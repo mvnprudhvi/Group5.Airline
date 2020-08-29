@@ -54,7 +54,7 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             if (CancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
             {
-                CancellationID.update(bookingId);
+                CancellationID.Update(bookingId);
             }
             else
             {
