@@ -94,7 +94,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
 
             FlightBooking fb = new FlightBooking();
-            Console.Write("Enter Existing booking id to Delete ticket cancellation ");
+            Console.Write("Enter Existing booking id to Delete FlightBooking ");
             _flightBookingbusinessLogic.DeleteFlightBooking(fb);
             Console.WriteLine("The FlightBooking is Deleted Successfully \n");
         }
@@ -118,13 +118,12 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         }
 
         /// <summary>
-        /// This Method Represents get Ticket Cancellation
+        /// This Method Represents getting all details of  FlightBooking
         /// </summary>
         static void GetFlightBooking()
         {
 
-            List<FlightBooking> 
-                fb = _flightBookingbusinessLogic.GetFlightBooking();
+            List<FlightBooking> fb = _flightBookingbusinessLogic.GetFlightBooking();
 
             foreach (FlightBooking fb in _flightBooking)
             {
