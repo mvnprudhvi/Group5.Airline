@@ -22,7 +22,7 @@ using System;
                 Console.Write("enter date:");
                 int date =int.Parse (Console.ReadLine());
 
-            Console.WriteLine("BookingID:" + TicketCancellation.bookingId);
+            Console.WriteLine("BookingID:" + TicketCancellation.BookingID);
             Console.WriteLine("SeatNumber:" + TicketCancellation.seatNumber);
             Console.WriteLine("Date:" + TicketCancellation.date);
 
