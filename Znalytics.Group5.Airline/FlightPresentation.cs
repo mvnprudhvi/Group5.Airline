@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using Znalytic.Group5.Airline.Flight.BusinessLogicLayer;
+using Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 
@@ -90,7 +90,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 flight.FlightName = System.Console.ReadLine();
 
                 System.Console.Write("Enter FlightId:"); // enter flight id
-                flight.FlightId = int.Parse(System.Console.ReadLine());
+                flight.FlightId = System.Console.ReadLine();
 
                 System.Console.Write("Enter FlightType:"); // enter flight type of the flight (i.e,Economy/Business)
                 flight.FlightType = System.Console.ReadLine();
