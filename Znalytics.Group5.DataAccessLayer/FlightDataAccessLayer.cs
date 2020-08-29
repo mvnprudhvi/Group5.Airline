@@ -1,10 +1,10 @@
-﻿
+﻿//........KEERTHANA......
+
 //using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 
 //Created a namespace for DataAccess Layer of flight Module
@@ -43,12 +43,12 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         }
 
         //Method to ADD details to the list
-        public void AddFlight(Flight flightDetails)
+        public void AddFlight(Flight flight)
         {
             
-                if (!_flightList.Exists(temp => temp.flightId == flightDetails.flightId))
+                if (!_flightList.Exists(temp => temp.flightId == flight.flightId))
                 {
-                    _flightList.Add(flightDetails);
+                    _flightList.Add(flight);
                 }
             
             else

@@ -46,6 +46,7 @@
     <Compile Include="FlightDataAccessLayer.cs" />
     <Compile Include="FlightScheduleDataAccessLayer.cs" />
     <Compile Include="FlightSearchingDataAccessLayer.cs" />
+    <Compile Include="ICustomerDataAccessLayer.cs" />
     <Compile Include="IFlightBookingDataAccessLayer.cs" />
     <Compile Include="IFlightDataAccessLayer.cs" />
     <Compile Include="IFlightScheduleDataAccessLayer.cs" />

@@ -6,23 +6,24 @@ using Znalytic.Group5.Airline.FlightModule.BussinessLogicLayer;
 
 //Created a namespace for BusinessLayer of flight module
 namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
-
+{ 
 
     /// <summary>
     /// Represents BusinessLogic class of flight and Implementing an interface
     /// </summary>
 
-    public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
-    {
-        FlightDataAccessLayer fdal;
+public class FlightBusinessLogicLayer : IFlightBusinessLogicLayer
+{
+    
+         FlightDataAccessLayer fdal;
 
         /// <summary>
         /// Default Constructor
         /// </summary>
         public FlightBusinessLogicLayer()
         {
-
-            fdal = new FlightDataAccessLayer();
+       //Creating object for DataAcessLayer and storing  in reference variable
+        fdal = new FlightDataAccessLayer();
         }
 
         //Method to ADD FlightDetails to the list
@@ -143,6 +144,5 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         }
 
 
-
     }
-}
+    }
