@@ -19,23 +19,17 @@ namespace Znalytics.Group5.Airline.Entities
         private int _seatNumber;
         private DateTime _date;
         private int _cancellationID;
-
-        public TicketCancellation()
-        {
-        }
-
-        //private string _flightName { set; get; }
-        //private int _price { set; get; }
-        // private string _arrivalTiming { set; get; }
+        
         /// <summary>
         /// Constructor that initializes details of ticketcancellation
         /// </summary>
-        /// <param name="customerId">Represents id of the store</param>
-        /// <param name="bookingId">Represents name of the store</param>
-        /// <param name="seatNumber">Represents location of the store</param>
-        /// <param name="date">Represents phone number of the store</param>
-        public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date, int cancellationId)
+       public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date, int cancellationId)
         {
+            /// <param name="customerId">Represents id of the store</param>
+            /// <param name="bookingId">Represents name of the store</param>
+            /// <param name="seatNumber">Represents location of the store</param>
+            /// <param name="date">Represents phone number of the store</param>
+
             _customerID = customerId;
             _bookingID = bookingId;
             _flightID = flightId;
@@ -157,8 +151,6 @@ namespace Znalytics.Group5.Airline.Entities
         }
     }
 }
-
-
 
 
 
