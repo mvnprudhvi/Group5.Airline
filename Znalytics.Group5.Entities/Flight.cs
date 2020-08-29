@@ -79,7 +79,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 4)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
                     {
                         _flightId = value;
                     }

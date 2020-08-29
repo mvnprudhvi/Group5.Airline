@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
     {
         //Private Fields
-        private string _flightScheduleId { set; get; }
+        private int _flightScheduleId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private DateTime _departureTiming { set; get; }
@@ -54,7 +54,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 4)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
                     {
                         _flightScheduleId = value;
                     }
