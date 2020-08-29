@@ -30,16 +30,17 @@ namespace Znalytics.Group5.DataAccessLayer
             CancellationID = new List<TicketCancellation>()
             {
 
-           new TicketCancellation() { customerID = "12345", bookingID = "67890", seatNumber = "01", date = "2020-08-29", cancellationId = "23" }
-          new TicketCancellation() { customerID = "12345", bookingID = "67890", seatNumber = "01", date = "2020-08-29", cancellationId = "23" }
-          new TicketCancellation() { customerID = "12345", bookingID = "67890", seatNumber = "01", date = "2020-08-29", cancellationId = "23" }
+           new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
+          new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 },
+          new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Date = 2020-08-29, CancellationID = 23 }
             };
         }
         //methods to add ticket cancellation
         public void AddTicketCancellations(TicketCancellation bookingId)
         {
-            if (CancellationID.Exists(temp => temp.customerID == bookingId.customerID))
+            if (CancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
             {
+                bookingId.CancellationID = bookingId.CustomerID+45;
                 CancellationID.Add(bookingId);
             }
             else
@@ -51,9 +52,9 @@ namespace Znalytics.Group5.DataAccessLayer
         //methods to update ticket cancellation
         public void UpdateTicketCancellations(TicketCancellation bookingId)
         {
-            if (CancellationID.Exists(temp => temp.customerID == bookingId.customerID))
+            if (CancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
             {
-                CancellationID.Update(bookingId);
+                CancellationID.update(bookingId);
             }
             else
             {
@@ -64,17 +65,17 @@ namespace Znalytics.Group5.DataAccessLayer
         //method to get ticket cancellation by ticket cancellation id
         public TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID)
         {
-            return CancellationID.Find(temp => temp.cancellationID == cancellationID);
+            return CancellationID.Find(temp => temp.CancellationID == cancellationID);
         }
         //method to get ticket cancellation by ticket customer id
         public TicketCancellation GetTicketCancellationsByCustomerID(int customerID)
         {
-            return CancellationID.Find(temp => temp.cancellationID == customerID);
+            return CancellationID.Find(temp => temp.CancellationID == customerID);
         }
         //method to get ticket cancellation by ticket booking id
         public TicketCancellation GetTicketCancellationsByBookingID(int bookingID)
         {
-            return CancellationID.Find(temp => temp.cancellationID == bookingID);
+            return CancellationID.Find(temp => temp.CancellationID == bookingID);
         }
     }
 }

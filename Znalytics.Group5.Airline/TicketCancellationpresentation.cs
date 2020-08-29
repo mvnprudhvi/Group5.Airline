@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System;
-    namespace FlightBooking
+    namespace TicketCancellation
     {
         public class TicketCancellation
         {
@@ -23,12 +23,12 @@ using System;
                 int date =int.Parse (Console.ReadLine());
 
             Console.WriteLine("BookingID:" + TicketCancellation.BookingID);
-            Console.WriteLine("SeatNumber:" + TicketCancellation.seatNumber);
-            Console.WriteLine("Date:" + TicketCancellation.date);
+            Console.WriteLine("SeatNumber:" + TicketCancellation.SeatNumber);
+            Console.WriteLine("Date:" + TicketCancellation.Date);
 
 
             //Random class generates pseudo Random numbers
-            var random = new Random();
+                var random = new Random();
                 int RandomNo = random.Next();
                 int SeatNumber = RandomNo;
 
