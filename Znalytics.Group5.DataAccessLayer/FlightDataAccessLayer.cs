@@ -8,7 +8,7 @@ using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 
 //Created a namespace for DataAccess Layer of flight Module
-namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
+namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 {
     /// <summary>
     /// Represents the class for flight Data
@@ -73,25 +73,25 @@ namespace Znalytics.Group5.Airline.Flight.DataAccessLayer
         }
 
         //Method to REMOVE Flight by FlightId
-        public void RemoveFlightByFlightId(string flightId)
+        public void RemovetFlightByFlightId(string flightId)
         {
-            _flightList.RemoveAll(temp => temp.flightId == Flight.flightId);
+            _flightList.RemoveAll(temp => temp.FlightId == Flight.flightId);
 
         }
 
         //Method to REMOVE Flight by flight Name
         public void RemoveFlightByFlightName(string flightName)
         {
-            _flightList.RemoveAll(temp => temp.flightName == Flight.flightName);
+            _flightList.RemoveAll(temp => temp.FlightName == Flight.flightName);
         }
 
         // Method to UPDATE the flight Name 
-        public void UpdateFlightName(Flight flight)
+        public void UpdateFlightName(Flight flightId)
         {
             Flight f = _flightList.Find(temp => temp.FlightId == flightId);
             if (f != null)
             {
-                f.FlightName = flight.FlightName;
+                f.FlightName = Flight.flightName;
 
 
             }

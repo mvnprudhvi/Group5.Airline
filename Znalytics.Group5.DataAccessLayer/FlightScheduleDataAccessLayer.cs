@@ -10,7 +10,7 @@ using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 /// <summary>
 /// represents dataAccessLayer of Flight
 /// </summary>
-namespace Znalytics.Group5.Airline.FlightSchedule.DataAccessLayer
+namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 {
     /// <summary>
     /// Represents the class for Flight Schedule

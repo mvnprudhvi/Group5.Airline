@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-using Znalytics.Group5.Airline.Flight.DataAccessLayer;
+using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 
 //Created a namespace for BusinessLogicLayer of FlightSchedule module
 namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
