@@ -31,11 +31,11 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             _scheduleList = new List<FlightSchedule>()
             {
                 //Sample information
-                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "S1", Source = "HYDERABAD", Destination = "MUMBAI", DepartureTiming = "01-09-2020  06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "S2", Source = "MUMBAI", Destination = "CHENNAI", DepartureTiming = "02/09/2020 06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "S3", Source = "BANGALORE", Destination = "DELHI", DepartureTiming = "05/10/2020  05:30:25 PM", ArrivalTiming = "01-09-2020  05:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "S4", Source = "HYDERABAD", Destination = "DELHI", DepartureTiming = "06/10/2020 08:15:10 AM", ArrivalTiming = "01-09-2020  08:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "S2", Source = "HYDERABAD", Destination = "BANGALORE", DepartureTiming = "02/09/2020 11:50:44AM", ArrivalTiming = "01-09-2020  10:45:00 AM" }
+                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "FSID01", Source = "HYDERABAD", Destination = "MUMBAI", DepartureTiming = "01-09-2020  06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "FSID02", Source = "MUMBAI", Destination = "CHENNAI", DepartureTiming = "02/09/2020 06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
+                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "FSID03", Source = "BANGALORE", Destination = "DELHI", DepartureTiming = "05/10/2020  05:30:25 PM", ArrivalTiming = "01-09-2020  05:00:00 AM" },
+                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "FSID04", Source = "HYDERABAD", Destination = "DELHI", DepartureTiming = "06/10/2020 08:15:10 AM", ArrivalTiming = "01-09-2020  08:00:00 AM" },
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "SFSID02", Source = "HYDERABAD", Destination = "BANGALORE", DepartureTiming = "02/09/2020 11:50:44AM", ArrivalTiming = "01-09-2020  10:45:00 AM" }
             };
         }
 
