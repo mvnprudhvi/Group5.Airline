@@ -34,7 +34,7 @@ using System;
 
 
                 Console.WriteLine("================== TICKET CANCELLATION==========================");
-                Console.WriteLine(" Bookingid:" + bookingId);
+                Console.WriteLine(" bookingid:" + bookingId);
                 Console.WriteLine(" date:" + date);
                 Console.WriteLine(" seatNumber :" + seatNumber);
                 Console.WriteLine(" you are alloted in seat number: " + SeatNumber);
