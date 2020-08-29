@@ -68,7 +68,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         //Method to GET the Flight by flightId
         public Flight GetFlightByFlightId(string flightId)
         {
-            Flight f = _flightList.Find(temp => temp.flightId == Flight.lightId);
+            Flight f = _flightList.Find(temp => temp.FlightId == Flight.flightId);
             return f;
         }
 
