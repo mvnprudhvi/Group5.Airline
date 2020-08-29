@@ -3,6 +3,8 @@
 /// Module Name is Flight Price
 /// </summary>
 
+using System;
+
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
@@ -11,34 +13,60 @@ namespace Znalytics.Group5.Airline.Entities
     public class FlightPrice
     {
         //Private Fields
-        private int _flightid;
-        private int _flightScheduleId;
+        private string _flightId;
+        private string _flightScheduleId;
         private int _beforeDays;
         private double _priceForBusinessClassSeat;
         private double _priceForEconomyClassSeat;
         private double _weekendPriceHikePercentage;
 
-        //Property For Flight id
-        public int FlightId
+        //Property For Flight Id
+        public string FlightId
         {
             set
             {
+                if (!string.IsNullOrEmpty(value))
+                {
 
-                _flightid = value;
+                    bool spaceFound = value.Contains(" ");
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
+                    {
+                        _flightId = value;
+                    }
+                    else
+                    {
+                        throw new FlightPriceException("Enter valid flightId");
+                    }
+                }
             }
             get
             {
-                return _flightid;
+                return _flightId;
             }
         }
 
         //Property For Flight Schedule Id
-        public int FlightScheduleId
+        public string FlightScheduleId
         {
             set
             {
+                if (!string.IsNullOrEmpty(value))
+                {
 
-                _flightScheduleId = value;
+                    bool spaceFound = value.Contains(" ");
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
+                    {
+                        _flightScheduleId = value;
+                    }
+                    else
+                    {
+                        throw new System.Exception("invalid flightScheduleid");
+                    }
+                }
             }
             get
             {
@@ -52,8 +80,14 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-               
-                _beforeDays = value;
+                if (value <= 60)
+                {
+                    _beforeDays = value;
+                }
+                else
+                {
+                    throw new Exception("Please Enter Before Days Below 60 Days Only");
+                }
             }
             get
             {
