@@ -45,14 +45,12 @@
     <Compile Include="CustomerBusinessLogicLayer.cs" />
     <Compile Include="customerID.cs" />
     <Compile Include="FlightBookingbusinessLogic.cs" />
-    <Compile Include="FlightBookingDataAccessLayer.cs" />
     <Compile Include="FlightBusinessLogicLayer.cs" />
     <Compile Include="FlightScheduleBusinessLogicLayer.cs" />
     <Compile Include="FlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightBookingbusinessLogic.cs" />
     <Compile Include="IFlightBookingBusinessLogicLayer.cs" />
-    <Compile Include="IFlightBookingDataAccessLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
     <Compile Include="IFlightScheduleBusinessLogic.cs" />
     <Compile Include="IFlightSearchingbusinessLogicLayer.cs" />
