@@ -19,11 +19,15 @@ namespace Znalytics.Group5.Airline.Entities
         private int _seatNumber;
         private DateTime _date;
         private int _cancellationID;
-        
+
+        public TicketCancellation()
+        {
+        }
+
         /// <summary>
         /// Constructor that initializes details of ticketcancellation
         /// </summary>
-       public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date, int cancellationId)
+        public TicketCancellation(int customerId, int bookingId, int flightId, int seatNumber, DateTime date, int cancellationId)
         {
             /// <param name="customerId">Represents id of the store</param>
             /// <param name="bookingId">Represents name of the store</param>
