@@ -123,8 +123,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void GetFlightBooking()
         {
 
-            List<FlightBooking> 
-                fb = _flightBookingbusinessLogic.GetFlightBooking();
+            List<FlightBooking> fb = _flightBookingbusinessLogic.GetFlightBooking();
 
             foreach (FlightBooking fb in _flightBooking)
             {
