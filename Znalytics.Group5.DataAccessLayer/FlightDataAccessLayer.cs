@@ -85,7 +85,6 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
 
         }
 
-
         /// <summary>
         /// Method to ADD details to the list
         /// </summary>

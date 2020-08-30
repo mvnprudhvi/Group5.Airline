@@ -20,11 +20,10 @@ namespace Znalytics.Group5.DataAccessLayer
 
         // creating list
         private static List<TicketCancellation> _cancellationID
-        {
+        { 
             set;
             get;
-        }
-
+                }
         static TicketCancellationDataAccessLayer()
         {
 
@@ -58,9 +57,8 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
             string str1 = streamReader.ReadToEnd();
-            List<TicketCancellation> ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
+            List<TicketCancellation> _ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
             return _cancellationID;
-
         }
 
         //methods to add ticket cancellation
@@ -77,19 +75,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 throw new Exception("bookingId doesnot exists");
             }
         }
-        //methods to update ticket cancellation
-        public void UpdateTicketCancellations(TicketCancellation bookingId)
-        {
-            if (_cancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
-            {
-                _cancellationID.Update(bookingId);
-            }
-            else
-            {
-                //throws exception that booking id doesnot exist
-                throw new Exception("bookingId doesnot exists");
-            }
-        }
+        
         //method to get ticket cancellation by ticket cancellation id
         public List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID)
         {
@@ -113,8 +99,20 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return GetTicketCancellations();
         }
+        }
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -204,7 +202,7 @@ namespace Znalytics.Group5.DataAccessLayer
 
 
 
-        /*//method to display the added booking id
+        //method to display the added booking id
         public List<TicketCancellation> GetTicketCancellations()
         {
             return TicketCancellationDataAccessLayer.CancellationID();

@@ -14,15 +14,13 @@ namespace Znalytic.Group5.BussinessLogicLayer
         //Created an object for DataAccessLayer and strore the object in reference variable
         TicketCancellationDataAccessLayer tcdal = new TicketCancellationDataAccessLayer();
 
-        public bool checkCancellationID(string CancellationID)
+        public bool checkCancellationID(int cancellationID)
         {
             List<TicketCancellation> _cancellationID = new List<TicketCancellation>();
-       
-            bool result = _cancellationID.Exists(temp => temp.CustomerID ==customerID);
+
+            bool result = _cancellationID.Exists(temp => temp.CustomerID == customerID);
             return result;
         }
-
-
         /// <summary>
         /// This Method Represents AddTicketCancellation 
         /// </summary>
@@ -75,49 +73,12 @@ namespace Znalytic.Group5.BussinessLogicLayer
             return tcdal.GetTicketCancellationsByCancellationID(cancellationID);
         }
 
-
-
-
-        /// <summary>
-        /// This Method Represents Update ticket cancellation
-        /// </summary>
-        /// <param name="bookingid"></param>
-        public void UpdateTicketCancellations(TicketCancellation bookingID)
-        {
-            if (TicketCancellation.bookingID != null)
-            {
-                _tcdal.UpdateTicketCancellation(bookingID);
-            }
-            else
-            {
-                throw new Exception("booking id can't be null");
-            }
-        }
-
-        //Method to GET GetTicketCancellations By CustomerID
-        public TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID)
-        {
-            try
-            {
-                //flight Id should not be null
-                if(cancellationID != null)
-                 
-                {
-                    return _tcdal.GetTicketCancellationsByCancellationID(cancellationID);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-       
-
         public void DeleteTicketCancellation(TicketCancellation tc)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTicketCancellations(TicketCancellation tc)
         {
             throw new NotImplementedException();
         }
@@ -127,75 +88,8 @@ namespace Znalytic.Group5.BussinessLogicLayer
     /// This Method Represents GetbookingId 
     /// </summary>
     /// <returns>TicketCancellationDataAccessLayer</returns>
-    public List<TicketCancellation> GetTicketCancellation()
+    public List<TicketCancellation> GetTicketCancellations()
     {
-        return _tcdal.GetTicketCancellation();
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.DataAccessLayer;
-
-namespace Znalytics.AirLine.BusinessLogicLayer
-{
-    public class CancellationBusinessLogicLayer : CancellationBusinessLogicLayer
-    {
-        private CancellationDataAccessLayer cdl = null;
-
-        public CancellationBusinessLogicLayer()
-        {
-            cdal = new CancellationDataAccessLayer();
-        }
-
-        public void AddFlightName(FlightName FlightName)
-        {
-            if (FlightName.FlightName != null)
-
-                cdal.AddFlightName(FlightName);
-        }
-    }
-}*/
-
-
-
-
-
-
-
-
-
-
-/*//using system.Znalytic.Group5.BussinessLayer
-    public  class FlightBussinessLayer
-    {
-        public void AddFlight(Flight fn)
-    {
-        if(Flight.FlightName<=30)
-        {
-            FlightBussinessLayer fdl = new FlightBussinessLayer()
-        }
-    }
-
+        return tcdal.GetTicketCancellations();
     }
 }

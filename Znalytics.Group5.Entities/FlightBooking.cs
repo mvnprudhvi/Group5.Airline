@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Znalytics.Group5.Airline.FlightBooking.Entities
+namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
     /// Represents  class of flightbooking
