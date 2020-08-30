@@ -1,4 +1,6 @@
-﻿//////using System;
+﻿
+using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
+
 using System.Collections.Generic;
 using System;
 
@@ -8,21 +10,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Znalytics.Group5.Airline.FlightSearchingDataAcessLayer;
+using System.Dynamic;
 
 namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
 
 { 
 
-        public class FlightSearchingbusinessLogicLayer : IFlightSearchingbusinessLogicLayer()
+        public class FlightSearchingbusinessLogicLayer : IFlightSearchingbusinessLogicLayer
              
 
     
-            private FlightSearchingDataAccessLayer fdal = null;
+            private FlightSearchingDataAccessLayer fsdl = null;
 
             public FlightSearchingbusinessLogicLayer()
             {
-                fdal = new FlightSearchingDataAccessLayer();
+                fsdl = new FlightSearchingDataAccessLayer();
             }
               //Addflightname
             public void Add(FlightName FlightName)
@@ -39,7 +42,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
 
             //GetAllflightNames
-            public List<FlightSearchingbusinessLogicLayer> GetFlightSearchings()
+            public List<FlightSearching> GetFlightSearchings()
             {
                 return _FlightSearchings;
             }
@@ -51,10 +54,29 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
                     _FlightSearchingDataAccessLayer.UpdateFlightName(FlightName);
                 }
             }
-        public FlightSearching GetFlightSearchinsByFlightID(int FlightID)
-        {
-        return _FlightID;
-       }
+         public   List<Flight> GetFlightsByFlightName(string FlightName)
+       {
+      return  fsdl.GetFlightName();
+    }
+         public List<Flight> GetFlightsByFlightId(string FlightId)
+       {
+         return fsdl.GetFlightId);
+    }
+
+    public List<FlightSchedule> GetFlightScheduleBySource(string Source)
+    
+    {
+
+
+        return fsdl.GetSource();
+    }
+    
+
+public List<FlightSchedule> GetFlightScheduleByDestination(string Destination)
+    {
+        return fsdl.GetDestination();
+    }
+      
 }
     
 
