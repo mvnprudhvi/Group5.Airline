@@ -15,18 +15,19 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
     /// <summary>
     /// This Class Represents Business Logic Layer Of FlightBooking
     /// </summary>
-    public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer
+    public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer()
     {
-        private IFlightBookingbusinessLogicLayer _fbbl = null;
+        //Created an object for DataAccessLayer and strore the object in reference variable
+        FlightBookingDataAccessLayer fbdl = new FlightBookingDataAccessLayer();
 
-        //Constructor for Business Logic Layer
-        public FlightBookingbusinessLogicLayer()
+        public bool checkFlightBookingId(string bookingId)
         {
-            //Creating Object for FlightBookingDataAccessLayer
-            _fbbl = new IFlightBookingDataAccessLayer();
-
+            List<FlightBooking> _bookingIDList = new List<FlightBooking>();
+            // Flight flight = new Flight();
+            bool result = _BookingIDList.Exists(temp => temp.bookingID == bookingID);
+            return result;
         }
-
+       
         /// <summary>
         /// This Method Represents AddFlightBooking
         /// </summary>

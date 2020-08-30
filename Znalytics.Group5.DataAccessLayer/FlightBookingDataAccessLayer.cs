@@ -22,7 +22,7 @@ namespace Znalytics.Group5.DataAccessLayer
     /// </summary>
     class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
     {
-        private static List<FlightBooking>_BookingID
+        private static List<FlightBooking>_bookingID
         {
             set;
             get;
@@ -33,7 +33,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 static FlightBookingDataAccessLayer()
                 {
 
-                    _BookingID = new List<FlightBooking>()
+                    _bookingID = new List<FlightBooking>()
                     {
 
           new FlightBooking() { FlightID = 12, CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Source = "hyderabad", Destination  = "Mumbai"},
@@ -44,9 +44,9 @@ namespace Znalytics.Group5.DataAccessLayer
         //methods to add FlightBooking
         public void AddFlightBooking(FlightBooking bookingID)
         {
-            if (_BookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+            if (_bookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             {
-                _BookingID.Add(bookingID);
+                _bookingID.Add(bookingID);
             }
             else
             {
@@ -57,10 +57,10 @@ namespace Znalytics.Group5.DataAccessLayer
         //methods to update  FlightBooking
         public void UpdateFlightBooking(FlightBooking bookingID)
         {
-            if (_BookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+            if (_bookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             
             {
-               _BookingID.Update(bookingID);
+               _bookingID.Update(bookingID);
             }
             else
             {
@@ -71,12 +71,12 @@ namespace Znalytics.Group5.DataAccessLayer
         //method to get  FlightBooking by  Flight Bookingid
         public FlightBooking GetFlightBookingsByFlightBookingID(int BookingID)
         {
-            return _BookingID.Find(temp => temp.BookingID == BookingID);
+            return _bookingID.Find(temp => temp.BookingID == BookingID);
         }
         //method to get  FlightBooking by  customer id
         public FlightBooking GetFlightBookingsByFlightCustomerID(int CustomerID)
         {
-            return _CustomerID.Find(temp => temp.customerID == CustomerID);
+            return _customerID.Find(temp => temp.customerID == CustomerID);
         }
         //method to get  FlightBookinging by  flightid
         public FlightBooking GetFlightBookingsByFlightID(int flightID)
