@@ -13,6 +13,7 @@ using Znalytics.Group5.Airline.DataAccessLayer;
 using Newtonsoft.Json;
 using System.IO;
 using System;
+using System.Runtime.Remoting.Messaging;
 
 //Created a namespace for DataAccess Layer of flight Module
 namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
@@ -23,10 +24,14 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
     public class FlightDataAccessLayer : IFlightDataAccessLayer
     {
         //create a list of Flight
-        private static List<Flight> _flightList
+        public static List<Flight> _flightList
         {
-            set;
-            get;
+            set {
+                _flightList = value;
+            }
+            get {
+                return _flightList;
+            }
         }
         
 

@@ -5,13 +5,13 @@ namespace Znalytic.Group5.BussinessLogicLayer
     public interface ITicketCancellationBusinessLogicLayer
     {
         //this method represents add ticket cancellation
-        public void AddTicketCancellation(TicketCancellation ticketCancellation);
+        void AddTicketCancellation(TicketCancellation ticketCancellation);
 
         //this method represents update cancellation
-        public void UpdateTicketCancellation(TicketCancellation ticketCancellation);
+        void UpdateTicketCancellation(TicketCancellation ticketCancellation);
 
         //this method represents get ticket cancellation by customer id
-        public TicketCancellation GetTicketCancellationsByCustomerID(int _customerID);
-        public TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID);
+        TicketCancellation GetTicketCancellationsByCustomerID(int _customerID);
+        TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID);
     }
 }

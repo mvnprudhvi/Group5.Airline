@@ -14,7 +14,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
 { 
 
-        public class FlightSearchingbusinessLogicLayer : IFlightSearchingbusinessLogicLayer
+        public class FlightSearchingbusinessLogicLayer : IFlightSearchingbusinessLogicLayer()
              
 
     
