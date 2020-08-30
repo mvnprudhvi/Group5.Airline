@@ -6,7 +6,7 @@ using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
-    public class FlightSearchingDataAcessLayer
+    public class FlightSearchingDataAcessLayer : IFlightSearchingDataAcessLayer
     {
         //private fields
         private static List<FlightSearchingDataAcessLayer> _FlightSearching;
@@ -16,33 +16,34 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         {
             _FlightSearching = new List<FlightSearchingDataAcessLayer>();
 
-         
-            
+
+
             //Add
-            public void Add(FlightSearching FlightSearching)
-        {
-            _FlightSearching.Add(FlightSearching);
-        }
-
-        //Get all details of flight
-        public List<FlightSearching> GetFlightSearching()
-        {
-            return _FlightSearching;
-        }
-
-        //Update
-        public void UpdateFlightSearching(FlightSearching FlightSearching)
-        {
-            //Get matching flightnames based on flightname
-            _FlightSearching fs = _FlightSearching.Find(temp => temp.FlightID == fs.FlightID);
-            if (fs != null)
+            public void AddFlightSearching(FlightSearching flightID)
             {
-                fs.flightName = Flight.FlightName;
+                _FlightSearching.Add(flightID);
             }
         }
-       
+    }
+            //Get all details of flight
+            public List<FlightSearching> GetFlightSearching()
+            {
+                return _FlightSearching;
+            }
 
-            public List<Flight> FlightSearching(string FlightName)
+            //Update
+            public void UpdateFlightSearching(FlightSearching flightID)
+            {
+                //Get matching flightnames based on flightname
+                _FlightSearching fs = _FlightSearching.Find(temp => temp.FlightID == fs.FlightID);
+                if (fs != null)
+                {
+                    fs.flightID= Flight.FlightID;
+                }
+            }
+
+
+           public  List<Flight> FlightSearching(string FlightName)
             {
                 List<Flight> samp=FlightDataAccessLayer._flightList;
                 List<Flight> res = samp.FindAll(temp => temp.FlightName == FlightName);

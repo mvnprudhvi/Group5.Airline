@@ -22,10 +22,16 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
     public class FlightScheduleDataAccessLayer : IFlightScheduleDataAccessLayer
     {
         //Created a list for flight Schedule
-        private static List<FlightSchedule> _scheduleList
+        public static List<FlightSchedule> _scheduleList
         {
-            set;
-            get;
+            set
+            {
+                 _scheduleList = value;
+            }
+            get 
+            {
+                return _scheduleList;
+            }
         }
 
 
