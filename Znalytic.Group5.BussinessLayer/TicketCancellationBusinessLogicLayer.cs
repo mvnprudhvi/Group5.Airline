@@ -17,12 +17,10 @@ namespace Znalytic.Group5.BussinessLogicLayer
         public bool checkCancellationID(int cancellationID)
         {
             List<TicketCancellation> _cancellationID = new List<TicketCancellation>();
-       
+
             bool result = _cancellationID.Exists(temp => temp.CustomerID == customerID);
             return result;
         }
-
-
         /// <summary>
         /// This Method Represents AddTicketCancellation 
         /// </summary>
@@ -93,72 +91,5 @@ namespace Znalytic.Group5.BussinessLogicLayer
     public List<TicketCancellation> GetTicketCancellations()
     {
         return tcdal.GetTicketCancellations();
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.DataAccessLayer;
-
-namespace Znalytics.AirLine.BusinessLogicLayer
-{
-    public class CancellationBusinessLogicLayer : CancellationBusinessLogicLayer
-    {
-        private CancellationDataAccessLayer cdl = null;
-
-        public CancellationBusinessLogicLayer()
-        {
-            cdal = new CancellationDataAccessLayer();
-        }
-
-        public void AddFlightName(FlightName FlightName)
-        {
-            if (FlightName.FlightName != null)
-
-                cdal.AddFlightName(FlightName);
-        }
-    }
-}*/
-
-
-
-
-
-
-
-
-
-
-/*//using system.Znalytic.Group5.BussinessLayer
-    public  class FlightBussinessLayer
-    {
-        public void AddFlight(Flight fn)
-    {
-        if(Flight.FlightName<=30)
-        {
-            FlightBussinessLayer fdl = new FlightBussinessLayer()
-        }
-    }
-
     }
 }

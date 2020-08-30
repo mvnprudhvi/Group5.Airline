@@ -20,11 +20,10 @@ namespace Znalytics.Group5.DataAccessLayer
 
         // creating list
         private static List<TicketCancellation> _cancellationID
-        {
+        { 
             set;
             get;
-        }
-
+                }
         static TicketCancellationDataAccessLayer()
         {
 
