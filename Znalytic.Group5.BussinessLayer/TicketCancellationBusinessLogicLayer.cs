@@ -37,6 +37,27 @@ namespace Znalytic.Group5.BussinessLogicLayer
                 throw new Exception("bookingId can't be null");
             }
         }
+        //Method to GET GetTicketCancellations By CustomerID
+        public TicketCancellation GetTicketCancellationsByCancellationID(int customerID)
+        {
+            try
+            {
+                //flight Id should not be null
+                if(CustomerID != null)
+                {
+                    return _tcdal.GetTicketCancellationsByCancellationID(CustomerID);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
 
         /// <summary>
         /// This Method Represents Update ticket cancellation

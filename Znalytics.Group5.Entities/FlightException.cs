@@ -10,13 +10,6 @@ namespace Znalytics.Group5.Entities
     internal class FlightException : ApplicationException
     {
         /// <summary>
-        /// exception calls parent exception
-        /// </summary>
-        public FlightException() :base()
-        {
-
-        }
-        /// <summary>
         /// exception is displayed with user defined message
         /// </summary>
         /// <param name="message"></param>
