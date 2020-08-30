@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Newtonsoft.Json;
@@ -26,7 +28,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             set;
             get;
         }
-        public string FlightName { get; private set; }
+        
 
 
         //static constructor
@@ -40,10 +42,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
                 new Flight() { FlightId = "FID1033", FlightName = "AIRGO", FlightType = "EconomySeats(or)BusinessSeats",LuggageWeightage ="30kgs" , NoOfEconomySeats = "150" , NoOfBusinessSeats = "25"},
                 new Flight() { FlightId = "FID1044", FlightName = "JETBLUE", FlightType = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="20kgs",NoOfEconomySeats = "180" ,NoOfBusinessSeats = "20"}
             };
-            if (_flightList.Count == 0)
-            {
-                _flightList = GetFiledata();
-            }
+            
 
         }
 
@@ -52,6 +51,10 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
              int flightId =System.Convert.ToInt32( _flightList.Max(temp => temp.FlightId));
              return flightId++;
          }*/
+
+        /// <summary>
+        /// Saving the data into Json file
+        /// </summary>
         public void SaveIntoFile()
         {
 
@@ -128,7 +131,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         public void RemovetFlightByFlightId(string flightId)
         {
             _flightList.RemoveAll(temp => temp.FlightId == Flight.flightId);
-
+            SaveIntoFile();
         }
 
         /// <summary>
@@ -138,6 +141,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         public void RemoveFlightByFlightName(string flightName)
         {
             _flightList.RemoveAll(temp => temp.FlightName == Flight.flightName);
+            SaveIntoFile();
         }
 
         /// <summary>
@@ -150,7 +154,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             if (f != null)
             {
                 f.FlightName = Flight.flightName;
-
+                SaveIntoFile();
 
             }
             else
@@ -170,14 +174,15 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             if (f != null)
             {
                 f.FlightId = flight.FlightId;
+                SaveIntoFile();
             }
             else
             {
                 throw new FlightException("flightid doesn't exist");
             }
         }
-        
 
+       
 
 
     }

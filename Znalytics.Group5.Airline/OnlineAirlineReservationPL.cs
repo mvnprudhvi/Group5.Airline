@@ -37,8 +37,8 @@ namespace Znalytics.Group5.Airline
         }
         static void AdminMenu()
         {
-            int option = 0;
-            string userName;
+           int option = 0;
+           private string userName { }
             string password;
             do
             {

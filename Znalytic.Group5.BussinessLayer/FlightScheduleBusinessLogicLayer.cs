@@ -17,6 +17,14 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         //Created an object for DataAccessLayer and strore the object in reference variable
         FlightScheduleDataAccessLayer fsdl = new FlightScheduleDataAccessLayer();
 
+        public bool checkFlightScheduleId(string flightScheduleId)
+        {
+            List<FlightSchedule> _ScheduleList = new List<FlightSchedule>();
+            // Flight flight = new Flight();
+            bool result = _ScheduleList.Exists(temp => temp.flightScheduleId == flightScheduleId);
+            return result;
+        }
+
         //Method to ADD Flights Schedule to the list
         public void AddSchedule(FlightSchedule schedule)
         {
@@ -176,7 +184,10 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
 
-
+        public bool CheckFlightId(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
  

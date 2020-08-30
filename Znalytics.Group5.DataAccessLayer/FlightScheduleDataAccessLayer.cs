@@ -8,6 +8,8 @@ using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.Entities;
+using Newtonsoft.Json;
+using System.IO;
 
 /// <summary>
 /// represents dataAccessLayer of Flight
@@ -33,14 +35,40 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             _scheduleList = new List<FlightSchedule>()
             {
                 //Sample information
-                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "FSID01", Source = "HYDERABAD", Destination = "MUMBAI", DepartureTiming = "01-09-2020  06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "FSID02", Source = "MUMBAI", Destination = "CHENNAI", DepartureTiming = "02/09/2020 06:30:00 AM", ArrivalTiming = "01-09-2020  06:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "FSID03", Source = "BANGALORE", Destination = "DELHI", DepartureTiming = "05/10/2020  05:30:25 PM", ArrivalTiming = "01-09-2020  05:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "FSID04", Source = "HYDERABAD", Destination = "DELHI", DepartureTiming = "06/10/2020 08:15:10 AM", ArrivalTiming = "01-09-2020  08:00:00 AM" },
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "SFSID02", Source = "HYDERABAD", Destination = "BANGALORE", DepartureTiming = "02/09/2020 11:50:44AM", ArrivalTiming = "01-09-2020  10:45:00 AM" }
+                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "FSID01", Source = "HYDERABAD", Destination = "MUMBAI"},
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "FSID02", Source = "MUMBAI", Destination = "CHENNAI"},
+                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "FSID03", Source = "BANGALORE", Destination = "DELHI"},
+                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "FSID04", Source = "HYDERABAD", Destination = "DELHI"},
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "SFSID02", Source = "HYDERABAD", Destination = "BANGALORE" }
             };
         }
 
+        /// <summary>
+        /// Saving the data into Json file
+        /// </summary>
+        public void SaveIntoFile()
+        {
+
+            string str = JsonConvert.SerializeObject(_scheduleList);
+
+            //write data into file
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
+            streamWriter.Write(str);
+            streamWriter.Close();
+        }
+
+        /// <summary>
+        /// Method For Getting Data From File
+        /// </summary>
+        /// <returns></returns>
+        public List<FlightSchedule> GetFiledata()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
+            string str1 = streamReader.ReadToEnd();
+            List<FlightSchedule> flightSchedule = JsonConvert.DeserializeObject<List<FlightSchedule>>(str1);
+            return flightSchedule;
+
+        }
         /// <summary>
         /// Method to ADD Schedules to the list
         /// </summary>
@@ -51,6 +79,8 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             if (!_scheduleList.Exists(temp => temp.flightId == schedule.flightId))
             {
                 _scheduleList.Add(schedule);
+                SaveIntoFile();
+
             }
             else
             {
@@ -65,6 +95,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         public List<FlightSchedule> GetSchedule()
         {
             return _scheduleList;
+            GetFiledata();
         }
 
         /// <summary>
@@ -76,7 +107,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-
+            
         }
 
 
@@ -89,7 +120,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-
+           
         }
 
         /// <summary>
@@ -101,7 +132,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-
+            
         }
 
 
@@ -115,7 +146,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightId == flightId);
-
+            
         }
 
 
