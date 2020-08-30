@@ -76,6 +76,14 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
+       
+
+        /// <summary>
+        /// Method to GET flight details by WareHouseId
+        /// </summary>
+        /// <param name="flightId">Reprents flight id</param>
+        /// <returns></returns>
+
         //Method to REMOVE flight  by flightId
         public void RemovetFlightByFlightId(string flightId)
         {
@@ -146,7 +154,12 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 throw new FlightException(ex.Message);
             }
         }
+        public bool CheckFlightId(string id)
+        {
+            return FlightDataAccessLayer.CheckFlightId(id);
+        }
 
-      
+
+
     }
 }

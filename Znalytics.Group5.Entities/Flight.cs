@@ -4,12 +4,12 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     public class Flight
     {
-       // public static string flightName;
-       // public static int flightId;
+        public static string flightName;
+        public static string flightId;
 
         //Instance (or) non.staticfields
-        private int _flightId { set; get; }
         private string _flightName { set; get; }
+        private string _flightId { set; get; }
         private string _flightType { set; get; }
         private string _luggageWeightage { set; get; }
         private string _noOfEconomySeats { set; get; }
@@ -17,11 +17,11 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 
 
         //Constructor
-        public Flight(int flightid, string flightName, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
+        public Flight(string flightName, string flightId, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
         {
-            _flightId = flightId;
+
             _flightName = flightName;
- 
+            _flightId = flightId;
             _flightType = flightType;
             _luggageWeightage = luggageWeightage;
             _noOfEconomySeats = noOfEconomySeats;
@@ -40,7 +40,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// propery for  flightName
         /// </summary>
-        public string FlightName
+        public  string FlightName
         {
             set
             {
@@ -68,26 +68,21 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// property for flightId
         /// </summary>
-        public int FlightId
+        public string FlightId
         {
             set
             {
-                if (!int.TryParse(value))
+                if (!string.IsNullOrEmpty(value))
                 {
-                    
+
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value <= 8)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
                     {
                         _flightId = value;
                     }
 
-
-                    else
-                    {
-                        throw new Exception("Enter valid flightId");
-                    }
                 }
             }
             get

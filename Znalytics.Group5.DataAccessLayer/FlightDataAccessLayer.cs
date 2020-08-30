@@ -44,10 +44,10 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             _flightList = new List<Flight>()
             {
                 //mock data
-                new Flight() { FlightId = "FID1011", FlightName = "AIRINDIA", FlightType = "EconomySeats(or)BusinessSeats", LuggageWeightage ="30kgs",NoOfEconomySeats = "200" ,NoOfBusinessSeats = "20"},
-                new Flight() { FlightId = "FID1022", FlightName = "INDIGO", FlightType = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="25kgs", NoOfEconomySeats ="210" , NoOfBusinessSeats = "10"},
-                new Flight() { FlightId = "FID1033", FlightName = "AIRGO", FlightType = "EconomySeats(or)BusinessSeats",LuggageWeightage ="30kgs" , NoOfEconomySeats = "150" , NoOfBusinessSeats = "25"},
-                new Flight() { FlightId = "FID1044", FlightName = "JETBLUE", FlightType = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="20kgs",NoOfEconomySeats = "180" ,NoOfBusinessSeats = "20"}
+                new Flight() { FlightId = "1011", FlightName = "AIRINDIA", FlightType = "EconomySeats(or)BusinessSeats", LuggageWeightage ="30kgs",NoOfEconomySeats = "200" ,NoOfBusinessSeats = "20"},
+                new Flight() { FlightId = "1022", FlightName = "INDIGO", FlightType = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="25kgs", NoOfEconomySeats ="210" , NoOfBusinessSeats = "10"},
+                new Flight() { FlightId = "1033", FlightName = "AIRGO", FlightType = "EconomySeats(or)BusinessSeats",LuggageWeightage ="30kgs" , NoOfEconomySeats = "150" , NoOfBusinessSeats = "25"},
+                new Flight() { FlightId = "1044", FlightName = "JETBLUE", FlightType = "EconomySeats(or)BusinessSeats" ,LuggageWeightage ="20kgs",NoOfEconomySeats = "180" ,NoOfBusinessSeats = "20"}
             };
             
 
@@ -129,7 +129,9 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             return f;
         }
 
-        
+       
+
+
 
         /// <summary>
         /// Method to REMOVE Flight by FlightId
@@ -188,8 +190,12 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
                 throw new FlightException("flightid doesn't exist");
             }
         }
+        public static bool CheckFlightId(string id)
+        {
+            bool result = _flightList.Exists(temp => temp.FlightId == id);
+            return result;
+        }
 
-       
 
 
     }
