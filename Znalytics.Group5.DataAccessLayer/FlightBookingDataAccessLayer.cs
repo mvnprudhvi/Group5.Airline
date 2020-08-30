@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Znalytics.Group5.Airline.FlightBooking.Entities;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
@@ -28,7 +29,7 @@ namespace Znalytics.Group5.DataAccessLayer
         private object JsonConvert;
 
         //creating list
-        private static List<FlightBooking>_bookingID
+        private static List<FlightBooking>_bookingList
         {
             set;
             get;
@@ -40,7 +41,7 @@ namespace Znalytics.Group5.DataAccessLayer
      static FlightBookingDataAccessLayer()
            {
 
-               _bookingID = new List<FlightBooking>()
+               _bookingList = new List<FlightBooking>()
                     {
 
           new FlightBooking() { FlightID = 12, CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Source = "hyderabad", Destination  = "Mumbai"},
@@ -57,7 +58,7 @@ namespace Znalytics.Group5.DataAccessLayer
         public void SaveIntoFile()
         {
 
-            string str = JsonConvert.SerializeObject(_bookingID);
+            string str = JsonConvert.SerializeObject(_bookingList);
 
             //write data into file
             StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\FlightBooking.txt");
@@ -73,20 +74,20 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
             string str1 = streamReader.ReadToEnd();
-            List<FlightBooking> _flightBooking = JsonConvert.DeserializeObject<List<FlightBooking>>(str1);
-            return _bookingID;
+            List<FlightBooking> _bookingList = JsonConvert.DeserializeObject<List<FlightBooking>>(str1);
+            return _bookingList;
         }
 
        
         //methods to add FlightBooking
         public void AddFlightBooking(FlightBooking bookingID)
         {
-            if (_bookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             {
 
 
 
-                _bookingID.Add(bookingID);
+                _bookingList.Add(bookingID);
             }
 
             else
@@ -98,10 +99,10 @@ namespace Znalytics.Group5.DataAccessLayer
         //methods to update  FlightBooking
         public void UpdateFlightBooking(FlightBooking bookingID)
         {
-            if (_bookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             
             {
-               _bookingID.Update(bookingID);
+               _bookingList.Update(bookingID);
             }
             else
             {
@@ -110,19 +111,19 @@ namespace Znalytics.Group5.DataAccessLayer
             }
         }
         //method to get  FlightBooking by  Flight Bookingid
-        public FlightBooking GetFlightBookingsByFlightBookingID(int bookingID)
+        public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {
-            return _bookingID.Find(temp => temp.BookingID == bookingID);
+            return _bookingList.FindAll(temp => temp.BookingID == bookingID);
         }
         //method to get  FlightBooking by  customer id
-        public FlightBooking GetFlightBookingsByFlightCustomerID(int customerID)
+        public List<FlightBooking>  GetFlightBookingsByFlightCustomerID(int customerID)
         {
-            return _bookingID.Find(temp => temp.CustomerID == customerID);
+            return _bookingList.FindAll(temp => temp.CustomerID == customerID);
         }
         //method to get  FlightBookinging by  flightid
-        public FlightBooking GetFlightBookingsByFlightID(int flightID)
+        public List<FlightBooking> GetFlightBookingsByFlightID(int flightID)
         {
-            return _bookingID.Find(temp => temp.FlightID == flightID);
+            return _bookingList.FindAll(temp => temp.FlightID == flightID);
         }
     }
 }

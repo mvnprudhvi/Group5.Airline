@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 using System;
 using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
@@ -126,7 +127,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
 
             object _flightBookingbusinessLayer = null;
-            List<FlightBookingPresentation> fb = _flightBookingbusinessLayer.GetFlightBooking();
+            List<FlightBooking> fb = _flightBookingbusinessLayer.GetFlightBooking();
 
             foreach (_flightBooking fb in _flightBooking)
             {
