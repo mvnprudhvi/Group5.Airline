@@ -6,6 +6,9 @@ using Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
+using Znalytics.Group5.Airline.Entities;
+using System.Linq;
+using System.Linq.Expressions;
 
 
 //Represents Presentation Layer
@@ -54,10 +57,17 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             do
             {
                 Console.WriteLine(" ====FLIGHTSMENU==== ");
+                Console.WriteLine("1.AddFlight");
+                Console.WriteLine("1.GetFlights");
+                Console.WriteLine("1.GetfFlightByflightId");
+                Console.WriteLine("1.UpdateFlights");
+                Console.WriteLine("1.RemoveFlight");
+                Console.WriteLine("1.AddFlights");
+                Console.WriteLine("1.AddFlights");
                 Console.WriteLine("1.AddFlights");
                 Console.WriteLine("2.UpdateFlights");
-                Console.WriteLine("3.DeleteFlights");
-                Console.WriteLine("4.GetFlights");
+                Console.WriteLine("3.DeleteFlight");
+                
 
                 bool b = int.TryParse(Console.ReadLine(), out choice);
                 if (b == true)
@@ -66,7 +76,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     {
                         case 1: AddFlight(); break;
                         case 2: UpdateFlight(); break;
-                        case 3: Deleteflight(); break;
+                        case 3: RemoveFlight(); break;
                         case 4: GetFlights(); break;
                         case 5: Console.WriteLine("Exit"); break;
 
@@ -160,7 +170,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
-        public static void Deleteflight()
+        public static void RemoveFlight()
         {
             // creating the object for Flight class
             Flight f = new Flight();
@@ -275,9 +285,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     switch (choice)
                     {
                         case 1: AddSchedule(); break;
-                        case 2: UpdateSchedule(); break;
-                        case 3: GetSchedule(); break;
-                        case 4: DeleteSchedule(); break;
+                        case 2: GetSchedule(); break;
+                        case 3: GetScheduleByFlightId(); break;
+                        case 4: GetScheduleByFlightScheduleId(); break;
+                        case 5: GetScheduleBySource(); break;
+                        case 6: GetScheduleByDestination(); break;
+                        case 7: UpdateSchedule(); break;
+                        case : GetScheduleBySource(); break;
 
 
 
@@ -288,34 +302,57 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
         public static void AddSchedule()
         {
-            //create object for flightSchedule
-            FlightSchedule fs = new FlightSchedule();
+            try
+            {
 
-            //create object for fligthBusiness layer
-            FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
+                //create object for flightSchedule
+                FlightSchedule fs = new FlightSchedule();
 
-            Console.WriteLine("You choose to add schedule to the repecitive flight");
-            Console.WriteLine("Enter Existing flightId");
-            fs.flightId = Console.ReadLine();
-            Console.WriteLine("Enter scheduleId");
-            fs.Source = Console.ReadLine();
-            Console.WriteLine("Enter source");
-            fs.Source = Console.ReadLine();
-            Console.WriteLine("Enter destination");
-            fs.Destination = Console.ReadLine();
-            Console.WriteLine("Enter DepartureTiming");
-            fs.DepartureTiming = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine(fs.DepartureTiming.ToString("dd/MM/yyyy hh:mm:s"));
+                //create object for fligthBusiness layer
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
 
-            Console.WriteLine("Enter ArrivalTiming");
-            fs.ArrivalTiming = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine(fs.ArrivalTiming.ToString("dd/MM/yyyy hh:mm:s"));
+                Console.WriteLine("You choose to add schedule to the repecitive flight");
+                Console.WriteLine("Enter Existing flightId");
+                fs.FlightId = Console.ReadLine();
+                if (CheckFlightId(fs.flightId) == true)
+                {
 
-            fsbl.AddSchedule(fs);
+                    if (checkFlightScheduleId(fs.FlightScheduleId) == false)
+                    {
+                        Console.WriteLine("Enter scheduleId");
+                        fs.Source = Console.ReadLine();
+                        Console.WriteLine("Enter source");
+                        fs.Source = Console.ReadLine();
+                        Console.WriteLine("Enter destination");
+                        fs.Destination = Console.ReadLine();
+                        Console.WriteLine("Enter DepartureTiming");
+                        fs.DepartureTiming = DateTime.Parse(Console.ReadLine());
+                        Console.WriteLine(fs.DepartureTiming.ToString("dd/MM/yyyy hh:mm:s"));
 
-            Console.WriteLine("schedule is  added successfully");
+                        Console.WriteLine("Enter ArrivalTiming");
+                        fs.ArrivalTiming = DateTime.Parse(Console.ReadLine());
+                        Console.WriteLine(fs.ArrivalTiming.ToString("dd/MM/yyyy hh:mm:s"));
 
+                        fsbl.AddSchedule(fs);
+
+                        Console.WriteLine("schedule is  added successfully");
+                    }
+                    else
+                    {
+                        Console.WriteLine("FlightSchedule id  already exists");
+                    }
+
+                }
+            }
+
+            catch (FlightException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
+       
+
         public static void GetSchedule()
         {
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
@@ -331,59 +368,100 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
         }
+
+        //method to get flightSchedule Details  by flightId
         public static void GetScheduleByFlightId()
         {
-
-            Console.WriteLine("Enter the existing flight  Id");
-            string flightId = Console.ReadLine();
-            FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleByFlightId(flightId);
-            foreach (FlightSchedule item in scheduleList)
+            try
             {
-                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
-            }
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                Console.WriteLine("Enter the existing flight  Id");
+                string flightid = Console.ReadLine();
+                FlightSchedule fd = fsbl.GetScheduleByFlightId(flightid);
+               if(fd != null)
+                {
+                    Console.WriteLine("FlightId" + " " + "FlightScheduleId" + " " + "Source" + " " + "Destination" + " " + "DepartureTiming" + " " + "ArrivalTiming");
+                    Console.WriteLine(fd.FlightId + " " + fd.FlightScheduleId + "    " + fd.Source + "  " + fd.Destination + " " + fd.DepartureTiming + "  " + fd.ArrivalTiming);// Displaying the schedules
+                }
 
+            }
+            catch(FlightException ex)
+            {
+               Console. WriteLine(ex.Message);
+            }
         }
 
+        //Method to get schedule by flighScheduleId
         public static void GetScheduleByFlightScheduleId()
         {
-            Console.WriteLine("Enter the existing flightScheduleId ");
-            string flightScheduleId = Console.ReadLine();
-            FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleByFlightScheduleId(flightScheduleId);
-            foreach (FlightSchedule item in scheduleList)
+            try
             {
-                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+
+                Console.WriteLine("Enter the existing flightScheduleId ");
+                string flightscheduleid = Console.ReadLine();
+                FlightSchedule fd = fsbl.GetScheduleByFlightScheduleId(flightscheduleid);
+                if (fd != null)
+                {
+
+                    Console.WriteLine("FlightId" + " " + "FlightScheduleId" + " " + "Source" + " " + "Destination" + " " + "DepartureTiming" + " " + "ArrivalTiming");
+                    Console.WriteLine(fd.FlightId + " " + fd.FlightScheduleId + "    " + fd.Source + "  " + fd.Destination + " " + fd.DepartureTiming + "  " + fd.ArrivalTiming);// Displaying the schedules
+                }
             }
+           
+               catch(FlightException ex)
+            {
+                Console.WriteLine("ex.Message");
+            }
+            
 
         }
 
+        //method to get schedule by source
         public static void GetScheduleBySource()
         {
-            Console.WriteLine("Enter the Source");
-            string source = Console.ReadLine();
-            FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleBySource(source);
-            foreach (FlightSchedule item in scheduleList)
+            try
             {
-                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
-            }
 
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                Console.WriteLine("Enter the Source");
+                string sr = Console.ReadLine();
+                FlightSchedule fd = fsbl.GetScheduleBySource(sr);
+                if (fd != null)
+                {
+                    Console.WriteLine("FlightId" + " " + "FlightScheduleId" + " " + "Source" + " " + "Destination" + " " + "DepartureTiming" + " " + "ArrivalTiming");
+                    Console.WriteLine(fd.FlightId + " " + fd.FlightScheduleId + "    " + fd.Source + "  " + fd.Destination + " " + fd.DepartureTiming + "  " + fd.ArrivalTiming);// Displaying the schedules
+                }
+
+            }
+            catch (FlightException ex)
+            {
+                Console.WriteLine("ex.Message");
+            }
         }
 
         public static void GetScheduleByDestination()
         {
-            Console.WriteLine("Enter the destination :");
-            string destination = Console.ReadLine();
-            FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
-            List<FlightSchedule> scheduleList = fsbl.GetScheduleByDestination(destination);
-            foreach (FlightSchedule item in scheduleList)
+            try
             {
-                Console.WriteLine(item.FlightScheduleId + "  " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
-            }
 
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                Console.WriteLine("Enter the destination :");
+                string ds = Console.ReadLine();
+                FlightSchedule fd = fsbl.GetScheduleByDestination(ds);
+                if (fd != null)
+                {
+                    Console.WriteLine("FlightId" + " " + "FlightScheduleId" + " " + "Source" + " " + "Destination" + " " + "DepartureTiming" + " " + "ArrivalTiming");
+                    Console.WriteLine(fd.FlightId + " " + fd.FlightScheduleId + "    " + fd.Source + "  " + fd.Destination + " " + fd.DepartureTiming + "  " + fd.ArrivalTiming);// Displaying the schedules
+                }
+
+            }
+            catch (FlightException ex)
+            {
+                Console.WriteLine("ex.Message");
+            }
         }
-        public static void UpdateSchedule()
+            public static void UpdateSchedule()
         {
             FlightSchedule schedule = new FlightSchedule();
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
@@ -420,20 +498,25 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 try
                 {
                     Console.WriteLine("Enter Existing flightSchedule ID");
-                    schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(schedule);
-                    if (schedule1 != null)
+                    string fsId = Console.ReadLine();
+                    FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                    FlightSchedule fd = fsbl.GetSourceByFlightScheduleId(fsId);
+                    if (fd != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");
-                        schedule.Source = Console.ReadLine();
+                        fd.Source = Console.ReadLine();
 
                         fsbl.UpdateSource(schedule);
                         Console.WriteLine("Source Updated Sucessfully");
                     }
+                    else
+                    {
+                        Console.WriteLine("flightSheduleId doesn't exists");
+                    }
                 }
-                catch (Exception ex)
+                catch (FlightException ex)
                 {
-                    throw new Exception("flightSheduleId doesn't exists", ex);
+                    Console.WriteLine(ex.Message);
                 }
 
 
@@ -443,21 +526,26 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 try
                 {
-                    Console.WriteLine("Enter Existing flight Schedule ID");
-                    schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetDestinationByFlightScheduleId(schedule1);
-                    if (schedule1 != null)
+                    Console.WriteLine("Enter Existing flightSchedule ID");
+                    string fsId = Console.ReadLine();
+                    FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                    FlightSchedule fd = fsbl.GetDestinationByFlightScheduleId(fsId);
+                    if (fd != null)
                     {
-                        Console.WriteLine("Enter the new source for the Flight");
-                        schedule.Destination = Console.ReadLine();
+                        Console.WriteLine("Enter the new dstination for the Flight");
+                        fd.Destination = Console.ReadLine();
 
-                        fsbl.UpdateDestination(schedule);
-                        Console.WriteLine("Destination Updated Sucessfully");
+                        fsbl.UpdateSource(schedule);
+                        Console.WriteLine("destination Updated Sucessfully");
+                    }
+                    else
+                    {
+                        Console.WriteLine("flightSheduleId doesn't exists");
                     }
                 }
-                catch (Exception ex)
+                catch (FlightException ex)
                 {
-                    throw new Exception("flightSheduleId doesn't exists", ex);
+                    Console.WriteLine(ex.Message);
                 }
 
 
@@ -492,7 +580,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
         }
 
-        public static void DeleteSchedule()
+        public static void RemoveSchedule()
         {
             FlightSchedule schedule = new FlightSchedule();// creating the object for flightschedule class
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();//Creating the object for flightschedule BusinessLogic class
@@ -508,7 +596,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 switch (choice)
                 {
                     case 1: RemoveFlightScheduleByFlightId(); break;
-                    case 2: RemoveFlightByFlightScheduleId(); break;
+                    case 2: RemoveFlightScheduleByFlightScheduleId(); break;
                     default: Console.WriteLine("Please Choose enter correct choice"); break;
 
                 }
@@ -520,25 +608,81 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
             void RemoveFlightScheduleByFlightId()
             {
-                Console.Write("Enter the flightId:");
+                
+
+                Console.Write("Enter the flightId of flllight to remove flightSchedule:");
                 string flightId = Console.ReadLine();
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                try
+                {
 
-                fsbl.RemoveFlightScheduleByFlightId(flightId);
-                Console.WriteLine("Schedule is Removed");
+                    if (fsbl.RemoveFlightScheduleByFlightId(Flight.flightId) == null)
+                    {
+                        fsbl.RemoveFlightScheduleByFlightId(Flight.flightId);
+
+                        Console.WriteLine("Schedule is Removed");
+                    }
+                }
 
 
+
+                catch (FlightException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
-
-            void RemoveFlightByFlightScheduleId()
+           void RemoveFlightScheduleByFlightScheduleId()
             {
-                Console.Write("Enter the flightScheduleId:");
+                FlightSchedule fs = new FlightSchedule();
+                Console.Write("Enter the flightScheduleId of flightSchedule to remove flight:");
                 string flightScheduleId = Console.ReadLine();
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                try
+                {
 
-                fsbl.RemoveFlightByFlightScheduleId(flightScheduleId);
-                Console.WriteLine("Schedule is Removed");
+                    if (fsbl.RemoveFlightScheduleByFlightScheduleId(fs.flightScheduleId) == null)
+                    {
+                        fsbl.RemoveFlightScheduleByFlightScheduleId(fs.flightScheduleId);
+
+                        Console.WriteLine("Schedule is Removed");
+                    }
+                }
+
+
+
+                catch (FlightException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
 
             }
+        }
+            public bool CheckFlightId(string id)
+            {
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                bool result = fsbl.CheckFlightId(id);
+                if (result == true)
+                {
+                   Console.WriteLine("Flight Exists");
+                    return result;
+                }
+                return result;
+            }
+
+            public bool CheckFlightScheduleId(string id)
+            {
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                bool result = fsbl.CheckFlightScheduleId(id);
+                if (result == true)
+                {
+                    Console.WriteLine("FlightSchedule Exists");
+                    return result;
+                }
+                return result;
+            }
+
+
         }
     }
 }

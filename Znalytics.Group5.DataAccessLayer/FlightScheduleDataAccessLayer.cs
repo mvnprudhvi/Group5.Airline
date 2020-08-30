@@ -79,7 +79,32 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
         }
 
-        
+
+        /// <summary>
+        /// //Method to GET Source by flightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
+        /// <returns></returns>
+        public List<FlightSchedule> GetSourceByFlightScheduleId(string flightScheduleId)
+        {
+
+            return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
+
+        }
+
+        /// <summary>
+        /// //Method to GET Destination by flightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
+        /// <returns></returns>
+        public List<FlightSchedule> GetDestinationByFlightScheduleId(string flightScheduleId)
+        {
+
+            return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
+
+        }
+
+
 
         /// <summary>
         /// //Method to GET the Schedules by flightI
@@ -213,7 +238,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         /// Method to REMOVE schedule of the flight by flightScheduleId
         /// </summary>
         /// <param name="flightScheduleId"></param>
-        public void RemoveFlightByFlightScheduleId(string flightScheduleId)
+        public void RemoveFlightScheduleByFlightScheduleId(string flightScheduleId)
         {
             //Condition to check whether the flightId exists or not
            if( _scheduleList.Exists(temp => temp.FlightScheduleId == flightScheduleId))
