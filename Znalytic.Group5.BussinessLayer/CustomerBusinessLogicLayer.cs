@@ -1,15 +1,17 @@
-﻿using System;
+﻿//Importing Statements
+using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.AirLine.ICustomerBusinessLogicLayer;
+using Znalytics.Group5.AirLine.Entities;
 using System.Runtime.Serialization;
 
 //Created a Namespace For Business Layer of Customer Module
 namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
     /// <summary>
-    /// Represents BusinessLogic class of Customer and Implementing an interface
+    /// Represents BusinessLogic Class of Customer And Implementing An Interface
     /// </summary> 
     public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
     {
@@ -21,7 +23,8 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// </summary>
         public CustomerBusinessLogicLayer()
         {
-            CustomerDataAccessLayer cdal = new CustomerDataAccessLayer();
+          //Creating Object For DataAcessLayer And Storing  In Reference Variable
+            cdal = new CustomerDataAccessLayer();
         }
 
         //Method to ADD Customer Details To The List
@@ -29,32 +32,33 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             try
             {
+                //Customer Details Should Not Be null
                 if ((customer.CustomerId != null) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
                 {
                     cdal.AddCustomer(customer);
                 }
             }
-            catch (CustomerExcepion ex)
+            catch (CustomerException ex)
             {
                 throw new CustomerException(ex.Message);
             }
         }
 
-        // Method to GET the added details
-        public List<Customer> GetCustomer()
+        // Method to GET the Added Cutomer Details
+        public List<Customer> GetCustomer(Customer c)
         {
             return cdal.GetCustomer();
         }
 
-        //Method to GET flightDetails by flightId
-        public Customer  GetCustomerByCustomerId(string CustomerId)
+        //Method to GET Customer Details By Customer Id
+        public List<Customer> GetCustomerByCustomerId(string customerId)
         {
             try
             {
-                //flight Id should not be null
-                if (CustomerId != null)
+                //Customer Id Should Not Be null
+                if (customerId != null)
                 {
-                    return cdal.GetCustomerByCustomerId(CustomerId);
+                    return cdal.GetCustomerByCustomerId(customerId);
                 }
                 else
                 {
@@ -68,14 +72,14 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method to GET flightDetails by flightId
-        public Customer GetCustomerByCustomerUserName(string CustomerUserName)
+        public List<Customer> GetCustomerByCustomerUserName(string customeruserName)
         {
             try
             {
                 //flight Id should not be null
-                if (CustomerUserName != null)
+                if (customeruserName != null)
                 {
-                    return cdal.GetCustomerByCustomerUserName(string CustomerUserName);
+                    return cdal.GetCustomerByCustomerUserName(customeruserName);
                 }
                 else
                 {
