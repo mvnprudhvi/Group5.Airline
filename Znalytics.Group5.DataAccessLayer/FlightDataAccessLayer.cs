@@ -26,10 +26,12 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         //create a list of Flight
         public static List<Flight> _flightList
         {
-            set {
+            set 
+            {
                 _flightList = value;
             }
-            get {
+            get
+            {
                 return _flightList;
             }
         }
@@ -77,8 +79,8 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         public List<Flight> GetFiledata()
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\DesktopJson.txt");
-            string s1 = streamReader.ReadToEnd();
-            List<Flight> flight = JsonConvert.DeserializeObject<List<Flight>>(s1);
+            string str = streamReader.ReadToEnd();
+            List<Flight> flight = JsonConvert.DeserializeObject<List<Flight>>(str);
             return flight;
 
         }

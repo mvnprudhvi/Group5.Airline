@@ -4,12 +4,12 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     public class Flight
     {
-        public static string flightName;
-        public static string flightId;
+       // public static string flightName;
+       // public static int flightId;
 
         //Instance (or) non.staticfields
+        private int _flightId { set; get; }
         private string _flightName { set; get; }
-        private string _flightId { set; get; }
         private string _flightType { set; get; }
         private string _luggageWeightage { set; get; }
         private string _noOfEconomySeats { set; get; }
@@ -17,11 +17,11 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 
 
         //Constructor
-        public Flight(string flightName, string flightId, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
+        public Flight(int flightid, string flightName, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
         {
-
-            _flightName = flightName;
             _flightId = flightId;
+            _flightName = flightName;
+ 
             _flightType = flightType;
             _luggageWeightage = luggageWeightage;
             _noOfEconomySeats = noOfEconomySeats;
@@ -68,17 +68,17 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// property for flightId
         /// </summary>
-        public string FlightId
+        public int FlightId
         {
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (!int.TryParse(value))
                 {
-
+                    
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value <= 8)
                     {
                         _flightId = value;
                     }

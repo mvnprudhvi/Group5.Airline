@@ -1,8 +1,6 @@
 ﻿
 
 using System.Collections.Generic;
-
-using Znalytics.Group5.Flightsearching.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 
