@@ -445,7 +445,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     Console.WriteLine("Enter Existing flight Schedule ID");
                     schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetDestinationByFlightScheduleId(schedule);
+                    FlightSchedule schedule1 = fsbl.GetDestinationByFlightScheduleId(schedule1);
                     if (schedule1 != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");

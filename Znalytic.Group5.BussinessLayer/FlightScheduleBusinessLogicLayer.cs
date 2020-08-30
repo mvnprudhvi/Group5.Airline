@@ -50,7 +50,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             return fsdl.GetScheduleByFlightScheduleId(flightScheduleId);
         }
 
-        //Method to GET flightSchedule by scheduleId
+        //Method to GET flightSchedule by flightId
         public List<FlightSchedule> GetScheduleByFlightId(string flightId)
         {
             return fsdl.GetScheduleByFlightId(flightId);
@@ -62,12 +62,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         {
             return fsdl.GetScheduleBySource(source);
         }
-        //Method to GET FlightSchedule by Destination
-        public List<FlightSchedule> GetScheduleByDestination(string source)
-        {
-            return fsdl.GetScheduleByDestination(source);
-        }
-
+       
         //Method to UPDATE source of flightSchedule
         public void UpdateSource(FlightSchedule schedule)
         {

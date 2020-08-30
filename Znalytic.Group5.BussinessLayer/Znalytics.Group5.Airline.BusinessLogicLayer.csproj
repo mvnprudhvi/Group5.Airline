@@ -51,7 +51,7 @@
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightBookingBusinessLogicLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
-    <Compile Include="IFlightScheduleBusinessLogic.cs" />
+    <Compile Include="IFlightScheduleBusinessLogicLayer.cs" />
     <Compile Include="IFlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ITicketCancellationBusinessLogicLayer.cs" />
     <Compile Include="FlightPriceBusinessLogic.cs" />
