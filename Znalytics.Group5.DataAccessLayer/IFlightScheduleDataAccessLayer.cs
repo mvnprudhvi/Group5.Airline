@@ -8,7 +8,7 @@ using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
     interface IFlightScheduleDataAccessLayer
-    {
+    {    
         void AddSchedule(FlightSchedule schedule);
         
         void RemoveFlightScheduleByFlightId(string flightId);
