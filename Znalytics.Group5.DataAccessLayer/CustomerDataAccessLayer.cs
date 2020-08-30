@@ -18,13 +18,28 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         //Add
         public void AddCustomer(Customer customer)
         {
-            _customer.Add(customer);
+            if(_customer.Exists(temp => temp.CustomerUserName == customer.CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == customer.CustomerPassword)))
+              { 
+                    _customer.Add(customer);
+            }
+                       
         }
+    
         public void DeleteCustomer(Customer customer)
         {
             _customer.Remove(customer);
         }
-        public List<Customer> GetCustomerByCustomerId(int CustomerId)
+        public List<Customer> GetCustomerByCustomerId(string CustomerId)
+        {
+            return _customer;
+        }
+
+        public List<Customer> GetCustomerByCustomerUserName(string CustomerUserName)
+        {
+            return _customer;
+        }
+
+        public List<Customer> GetCustomer()
         {
             return _customer;
         }

@@ -90,22 +90,19 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 flight.FlightName = System.Console.ReadLine();
 
                 System.Console.Write("Enter FlightId:"); // enter flight id
-                flight.FlightId = System.Console.ReadLine();
+                int FlightId = int.Parse(System.Console.ReadLine());
 
                 System.Console.Write("Enter FlightType:"); // enter flight type of the flight (i.e,Economy/Business)
                 flight.FlightType = System.Console.ReadLine();
-
-                System.Console.Write("Enter FlightCapacity:"); //no of seats present in particual flight
-                flight.FlightCapacity = System.Console.ReadLine();
 
                 System.Console.Write("Enter LuggageWeightage:"); //weight of the luggage carried by the passengers
                 flight.LuggageWeightage = System.Console.ReadLine();
 
                 System.Console.Write("Enter no of Business Seats:"); //Business seats in flight
-                flight.NoOfBusinessSeats = System.Console.ReadLine();
+                int NoOfBusinessSeats = int.Parse(System.Console.ReadLine());
 
                 System.Console.Write("Enter no of Economy seats:"); //weight of the luggage carried by the passengers
-                flight.NoOfEconomySeats = System.Console.ReadLine();
+                int NoOfEconomySeats = int.Parse(System.Console.ReadLine());
 
                 //creating object for Business logic layer 
                 FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
@@ -138,7 +135,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
 
             //Creating  flightlist
-            List<Flight> flightList = fbl.Getflights();
+            List<Flight> flightList = fbl.GetFlights();
 
             Console.WriteLine("==============================   FLIGHT DETAILS=============");
             Console.WriteLine("flightId" + "   " + "flightName" + "  " + "flightType" + " " + " flightCapacity" + " " + " luggageWeightage " + " " + " noOfBusinessSeats" + " " + "noOfEconomySeats");// Displaying the Flights;
@@ -147,7 +144,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             //Reads and get the details from flightList
             foreach (Flight fl in flightList)
             {
-                Console.WriteLine(fl.flightId + "    " + fl.flightName + "  " + fl.flightType + " " + fl.flightCapacity + " " + fl.luggageWeightage + " " + fl.noOfBusinessSeats + " " + fl.noOfEconomySeats);// Displaying the flights
+                Console.WriteLine(fl.FlightId + "    " + fl.FlightName + "  " + fl.FlightType + " " + fl.FlightCapacity + " " + fl.LuggageWeightage + " " + fl.NoOfBusinessSeats + " " + fl.NoOfEconomySeats);// Displaying the flights
             }
 
         }
@@ -157,8 +154,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             Console.WriteLine("Enter exixting flightId");
             string flightId = Console.ReadLine();
             FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
-            Flight flight = fbl.GetflightByflightId(flightId);
-            Console.WriteLine(flight.flightId + " " + flight.flightName);
+            Flight flight = fbl.GetFlightByFlightId(flightId);
+            Console.WriteLine(flight.FlightId + " " + flight.FlightName);
 
         }
 
@@ -196,7 +193,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.Write("Enter the flightId to be Deleted:");
                 string flightId = Console.ReadLine();
 
-                fbl.RemoveFlightByFlightId(flightId);
+                fbl.RemovetFlightByFlightId(flightId);
                 Console.WriteLine("flight Removed");
 
 
@@ -229,32 +226,32 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 switch (choice)
                 {
                     case 1:
-                        UpdateflightName(); break;
+                        UpdateFlightName(); break;
                     case 2:
-                        UpdateflightId(); break;
+                        UpdateFlightId(); break;
                     default: Console.WriteLine("Enter correct option"); break;
 
                 }
             }
-            void UpdateflightName()
+            void UpdateFlightName()
             {
 
                 Console.WriteLine("Enter Existing flight ID");
-                f.flightId = int.Parse(Console.ReadLine());
+                 f.FlightId =int.Parse( Console.ReadLine());
                 Console.WriteLine("Enter new name for Flight");
-                f.flightName = Console.ReadLine();
-                fbl.UpdateflightName(f);
+                f.FlightName = Console.ReadLine();
+                fbl.UpdateFlightName(f);
                 Console.WriteLine("flight Name Updated Sucessfully!!!");
 
             }
-            void UpdateflightId()
+            void UpdateFlightId()
             {
                 Console.WriteLine("Enter Existing WareHouse ID");
-                f.flightName = Console.ReadLine();
+                f.FlightName = Console.ReadLine();
                 Console.WriteLine("Enter new flight id");
-                f.flightId = Console.ReadLine();
+                f.FlightId = Console.ReadLine();
 
-                fbl.UpdateflightId(f);
+                fbl.UpdateFlightId(f);
                 Console.WriteLine("flightId is Updated Sucessfully!!!");
             }
         }
@@ -342,7 +339,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             List<FlightSchedule> scheduleList = fsbl.GetScheduleByScheduleId(flightId);
             foreach (FlightSchedule item in scheduleList)
             {
-                Console.WriteLine(item.flightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
+                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
             }
 
         }
@@ -355,7 +352,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             List<FlightSchedule> scheduleList = fsbl.GetScheduleByscheduleId(flightScheduleId);
             foreach (FlightSchedule item in scheduleList)
             {
-                Console.WriteLine(item.flightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
+                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
             }
 
         }
@@ -368,7 +365,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             List<FlightSchedule> scheduleList = fsbl.GetScheduleBySource(source);
             foreach (FlightSchedule item in scheduleList)
             {
-                Console.WriteLine(item.flightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
+                Console.WriteLine(item.FlightScheduleId + "    " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
             }
 
         }
@@ -381,7 +378,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             List<FlightSchedule> scheduleList = fsbl.GetScheduleByDestination(destination);
             foreach (FlightSchedule item in scheduleList)
             {
-                Console.WriteLine(item.flightScheduleId + "  " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
+                Console.WriteLine(item.FlightScheduleId + "  " + item.Source + "  " + item.Destination + " " + item.DepartureTiming + "  " + item.ArrivalTiming);// Displaying the schedules
             }
 
         }

@@ -4,6 +4,7 @@ using System;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 //Represents Presentation Layer
 
@@ -54,7 +55,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
                     Console.WriteLine("enter your ID:");
-                    c.CustomerId = Convert.ToInt32(Console.ReadLine());
+                    c.CustomerId = Console.ReadLine();
 
                     //customer user name
                     Console.WriteLine("enter your user name:");
@@ -117,12 +118,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                 if (userName == "," && Password == ",")
                 {
-
+                    CustomersMenu();
+                    Console.ReadKey();
                 }
 
             }
-            CustomersMenu();
-            Console.ReadKey();
+            
+            
         CustomersMenu:
             //represents customers menu
             static void CustomersMenu()
@@ -238,7 +240,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         {
             Customer c = new Customer();
             CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            List<Customer> cust = customerBusinessLogicLayer.GetCustomerByCustomerId();
+            List<Customer> cust = customerBusinessLogicLayer.GetCustomer();
 
             foreach (Customer customer in cust)
             {
@@ -246,9 +248,76 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
         }
 
-        static void DeleteCustomer()
+             static void GetCustomerByCustomerId()
+            {
+                Customer c = new Customer();
+                Console.WriteLine("Enter existing Customer Id");
+                string CustomerId = Console.ReadLine();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Customer customer= customerBusinessLogicLayer.GetCustomerByCustomerId(CustomerId);
+                Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
+
+            }
+
+            static void GetCustomerByCustomerUserName()
+            {
+                Customer c = new Customer();
+                Console.WriteLine("Enter existing Customer User Name");
+                string CustomerUserName = Console.ReadLine();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Customer customer = customerBusinessLogicLayer.GetCustomerByCustomerId(CustomerUserName);
+                Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
+            }
+
+
+                static void DeleteCustomer()
         {
                 Customer c = new Customer();
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Console.WriteLine("select the Option based on which you want to remove the Customer Account ");
+                Console.WriteLine("Enter 1 by Customer Id");
+                Console.WriteLine("Enter 2 by Customer UserName");
+                int choice;
+                bool b;
+                b = int.TryParse(Console.ReadLine(), out choice);
+
+                if (b == true)
+                {
+                    switch (choice)
+                    {
+                        case 1: RemoveCustomerByCustomerId(); break;
+                        case 2: RemoveCustomerByCustomerUserName(); break;
+                        default: Console.WriteLine("Please Choose enter the correct choice"); break;
+
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("the choice you entered is incorrect ..please ReEnter the choice ");
+                }
+                void RemoveCustomerByCustomerId()
+                {
+                    Console.Write("Enter the CustomerId:");
+                    string CustomerId = Console.ReadLine();
+
+                    customerBusinessLogicLayer.RemoveCustomerScheduleByCustomerId(CustomerId);
+                    Console.WriteLine("Your Account is Delete");
+
+
+                }
+
+                void RemoveCustomerByCustomerUserName()
+                {
+                    Console.Write("Enter the CustomerUserName:");
+                    string CustomerUserName = Console.ReadLine();
+
+                    customerBusinessLogicLayer.RemoveCustomerByCustomerUserName(CustomerUserName);
+                    Console.WriteLine("Your Account is Deleted");
+
+
+                }
             }
+        }
+    }
 }

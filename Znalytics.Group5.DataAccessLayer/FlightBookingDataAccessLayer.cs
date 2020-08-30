@@ -22,30 +22,31 @@ namespace Znalytics.Group5.DataAccessLayer
     /// </summary>
     class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
     {
-        private static List<FlightBooking>BookingID
+        private static List<FlightBooking>_BookingID
         {
             set;
             get;
         }
         //constructor
 
-        static FlightBookingDataAccessLayer()
-        {
+       
+                static FlightBookingDataAccessLayer()
+                {
 
-            BookingID = new List<FlightBooking>()
-            {
+                    _BookingID = new List<FlightBooking>()
+                    {
 
-           new FlightBooking() { flightID = 12, customerID = 12345, bookingID = 67890, seatNumber = 01, source = "hyderabad", destination  = "Mumbai"},
-          new FlightBooking() { flightID = 13, customerID = 5678, bookingID  = 78901, seatNumber = 02, source = "Mumbai", destination  = "chennai"},
-          new FlightBooking() { flightID = 14,  customerID = 8901, bookingID  = 8760, seatNumber = 03,source = "pune", destination  = "Hyderabad" }
+          new FlightBooking() { FlightID = 12, CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Source = "hyderabad", Destination  = "Mumbai"},
+          new FlightBooking() { FlightID = 13, CustomerID = 5678, BookingID  = 78901, SeatNumber = 02, Source = "Mumbai", Destination  = "chennai"},
+          new FlightBooking() { FlightID = 14,  CustomerID = 8901, BookingID  = 8760, SeatNumber = 03,Source = "pune", Destination  = "Hyderabad" }
             };
         }
         //methods to add FlightBooking
         public void AddFlightBooking(FlightBooking bookingID)
         {
-            if (BookingID.Exists(temp => temp.customerID == bookingID.customerID))
+            if (_BookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             {
-                BookingID.Add(bookingID);
+                _BookingID.Add(bookingID);
             }
             else
             {
@@ -54,12 +55,12 @@ namespace Znalytics.Group5.DataAccessLayer
             }
         }
         //methods to update  FlightBooking
-        public void UpdateFlightBooking(FlightBooking BookingID)
+        public void UpdateFlightBooking(FlightBooking bookingID)
         {
-            if (BookingID.Exists(temp => temp.customerID == bookingId.customerID))
+            if (_BookingID.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             
             {
-               BookingID.Update(BookingID);
+               _BookingID.Update(bookingID);
             }
             else
             {
@@ -70,17 +71,17 @@ namespace Znalytics.Group5.DataAccessLayer
         //method to get  FlightBooking by  Flight Bookingid
         public FlightBooking GetFlightBookingsByFlightBookingID(int BookingID)
         {
-            return BookingID.Find(temp => temp.BookingID == BookingID);
+            return _BookingID.Find(temp => temp.BookingID == BookingID);
         }
         //method to get  FlightBooking by  customer id
-        public FlightBooking GetFlightBookingsByFlightCustomerID(int customerID)
+        public FlightBooking GetFlightBookingsByFlightCustomerID(int CustomerID)
         {
-            return customerID.Find(temp => temp.customerID == customerID);
+            return _CustomerID.Find(temp => temp.CustomerID == CustomerID);
         }
         //method to get  FlightBookinging by  flightid
         public FlightBooking GetFlightBookingsByFlightID(int FlightID)
         {
-            return FlightID.Find(temp => temp.FlightID == FlightID);
+            return _FlightID.Find(temp => temp.FlightID == FlightID);
         }
     }
 }

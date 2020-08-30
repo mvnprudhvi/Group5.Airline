@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
     {
         //Private Fields
-        private string _flightScheduleId { set; get; }
+        private int _flightScheduleId { set; get; }
         private string _source { set; get; }
         private string _destination { set; get; }
         private DateTime _departureTiming { set; get; }
@@ -21,13 +21,13 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         public string flightId;
 
         //constructor
-        public FlightSchedule(string FlightScheduleId, string Source, string Destination, DateTime DepartureTiming, DateTime ArrivalTiming)
+        public FlightSchedule(string flightScheduleId, string source, string destination, DateTime departureTiming, DateTime arrivalTiming)
         {
             _flightScheduleId = flightScheduleId;
-            _source = Source;
-            _destination = Destination;
-            _departureTiming = DepartureTiming;
-            _arrivalTiming = ArrivalTiming;
+            _source = source;
+            _destination = destination;
+            _departureTiming = departureTiming;
+            _arrivalTiming = arrivalTiming;
         }
 
         //properties
@@ -44,7 +44,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         /// <summary>
         /// SHedule id of Flight
         /// </summary>
-        public string flightScheduleId
+        public string FlightScheduleId
         {
             set
             {
@@ -54,7 +54,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 4)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
                     {
                         _flightScheduleId = value;
                     }

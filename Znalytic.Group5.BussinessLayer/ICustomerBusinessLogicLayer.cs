@@ -13,6 +13,6 @@ namespace Znalytics.Group5.AirLine.ICustomerBusinessLogicLayer
         void UpdateCustomer(Customer c);
         void DeleteCustomer(Customer c);
         void Getustomer(Customer c);
-        Customer GetCustomerById(string CustomerId);
+        public List<Customer> GetCustomerByCustomerId(string CustomerId);
     }
 }

@@ -47,7 +47,6 @@
     <Compile Include="FlightBookingbusinessLogic.cs" />
     <Compile Include="FlightBookingDataAccessLayer.cs" />
     <Compile Include="FlightBusinessLogicLayer.cs" />
-    <Compile Include="FlightException.cs" />
     <Compile Include="FlightScheduleBusinessLogicLayer.cs" />
     <Compile Include="FlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ICustomerBusinessLogicLayer.cs" />

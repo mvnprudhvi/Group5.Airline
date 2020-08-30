@@ -1,10 +1,9 @@
 ﻿//........KEERTHANA....
 using System;
 using System.Collections.Generic;
-using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-using Znalytics.Group5.Airline.Flight.DataAccessLayer;
+using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
 
 //Created a namespace for BusinessLogicLayer of FlightSchedule module
 namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
@@ -25,7 +24,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
             try
             {
                 //flightScheduleIdId should not be null
-                if (schedule.flightScheduleId != null)
+                if (schedule.FlightScheduleId != null)
                 {
 
 
@@ -70,7 +69,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateSource(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateSource(schedule);
             }
@@ -80,7 +79,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateDestination(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateDestination(schedule);//UpdateDepartureTiming
             }
@@ -89,7 +88,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateDepartureTiming(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateDepartureTiming(schedule);
             }
@@ -98,7 +97,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         public void UpdateArrivalTiming(FlightSchedule schedule)
         {
 
-            if (schedule.flightScheduleId != null)
+            if (schedule.FlightScheduleId != null)
             {
                 fsdl.UpdateArrivalTiming(schedule);
             }
@@ -122,3 +121,4 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BussinessLogicLayer
         }
 
     }
+}

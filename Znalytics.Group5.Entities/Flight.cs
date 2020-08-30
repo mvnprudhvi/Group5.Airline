@@ -4,6 +4,8 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     public class Flight
     {
+        public static string flightName;
+
         //Instance (or) non.staticfields
         private string _flightName { set; get; }
         private string _flightId { set; get; }
@@ -14,15 +16,15 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 
 
         //Constructor
-        public Flight(string FlightName, string FlightId, string FlightType, string luggageWeightage, string NoOfEconomySeats, string NoOfBusinessSeats)
+        public Flight(string flightName, string flightId, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
         {
 
-            _flightName = FlightName;
-            _flightId = FlightId;
-            _flightType = FlightType;
-            _luggageWeightage = LuggageWeightage;
-            _noOfEconomySeats = NoOfEconomySeats;
-            _noOfBusinessSeats = NoOfBusinessSeats;
+            _flightName = flightName;
+            _flightId = flightId;
+            _flightType = flightType;
+            _luggageWeightage = luggageWeightage;
+            _noOfEconomySeats = noOfEconomySeats;
+            _noOfBusinessSeats = noOfBusinessSeats;
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 4)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
                     {
                         _flightId = value;
                     }
@@ -208,9 +210,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
             }
         }
 
-
-
-
+        public string FlightCapacity { get; set; }
     }
 }
 

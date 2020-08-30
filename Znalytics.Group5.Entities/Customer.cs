@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.Entities
     public class Customer
     {
         //private fields
-        private int _customerid;
+        private string _customerid;
         private string _customeruserName;
         private string _customerEmail;
         private string _customerPassword;
@@ -31,16 +31,16 @@ namespace Znalytics.Group5.Airline.Entities
         /// <param name="aadharNumber"></param>  
         /// <param name="pancardnumber"></param>
         /// <param name="gender"></param>  
-        public Customer(int custid, string custusername, string custemail, string custpassword, string custmobileNumber, string custaadharNumber, string custpancardnumber, string custgender)
+        public Customer(string customerid, string customerusername, string customeremail, string customerpassword, string customermobileNumber, string customeraadharNumber, string customerpancardnumber, string customergender)
         {
-             _customerid = custid;
-             _customeruserName = custusername;
-             _customerEmail = custemail;
-             _customerPassword = custpassword;
-             _customermobileNumber = custmobileNumber;
-             _customeraadharNumber = custaadharNumber;
-             _customerpancardNumber = custpancardnumber;
-             _customerGender = custgender;
+             _customerid = customerid;
+             _customeruserName = customerusername;
+             _customerEmail = customeremail;
+             _customerPassword = customerpassword;
+             _customermobileNumber = customermobileNumber;
+             _customeraadharNumber = customeraadharNumber;
+             _customerpancardNumber = customerpancardnumber;
+             _customerGender = customergender;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace Znalytics.Group5.Airline.Entities
         }
 
         // Property for setting values to CustomerId field and Getting The value of the Field
-        public int CustomerId
+        public string CustomerId
         {
             set
             {
-                if (value >= 0 && value <= 9)
+                if (value.Length>= 0 && value.Length <= 9)
                 {
                    CustomerId = value;
                 }
