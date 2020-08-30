@@ -9,6 +9,9 @@ using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
+    /// <summary>
+    /// This Class Represents DataAcessLayer Of FlightSearching
+    /// </summary>
     public class FlightSearchingDataAccessLayer : IFlightSearchingDataAccessLayer
     {
         //private fields
