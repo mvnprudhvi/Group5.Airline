@@ -25,7 +25,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             //Creating Object for Flight Price Business Logic 
             _flightPriceBusinessLogic = new FlightPriceBusinessLogic();
             //Calling Menu Method For List Of Prices Menus Available in it
-            PricesMenu(); 
+            PricesMenu();
             ReadKey();
         }
 
@@ -37,7 +37,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             int choice = 0;
             do
             {
-                WriteLine("=====PRICES MENU=====");
+                WriteLine("=====PRICE MENU=====");
                 WriteLine("1. Add Flight Price");
                 WriteLine("2. Delete Flight Price");
                 WriteLine("3. Update Flight Price");
@@ -65,7 +65,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             FlightPrice fp = new FlightPrice();
 
             Write("Enter the Schedule Id (Ex.FSID01): ");
-            fp.FlightScheduleId =ReadLine();
+            fp.FlightScheduleId = ReadLine();
 
             Write("Enter the Price For Business Class Seats: ");
             fp.PriceForBusinessClassSeat = double.Parse(ReadLine());
@@ -74,7 +74,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             fp.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
             _flightPriceBusinessLogic.AddFlightPrice(fp);
-            WriteLine("The Details of Prices is Successfully Added \n");
+            WriteLine("The Price of ScheduleId:" + fp.FlightScheduleId + " is Successfully Added\n");
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             Write("Enter Existing Flight Schedule Id to Delete the All Prices of That Schedule: ");
             fpr.FlightScheduleId = ReadLine();
             _flightPriceBusinessLogic.DeleteFlightPrice(fpr);
-             WriteLine("The Price Of Given Schedule is Successfully Deleted \n");
+            WriteLine("The Price of ScheduleId:" + fpr.FlightScheduleId + " is Successfully Deleted\n");
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             fpri.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
             _flightPriceBusinessLogic.UpdateFlightPrice(fpri);
-            WriteLine("The Price of Flight is Updated Successfully \n");
+            WriteLine("The Price of ScheduleId:" + fpri.FlightScheduleId + " is Successfully Updated\n");
         }
 
         /// <summary>
@@ -114,22 +114,18 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void GetFlightPrices()
         {
+            //Creating Object for Flight Price
             List<FlightPrice> prs = _flightPriceBusinessLogic.GetFlightPrices();
+
+            WriteLine("=========FLIGHTS SCHEDULED PRICE DETAILS ARE BELOW=======");
+            WriteLine("FlightScheduleId" + "   " + "BusinessClassSeats" + "   " + "EconomyClassSeats");
+            WriteLine("-----------------------------------------------------------");
 
             foreach (FlightPrice pri in prs)
             {
-                WriteLine("=======The Flight Prices are Below=======");
-
-                WriteLine("The Flight Id is: "+ pri.FlightId);
-                WriteLine("The Flight Schedule Id is: " + pri.FlightScheduleId);
-                WriteLine("The Price of Business Class Seats: "+pri.PriceForBusinessClassSeat);
-                WriteLine("The Price of Economy Class Seats: "+pri.PriceForEconomyClassSeat);
+                WriteLine(pri.FlightScheduleId + " \t\t\t" + pri.PriceForBusinessClassSeat + "\t\t   " + pri.PriceForEconomyClassSeat);
             }
+            WriteLine();
         }
-         static void GetPriceByBeforeDays()
-         {
-            Write("Enter Number of Days Before U want the Ticket: ");
-
-         }
     }
 }
