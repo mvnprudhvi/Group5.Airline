@@ -75,6 +75,11 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return _cancellationID.Find(temp => temp.CancellationID == bookingID);
         }
+
+        public void AddTicketCancellation(TicketCancellation bookingId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
