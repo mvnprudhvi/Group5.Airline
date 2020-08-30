@@ -43,6 +43,7 @@ namespace Znalytics.Group5.Airline.Entities
             _cancellationID = cancellationId;
         }
 
+        public static object bookingID { get; set; }
 
         public int CustomerID
         {

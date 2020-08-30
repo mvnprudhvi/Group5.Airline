@@ -12,9 +12,6 @@ namespace Znalytic.Group5.BussinessLogicLayer
 
         //this method represents get ticket cancellation by customer id
         public TicketCancellation GetTicketCancellationsByCustomerID(int _customerID);
-
-        //this method represents delete ticket cancellation 
-        public void DeleteTicketCancellation(TicketCancellation tc);
-        TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID);
+        public TicketCancellation GetTicketCancellationsByCancellationID(int cancellationID);
     }
 }
