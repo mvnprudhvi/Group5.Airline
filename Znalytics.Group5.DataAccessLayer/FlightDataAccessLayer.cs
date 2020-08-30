@@ -89,7 +89,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
                 if (!_flightList.Exists(temp => temp.FlightId == flight.FlightId))
                 {
                     _flightList.Add(flight);
-                SaveIntoFile();
+                     SaveIntoFile();
                 }
             
             else
