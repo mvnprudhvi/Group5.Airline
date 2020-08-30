@@ -37,7 +37,7 @@ namespace Znalytics.Group5.Airline.Entities
                     }
                     else
                     {
-                        throw new FlightPriceException("Enter valid flightId");
+                        throw new FlightPriceException("invalid flightScheduleid");
                     }
                 }
             }
@@ -54,7 +54,6 @@ namespace Znalytics.Group5.Airline.Entities
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");

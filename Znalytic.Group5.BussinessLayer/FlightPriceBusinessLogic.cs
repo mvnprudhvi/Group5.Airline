@@ -15,7 +15,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     public class FlightPriceBusinessLogic
     {
         //Reference Variable Of Price Data Access Layer
-        FlightPriceBusinessLogic _flightPriceDataAccessLayer;
+        private FlightPriceDataAccessLayer _flightPriceDataAccessLayer;
 
         /// <summary>
         /// Constructor For Business Logic Layer
@@ -23,7 +23,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         public FlightPriceBusinessLogic()
         {
             //Creating Object for Price Data Access Layer
-            _flightPriceDataAccessLayer = new FlightPriceBusinessLogic();
+            _flightPriceDataAccessLayer = new FlightPriceDataAccessLayer();
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         {
             _flightPriceDataAccessLayer.AddFlightPrice(price);
         }
-        
+
         public void DeleteFlightPrice(FlightPrice price)
         {
             _flightPriceDataAccessLayer.DeleteFlightPrice(price);
@@ -56,11 +56,6 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         public List<FlightPrice> GetFlightPrices()
         {
             return _flightPriceDataAccessLayer.GetFlightPrices();
-        }
-
-        public List<FlightPrice>  GetPriceByBeforeDays()
-        {
-            return _flightPriceDataAccessLayer.GetPriceByBeforeDays();
         }
     }
 }

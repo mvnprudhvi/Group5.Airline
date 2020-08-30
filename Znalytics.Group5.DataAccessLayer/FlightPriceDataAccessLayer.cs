@@ -38,34 +38,33 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void DeleteFlightPrice(FlightPrice price)
         {
             //Based on  ScheduleID the Price Will be deleted 
-            FlightPrice pri = _flightPrices.Find(temp => temp.FlightScheduleId == price.FlightScheduleId);
-            _flightPrices.Remove(pri);
+            FlightPrice dpri = _flightPrices.Find(temp => temp.FlightScheduleId == price.FlightScheduleId);
+            _flightPrices.Remove(dpri);
         }
 
         /// <summary>
         /// This Method Represents UpdatePrice
         /// </summary>
-        /// <param name="price"></param>
+        /// <param name="price">This is a object of Flight Price</param>
         public void UpdateFlightPrice(FlightPrice price)
         {
             //Based on ScheduleID the Price Will be Updated 
-             FlightPrice pri = _flightPrices.Find(temp => temp.FlightScheduleId == price.FlightScheduleId);
-             pri.PriceForBusinessClassSeat = price.PriceForBusinessClassSeat;
-             pri.PriceForEconomyClassSeat = price.PriceForEconomyClassSeat;
+            FlightPrice upri = _flightPrices.Find(temp => temp.FlightScheduleId == price.FlightScheduleId);
+            upri.PriceForBusinessClassSeat = price.PriceForBusinessClassSeat;
+            upri.PriceForEconomyClassSeat = price.PriceForEconomyClassSeat;
         }
 
         /// <summary>
         /// This Method Represents GetPrices
         /// </summary>
-        /// <returns>_prices</returns>
+        /// <returns>_flightprices</returns>
         public List<FlightPrice> GetFlightPrices()
         {
             return _flightPrices;
         }
-
-        public List<FlightPrice> GetPriceByBeforeDays()
-        {
-            return _flightPrices;
-        }
+        /// <summary>
+        /// This Method Represents GetPrices
+        /// </summary>
+        /// <returns>_prices</returns>
     }
 }
