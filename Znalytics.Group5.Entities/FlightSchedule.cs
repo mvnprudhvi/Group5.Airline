@@ -20,6 +20,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
 
         //flightId Property
         public string flightId;
+        public string flightScheduleId;
 
         //constructor
         public FlightSchedule(string flightScheduleId, string source, string destination, DateTime departureTiming, DateTime arrivalTiming)
