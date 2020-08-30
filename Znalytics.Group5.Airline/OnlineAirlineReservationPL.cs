@@ -37,9 +37,8 @@ namespace Znalytics.Group5.Airline
         }
         static void AdminMenu()
         {
-            int option = 0;
-            string userName;
-            string password;
+           int option = 0;
+          
             do
             {
                 Console.WriteLine("enter user name:");

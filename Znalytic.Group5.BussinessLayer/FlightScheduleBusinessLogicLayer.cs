@@ -17,6 +17,14 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         //Created an object for DataAccessLayer and strore the object in reference variable
         FlightScheduleDataAccessLayer fsdl = new FlightScheduleDataAccessLayer();
 
+        public bool checkFlightScheduleId(string flightScheduleId)
+        {
+            List<FlightSchedule> _ScheduleList = new List<FlightSchedule>();
+            // Flight flight = new Flight();
+            bool result = _ScheduleList.Exists(temp => temp.flightScheduleId == flightScheduleId);
+            return result;
+        }
+
         //Method to ADD Flights Schedule to the list
         public void AddSchedule(FlightSchedule schedule)
         {
@@ -37,32 +45,80 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
                 throw new Exception("flightScheduleId already exists");
             }
         }
-        // Method to GET the added  Schedules 
+        /// <summary>
+        /// Method to GET the added  Schedules 
+        /// </summary>
+        /// <returns></returns>
         public List<FlightSchedule> GetSchedule()
         {
             return fsdl.GetSchedule();
         }
 
 
-        //Method to GET flight Schedule by flightScheduleId
+        /// <summary>
+        ///Method to GET flight Schedule by flightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
+        /// <returns></returns>
         public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightScheduleId)
         {
             return fsdl.GetScheduleByFlightScheduleId(flightScheduleId);
         }
 
-        //Method to GET flightSchedule by flightId
+        /// <summary>
+        /// Method to GET flightSchedule by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
         public List<FlightSchedule> GetScheduleByFlightId(string flightId)
         {
             return fsdl.GetScheduleByFlightId(flightId);
         }
 
-       
-        //Method to GET FlightSchedule by Source
+
+        /// <summary>
+        /// Method to GET FlightSchedule by Source
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public List<FlightSchedule> GetScheduleBySource(string source)
         {
             return fsdl.GetScheduleBySource(source);
         }
-       
+
+
+        /// <summary>
+        /// Method to GET FlightSchedule by Destination
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public List<FlightSchedule> GetScheduleByDestination(string destination)
+        {
+            return fsdl.GetScheduleByDestination(destination);
+        }
+
+        /// <summary>
+        ///  method to Get Source by FlightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
+        /// <returns></returns>
+        public List<FlightSchedule> GetSourceByFlightScheduleId(string flightScheduleId)
+        {
+            return fsdl.GetSourceByFlightScheduleId(flightScheduleId);
+        }
+
+
+        /// <summary>
+        ///  method to Get Destination by FlightScheduleId
+        /// </summary>
+        /// <param name="flightScheduleId"></param>
+        /// <returns></returns>
+        public List<FlightSchedule> GetDestinationByFlightScheduleId(string flightScheduleId)
+        {
+            return fsdl.GetDestinationByFlightScheduleId(flightScheduleId);
+        }
+
+
         //Method to UPDATE source of flightSchedule
         public void UpdateSource(FlightSchedule schedule)
         {
@@ -82,7 +138,10 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
                 fsdl.UpdateDestination(schedule);//UpdateDepartureTiming
             }
         }
-        //Method to UPDATE DepartureTiming of flightSchedule
+        /// <summary>
+        /// Method to UPDATE DepartureTiming of flightSchedule
+        /// </summary>
+        /// <param name="schedule"></param>
         public void UpdateDepartureTiming(FlightSchedule schedule)
         {
 
@@ -92,6 +151,10 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
 
+        /// <summary>
+        /// Method to UPDATE DepartureTiming of flightSchedule
+        /// </summary>
+        /// <param name="schedule"></param>
         public void UpdateArrivalTiming(FlightSchedule schedule)
         {
 
@@ -100,7 +163,10 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
                 fsdl.UpdateArrivalTiming(schedule);
             }
         }
-        //Method to REMOVE flight by flightId
+        /// <summary>
+        /// Method to REMOVE flight by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
         public void RemoveFlightScheduleByFlightId(string flightId)
         {
             if (flightId != null)
@@ -110,13 +176,18 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         }
 
         //Method to REMOVE an schedule of flight by flightScheduleId
-        public void RemoveFlightByFlightScheduleId(string flightScheduleId)
+        public void RemoveFlightScheduleByFlightScheduleId(string flightScheduleId)
         {
             if (flightScheduleId != null)
             {
-                fsdl.RemoveFlightByFlightScheduleId(flightScheduleId);
+                fsdl.RemoveFlightScheduleByFlightScheduleId(flightScheduleId);
             }
         }
 
+        public bool CheckFlightId(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+ 

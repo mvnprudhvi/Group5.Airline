@@ -4,6 +4,7 @@ using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
+
     public interface IFlightDataAccessLayer
     {
         //method to add flight Details to the list

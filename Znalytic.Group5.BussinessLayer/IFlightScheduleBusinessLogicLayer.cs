@@ -9,20 +9,34 @@ using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 
 namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 {
-    public interface IFlightScheduleBusinessLogicLayer
+
+    /// <summary>
+    /// Represents an interface of FlightScheduleBusinessLogicLayer
+    /// </summary>
+     interface IFlightScheduleBusinessLogicLayer
     {
 
-        //Method to add flightSchedule to the list
-       public void AddSchedule(FlightSchedule fs);
+        /// <summary>
+        //Method to add flightSchedule details to the list
+        /// </summary>
+        /// <param name="fs"></param>
+        void AddSchedule(FlightSchedule fs);
 
-        // Method to display the added flightsSchedule
+        /// <summary>
+         /// Method to get  added schedule details to the list
+         /// </summary>
+         /// <returns></returns>
         List<FlightSchedule> GetSchedule();
 
         //Method to get flightsSchedule by flightScheduleId
         List<FlightSchedule> GetScheduleByFlightScheduleId(string flightScheduleId);
 
-        //Method to get the flightsSchedule by WareHouseID
+        //Method to get the flightsSchedule by flightId
         List<FlightSchedule> GetScheduleByFlightId(string flightId);
+
+
+        //Method to get the flightsSchedule by Destination
+        List<FlightSchedule> GetScheduleByDestination(string destination);
 
     }
 }

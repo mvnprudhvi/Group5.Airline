@@ -6,6 +6,11 @@ using Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
+using Znalytics.Group5.Airline.Entities;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Net;
+
 
 
 //Represents Presentation Layer
@@ -21,18 +26,28 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         /// </summary>
         static void Main()
         {
+            //Login pagr for flight Administrator
+           Console. WriteLine("ONLINE AIRLINE RESERVATION SYSTEM ");
+            Console.WriteLine("==================================");
+            Console.Write("\nuserName:");
+            string userName = Console.ReadLine();
+            System.Console.Write("Password:");
+            string password = Console.ReadLine();
 
-            Menu();
-            Console.ReadKey();
+            if (userName == "Admin" && password == "manager")
+            {
+                AirlineMenu();
+                Console.ReadKey();
+            }
         }
-        static void Menu()
+        static void AirlineMenu()
         {
             int choice = 0;
 
             //using doWhile loop for Menu
             do
             {
-                Console.WriteLine("::::::::::: MENU::::::::: ");
+                Console.WriteLine("::::::::::: AirlineMenu::::::::: ");
                 Console.WriteLine("1.FlightsMenu");
                 Console.WriteLine("2.FlightScheduleMenu");
                 Console.WriteLine("3. exit");
@@ -50,14 +65,17 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         public static void FlightsMenu()
 
         {
-            int choice = 1;
+            int choice = 0;
             do
             {
                 Console.WriteLine(" ====FLIGHTSMENU==== ");
-                Console.WriteLine("1.AddFlights");
-                Console.WriteLine("2.UpdateFlights");
-                Console.WriteLine("3.DeleteFlights");
-                Console.WriteLine("4.GetFlights");
+                Console.WriteLine("1.AddFlight");
+                Console.WriteLine("1.GetFlights");
+                Console.WriteLine("1.GetFlightByflightId");
+                Console.WriteLine("1.UpdateFlights");
+                Console.WriteLine("1.RemoveFlight");
+                
+                
 
                 bool b = int.TryParse(Console.ReadLine(), out choice);
                 if (b == true)
@@ -65,19 +83,19 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     switch (choice)
                     {
                         case 1: AddFlight(); break;
-                        case 2: UpdateFlight(); break;
-                        case 3: Deleteflight(); break;
-                        case 4: GetFlights(); break;
-                        case 5: Console.WriteLine("Exit"); break;
-
+                        case 2: GetFlights(); break;
+                        case 3: GetFlightByflightId(); break;
+                        case 4: UpdateFlight(); break;
+                        case 5: RemoveFlight(); break;
+                        case 6: Console.WriteLine("Exit"); break;
 
 
                     }
                 }
-            } while (choice <= 5);
+            } while (choice <= 6);
         }
 
-        //Represents Add FlightMethod
+        //method to add Flightdetails to the list
         static void AddFlight()
         {
             try
@@ -126,7 +144,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
         }
-        //View existing Flight Details
+        //method to get added flight details i.e.,View existing Flight Details
         public static void GetFlights()
         {
             //create object for Flight
@@ -150,7 +168,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
-        public static void GetfFlightByflightId()
+        //methods to get flightdetails by flight id
+        public static void GetFlightByflightId()
         {
             Console.WriteLine("Enter exixting flightId");
             string flightId = Console.ReadLine();
@@ -160,13 +179,14 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
-        public static void Deleteflight()
+        //methods to remove flight
+        public static void RemoveFlight()
         {
             // creating the object for Flight class
             Flight f = new Flight();
 
-            ;// Creating thhe object for FlightBusinessLogicLayer class
-            FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();// Creating thhe object for FlightBusinessLogicLayer class
+            // Creating thhe object for FlightBusinessLogicLayer class
+            FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
             Console.WriteLine("Choose the options to delete the Flight based on  the category");
             Console.WriteLine("1.by FlightId");
             Console.WriteLine("2.by FlightName");
@@ -189,6 +209,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 Console.WriteLine("Please Enter Correct Option");
             }
+
+            //methods to remove flight based on flightId
             void RemovetFlightByFlightId()
             {
                 Console.Write("Enter the flightId to be Deleted:");
@@ -199,6 +221,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
             }
+
+            //methods to remove flight based on flightname
             void RemoveFlightByFlightName()
             {
                 Console.Write("Enter the Flight Name:");
@@ -209,6 +233,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
         }
 
+        //method to update flight
         public static void UpdateFlight()
         {
             Flight f = new Flight();
@@ -234,6 +259,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                 }
             }
+
+            //method to update flight based on flightname
             void UpdateFlightByFlightName()
             {
 
@@ -245,6 +272,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("flight Name Updated Sucessfully!!!");
 
             }
+            //method to update flight based on flightId
+
             void UpdateFlightByFlightId()
             {
                 Console.WriteLine("Enter Existing Flight ID");
@@ -258,70 +287,97 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
 
-
+        //Represents flightScheduleMenu
         public static void FlightsScheduleMenu()
         {
-            int choice = 1;
+            int choice = 0;
             do
             {
-                Console.WriteLine(" ====FlightScheduleMenu==== ");
+                Console.WriteLine(" ====FLIGHTSCHEDULE MENU==== ");
                 Console.WriteLine("1.AddSchedule");
-                Console.WriteLine("2.UpdateSchedule");
-                Console.WriteLine("3.GetSchedule");
-                Console.WriteLine("3.DeleteSchedule");
+                Console.WriteLine("2.GetSchedule"); 
+                Console.WriteLine("3.GetScheduleByFlightId");
+                Console.WriteLine("4.GetScheduleByFlightScheduleId");
+                Console.WriteLine("5.GetScheduleBySource");
+                Console.WriteLine("6.GetScheduleByDestination");
+                Console.WriteLine("7.UpdateSchedule");
+                Console.WriteLine("8.RemoveSchedule");
+
                 bool b = int.TryParse(Console.ReadLine(), out choice);
                 if (b == true)
                 {
                     switch (choice)
                     {
                         case 1: AddSchedule(); break;
-                        case 2: UpdateSchedule(); break;
-                        case 3: GetSchedule(); break;
-                        case 4: DeleteSchedule(); break;
-
-
-
+                        case 2: GetSchedule(); break;
+                        case 3: GetScheduleByFlightId(); break;
+                        case 4: GetScheduleByFlightScheduleId(); break;
+                        case 5: GetScheduleBySource(); break;
+                        case 6: GetScheduleByDestination(); break;
+                        case 7: UpdateSchedule(); break;
+                        case 8: RemoveSchedule(); break;
 
                     }
                 }
-            } while (choice <= 4);
+            } while (choice <= 8);
         }
+
+        //Method to add Flightschedules to the list
         public static void AddSchedule()
         {
-            //create object for flightSchedule
-            FlightSchedule fs = new FlightSchedule();
+            try
+            {
 
-            //create object for fligthBusiness layer
-            FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
+                //create object for flightSchedule
+                FlightSchedule fs = new FlightSchedule();
 
-            Console.WriteLine("You choose to add schedule to the repecitive flight");
-            Console.WriteLine("Enter Existing flightId");
-            fs.flightId = Console.ReadLine();
-            Console.WriteLine("Enter scheduleId");
-            fs.Source = Console.ReadLine();
-            Console.WriteLine("Enter source");
-            fs.Source = Console.ReadLine();
-            Console.WriteLine("Enter destination");
-            fs.Destination = Console.ReadLine();
-            Console.WriteLine("Enter DepartureTiming");
-            fs.DepartureTiming = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine(fs.DepartureTiming.ToString("dd/MM/yyyy hh:mm:s"));
+                //create object for fligthBusiness layer
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
 
-            Console.WriteLine("Enter ArrivalTiming");
-            fs.ArrivalTiming = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine(fs.ArrivalTiming.ToString("dd/MM/yyyy hh:mm:s"));
+                Console.WriteLine("You choose to add schedule to the repecitive flight");
+                Console.WriteLine("Enter Existing flightId");
 
-            fsbl.AddSchedule(fs);
+                Console.WriteLine("Enter scheduleId");
+                fs.Source = Console.ReadLine();
+                Console.WriteLine("Enter source");
+                fs.Source = Console.ReadLine();
+                Console.WriteLine("Enter destination");
+                fs.Destination = Console.ReadLine();
+                Console.WriteLine("Enter DepartureTiming");
+                fs.DepartureTiming = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine(fs.DepartureTiming.ToString("dd/MM/yyyy hh:mm:s"));
 
-            Console.WriteLine("schedule is  added successfully");
+                Console.WriteLine("Enter ArrivalTiming");
+                fs.ArrivalTiming = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine(fs.ArrivalTiming.ToString("dd/MM/yyyy hh:mm:s"));
 
+                fsbl.AddSchedule(fs);
+
+                Console.WriteLine("schedule is  added successfully");
+            }
+             
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine(ex.InnerException.Message);
+                }
+                 Console.WriteLine();
+                Console.WriteLine(ex.Message);
+                //Console.WriteLine();
+                //Console.WriteLine(ex.StackTrace);
+                //Console.WriteLine();
+                // Console.WriteLine(ex.Source);
+            }
         }
+
+        //Method to get added details of flightSchedule
         public static void GetSchedule()
         {
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
             List<FlightSchedule> ScheduleList = fsbl.GetSchedule();
 
-            Console.WriteLine("==========================  Flight Details=====================================================");
+            Console.WriteLine("===============   Flight Details=============");
             Console.WriteLine("flightscheduleId" + "   " + "source" + "  " + "destination" + "  " + "departureTiming" + "  " + "arrivalTiming");
             Console.WriteLine("-----------------------------------------------------------------------");
 
@@ -331,6 +387,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
         }
+
+        //method to get flightSchedule by flightId
         public static void GetScheduleByFlightId()
         {
 
@@ -345,6 +403,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
+        //method to get flightSchedule by flightScheduleId
         public static void GetScheduleByFlightScheduleId()
         {
             Console.WriteLine("Enter the existing flightScheduleId ");
@@ -358,6 +417,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
+        //method to get flightSchedule by Source
         public static void GetScheduleBySource()
         {
             Console.WriteLine("Enter the Source");
@@ -371,6 +431,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
+        //method to get flightSchedule by destination
         public static void GetScheduleByDestination()
         {
             Console.WriteLine("Enter the destination :");
@@ -383,6 +444,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
         }
+        //method to update schedule
         public static void UpdateSchedule()
         {
             FlightSchedule schedule = new FlightSchedule();
@@ -415,14 +477,16 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                 }
             }
+
+            //method to update source by flightScheduleId
             void UpdateSource()
             {
                 try
                 {
                     Console.WriteLine("Enter Existing flightSchedule ID");
                     schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(schedule);
-                    if (schedule1 != null)
+                    FlightSchedule fd = fsbl.GetSourceByFlightScheduleId(flightScheduleId);
+                    if (fd != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");
                         schedule.Source = Console.ReadLine();
@@ -438,6 +502,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
             }
+            //method to update Destination by flightScheduleId
 
             void UpdateDestination()
             {
@@ -445,13 +510,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     Console.WriteLine("Enter Existing flight Schedule ID");
                     schedule.flightScheduleId = Console.ReadLine();
-                    FlightSchedule schedule1 = fsbl.GetDestinationByFlightScheduleId(schedule1);
+                    FlightSchedule schedule1 = fsbl.GetSourceByFlightScheduleId(flightScheduleId);
                     if (schedule1 != null)
                     {
                         Console.WriteLine("Enter the new source for the Flight");
                         schedule.Destination = Console.ReadLine();
 
-                        fsbl.UpdateDestination(schedule);
+                        fsbl.UpdateSource(schedule);
                         Console.WriteLine("Destination Updated Sucessfully");
                     }
                 }
@@ -462,6 +527,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
             }
+
+            //methods to update departure timings
 
             void UpdateDepartureTiming()
             {
@@ -477,6 +544,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             }
 
+            //methods to update Arrival timings
             void UpdateArrivalTiming()
             {
 
@@ -492,7 +560,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
         }
 
-        public static void DeleteSchedule()
+        //Represents removing of flightSchedule
+        public static void RemoveSchedule()
         {
             FlightSchedule schedule = new FlightSchedule();// creating the object for flightschedule class
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();//Creating the object for flightschedule BusinessLogic class
@@ -508,7 +577,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 switch (choice)
                 {
                     case 1: RemoveFlightScheduleByFlightId(); break;
-                    case 2: RemoveFlightByFlightScheduleId(); break;
+                    case 2: RemoveFlightScheduleByFlightScheduleId(); break;
                     default: Console.WriteLine("Please Choose enter correct choice"); break;
 
                 }
@@ -518,6 +587,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 Console.WriteLine("the choice you entered is incorrect ..please ReEnter the choice ");
             }
+
+            //Methods to remove Flightschedule by flightId
             void RemoveFlightScheduleByFlightId()
             {
                 Console.Write("Enter the flightId:");
@@ -529,12 +600,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             }
 
-            void RemoveFlightByFlightScheduleId()
+            //Methods to remove Flightschedule by flightScheduleId
+            void RemoveFlightScheduleByFlightScheduleId()
             {
                 Console.Write("Enter the flightScheduleId:");
                 string flightScheduleId = Console.ReadLine();
 
-                fsbl.RemoveFlightByFlightScheduleId(flightScheduleId);
+                fsbl.RemoveFlightScheduleByFlightScheduleId(flightScheduleId);
                 Console.WriteLine("Schedule is Removed");
 
 
@@ -542,3 +614,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
     }
 }
+
+       
+
+       

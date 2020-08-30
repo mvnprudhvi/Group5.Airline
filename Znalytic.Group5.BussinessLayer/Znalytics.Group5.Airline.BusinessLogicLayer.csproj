@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,7 @@
     <Compile Include="ICustomerBusinessLogicLayer.cs" />
     <Compile Include="IFlightBookingBusinessLogicLayer.cs" />
     <Compile Include="IFlightBusinessLogicLayer.cs" />
+    <Compile Include="IFlightPriceBusinessLogic.cs" />
     <Compile Include="IFlightScheduleBusinessLogicLayer.cs" />
     <Compile Include="IFlightSearchingbusinessLogicLayer.cs" />
     <Compile Include="ITicketCancellationBusinessLogicLayer.cs" />
@@ -67,6 +71,9 @@
       <Project>{b5d2cf2f-de1d-4daa-8b85-9ed0af6b53cf}</Project>
       <Name>Znalytics.Group5.Airline.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
