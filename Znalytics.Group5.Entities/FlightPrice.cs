@@ -37,7 +37,7 @@ namespace Znalytics.Group5.Airline.Entities
                     }
                     else
                     {
-                        throw new FlightPriceException("invalid flightScheduleid");
+                        throw new  FlightPriceException("invalid flightScheduleid");
                     }
                 }
             }

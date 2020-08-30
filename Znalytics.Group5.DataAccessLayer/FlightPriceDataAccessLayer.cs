@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     /// <summary>
     /// This Class Represents Data Access Layer Of Price
     /// </summary>
-    public class FlightPriceDataAccessLayer
+    public class FlightPriceDataAccessLayer : IFlightPriceDataAccessLayer
     {
         //private Field of price Collection
         private static List<FlightPrice> _flightPrices;
@@ -45,7 +45,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <summary>
         /// This Method Represents UpdatePrice
         /// </summary>
-        /// <param name="price">This is a object of Flight Price</param>
+        /// <param name="price"></param>
         public void UpdateFlightPrice(FlightPrice price)
         {
             //Based on ScheduleID the Price Will be Updated 
@@ -57,14 +57,10 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <summary>
         /// This Method Represents GetPrices
         /// </summary>
-        /// <returns>_flightprices</returns>
+        /// <returns>_prices</returns>
         public List<FlightPrice> GetFlightPrices()
         {
             return _flightPrices;
         }
-        /// <summary>
-        /// This Method Represents GetPrices
-        /// </summary>
-        /// <returns>_prices</returns>
     }
 }

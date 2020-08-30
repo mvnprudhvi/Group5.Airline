@@ -1,31 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Znalytics.Group5.Airline.Entities
 {
+    /// <summary>
+    /// Exception class For Flight 
+    /// </summary>
     public class FlightException : ApplicationException
     {
+
         /// <summary>
-        /// exception is displayed with user defined message
+        /// Exception which Calls the Parent Exception
         /// </summary>
-        /// <param name="message"></param>
+        public FlightException() : base()
+        {
+        }
+
+        /// <summary>
+        /// Exception is displayed With user defined Message
+        /// </summary>
+        /// <param name="message">Message to be displayed</param>
         public FlightException(string message) : base(message)
         {
-
         }
+
         /// <summary>
-        /// inner Exception thrown by  other layer & rethrown to another layer
+        /// Inner exception thrown from another layer and re thrown to another layer
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
+        /// <param name="message">base Exception message</param>
+        /// <param name="innerException">inner exception message</param>
         public FlightException(string message, Exception innerException) : base(message, innerException)
         {
         }
-       
-
     }
 }

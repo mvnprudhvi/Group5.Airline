@@ -16,7 +16,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     class FlightPricePL
     {
         //Reference Variable Of Price Business Logic Layer
-        private static FlightPriceBusinessLogic _flightPriceBusinessLogic;
+        private static IFlightPriceBusinessLogic _flightPriceBusinessLogic;
         /// <summary>
         ///This Represents Main Method of Flight Price
         /// </summary>

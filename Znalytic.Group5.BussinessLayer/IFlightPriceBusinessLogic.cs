@@ -1,13 +1,12 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytics.Group5.Airline.DataAccessLayer
+namespace Znalytics.Group5.Airline.BusinessLogicLayer
 {
     /// <summary>
     ///  Interface For Flight Price Data Access Layer Consists of Following Methods to implement
     /// </summary>
-    public interface IFlightPriceDataAccessLayer
+    public interface IFlightPriceBusinessLogic
     {
         /// <summary>
         /// This Represents Declaration of Add Flight Price Method
