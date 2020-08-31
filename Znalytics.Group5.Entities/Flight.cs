@@ -16,9 +16,8 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         private string _noOfEconomySeats { set; get; }
         private string _noOfBusinessSeats { set; get; }
 
-
-        //Constructor
-        public Flight(string flightName, string flightId, string flightType, string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
+        // constructor
+         public Flight( string flightName,string flightId,string flightType,string luggageWeightage, string noOfEconomySeats, string noOfBusinessSeats)
         {
 
             _flightName = flightName;
