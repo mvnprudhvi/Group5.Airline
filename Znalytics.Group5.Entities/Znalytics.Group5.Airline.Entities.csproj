@@ -54,7 +54,6 @@
     <Compile Include="FlightSchedule.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="FlightPrice.cs" />
-    <Compile Include="FlightSearching.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCancellation.cs" />
     <Compile Include="TicketCancellationException.cs" />
