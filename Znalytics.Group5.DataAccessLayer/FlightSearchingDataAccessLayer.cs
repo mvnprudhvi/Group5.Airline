@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-using Znalytics.Group5.Flightsearching.Entities;
+
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 
@@ -47,7 +47,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         }
        
 
-            public List<Flight> Flightsearching(string FlightName)
+            public List<Flight> FlightSearching(string FlightName)
             {
                 List<Flight> samp=FlightDataAccessLayer._flightList;
                 List<Flight> res = samp.FindAll(temp => temp.FlightName == FlightName);

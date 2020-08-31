@@ -27,13 +27,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         fdal = new FlightDataAccessLayer();
         }
 
-        public  bool CheckFlightId(string flightId)
-        {
-            List<Flight> _flightList = new  List<Flight>();
-           // Flight flight = new Flight();
-            bool result = _flightList.Exists(temp => temp.FlightId == flightId);
-            return result;
-        }
+        
 
         //Method to ADD FlightDetails to the list
         public void AddFlight(Flight flight)
