@@ -39,7 +39,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         switch (choice)
                         {
                             case 1: AddCustomer(); break;
-                            case 2: Login(); break;
+                            case 2: CustomerLogin(); break;
                         }
                     }
                 } while (choice != 3);
@@ -58,7 +58,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
                     Console.WriteLine("enter your ID:");
-                    c.CustomerId = Console.ReadLine();
+                    c.CustomerId = int.Parse(Console.ReadLine());
 
                     //customer user name
                     Console.WriteLine("enter your user name:");
@@ -110,19 +110,21 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
             //Method for Customers Login
-            static void Login()
+            static void CustomerLogin()
             {
-                Customer c = new Customer();
-                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                 
                 //Login form
                 Console.WriteLine("-------LOGIN FORM-----------------");
                 Console.WriteLine("==================================");
-                Console.WriteLine("\nUsername:");
-                c.CustomerUserName = Console.ReadLine();
-                Console.Write("Password:");
-                c.CustomerPassword = Console.ReadLine();
-                
-                CustomerBusinessLogicLayer.Login(customer);
+                Console.WriteLine("Enter your Username:");
+                string CustomerUserName = Console.ReadLine();
+                Console.Write("Enter your Password:");
+                string CustomerPassword = Console.ReadLine();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Tuple<string, string> tuple = new Tuple<string, string>(CustomerUserName, CustomerPassword);
+                Tuple<string, string> c = customerBusinessLogicLayer.CustomerLogin(CustomerUserName, CustomerPassword);
+                Console.WriteLine("valid user");
+               
                 {
                     CustomersMenu();
                     Console.ReadKey();
@@ -257,7 +259,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 Customer c = new Customer();
                 Console.WriteLine("Enter existing Customer Id");
-                string customerId = Console.ReadLine();
+                int customerId = int.Parse(Console.ReadLine());
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
                 Customer customer= customerBusinessLogicLayer.GetCustomerByCustomerId(customerId);
                 Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
@@ -310,7 +312,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     
                     Console.Write("Enter the CustomerId:");
-                    string customerId = Console.ReadLine();
+                    int customerId = int.Parse(Console.ReadLine());
   
                     customerBusinessLogicLayer.RemoveCustomerByCustomerId(customerId);
                     Console.WriteLine("Your Account is Deleted");
