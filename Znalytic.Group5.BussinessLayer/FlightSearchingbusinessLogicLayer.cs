@@ -1,4 +1,5 @@
-﻿
+﻿// created by Reshma
+
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
     public void UpdateFlightSearching(FlightSearching flightId)
             {
-                if (flightId.flightId != null)
+                if (flightId.flightId != 0)
                 {
                     _flightSearchingDataAccessLayer.UpdateflightId(flightId);
                 }
