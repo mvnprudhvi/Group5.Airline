@@ -388,9 +388,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         case 1: AddSchedule(); break;
                         case 2: GetSchedule(); break;
                         case 3: GetScheduleByFlightScheduleId(); break;
-                        case 4: GetScheduleBySource(); break;
-                        case 5: UpdateSchedule(); break;
-                        case 6: RemoveSchedule(); break;
+                        case 4: GetScheduleByFlightId(); break;
+                        case 5: GetScheduleBySource(); break;
+                        case 6: UpdateSchedule(); break;
+                        case 7: RemoveSchedule(); break;
 
                     }
                 }
@@ -530,12 +531,39 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
         }
-   
+
+        //method to get flightSchedule by flightId
+        public static void GetScheduleByFlightId()
+        {
+
+            try
+            {
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                Console.WriteLine("Enter existing flightId");
+                string fId = Console.ReadLine();
+                FlightSchedule fs = fsbl.GetScheduleByFlightId(fId);
+                if (fs != null)
+                {
+                    Console.WriteLine("FlightId " + "  " + "FlightScheduleId" + "  " + "Source " + " " + "Destination" + " " + "DepartureTiming " + " " + "ArrivalTiming");
+                    Console.WriteLine(fs.FlightId + "  " + fs.FlightScheduleId + "  " + fs.Source + " " + fs.Destination + " " + fs.DepartureTiming + " " + fs.ArrivalTiming);
+
+                }
+                else
+                {
+                    Console.WriteLine("flight Id doesn't exist");
+                }
+            }
+            catch (FlightException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
 
-        
-        
-        
+
+
+
+
         //method to update schedule
         public static void UpdateSchedule()
         {

@@ -86,8 +86,6 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-       
-
         /// <summary>
         /// Method to GET flight details by WareHouseId
         /// </summary>

@@ -242,7 +242,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         /// </summary>
         /// <param name="source">Represents source</param>
         /// <returns></returns>
-        public List<FlightSchedule> GetFlightScheduleBySource(string source)
+        public List<FlightSchedule> GetScheduleBySource(string source)
         {
             try
             {
@@ -250,7 +250,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
                 if (source != null)
                 {
                     //Calls the GetFlightSchedule By Source Method of FlighhtSchedule Data Layer
-                    return fsdl.GetFlightScheduleBySource(source);
+                    return fsdl.GetScheduleBySource(source);
                 }
                 else
                 {
@@ -262,35 +262,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
                 throw new FlightException(ex.Message);
             }
         }
-        /// <summary>
-        /// Method to GET schedules  by Destination
-        /// </summary>
-        /// <param name="destination"></param>
-        /// <returns></returns>
-        public List<FlightSchedule> GetScheduleByDestination(string destination)
-        {
-
-
-            try
-            {
-                //Location Name should not be null
-                if (destination != null)
-                {
-                    //Calls the GetFlightSchedule By Source Method of FlighhtSchedule Data Layer
-                    return fsdl.GetScheduleByDestination(destination);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (FlightException ex)
-            {
-                throw new FlightException(ex.Message);
-            }
-        }
-
-
+       
 
         /// <summary>
         /// //Method to UPDATE source of Flight

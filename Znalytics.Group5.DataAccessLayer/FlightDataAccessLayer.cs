@@ -102,8 +102,11 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         /// <param name="flight"></param>
         public void AddFlight(Flight flight)
         {
+            //Condition to check whether the flightId exists or not
             if (!_flightList.Exists(temp => temp.FlightId == flight.FlightId))
             {
+
+                //Adds flight details into the list and is saved into the file
                 _flightList.Add(flight);
                 SaveIntoFile();
             }
@@ -112,7 +115,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             {
                 throw new FlightException("flight id already exists");
             }
-
+            
 
         }
         
