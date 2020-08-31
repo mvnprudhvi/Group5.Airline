@@ -58,7 +58,7 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
             string str1 = streamReader.ReadToEnd();
-            List<TicketCancellation> ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
+            List<TicketCancellation> _ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
             return _cancellationID;
 
         }
