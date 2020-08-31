@@ -7,7 +7,6 @@
 
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.FlightBooking.Entities;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
@@ -22,7 +21,7 @@ namespace Znalytics.Group5.DataAccessLayer
         /// method to updatation of customerId
         /// </summary>
         /// <param name="CustomerID"></param>
-        void UpdateFlightBooking(FlightBooking CustomerID);
+        void UpdateFlightBooking(FlightBooking Booking);
 
 
         //method to get  FlightBooking by  Flight Bookingid
