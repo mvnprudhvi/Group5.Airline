@@ -15,7 +15,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
     public class FlightSearchingDataAccessLayer : IFlightSearchingDataAccessLayer
     {
         //private fields
-        private static List<FlightSearchingDataAccessLayer> _flightSearching;
+        private static List<FlightSearching> _flightSearching;
 
         //constructor
         static FlightSearchingDataAccessLayer()
@@ -25,7 +25,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
 
             //Add
-            public void AddFlightSearching(FlightSearching FlightId)
+            public  void AddFlightSearching(FlightSearching FlightId)
             {
                 _flightSearching.Add(FlightId);
             }
@@ -44,7 +44,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
                 _flightSearching fs = _flightSearching.Find(temp => temp.FlightId == fs.FlightId);
                 if (fs != null)
                 {
-                    fs.flightId= Flight.FlightId;
+                    fs.FlightId= Flight.FlightId;
                 }
             }
 

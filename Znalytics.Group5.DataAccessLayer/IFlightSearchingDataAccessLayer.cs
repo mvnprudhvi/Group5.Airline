@@ -2,6 +2,10 @@
 {
     public interface IFlightSearchingDataAccessLayer
     {
+        /// <summary>
+        /// this method  add all the details of flightID
+        /// </summary>
+        /// <param name="FlightID"></param>
         void AddFlightSearching(FlightSearching FlightID);
 
         void UpdateFlightSearching(FlightSearching FlightID);

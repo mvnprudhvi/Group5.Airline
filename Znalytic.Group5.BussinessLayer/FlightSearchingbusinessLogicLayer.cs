@@ -34,15 +34,15 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
               /// This method represents adding of flightsearching details
               /// </summary>
               /// <param name="FlightName"></param>
-            public void AddFlightSearching(FlightName FlightName)
+            public void AddFlightSearching(FlightSearching FlightId)
             {
-                if (FlightName.FlightName != null)
+                if (FlightId.FlightId != null)
                 {
-                    _FlightSearchingDataAccessLayer.Add(FlightName);
+                    _FlightSearchingDataAccessLayer.Add(FlightId);
                 }
                 else
                 {
-                    throw new Exception("flight Name can't be null");
+                    throw new Exception("flight Id can't be null");
                 }
             }
 
@@ -53,8 +53,9 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
    
     public List<FlightSearching> GetFlightSearchings()
             {
-                return _FlightSearchings;
-    }
+                return _FlightSearching;
+             }
+
     /// <summary>
     ///  // this method represents all the updation of details of flightsearchings
     /// </summary>
@@ -62,11 +63,11 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
    
 
-    public void UpdateFlightSearching(FlightName FlightName)
+    public void UpdateFlightSearching(FlightSearching FlightId)
             {
-                if (FlightName.FlightName != null)
+                if (FlightId.FlightId != null)
                 {
-                    _FlightSearchingDataAccessLayer.UpdateFlightName(FlightName);
+                    _FlightSearchingDataAccessLayer.UpdateFlightId(FlightId);
                 }
             }
 
@@ -86,7 +87,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <returns></returns>
     public List<Flight> GetFlightsByFlightId(string FlightId)
        {
-         return fsdl.GetFlightId);
+         return fsdl.GetFlightId();
         }
     /// <summary>
     /// this method represents getting all details of source
