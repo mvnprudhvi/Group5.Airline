@@ -6,8 +6,10 @@ namespace Znalytics.Group5.DataAccessLayer
 {
     interface ITicketCancellationDataAccessLayer
     {
-        //method to add ticket cancellations to the list
-
+        /// <summary>
+        //Method to add ticket cancellation details to the list
+        /// </summary>
+        /// <param name="tc"></param>
         void AddTicketCancellations(TicketCancellation bookingId);
 
         //method to get ticket cancellations by cancellation Id

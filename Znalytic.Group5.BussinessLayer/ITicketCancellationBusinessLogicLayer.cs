@@ -6,7 +6,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
     public interface ITicketCancellationBusinessLogicLayer
     {
         /// <summary>
-        //Method to addticket cancellation details to the list
+        //Method to add ticket cancellation details to the list
         /// </summary>
         /// <param name="tc"></param>
 
@@ -28,10 +28,5 @@ namespace Znalytic.Group5.BussinessLogicLayer
 
         //method to get Ticket Cancellations by cancellation ID
         List<TicketCancellation> GetTicketCancellationByCancellationID(int cancellationID);
-
-
-
-
-
     }
 }
