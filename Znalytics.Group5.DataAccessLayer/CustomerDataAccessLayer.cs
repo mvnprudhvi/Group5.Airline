@@ -61,11 +61,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
                 throw new CustomerException("UserName or Password is Incorrect");
             }
         }
-        public List<Customer> Login(Customer customer)
-        {
-            return _customer;
-
-        }
+         
 
 
         /// <summary>
