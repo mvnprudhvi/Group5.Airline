@@ -172,7 +172,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         /// Method to REMOVE Flight by FlightId
         /// </summary>
         /// <param name="flightId"></param>
-        public  void RemoveFlightByFlighthId(string flightId)
+        public  void RemoveFlightByFlightId(string flightId)
         {
             //Condition to check whether the flightName exists or not
             if (_flightList.Exists(temp => temp.FlightId == flightId))

@@ -41,11 +41,11 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             _scheduleList = new List<FlightSchedule>()
             {
                 //Sample information
-                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "FSID01", Source = "HYDERABAD", Destination = "MUMBAI"},
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "FSID02", Source = "MUMBAI", Destination = "CHENNAI"},
-                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "FSID03", Source = "BANGALORE", Destination = "DELHI"},
-                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "FSID04", Source = "HYDERABAD", Destination = "DELHI"},
-                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "SFSID02", Source = "HYDERABAD", Destination = "BANGALORE" }
+                new FlightSchedule() { flightId = "FID1011", FlightScheduleId = "FSID01", Source = "HYDERABAD", Destination = "MUMBAI" , DepartureTiming=Convert.ToDateTime("07-10-2020 06:20:33Am")},
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "FSID02", Source = "MUMBAI", Destination = "CHENNAI" , DepartureTiming=Convert.ToDateTime("08-10-2020 11:50:33Am")},
+                new FlightSchedule() { flightId = "FID1033", FlightScheduleId = "FSID03", Source = "BANGALORE", Destination = "DELHI" , DepartureTiming=Convert.ToDateTime("07-10-2020 06:50:35Pm")},
+                new FlightSchedule() { flightId = "FID1044", FlightScheduleId = "FSID04", Source = "HYDERABAD", Destination = "DELHI" ,  DepartureTiming=Convert.ToDateTime("10-10-2020 05:00:35Pm")},
+                new FlightSchedule() { flightId = "FID1022", FlightScheduleId = "SFSID02", Source = "HYDERABAD", Destination = "BANGALORE" , DepartureTiming=Convert.ToDateTime("07-10-2020 02:00:35Pm") }
             };
         }
 

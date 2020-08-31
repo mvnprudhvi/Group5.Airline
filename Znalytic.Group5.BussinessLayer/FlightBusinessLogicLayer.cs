@@ -92,7 +92,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Id should not be null
                 if (flightId != null)
                 {
-                    fdal.RemovetFlightByFlightId(flightId);
+                    fdal.RemoveFlightByFlightId(flightId);
                 }
             }
             catch (FlightException ex)
@@ -110,7 +110,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Name should not be null
                 if (flightName != null)
                 {
-                    fdal.RemoveFlightByFlightName(flightName);
+                    fdal.RemoveFlightByFlighthName(flightName);
                 }
             }
             catch (FlightException ex)

@@ -52,7 +52,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
                 set
                 {
                     //Regular Expression for AlphaNumeric values
-                    Regex r = new Regex("[A-Z0-9]$");
+                    Regex r = new Regex("^[A-Z0-9]+$");
                     //flightId should not be null or empty
                     if (!string.IsNullOrEmpty(value) && value.StartsWith("FSID") && r.IsMatch(value) && value.Length == 6)
                     {
