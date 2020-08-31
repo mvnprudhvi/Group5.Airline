@@ -1,5 +1,5 @@
 ﻿
-// created by 
+// created by Reshma
 using System.Collections.Generic;
 
 
@@ -25,9 +25,9 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
 
             //Add
-            public void AddFlightSearching(FlightSearching FlightID)
+            public void AddFlightSearching(FlightSearching FlightId)
             {
-                _flightSearching.Add(FlightID);
+                _flightSearching.Add(FlightId);
             }
         }
     }
@@ -38,13 +38,13 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
             }
 
             //Update
-            public void UpdateFlightSearching(FlightSearching FlightID)
+            public void UpdateFlightSearching(FlightSearching FlightId)
             {
                 //Get matching flightnames based on flightname
-                _flightSearching fs = _flightSearching.Find(temp => temp.FlightID == fs.FlightID);
+                _flightSearching fs = _flightSearching.Find(temp => temp.FlightId == fs.FlightId);
                 if (fs != null)
                 {
-                    fs.flightID= Flight.FlightID;
+                    fs.flightId= Flight.FlightId;
                 }
             }
 

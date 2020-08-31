@@ -82,7 +82,7 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         /// <returns>FlightBookingDataAccessLayer</returns>
         public List<FlightBooking> GetFlightBookings()
         {
-            return fbdl.GetFlightBooking();
+            return fbdl.GetFlightBookings();
         }
 
     }
