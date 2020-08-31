@@ -16,7 +16,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
     {
          CustomerDataAccessLayer cdal;
-
+        
 
         /// <summary>
         /// Default Constructor
@@ -37,6 +37,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
                 {
                     cdal.AddCustomer(customer);
                 }
+                
             }
             catch (CustomerException ex)
             {
@@ -48,9 +49,9 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         public void Login(Customer customer)
         {
             //Customer User Name and Password Cannot Be null
-            if (customeruserName != null && customerPassword != null)
+            if (customer.CustomerUserName != null && customer.CustomerPassword != null)
             {
-                return cdal.Login(customer);
+                 cdal.Login(customer);
             }
         }
 

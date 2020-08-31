@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.Entities
     public class Customer
     {
         //private fields
-        private string _customerId;
+        public  string _customerId;
         private string _customeruserName;
         private string _customerEmail;
         private string _customerPassword;

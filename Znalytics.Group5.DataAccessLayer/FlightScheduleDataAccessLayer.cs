@@ -26,9 +26,9 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
             set
             {
-                 _scheduleList = value;
+                _scheduleList = value;
             }
-            get 
+            get
             {
                 return _scheduleList;
             }
@@ -101,31 +101,31 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         public List<FlightSchedule> GetSchedule()
         {
             return _scheduleList;
-            GetFiledata();
+            
         }
-        
-                /// <summary>
-                /// Method to GET the added schedule Details
-                /// </summary>
-                /// <param name="flightScheduleID">Represents AddressId</param>
-                /// <returns></returns>
-                public  FlightSchedule GetScheduleByFlightScheduleId(string flightScheduleId)
-                {
-                    //Condition to check whether the flightScheduleId exists or not
-                    if (_scheduleList.Exists(temp => temp.flightScheduleId == flightScheduleId))
-                    {
 
-                        return _scheduleList.Find(temp => temp.flightScheduleId == flightScheduleId);
-                    }
-                    else
-                    {
-                        throw new FlightException("flightSchedule id doesn't exist");
-                    }
+        /// <summary>
+        /// Method to GET the added schedule Details
+        /// </summary>
+        /// <param name="flightScheduleID">Represents AddressId</param>
+        /// <returns></returns>
+        public FlightSchedule GetScheduleByFlightScheduleId(string flightScheduleId)
+        {
+            //Condition to check whether the flightScheduleId exists or not
+            if (_scheduleList.Exists(temp => temp.flightScheduleId == flightScheduleId))
+            {
 
-                }
+                return _scheduleList.Find(temp => temp.flightScheduleId == flightScheduleId);
+            }
+            else
+            {
+                throw new FlightException("flightSchedule id doesn't exist");
+            }
 
-                
-        
+        }
+
+
+
         ///Method to REMOVE an flightSchedule of the flight by flightScheduleId
         /// </summary>
         /// <param name="flightScheduleId">Represents flightScheduleId</param>
@@ -170,18 +170,6 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         }
 
 
-        /// <summary>
-        /// //Method to GET Source by flightScheduleId
-        /// </summary>
-        /// <param name="flightScheduleId"></param>
-        /// <returns></returns>
-        public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightScheduleId)
-        {
-
-            return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-
-        }
-
 
 
 
@@ -194,7 +182,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-           
+
         }
 
         /// <summary>
@@ -206,7 +194,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         {
 
             return _scheduleList.FindAll(temp => temp.FlightScheduleId == flightScheduleId);
-            
+
         }
 
 
@@ -236,28 +224,28 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
         }
 
-      
-
-         /// <summary>
-         /// //Method to UPDATE source of Flight
-         /// </summary>
-         /// <param name="schedule"></param>
-         public void UpdateSource(FlightSchedule schedule)
-         {
-             FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
-             if (fs != null)
-             {
-                 fs.Source = schedule.Source;
 
 
-             }
-             else
-             {
+        /// <summary>
+        /// //Method to UPDATE source of Flight
+        /// </summary>
+        /// <param name="schedule"></param>
+        public void UpdateSource(FlightSchedule schedule)
+        {
+            FlightSchedule fs = _scheduleList.Find(temp => temp.FlightScheduleId == schedule.FlightScheduleId);
+            if (fs != null)
+            {
+                fs.Source = schedule.Source;
 
-              throw new FlightException("FlightScheduleId doesn't exist");
-             }
-         }
-        
+
+            }
+            else
+            {
+
+                throw new FlightException("FlightScheduleId doesn't exist");
+            }
+        }
+
 
 
 
@@ -294,7 +282,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
 
 
             }
-           
+
         }
 
         /// <summary>
@@ -312,7 +300,7 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             }
         }
 
-       
+
         public static bool CheckFlightScheduleId(string id)
         {
             bool result = _scheduleList.Exists(temp => temp.FlightScheduleId == id);
