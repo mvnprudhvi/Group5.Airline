@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.Entities
     public class Customer
     {
         //private fields
-        private string _customerid;
+        private string _customerId;
         private string _customeruserName;
         private string _customerEmail;
         private string _customerPassword;
@@ -23,7 +23,7 @@ namespace Znalytics.Group5.Airline.Entities
         /// <summary>
         /// Constructor That Initializes Fields
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="customerId"></param>
         /// <param name="username"></param>  
         /// <param name="email"></param>  
         /// <param name="password"></param>  
@@ -31,16 +31,16 @@ namespace Znalytics.Group5.Airline.Entities
         /// <param name="aadharNumber"></param>  
         /// <param name="pancardnumber"></param>
         /// <param name="gender"></param>  
-        public Customer(string customerid, string customerusername, string customeremail, string customerpassword, string customermobileNumber, string customeraadharNumber, string customerpancardnumber, string customergender)
+        public Customer(string customerId, string customeruserName, string customerEmail, string customerPassword, string customermobileNumber, string customeraadharNumber, string customerpancardNumber, string customerGender)
         {
-             _customerid = customerid;
-             _customeruserName = customerusername;
-             _customerEmail = customeremail;
-             _customerPassword = customerpassword;
+             _customerId = customerId;
+             _customeruserName = customeruserName;
+             _customerEmail = customerEmail;
+             _customerPassword = customerPassword;
              _customermobileNumber = customermobileNumber;
              _customeraadharNumber = customeraadharNumber;
-             _customerpancardNumber = customerpancardnumber;
-             _customerGender = customergender;
+             _customerpancardNumber = customerpancardNumber;
+             _customerGender = customerGender;
         }
 
         /// <summary>
@@ -51,19 +51,19 @@ namespace Znalytics.Group5.Airline.Entities
 
         }
 
-        // Property for setting values to CustomerId field and Getting The value of the Field
+        // Property For Setting Values To Customer Id Field And Getting The Value of The Field
         public string CustomerId
         {
             set
             {
                 if (value.Length>= 0 && value.Length <= 9)
                 {
-                   CustomerId = value;
+                   _customerId = value;
                 }
             }
             get
             {
-                return CustomerId;
+                return _customerId;
 
             }
         }
@@ -76,7 +76,7 @@ namespace Znalytics.Group5.Airline.Entities
                 Regex r = new Regex(@"^[a - zA - Z0 - 9] + ([._]?[a - zA - Z0 - 9] +) *$");
                 if (r.IsMatch(value)==true)
                 {
-                    CustomerUserName = value;
+                    _customeruserName = value;
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
                 get
             {
-                    return CustomerUserName;
+                    return _customeruserName;
                 }
             }
 
@@ -98,7 +98,7 @@ namespace Znalytics.Group5.Airline.Entities
 
                 if (r.IsMatch(value)== true)
                 {
-                    CustomerEmail = value;
+                    _customerEmail = value;
                 }
                 else
                 {
@@ -108,7 +108,7 @@ namespace Znalytics.Group5.Airline.Entities
             get
             {
 
-                return CustomerEmail;
+                return _customerEmail;
             }
         
     }
@@ -121,7 +121,7 @@ namespace Znalytics.Group5.Airline.Entities
                 Regex r = new Regex(@"^(?=.*\d)(?=.*[a - z])(?=.*[A - Z]).{ 4,8}$");
                 if (r.IsMatch(value) == true)
                 {
-                    CustomerPassword = value;
+                    _customerPassword = value;
                 }
 
                 else
@@ -131,7 +131,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
                 get
             {
-                    return CustomerPassword;
+                    return _customerPassword;
                 }
             }
 
@@ -145,7 +145,7 @@ namespace Znalytics.Group5.Airline.Entities
 
             if (r.IsMatch(value) == true)
             {
-                CustomerMobileNumber = value;
+                _customermobileNumber = value;
             }
             else
                     {
@@ -155,7 +155,7 @@ namespace Znalytics.Group5.Airline.Entities
             
             get
             {
-                return CustomerMobileNumber;
+                return _customermobileNumber;
             }
         }
 
@@ -168,16 +168,16 @@ namespace Znalytics.Group5.Airline.Entities
                 Regex r = new Regex(@"^\d{4}\s\d{4}\s\d{4}$");
                 if (r.IsMatch(value) == true)
                 {
-                    CustomerAadharNumber = value;
+                    _customeraadharNumber = value;
                 }
                 else
                 {
-                    throw new Exception("Aadhar card number must be in 1111 1111 1111 1111 format only");
+                    throw new Exception("Aadhar card number must be in 1111 1111 1111 format only");
                 }
             }
             get
             {
-                return CustomerAadharNumber;
+                return _customeraadharNumber;
             }
         }
 
@@ -189,7 +189,7 @@ namespace Znalytics.Group5.Airline.Entities
                 Regex r = new Regex(@"[A-Z]{5}[0-9]{4}[A-Z]{1}");
                 if (r.IsMatch(value) == true)
                 {
-                    CustomerPanCardNumber = value;
+                    _customerpancardNumber = value;
                 }
                 else
                 {
@@ -198,7 +198,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return CustomerPanCardNumber;
+                return _customerpancardNumber;
             }
         }
 
@@ -210,7 +210,7 @@ namespace Znalytics.Group5.Airline.Entities
                 Regex r = new Regex(@"^(?:m|M|male|Male|f|F|female|Female)$");
                 if (r.IsMatch(value)== true)
                 {
-                    CustomerGender = value;
+                    _customerGender = value;
                 }
                 else
                 {
@@ -219,7 +219,7 @@ namespace Znalytics.Group5.Airline.Entities
             }
             get
             {
-                return CustomerGender;
+                return _customerGender;
             }
         }
     }

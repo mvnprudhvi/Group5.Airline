@@ -22,10 +22,10 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         
         void RemoveFlightScheduleByFlightId(string flightId);
 
-        /// <summary>
-        /// method to remove flightSchedule by flightScheduleId
-        /// </summary>
-        /// <param name="flightScheduleId"></param>
+       /// <summary>
+       /// method to remove flightSchedule by ScheduleId
+       /// </summary>
+       /// <param name="flightScheduleId"></param>
         void RemoveFlightScheduleByFlightScheduleId(string flightScheduleId);
         
            

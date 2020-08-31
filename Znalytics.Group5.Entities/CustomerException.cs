@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using Znalytics.Group5.AirLine.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,24 +11,18 @@ namespace Znalytics.Group5.AirLine.Entities
     /// <summary>
     /// Class For Customer Exception 
     /// </summary>
-    class CustomerException : ApplicationException
+   public class CustomerException : ApplicationException
     {
-        //Constructor That Initializes Nothing
-        public CustomerException() : base()
-        {
-
-        }
-
         /// <summary>
-        /// Constructor Initializes Only Message
+        ///  Exception Is Displayed With User Defined Message
         /// </summary>
         /// <param name="message"></param>
         public CustomerException(string message) : base(message)
         {
-        }
 
+        }
         /// <summary>
-        /// Constructor initializes Message and InnerException
+        /// Inner Exception Thrown By  Other Layer & Rethrown To Another Layer
         /// </summary>
         /// <param name="message">Exception message</param>
         /// <param name="innerException">Inner exception which causes the current exception</param>
