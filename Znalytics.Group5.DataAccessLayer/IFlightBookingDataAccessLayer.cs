@@ -18,12 +18,12 @@ namespace Znalytics.Group5.DataAccessLayer
         /// method to add bookingId
         /// </summary>
         /// <param name="bookingID"></param>
-        void AddFlightBooking(FlightBooking bookingID);
+        void AddFlightBooking(FlightBooking Booking);
         /// <summary>
         /// method to updatation of customerId
         /// </summary>
         /// <param name="CustomerID"></param>
-        void UpdateFlightBooking(FlightBooking CustomerID);
+        void UpdateFlightBooking(FlightBooking Booking);
 
 
         //method to get  FlightBooking by  Flight Bookingid

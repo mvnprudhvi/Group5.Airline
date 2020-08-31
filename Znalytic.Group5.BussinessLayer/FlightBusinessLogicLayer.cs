@@ -4,7 +4,6 @@ using System.Runtime.Serialization;
 using  Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.Entities;
-
 //Created a namespace for BusinessLayer of flight module
 namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
 { 
@@ -27,9 +26,12 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         fdal = new FlightDataAccessLayer();
         }
 
-        
 
-        //Method to ADD FlightDetails to the list
+
+        /// <summary>
+        /// Method to ADD flight details to the list
+        /// </summary>
+        /// <param name="flight">Represents flight object</param>
         public void AddFlight(Flight flight)
         {
 
@@ -48,14 +50,21 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-        // Method to GET the added details
+        /// <summary>
+        /// Method to GET the added details
+        /// </summary>
+        /// <returns>It returns the list of flights</returns>
         public List<Flight> GetFlights()
         {
             return fdal.GetFlights();
         }
 
-       
-        //Method to GET flightDetails by flightId
+
+        /// <summary>
+        /// Method to GET flightDetails by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
         public Flight GetFlightByFlightId(string flightId)
         {
             try
@@ -76,8 +85,6 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-       
-
         /// <summary>
         /// Method to GET flight details by WareHouseId
         /// </summary>
@@ -85,14 +92,14 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         /// <returns></returns>
 
         //Method to REMOVE flight  by flightId
-        public void RemovetFlightByFlightId(string flightId)
+        public void RemoveFlightByFlightId(string flightId)
         {
             try
             {
                 //flight Id should not be null
                 if (flightId != null)
                 {
-                    fdal.RemovetFlightByFlightId(flightId);
+                    fdal.RemoveFlightByFlightId(flightId);
                 }
             }
             catch (FlightException ex)
@@ -110,7 +117,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 //flight Name should not be null
                 if (flightName != null)
                 {
-                    fdal.RemoveFlightByFlightName(flightName);
+                    fdal.RemoveFlightByFlighthName(flightName);
                 }
             }
             catch (FlightException ex)
@@ -119,7 +126,10 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-        //Method to UPDATE flight by flightName
+        /// <summary>
+        /// Method to UPDATE flight by flightName
+        /// </summary>
+        /// <param name="flight"></param>
         public void UpdateFlightByFlightName(Flight flight)
         {
 
@@ -137,7 +147,10 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
             }
         }
 
-        //Method to UPDATE flight by flightId
+        /// <summary>
+        /// Method to update flight by flightId
+        /// </summary>
+        /// <param name="flight"></param>
         public void UpdateFlightByFlightId(Flight flight)// update flightid
         {
 
@@ -154,6 +167,12 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 throw new FlightException(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Method to check whether flightId exists or not
+        /// </summary>
+        /// <param name="id">Represents flight id</param>
+        /// <returns></returns>
         public bool CheckFlightId(string id)
         {
             return FlightDataAccessLayer.CheckFlightId(id);

@@ -7,6 +7,7 @@ using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Entities;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
@@ -21,11 +22,18 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     class FlightPresentation
     {
 
+       public void start()
+        {
+            AdminMenu();
+            Console.ReadKey();
+        }
+
         /// <summary>
         /// Beginning of the program
         /// </summary>
-        static void Main()
+        public  void AdminMenu()
         {
+
             //Login pagr for flight Administrator
             Console.WriteLine("ONLINE AIRLINE RESERVATION SYSTEM ");
             Console.WriteLine("==================================");
@@ -84,7 +92,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     {
                         case 1: AddFlight(); break;
                         case 2: GetFlights(); break;
-                        case 3: GetFlightByflightId(); break;
+                        case 3: GetFlightByFlightId(); break;
                         case 4: UpdateFlight(); break;
                         case 5: RemoveFlight(); break;
                         case 6: Console.WriteLine("Exit"); break;
@@ -179,7 +187,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
         //methods to get flightdetails by flight id
-        public static void GetFlightByflightId()
+        public static void GetFlightByFlightId()
         {
             try
             {
@@ -388,9 +396,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         case 1: AddSchedule(); break;
                         case 2: GetSchedule(); break;
                         case 3: GetScheduleByFlightScheduleId(); break;
-                        case 4: GetScheduleBySource(); break;
-                        case 5: UpdateSchedule(); break;
-                        case 6: RemoveSchedule(); break;
+                        case 4: GetScheduleByFlightId(); break;
+                        case 5: GetScheduleBySource(); break;
+                        case 6: UpdateSchedule(); break;
+                        case 7: RemoveSchedule(); break;
 
                     }
                 }
@@ -530,12 +539,39 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
         }
-   
+
+        //method to get flightSchedule by flightId
+        public static void GetScheduleByFlightId()
+        {
+
+            try
+            {
+                FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
+                Console.WriteLine("Enter existing flightId");
+                string fId = Console.ReadLine();
+                FlightSchedule fs = fsbl.GetScheduleByFlightId(fId);
+                if (fs != null)
+                {
+                    Console.WriteLine("FlightId " + "  " + "FlightScheduleId" + "  " + "Source " + " " + "Destination" + " " + "DepartureTiming " + " " + "ArrivalTiming");
+                    Console.WriteLine(fs.FlightId + "  " + fs.FlightScheduleId + "  " + fs.Source + " " + fs.Destination + " " + fs.DepartureTiming + " " + fs.ArrivalTiming);
+
+                }
+                else
+                {
+                    Console.WriteLine("flight Id doesn't exist");
+                }
+            }
+            catch (FlightException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
 
-        
-        
-        
+
+
+
+
         //method to update schedule
         public static void UpdateSchedule()
         {

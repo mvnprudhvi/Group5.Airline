@@ -19,7 +19,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         void UpdateFlightByFlightName(Flight flight);
 
         //method  to remove flight by flightname
-        void RemoveFlightByFlighthId(string flightId);
+        void RemoveFlightByFlightId(string flightId);
 
         //method to remove flight by flightName
         void RemoveFlightByFlighthName(string flightName);

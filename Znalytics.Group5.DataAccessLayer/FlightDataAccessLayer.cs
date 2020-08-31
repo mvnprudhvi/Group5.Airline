@@ -94,7 +94,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         ///  Method to GET the added details
         /// </summary>
         /// <returns>It returns the list of flights</returns>
-        public static List<Flight> GetWareHouses() => _flightList;//Used Linq
+        public static List<Flight> GetFlight() => _flightList;//Used Linq
 
         /// <summary>
         /// Method to ADD Flightdetails to the list
@@ -102,8 +102,11 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         /// <param name="flight"></param>
         public void AddFlight(Flight flight)
         {
+            //Condition to check whether the flightId exists or not
             if (!_flightList.Exists(temp => temp.FlightId == flight.FlightId))
             {
+
+                //Adds flight details into the list and is saved into the file
                 _flightList.Add(flight);
                 SaveIntoFile();
             }
@@ -112,11 +115,13 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             {
                 throw new FlightException("flight id already exists");
             }
-
+            
 
         }
-        /*
-         *  if (_flightList.Count == 0)
+        
+       /* public void AddFlight(Flight flight)
+        {
+        if (_flightList.Count == 0)
             {
                 flight.FlightId = 1;
             }
@@ -127,8 +132,8 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
                 //Add flight object to the collection
                 _flightList.Add(flight);
             }
-        }*/
-
+        }
+       /*/
 
         /// <summary>
         ///  Method to GET the added details
@@ -170,7 +175,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         /// Method to REMOVE Flight by FlightId
         /// </summary>
         /// <param name="flightId"></param>
-        public  void RemoveFlightByFlighthId(string flightId)
+        public  void RemoveFlightByFlightId(string flightId)
         {
             //Condition to check whether the flightName exists or not
             if (_flightList.Exists(temp => temp.FlightId == flightId))

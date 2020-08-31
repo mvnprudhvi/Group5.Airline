@@ -85,23 +85,60 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
 
-     
-
-
-
+        ///Method to GET flight Schedule by flightId
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
+        /// 
+        public FlightSchedule GetScheduleByFlightId(string flightId)
+        {
+            try
+            {
+                //flight Id should not be null
+                if (flightId != null)
+                {
+                    return fsdl.GetScheduleByFlightScheduleId(flightId);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
+        }
 
         /// <summary>
-        /// Method to GET FlightSchedule by Source
+        /// Method to GET FlightSchedule details by source
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="locationsourceName">Represents source</param>
         /// <returns></returns>
         public List<FlightSchedule> GetScheduleBySource(string source)
         {
-            return fsdl.GetScheduleBySource(source);
+            try
+            {
+                //Location Name should not be null
+                if (source != null)
+                {
+                    //Calls the GetAddressByLocationName Method of WareHouseAddress Data Layer
+                    return fsdl.GetScheduleBySource(source);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
         }
 
 
-        /// <summary>
+/*
+       /// <summary>
         /// Method to GET FlightSchedule by Destination
         /// </summary>
         /// <param name="source"></param>
@@ -109,7 +146,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         public List<FlightSchedule> GetScheduleByDestination(string destination)
         {
             return fsdl.GetScheduleByDestination(destination);
-        }
+        }*/
 
         
 
@@ -194,11 +231,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
 
-        public bool CheckFlightId(string id)
-        {
-            throw new NotImplementedException();
-     
-       }
+       
         public bool CheckFlightScheduleId(string id)
         {
             return FlightScheduleDataAccessLayer.CheckFlightScheduleId(id);
