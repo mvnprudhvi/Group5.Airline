@@ -84,7 +84,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     {
                         case 1: AddFlight(); break;
                         case 2: GetFlights(); break;
-                        case 3: GetFlightByflightId(); break;
+                        case 3: GetFlightByFlightId(); break;
                         case 4: UpdateFlight(); break;
                         case 5: RemoveFlight(); break;
                         case 6: Console.WriteLine("Exit"); break;
@@ -179,7 +179,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
         //methods to get flightdetails by flight id
-        public static void GetFlightByflightId()
+        public static void GetFlightByFlightId()
         {
             try
             {
