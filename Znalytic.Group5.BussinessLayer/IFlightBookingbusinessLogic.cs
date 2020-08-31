@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Znalytics.Group5.Airline.FlightBooking.Entities;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
-     interface IFlightBookingBusinessLogicLayer
+     interface IFlightBookingbusinessLogicLayer
     {
         /// <summary>
         /// this method is to add flightbooking details to the list
@@ -13,13 +13,16 @@ namespace Znalytic.Group5.BussinessLogicLayer
         void AddFlightBooking(FlightBooking bookingID);
         
         //this method represents get FlightBooking by booking id
-        List<FlightBooking> GetFlightBookingsByBookingID(int bookingID);
+        FlightBooking GetFlightBookingsByBookingID(int bookingID);
+
         //this method represents get FlightBooking by customer id
-        List<FlightBooking> GetFlightBookingsByCustomerID(int customerID);
+       FlightBooking GetFlightBookingsByCustomerID(int customerID);
+
         //this method represents get FlightBooking by flight id
-        List<FlightBooking> GetFlightBookingsByFlightID(int flightID);
+       FlightBooking GetFlightBookingsByFlightID(int flightID);
+
        // this methods gets all bookings of flight
-         List<FlightBooking> GetFlightBookings();
+         FlightBooking  GetFlightBookings();
 
 
 
