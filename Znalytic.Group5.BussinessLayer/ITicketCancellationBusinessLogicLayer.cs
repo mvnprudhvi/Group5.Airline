@@ -16,11 +16,9 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// Method to get  added ticket cancellation details to the list
         /// </summary>
         /// <returns></returns>
-
         List<TicketCancellation> GetTicketCancellations();
 
-        //Method to get Ticket Cancellations By Booking ID
-
+        //Method to get Ticket Cancellations By Booking id
         List<TicketCancellation> GetTicketCancellationsByBookingID(int bookingID);
 
         //method to get Ticket Cancellations By Customer ID
