@@ -80,9 +80,9 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         /// This Method Represents GetbookingId 
         /// </summary>
         /// <returns>FlightBookingDataAccessLayer</returns>
-        public List<FlightBooking> GetFlightBooking()
+        public List<FlightBooking> GetFlightBookings()
         {
-            return fbdl.GetFlightBooking();
+            return fbdl.GetFlightBookings();
         }
 
     }

@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytics.Group5.AirLine.ICustomerBusinessLogicLayer
+namespace Znalytics.Group5.AirLine.BusinessLogicLayer
 {
     interface ICustomerBusinessLogicLayer
     {
         void AddCustomer(Customer c);
         void UpdateCustomer(Customer c);
         void DeleteCustomer(Customer c);
-        List<Customer> GetCustomer(Customer c);
-        List<Customer> GetCustomerByCustomerId(string customerId);
-        List<Customer> GetCustomerByCustomerUserName(string CustomerUserName);
+        List<Customer> GetCustomer();
+        Customer GetCustomerByCustomerId(string customerId);
+        Customer GetCustomerByCustomerUserName(string customeruserName);
         void RemoveCustomerByCustomerId(string CustomerId);
-        void RemoveCustomerByCustomerUserName(string CustomerUserName);
+        void RemoveCustomerByCustomerUserName(string customeruserName);
     }
 }

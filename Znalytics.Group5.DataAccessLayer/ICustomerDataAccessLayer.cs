@@ -32,10 +32,10 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         void Login(Customer customer);
 
         //Method To Get Customer Details By Customer Id
-        List<Customer> GetCustomerByCustomerId(string customerId);
+        Customer GetCustomerByCustomerId(string customerId);
 
         //Method To Get Customer Details By Customer User Name
-        List<Customer> GetCustomerByCustomerUserName(string customeruserName);
+        Customer GetCustomerByCustomerUserName(string customeruserName);
 
 
 

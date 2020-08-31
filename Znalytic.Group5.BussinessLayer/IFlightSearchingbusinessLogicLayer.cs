@@ -8,8 +8,8 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
         List<Flight> GetFlightsByFlightName(string FlightName);
         List<Flight> GetFlightsByFlightId(string FlightId);
         
-         List<FlightSchedule> GetFlightScheduleBySource(string Source);
-        List<FlightSchedule> GetFlightScheduleByDestination(string Destination);
+         List<FlightSchedule> GetFlightSchedulesBySource(string Source);
+        List<FlightSchedule> GetFlightSchedulesByDestination(string Destination);
 
 
 

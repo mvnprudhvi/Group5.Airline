@@ -94,7 +94,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <param name="Source"></param>
     /// <returns></returns>
 
-    public List<FlightSchedule> GetFlightScheduleBySource(string Source)
+    public List<FlightSchedule> GetFlightSchedulesBySource(string Source)
     
     {
 
@@ -107,7 +107,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <param name="Destination"></param>
     /// <returns></returns>
 
-    public List<FlightSchedule> GetFlightScheduleByDestination(string Destination)
+    public List<FlightSchedule> GetFlightSchedulesByDestination(string Destination)
     {
         return fsdl.GetDestination();
     }

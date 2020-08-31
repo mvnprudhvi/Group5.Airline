@@ -15,7 +15,12 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
         // Create a List For Customer
-        private static List<Customer> _customer;
+        private static List<Customer> _customer
+        {
+            set;
+            get;
+        }
+
 
         //Static Constructor
     static CustomerDataAccessLayer()
@@ -56,6 +61,11 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
                 throw new CustomerException("UserName or Password is Incorrect");
             }
         }
+        public List<Customer> Login(Customer customer)
+        {
+            return _customer;
+
+        }
 
 
         /// <summary>
@@ -72,7 +82,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// </summary>
         /// <param name="CustomerId"></param>
         /// <returns></returns>
-        public List<Customer> GetCustomerByCustomerId(string customerId)
+        public Customer GetCustomerByCustomerId(string customerId)
         {
             Customer c = _customer.Find(temp => temp.CustomerId == Customer.customerId);
             return c;
@@ -81,14 +91,37 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <summary>
         /// Method To GET Customer Details By Customer Username
         /// </summary>
-        /// <param name="CustomerUserName"></param>
+        /// <param name="customeruserName"></param>
         /// <returns></returns>
-        public List<Customer> GetCustomerByCustomerUserName(string customeruserName)
+        public Customer GetCustomerByCustomerUserName(string customeruserName)
         {
             Customer c = _customer.Find(temp => temp.CustomerUserName == Customer.customeruserName);
             return c;
         }
 
+        /// <summary>
+        /// Method To UPDATE The Customer Details
+        /// </summary>
+        /// <param name="customer"></param>
+        public void UpdateCustomer(Customer customer)
+        {
+            Customer abc = _customer.Find(temp => temp.CustomerId == customer.CustomerId && temp.CustomerUserName == customer.CustomerUserName && temp.CustomerEmail == customer.CustomerEmail && temp.CustomerPassword == customer.CustomerPassword && temp.CustomerMobileNumber == customer.CustomerMobileNumber && temp.CustomerAadharNumber == customer.CustomerAadharNumber && temp.CustomerPanCardNumber == customer.CustomerPanCardNumber && temp.CustomerGender == customer.CustomerUserName);
+            if (abc != null)
+            {
+                abc.CustomerId = customer.CustomerId;
+                abc.CustomerUserName = customer.CustomerUserName;
+                abc.CustomerEmail = customer.CustomerEmail;
+                abc.CustomerPassword = customer.CustomerPassword;
+                abc.CustomerMobileNumber = customer.CustomerMobileNumber;
+                abc.CustomerAadharNumber = customer.CustomerAadharNumber;
+                abc.CustomerPanCardNumber = customer.CustomerPanCardNumber;
+                abc.CustomerGender = customer.CustomerGender;
+            }
+            else
+            {
+                throw new CustomerException("Customer Detail Does not Exist");
+            }
+        }
 
         /// <summary>
         /// Method To Delete The Added Details
@@ -115,30 +148,6 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void RemoveCustomerByCustomerUserName(string customeruserName)
         {
             _customer.RemoveAll(temp => temp.CustomerUserName == Customer.customeruserName);
-        }
-
-        /// <summary>
-        /// Method To UPDATE The Customer Details
-        /// </summary>
-        /// <param name="customer"></param>
-        public void UpdateCustomer(Customer customer)
-        {
-            Customer abc = _customer.Find(temp => temp.CustomerId == customer.CustomerId && temp.CustomerUserName == customer.CustomerUserName && temp.CustomerEmail == customer.CustomerEmail && temp.CustomerPassword == customer.CustomerPassword && temp.CustomerMobileNumber == customer.CustomerMobileNumber && temp.CustomerAadharNumber == customer.CustomerAadharNumber && temp.CustomerPanCardNumber == customer.CustomerPanCardNumber && temp.CustomerGender == customer.CustomerUserName);
-            if (abc != null)
-            {
-                abc.CustomerId = customer.CustomerId;
-                abc.CustomerUserName = customer.CustomerUserName;
-                abc.CustomerEmail = customer.CustomerEmail;
-                abc.CustomerPassword = customer.CustomerPassword;
-                abc.CustomerMobileNumber = customer.CustomerMobileNumber;
-                abc.CustomerAadharNumber = customer.CustomerAadharNumber;
-                abc.CustomerPanCardNumber = customer.CustomerPanCardNumber;
-                abc.CustomerGender = customer.CustomerGender;
-            }
-            else
-            {
-                throw new CustomerException("Customer Detail Does not Exist");
-            }
         }
     }
 }
