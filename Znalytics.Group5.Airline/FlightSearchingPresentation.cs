@@ -25,7 +25,7 @@ namespace Znalytics.Group5.Airline
             {
                 _flightSearchingbusinessLogic = new FlightSearchingbusinessLogic();
                 //Calling Menu Method For List Of Menus
-                FlightBookingMenu();
+                FlightSearchingMenu();
                 Console.ReadKey();
             }
 
@@ -71,8 +71,8 @@ namespace Znalytics.Group5.Airline
                 Console.Write("Enter flight id: ");
                 fb.FlightID = int.Parse(ReadLine());
 
-                Console.Write("Enter customer id ");
-                fb.CustomerID = int.Parse(ReadLine());
+                Console.Write("Enter flightName ");
+                fb.flightName= int.Parse(ReadLine());
 
                 _flightSearchingbusinessLogic.AddFlightSearching(fb);
 
@@ -92,13 +92,14 @@ namespace Znalytics.Group5.Airline
                 Console.Write("Enter Existing flight id: ");
                 fb.flightID = int.Parse(ReadLine());
 
-                Console.Write("Enter existing customer id");
-                fb.customerID = int.Parse(ReadLine());
+                Console.Write("Enter existing flightName");
+                fb.flightName= int.Parse(ReadLine());
 
                 _flightSearchingbusinessLogic.UpdateFlightSearching(fb);
-                Console.WriteLine("The booking of Flight is Updated Successfully \n");
+                Console.WriteLine("The Searching of Flight is Updated Successfully \n");
             }
-            /// <summary>
+
+           /* /// <summary>
             /// This Method Represents Delete FlightBooking by booking
             /// </summary>
             static void DeleteFlightBooking()
@@ -108,7 +109,7 @@ namespace Znalytics.Group5.Airline
                 Console.Write("Enter Existing booking id to Delete FlightSearching ");
                 _flightSearchingbusinessLogic.DeleteFlightBooking(fb);
                 Console.WriteLine("The FlightSearching is Deleted Successfully \n");
-            }
+            }*/
 
 
             /// <summary>
@@ -132,4 +133,4 @@ namespace Znalytics.Group5.Airline
 
 
 }
-}
+
