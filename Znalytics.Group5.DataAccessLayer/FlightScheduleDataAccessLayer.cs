@@ -133,10 +133,10 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         public void RemoveFlightScheduleByFlightScheduleId(string flightScheduleId)
         {
             //Condition to check whether the AddressId exists or not
-            if (_scheduleList.Exists(n => n.flightScheduleId == flightScheduleId))
+            if (_scheduleList.Exists(temp => temp.flightScheduleId == flightScheduleId))
             {
                 //It removes all the condition matching elements
-                _scheduleList.RemoveAll(n => n.flightScheduleId == flightScheduleId);
+                _scheduleList.RemoveAll(temp => temp.flightScheduleId == flightScheduleId);
 
                 SaveIntoFile();
             }
@@ -155,10 +155,10 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         public void RemoveFlightScheduleByFlightId(string flightId)
         {
             //Condition to check whether the AddressId exists or not
-            if (_scheduleList.Exists(n => n.flightId == flightId))
+            if (_scheduleList.Exists(temp => temp.FlightId == flightId))
             {
                 //It removes all the condition matching elements
-                _scheduleList.RemoveAll(n => n.flightId == flightId);
+                _scheduleList.RemoveAll(temp => temp.FlightId == flightId);
 
                 SaveIntoFile();
             }

@@ -35,14 +35,15 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void AddCustomer(Customer customer)
         {
 
-            if (!_customer.Exists(temp => temp.CustomerId == customer.CustomerId))
+            if (_customer.Count == 0)
             {
-                _customer.Add(customer);
+                customer.CustomerId = 1;
             }
             else
             {
-                throw new CustomerException("Customer id already exists");
+                customer.CustomerId = _customer.Max(temp => temp.CustomerId) + 1;
             }
+            _customer.Add(customer);
         }
 
 
@@ -50,11 +51,12 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// Method To  
         /// </summary>
         /// <returns></returns>
-        public void Login(Customer customer)
+        public Tuple<string, string> CustomerLogin(string CustomerUserName,string CustomerPassword)
         {
-            if (_customer.Exists(temp => temp.CustomerUserName == customer.CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == customer.CustomerPassword)))
+            if (_customer.Exists(temp => temp.CustomerUserName == CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == CustomerPassword)))
             {
-                _customer.Login(customer);
+
+                return null;
             }
             else
             {
@@ -78,9 +80,9 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// </summary>
         /// <param name="CustomerId"></param>
         /// <returns></returns>
-        public Customer GetCustomerByCustomerId(string customerId)
+        public Customer GetCustomerByCustomerId(int customerId)
         {
-            Customer c = _customer.Find(temp => temp.CustomerId == Customer.customerId);
+            Customer c = _customer.Find(temp => temp.CustomerId == customerId);
             return c;
         }
 
@@ -91,7 +93,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <returns></returns>
         public Customer GetCustomerByCustomerUserName(string customeruserName)
         {
-            Customer c = _customer.Find(temp => temp.CustomerUserName == Customer.customeruserName);
+            Customer c = _customer.Find(temp => temp.CustomerUserName == customeruserName);
             return c;
         }
 
@@ -132,9 +134,9 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// Method To REMOVE Customer By Customer Id
         /// </summary>
         /// <param name="CustomerId"></param>
-        public void RemoveCustomerByCustomerId(string customerId)
+        public void RemoveCustomerByCustomerId(int customerId)
         {
-            _customer.RemoveAll(temp => temp.CustomerId == Customer.customerId);
+            _customer.RemoveAll(temp => temp.CustomerId == customerId);
         }
 
         /// <summary>
@@ -143,7 +145,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// <param name="CustomerUserName"></param>
         public void RemoveCustomerByCustomerUserName(string customeruserName)
         {
-            _customer.RemoveAll(temp => temp.CustomerUserName == Customer.customeruserName);
+            _customer.RemoveAll(temp => temp.CustomerUserName == customeruserName);
         }
     }
 }

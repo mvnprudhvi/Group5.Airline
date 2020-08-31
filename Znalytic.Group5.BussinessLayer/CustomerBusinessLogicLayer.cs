@@ -33,7 +33,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             try
             {
                 //Customer Details Should Not Be null
-                if ((customer.CustomerId != null) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
                 {
                     cdal.AddCustomer(customer);
                 }
@@ -46,13 +46,14 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method To Login 
-        public void Login(Customer customer)
+        public Tuple<string,string>CustomerLogin(string CustomerUserName,string CustomerPassword)
         {
             //Customer User Name and Password Cannot Be null
-            if (customer.CustomerUserName != null && customer.CustomerPassword != null)
+            if (CustomerUserName != null && CustomerPassword != null)
             {
-                 cdal.Login(customer);
+                 return cdal.CustomerLogin(CustomerUserName,CustomerPassword);
             }
+            return null;
         }
 
         // Method to GET the Added Cutomer Details
@@ -62,12 +63,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method to GET Customer Details By Customer Id
-        public Customer GetCustomerByCustomerId(string customerId)
+        public Customer GetCustomerByCustomerId(int customerId)
         {
             try
             {
                 //Customer Id Should Not Be null
-                if (customerId != null)
+                if (customerId != 0)
                 {
                     return cdal.GetCustomerByCustomerId(customerId);
                 }
@@ -110,7 +111,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             try
             //Customer Id should not be null
             {
-                if (customer.CustomerId != null)
+                if (customer.CustomerId != 0)
                 {
                     cdal.UpdateCustomer(customer);
                 }
@@ -128,12 +129,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         }
 
         //Method to Delete Customer By Customer Id 
-        public void RemoveCustomerByCustomerId(string customerId)
+        public void RemoveCustomerByCustomerId(int customerId)
         {
             try
             {
                 //Customer Id should not be null
-                if (customerId != null)
+                if (customerId != 0)
                 {
                     cdal.RemoveCustomerByCustomerId(customerId);
                 }

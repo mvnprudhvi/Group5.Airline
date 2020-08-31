@@ -70,10 +70,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             {
                 Console.WriteLine(" ====FLIGHTSMENU==== ");
                 Console.WriteLine("1.AddFlight");
-                Console.WriteLine("1.GetFlights");
-                Console.WriteLine("1.GetFlightByflightId");
-                Console.WriteLine("1.UpdateFlights");
-                Console.WriteLine("1.RemoveFlight");
+                Console.WriteLine("2.GetFlights");
+                Console.WriteLine("3.GetFlightByflightId");
+                Console.WriteLine("4.UpdateFlights");
+                Console.WriteLine("5.RemoveFlight");
 
 
 
