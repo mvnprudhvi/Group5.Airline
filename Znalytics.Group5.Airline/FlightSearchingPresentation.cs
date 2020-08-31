@@ -50,8 +50,8 @@ namespace Znalytics.Group5.Airline
                     {
                         case 1: AddFlightSearching(); break;
                         case 2: UpdateFlightSearching(); break;
-                        case 3: DeleteFlightSearching(); break;
-                        case 4: GetFlightSearching(); break;
+                       // case 3: DeleteFlightSearching(); break;
+                        case 4: GetFlightSearchings(); break;
                     }
                 } while (choice != 5);
             }
@@ -115,7 +115,7 @@ namespace Znalytics.Group5.Airline
             /// <summary>
             /// This Method Represents getting all details of  FlightBooking
             /// </summary>
-            static void GetFlightSearching()
+            static void GetFlightSearchings()
             {
 
                 object _flightSearchinggbusinessLayer = null;
