@@ -13,7 +13,6 @@ namespace Znalytics.Group5.DataAccessLayer
         void AddTicketCancellations(TicketCancellation bookingId);
 
         //method to get ticket cancellations by cancellation Id
-
         List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID);
 
         //method Get TicketCancellations By Customer ID
