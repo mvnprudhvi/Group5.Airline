@@ -107,7 +107,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 //create  businessLogicLayer object for flight class
                 FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
                 Console.WriteLine("you chose to enter the flight details");
-                Console.WriteLine("Enter flight Id that starts with WHID and length should be 8");
+                Console.WriteLine("Enter flight Id that starts with FID and length should be 8");
                 flight.FlightId = Console.ReadLine();
                 if (fbl.CheckFlightId(flight.FlightId) == false)
                 {
