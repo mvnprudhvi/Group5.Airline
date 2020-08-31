@@ -19,6 +19,7 @@ namespace Znalytics.Group5.Airline.Entities
         private string _customeraadharNumber;
         private string _customerpancardNumber;
         private string _customerGender;
+       
 
         /// <summary>
         /// Constructor That Initializes Fields
