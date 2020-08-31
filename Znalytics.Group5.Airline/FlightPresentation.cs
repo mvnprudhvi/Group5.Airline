@@ -103,6 +103,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                 //Creating object for Entity layer that is Flight class
                 Flight flight = new Flight();
+
+                //create  businessLogicLayer object for flight class
                 FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
                 Console.WriteLine("you chose to enter the flight details");
                 Console.WriteLine("Enter flight Id that starts with WHID and length should be 8");
@@ -234,7 +236,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("Please Enter Correct Option");
             }
 
+
             //methods to remove flight based on flightId
+            
             void RemovetFlightByFlightId()
             {
                 Flight flight = new Flight();
@@ -393,7 +397,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             } while (choice <= 6);
         }
 
-        //Method to add Flightschedules to the list
+        /// <summary>
+        /// Method to add Flightschedules to the list
+        /// </summary>
         public static void AddSchedule()
         {
             try
@@ -448,7 +454,9 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
         }
 
-        //Method to get added details of flightSchedule
+        /// <summary>
+        ///  Method to get added details of flightSchedule
+        /// </summary>
         public static void GetSchedule()
         {
             FlightScheduleBusinessLogicLayer fsbl = new FlightScheduleBusinessLogicLayer();
@@ -465,8 +473,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
         }
 
-        //method to get flightSchedule by Source
-        public void GetScheduleBySource()
+        /// <summary>
+        /// method to get flightSchedule by Source
+        /// </summary>
+        public static void GetScheduleBySource()
         {
             try
             {
@@ -495,7 +505,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
         }
 
         //method to get flightSchedule by flightScheduleId
-        public  void GetScheduleByFlightScheduleId()
+        public static void GetScheduleByFlightScheduleId()
         {
 
             try
@@ -695,7 +705,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
 
 
-            //Methods to remove Flightschedule by flightScheduleId
+            //method to remove FlightSchedule by FlightScheduleId
             void RemoveFlightScheduleByFlightScheduleId()
             {
 
@@ -716,7 +726,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
             }
         }
-    
+    /// <summary>
+    /// method to check flightId exists  or not
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
         public bool CheckFlightId(string id)
         {
             FlightBusinessLogicLayer fbl = new FlightBusinessLogicLayer();
@@ -728,6 +742,11 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
             return result;
         }
+        /// <summary>
+        /// method to check flightscheduleId exists  or not
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool CheckFlightScheduleId(string id)
         {
             FlightScheduleBusinessLogicLayer fbl = new FlightScheduleBusinessLogicLayer();

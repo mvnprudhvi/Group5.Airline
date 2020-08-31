@@ -40,11 +40,14 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 
                     fsdl.AddSchedule(schedule);
                 }
-
+                else
+                {
+                    throw new Exception("flightScheduleId already exists");
+                }
             }
-            catch (Exception ex)
+            catch (FlightException ex)
             {
-                throw new Exception("flightScheduleId already exists");
+                throw new FlightException(ex.Message);
             }
         }
         /// <summary>
@@ -62,7 +65,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         /// <param name="flightScheduleId"></param>
         /// <returns></returns>
         /// 
-        public Flight GetScheduleByFlightScheduleId(string flightScheduleId)
+        public FlightSchedule GetScheduleByFlightScheduleId(string flightScheduleId)
         {
             try
             {
