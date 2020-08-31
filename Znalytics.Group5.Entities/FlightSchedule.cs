@@ -2,6 +2,7 @@
 
 //Entities
 using System;
+using System.Text.RegularExpressions;
 using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
@@ -44,32 +45,34 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         }
 
         /// <summary>
-        /// SHedule id of Flight
+        /// Schedule id of Flight
         /// </summary>
         public string FlightScheduleId
         {
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
+                set
                 {
-
-                    bool spaceFound = value.Contains(" ");
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
+                    //Regular Expression for AlphaNumeric values
+                    Regex r = new Regex("[A-Z0-9]$");
+                    //flightId should not be null or empty
+                    if (!string.IsNullOrEmpty(value) && value.StartsWith("FSID") && r.IsMatch(value) && value.Length == 6)
                     {
+
+
                         _flightScheduleId = value;
+
                     }
 
                     else
-
                     {
-                        throw new FlightException("invalid flightScheduleid");
+                        throw new FlightException("Enter valid flightScheduleId.It should not contain spaces and length be exactly 6");
                     }
                 }
+                get
+                {
+                    return _flightScheduleId;
+
+                }
             }
-                get { return _flightScheduleId; }
-        }
         
 
 
@@ -80,10 +83,30 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         {
             set
             {
+                //Regular Expression for Alphabets(Capital&small letters)
+                Regex r = new Regex("[a-zA-Z_]+$");
+                //LocationName should not be null or empty
+                if (!string.IsNullOrEmpty(value) && r.IsMatch(value) && value.Length <= 30)
+                {
 
-                _source = value;
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!atFound && !commaFound && value.Length <= 30)
+                    {
+                        _source = value;
+                    }
+
+                }
+
+                else
+                {
+                    throw new FlightException("destination shouldn't be null and shouldn't contain special characters");
+                }
             }
-            get { return _source; }
+            get
+            {
+                return _source;
+            }
         }
 
 
@@ -91,10 +114,28 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.Entities
         {
             set
             {
+                //Regular Expression for Alphabets(Capital&small letters)
+                Regex r = new Regex("[a-zA-Z_]+$");
+                //LocationName should not be null or empty
+                if (!string.IsNullOrEmpty(value) && r.IsMatch(value) && value.Length <= 30)
+                {
+                    bool atFound = value.Contains("@");
+                    bool commaFound = value.Contains(",");
+                    if (!atFound && !commaFound && value.Length <= 30)
+                    {
+                        _destination = value;
+                    }
+                }
 
-                _destination = value;
+                else
+                {
+                    throw new FlightException("Destination shouldn't be null and shouldn't contain special characters");
+                }
             }
-            get { return _destination; }
+            get
+            {
+                return _destination;
+            }
         }
 
 

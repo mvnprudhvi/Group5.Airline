@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using Znalytics.Group5.Airline.Entities;
 
 namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     public class Flight
     {
-        public static string flightName;
-        public static string flightId;
+
 
         //Instance (or) non.staticfields
         private string _flightName { set; get; }
@@ -42,53 +43,61 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// </summary>
         public  string FlightName
         {
+
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                //Regular Expression for Alphabets(Capital&small letters)
+                Regex r = new Regex("[a-zA-Z_]$");
+                //FlightName should not be null or empty
+                if (!string.IsNullOrEmpty(value) && r.IsMatch(value) && value.Length <= 30)
                 {
+                    _flightName = value;
 
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    if (!atFound && !commaFound && value.Length <= 10)
-                    {
-                        _flightName = value;
-                    }
-                    else
-                    {
-                        throw new Exception("Invalid flightName name");
-                    }
                 }
+
+                else
+                {
+                    throw new FlightException("invalid flight name,should not contain spaces and length should not exceed by 30");
+                }
+
             }
             get
             {
                 return _flightName;
             }
+
+           
         }
 
-        /// <summary>
-        /// property for flightId
-        /// </summary>
-        public string FlightId
+    /// <summary>
+    /// property for flightId
+    /// </summary>
+    public string FlightId
         {
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                //Regular Expression for AlphaNumeric values
+                Regex r = new Regex("[A-Z0-9]$");
+                //flightId should not be null or empty
+                if (!string.IsNullOrEmpty(value) && value.StartsWith("FID100") && r.IsMatch(value) && value.Length == 6)
                 {
 
-                    bool spaceFound = value.Contains(" ");
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
-                    {
-                        _flightId = value;
-                    }
 
+                    _flightId = value;
+
+                }
+
+                else
+                {
+                    throw new FlightException("Enter valid flight.It should not contain spaces and length be exactly 6");
                 }
             }
             get
             {
                 return _flightId;
+
             }
+            
         }
 
         /// <summary>
@@ -128,7 +137,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                 {
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!atFound && !commaFound && value.EndsWith("kgs") && value.Length <= 4)
+                    if (!atFound && !commaFound && value.EndsWith("kgs") && value.Length <= 10)
                     {
                         _luggageWeightage = value;
                     }
