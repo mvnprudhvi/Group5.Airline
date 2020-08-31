@@ -1,4 +1,5 @@
-﻿// created by Reshma
+﻿/*
+/ created by Reshma
 // IDataAccessLayer
 //module:FlightBooking
 
@@ -7,7 +8,7 @@
 
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
-using Znalytics.Group5.Airline.FlightBooking.Entities;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
@@ -38,7 +39,7 @@ namespace Znalytics.Group5.DataAccessLayer
 }
 
 
-
+*/
 
 
 

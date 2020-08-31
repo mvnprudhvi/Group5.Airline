@@ -1,4 +1,5 @@
-﻿// created by Reshma
+﻿/*
+// created by Reshma
 // DataAccessLayer
 //module:FlightBooking
 
@@ -114,7 +115,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }*/
 
         //method to get  FlightBooking by  Flight Bookingid
-        public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
+    /*    public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {
             return _bookingList.FindAll(temp => temp.BookingID == bookingID);
         }
@@ -130,6 +131,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }
     }
 }
+*/
 
 
 

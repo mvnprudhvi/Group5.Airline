@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlightSearchingPresentation.cs" />
-    <Compile Include="OnlineAirlineReservationPL.cs" />
     <Compile Include="TicketCancellationpresentation.cs" />
     <Compile Include="CustomerPL.cs" />
     <Compile Include="FlightBookingPresentation.cs" />

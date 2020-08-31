@@ -1,4 +1,4 @@
-﻿
+﻿/*
 // created by Reshma
 using System.Collections.Generic;
 
@@ -24,7 +24,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
 
 
-            //Add
+        } //Add
             public  void AddFlightSearching(FlightSearching flightId)
             {
                 _flightSearching.Add(flightId);
@@ -82,7 +82,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
 
   
-
+*/
 
 
 

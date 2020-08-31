@@ -1,4 +1,5 @@
-﻿//created by Madhumitha.....
+﻿/*
+//created by Madhumitha.....
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -102,7 +103,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }
     }
 
-
+*/
 
 
 

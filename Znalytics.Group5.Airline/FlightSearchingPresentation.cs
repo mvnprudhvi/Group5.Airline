@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+/*using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer;
 using System.Linq;
@@ -115,7 +116,7 @@ namespace Znalytics.Group5.Airline
             /// <summary>
             /// This Method Represents getting all details of  FlightBooking
             /// </summary>
-            static void GetFlightSearchings()
+        /*    static void GetFlightSearchings()
             {
 
                 object _flightSearchinggbusinessLayer = null;
@@ -136,3 +137,4 @@ namespace Znalytics.Group5.Airline
 
 }
 
+*/
