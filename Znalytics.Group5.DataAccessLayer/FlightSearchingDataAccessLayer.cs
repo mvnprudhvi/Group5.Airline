@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 using Znalytics.Group5.Airline.FlightModule.Entities;
@@ -8,9 +6,6 @@ using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
-
-
-
     public class FlightSearchingDataAcessLayer
     {
         //private fields

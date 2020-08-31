@@ -79,6 +79,11 @@ namespace Znalytic.Group5.BussinessLogicLayer
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateTicketCancellations(TicketCancellation tc)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>

@@ -28,7 +28,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         }
 
         /// <summary> 
-        /// This Method Represents PriceMenu To View Operations Of Price
+        /// This Method Represents Ticket cancellation Menu To View Operations Of Price
         /// </summary>
         static void TicketCancellationMenu()
         {
@@ -104,7 +104,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             tc.CustomerID = int.Parse(ReadLine());
 
             _ticketCancellationBusinessLogicLayer.UpdateTicketCancellations(tc);
-            Console.WriteLine("The Price of Flight is Updated Successfully \n");
+            Console.WriteLine("The cancellation of ticket is Updated Successfully \n");
         }
 
         /// <summary>

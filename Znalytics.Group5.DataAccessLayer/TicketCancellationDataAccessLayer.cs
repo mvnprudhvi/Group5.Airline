@@ -60,7 +60,6 @@ namespace Znalytics.Group5.DataAccessLayer
             string str1 = streamReader.ReadToEnd();
             List<TicketCancellation> _ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
             return _cancellationID;
-
         }
 
         //methods to add ticket cancellation
@@ -103,6 +102,18 @@ namespace Znalytics.Group5.DataAccessLayer
         }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -192,7 +203,7 @@ namespace Znalytics.Group5.DataAccessLayer
 
 
 
-        /*//method to display the added booking id
+        //method to display the added booking id
         public List<TicketCancellation> GetTicketCancellations()
         {
             return TicketCancellationDataAccessLayer.CancellationID();
