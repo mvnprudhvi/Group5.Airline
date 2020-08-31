@@ -85,14 +85,14 @@ namespace Znalytics.Group5.DataAccessLayer
 
        
         //methods to add FlightBooking
-        public void AddFlightBooking(FlightBooking bookingID)
+        public void AddFlightBooking(FlightBooking Booking)
         {
-            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+            if (_bookingList.Exists(temp => temp.CustomerID == Booking.CustomerID))
             {
 
 
 
-                _bookingList.Add(bookingID);
+                _bookingList.Add(Booking);
             }
 
             else
