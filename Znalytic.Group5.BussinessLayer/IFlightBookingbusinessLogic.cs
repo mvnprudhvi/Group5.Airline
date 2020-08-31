@@ -19,7 +19,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         //this method represents get FlightBooking by flight id
         List<FlightBooking> GetFlightBookingsByFlightID(int flightID);
        
-         List<FlightBooking> GetFlightBooking();
+         List<FlightBooking> GetFlightBookings();
 
 
 

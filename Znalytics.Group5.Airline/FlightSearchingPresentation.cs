@@ -126,6 +126,8 @@ namespace Znalytics.Group5.Airline
                     Console.Write("=====The FlightSearching  are Below=====");
                     Console.WriteLine("The flightId is " + fb.flightId);
                     Console.WriteLine("The flightName id is " + fb.flightName);
+                    Console.WriteLine("The Source is " + fb.Source);
+                    Console.WriteLine("The Destination id is " + fb.Destination);
                 }
             }
         }
