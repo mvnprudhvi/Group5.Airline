@@ -4,9 +4,10 @@
 // Module:FlightBooking
 
 using System;
+using Znalytics.Group5.Airline.Entities;
+
 using System.Collections.Generic;
 using Znalytics.Group5.DataAccessLayer;
-using Znalytics.Group5.Airline.Entities;
 
 
 namespace Znalytic.Group5.Airline.BussinessLogicLayer
