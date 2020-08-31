@@ -31,8 +31,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         
 
 
-        //Method to get the flightsSchedule by Destination
-        List<FlightSchedule> GetScheduleByDestination(string destination);
+        
 
     }
 }

@@ -92,7 +92,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         /// <returns></returns>
 
         //Method to REMOVE flight  by flightId
-        public void RemovetFlightByFlightId(string flightId)
+        public void RemoveFlightByFlightId(string flightId)
         {
             try
             {
