@@ -8,11 +8,8 @@ namespace Znalytics.Group5.Airline.Entities
     /// <summary>
     /// This Class Represents cancellation of ticket
     /// </summary>
-
     public class TicketCancellation
-
     {
-
         //represents Private Fields...
         private int _customerID;
         private int _bookingID;
