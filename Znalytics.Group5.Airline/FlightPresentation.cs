@@ -256,7 +256,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     if(fbl.GetFlightByFlightId(flight.FlightId) == null)
                     {
-                        fbl.RemovetFlightByFlightId(flightId);
+                        fbl.RemoveFlightByFlightId(flightId);
                         Console.WriteLine("flight is removed");
                     }
                 }
