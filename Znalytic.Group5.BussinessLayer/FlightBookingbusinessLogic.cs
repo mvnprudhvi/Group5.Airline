@@ -18,13 +18,13 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
     public class FlightBookingbusinessLogicLayer : IFlightBookingbusinessLogicLayer()
     {
         //Created an object for DataAccessLayer and strore the object in reference variable
-        FlightBookingDataAccessLayer fbdl = new FlightBookingDataAccessLayer();
+        FlightBookingDataAccessLayer fbbl = new FlightBookingDataAccessLayer();
 
         public bool checkFlightBookingId(string bookingId)
         {
             List<FlightBooking> _bookingIDList = new List<FlightBooking>();
             // Flight flight = new Flight();
-            bool result = _BookingIDList.Exists(temp => temp.bookingID == bookingID);
+            bool result = _bookingIDList.Exists(temp => temp.bookingID == bookingID);
             return result;
         }
        
@@ -37,7 +37,7 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         {
             if (FlightBooking.bookingID != null)
             {
-                _fbbl.AddFlightBooking(bookingID);
+                fbbl.AddFlightBooking(bookingID);
             }
             else
             {
@@ -53,7 +53,7 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         {
             if (FlightBooking.bookingID != null)
             {
-                _fbbl.UpdateFlightBooking(bookingID);
+                fbbl.UpdateFlightBooking(bookingID);
             }
             else
             {
@@ -70,15 +70,16 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
             throw new NotImplementedException();
         }
         //method to get FlightBooking by  bookingid
-        public FlightBooking GetFlightBookingsByBookingID(int BookingID)
+        public FlightBooking GetFlightBookingsByBookingID(int bookingID)
         {
-            return _fbbl.GetBookingID();
-
+            return fbbl.GetFlightBookingsByBookingID(bookingID);
+           
         }
         //method to get FlightBooking by  customerid
-        public FlightBooking GetFlightBookingsByCustomerID(int CustomerID)
+        public FlightBooking GetFlightBookingsByCustomerID(int customerID)
         {
-            return _fbbl.GetCustomerID();
+            return fbbl.GetFlightBookingsBycustomerID(customerID);
+            
 
         }
 
@@ -86,8 +87,8 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         //method to get FlightBooking by  flightid
         public FlightBooking GetFlightBookingsByFlightID(int flightID)
         {
-            return _fbbl.GetFlightID();
-
+            return fbbl.GetFlightBookingsByFlightID(flightID);
+            
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer
         /// <returns>FlightBookingDataAccessLayer</returns>
         public List<FlightBooking> GetFlightBooking()
         {
-            return _fbbl.GetFlightBooking();
+            return fbbl.GetFlightBooking();
         }
 
     }

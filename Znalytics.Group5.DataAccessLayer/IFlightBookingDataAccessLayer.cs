@@ -22,7 +22,26 @@ namespace Znalytics.Group5.DataAccessLayer
         /// <param name="CustomerID"></param>
         void UpdateFlightBooking(FlightBooking CustomerID);
 
-   
-     
+
+        //method to get  FlightBooking by  Flight Bookingid
+        FlightBooking GetFlightBookingsByFlightBookingID(int bookingID);
+
+        //method to get  FlightBooking by  customer id
+        FlightBooking GetFlightBookingsByFlightCustomerID(int customerID);
+
+        //method to get  FlightBookinging by  flightid
+        FlightBooking GetFlightBookingsByFlightID(int flightID);
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
