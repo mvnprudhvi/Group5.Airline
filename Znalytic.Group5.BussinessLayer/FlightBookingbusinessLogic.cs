@@ -35,7 +35,7 @@ namespace Znalytic.Group5.Airline.BussinessLogicLayer
         /// </summary>
         /// <param name="bookingID"></param>
 
-        public void AddFlightBooking(FlightBooking customerID)
+        public void AddFlightBooking(FlightBooking booking)
         {
             if (FlightBooking.customerID != null)
             {
