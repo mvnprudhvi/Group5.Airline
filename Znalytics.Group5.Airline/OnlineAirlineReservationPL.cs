@@ -29,24 +29,30 @@ namespace Znalytics.Group5.Airline
                 {
                     switch (choice)
                     {
-                        case 1: AdminMenu(); break;
-                        case 2: CustomerMenu(); break;
+                        case 1: AdminLogin(); break;
+                        case 2: CustomerLogin(); break;
                     }
                 }
             } while (choice != 4);
         }
-        static void AdminMenu()
+        static void AdminLogin()
         {
-           int option = 0;
-          
-            do
-            {
-                Console.WriteLine("enter user name:");
-                Console.ReadLine();
+            Console.Write("\nuserName:");
+            string userName = Console.ReadLine();
+            System.Console.Write("Password:");
+            string password = Console.ReadLine();
 
-                
+            if (userName == "Admin" && password == "manager")
+            {
+                AdminMenu();
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("username and password doesn't match ,,Try again");
             }
         }
+
         }
 
         }

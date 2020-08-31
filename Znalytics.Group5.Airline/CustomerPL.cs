@@ -112,17 +112,16 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             //Method for Customers Login
             static void Login()
             {
-                Customer c = new Customer();
-                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+               
                 //Login form
                 Console.WriteLine("-------LOGIN FORM-----------------");
                 Console.WriteLine("==================================");
                 Console.WriteLine("\nUsername:");
-                c.CustomerUserName = Console.ReadLine();
+                string UserName = Console.ReadLine();
                 Console.Write("Password:");
-                c.CustomerPassword = Console.ReadLine();
-                
-                CustomerBusinessLogicLayer.Login(customer);
+                string Password = Console.ReadLine();
+
+                customerBusinessLogicLayer.Login();
                 {
                     CustomersMenu();
                     Console.ReadKey();
