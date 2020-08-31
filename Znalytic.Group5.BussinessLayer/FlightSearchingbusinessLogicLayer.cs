@@ -34,11 +34,11 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
               /// This method represents adding of flightsearching details
               /// </summary>
               /// <param name="FlightName"></param>
-            public void AddFlightSearching(FlightSearching FlightId)
+            public void AddFlightSearching(FlightSearching flightId)
             {
-                if (FlightId.FlightId != null)
+                if (flightId.flightId != null)
                 {
-                    _FlightSearchingDataAccessLayer.Add(FlightId);
+                    _flightSearchingDataAccessLayer.Add(flightId);
                 }
                 else
                 {
@@ -53,7 +53,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
    
     public List<FlightSearching> GetFlightSearchings()
             {
-                return _FlightSearching;
+                return _flightSearching;
              }
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
    
 
-    public void UpdateFlightSearching(FlightSearching FlightId)
+    public void UpdateFlightSearching(FlightSearching flightId)
             {
-                if (FlightId.FlightId != null)
+                if (flightId.flightId != null)
                 {
-                    _FlightSearchingDataAccessLayer.UpdateFlightId(FlightId);
+                    _flightSearchingDataAccessLayer.UpdateflightId(flightId);
                 }
             }
 
@@ -76,18 +76,18 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// </summary>
     /// <param name="FlightName"></param>
     /// <returns></returns>
-    public List<Flight> GetFlightsByFlightName(string FlightName)
+    public List<Flight> GetFlightsByFlightName(string flightName)
        {
-      return  fsdl.GetFlightName();
+      return  fsdl.GetflightName();
        }
     /// <summary>
     /// this method represents getting all details of flightid
     /// </summary>
     /// <param name="FlightId"></param>
     /// <returns></returns>
-    public List<Flight> GetFlightsByFlightId(string FlightId)
+    public List<Flight> GetFlightsByFlightId(string flightId)
        {
-         return fsdl.GetFlightId();
+         return fsdl.GetflightId();
         }
     /// <summary>
     /// this method represents getting all details of source
@@ -95,12 +95,12 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <param name="Source"></param>
     /// <returns></returns>
 
-    public List<FlightSchedule> GetFlightSchedulesBySource(string Source)
+    public List<FlightSchedule> GetFlightSchedulesBySource(string source)
     
     {
 
 
-        return fsdl.GetSource();
+        return fsdl.Getsource();
     }
     /// <summary>
     /// this method represents getting all details of destination
@@ -108,9 +108,9 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <param name="Destination"></param>
     /// <returns></returns>
 
-    public List<FlightSchedule> GetFlightSchedulesByDestination(string Destination)
+    public List<FlightSchedule> GetFlightSchedulesByDestination(string destination)
     {
-        return fsdl.GetDestination();
+        return fsdl.Getdestination();
     }
       
 }
