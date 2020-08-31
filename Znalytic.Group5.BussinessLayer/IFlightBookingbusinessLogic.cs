@@ -3,7 +3,7 @@ using Znalytics.Group5.Airline.FlightBooking.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
-    public interface IFlightBookingBusinessLogicLayer
+     interface IFlightBookingBusinessLogicLayer
     {
         /// <summary>
         /// this method is to add flightbooking details to the list
@@ -18,7 +18,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         List<FlightBooking> GetFlightBookingsByCustomerID(int customerID);
         //this method represents get FlightBooking by flight id
         List<FlightBooking> GetFlightBookingsByFlightID(int flightID);
-       
+       // this methods gets all bookings of flight
          List<FlightBooking> GetFlightBookings();
 
 

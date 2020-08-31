@@ -44,9 +44,9 @@ namespace Znalytics.Group5.DataAccessLayer
                _bookingList = new List<FlightBooking>()
                     {
 
-          new FlightBooking() { FlightID = 12, CustomerID = 12345, BookingID = 67890, SeatNumber = 01, Source = "hyderabad", Destination  = "Mumbai"},
-          new FlightBooking() { FlightID = 13, CustomerID = 5678, BookingID  = 78901, SeatNumber = 02, Source = "Mumbai", Destination  = "chennai"},
-          new FlightBooking() { FlightID = 14,  CustomerID = 8901, BookingID  = 8760, SeatNumber = 03,Source = "pune", Destination  = "Hyderabad" }
+          new FlightBooking() { FlightID = 12, CustomerID = 12345, BookingID = 67890, SeatNumber = 01,PassengerName = "xxx", Source = "hyderabad", Destination  = "Mumbai"},
+          new FlightBooking() { FlightID = 13, CustomerID = 5678, BookingID  = 78901, SeatNumber = 02, PassengerName = "yyy", Source = "Mumbai", Destination  = "chennai"},
+          new FlightBooking() { FlightID = 14,  CustomerID = 8901, BookingID  = 8760, SeatNumber = 03, PassengerName  = "zzzz",Source = "pune", Destination  = "Hyderabad" }
                       
                     };
            }
@@ -93,10 +93,12 @@ namespace Znalytics.Group5.DataAccessLayer
             else
             {
                 //throws exception that booking id doesnot exist
-                throw new Exception("bookingIdnot added");
+                throw new Exception("bookingId not added");
             }
         }
-        //methods to update  FlightBooking
+
+
+       /* //methods to update  FlightBooking
         public void UpdateFlightBooking(FlightBooking bookingID)
         {
             if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
@@ -109,7 +111,8 @@ namespace Znalytics.Group5.DataAccessLayer
                 //throws exception that booking id doesnot exist
                 throw new Exception("bookingId doesnot exists");
             }
-        }
+        }*/
+
         //method to get  FlightBooking by  Flight Bookingid
         public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {

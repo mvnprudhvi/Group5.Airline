@@ -64,7 +64,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
         /// </summary>
         private static void SaveIntoFile()
         {
-            //Serialization converts an object into Json Format/String
+            
             //Serialize object is stored in a reference variable of a string
             string s = JsonConvert.SerializeObject(_flightList);
 
@@ -73,6 +73,7 @@ namespace Znalytics.Group5.Airline.FlightModule.DataAccessLayer
             streamWriter.Write(s);
             streamWriter.Close();
         }
+
         /// <summary>
         /// reading the data from Json file and return the data in the file in List format
         /// </summary>
