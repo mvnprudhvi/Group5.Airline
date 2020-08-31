@@ -12,11 +12,12 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
 using Znalytics.Group5.Airline.Entities;
 using Newtonsoft.Json;
-namespace Znalytics.Group5.DataAccessLayer
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
+using Znalytics.Group5.DataAccessLayer;
+
+namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
 {
 
 

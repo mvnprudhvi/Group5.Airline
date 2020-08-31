@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using  Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightModule.Entities;
-using Znalytics.Group5.Airline.Entities;
-
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
 //Created a namespace for BusinessLayer of flight module
 namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
 { 
