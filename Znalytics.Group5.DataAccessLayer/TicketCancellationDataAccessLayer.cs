@@ -77,19 +77,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 throw new Exception("bookingId doesnot exists");
             }
         }
-        //methods to update ticket cancellation
-        public void UpdateTicketCancellations(TicketCancellation bookingId)
-        {
-            if (_cancellationID.Exists(temp => temp.CustomerID == bookingId.CustomerID))
-            {
-                _cancellationID.Update(bookingId);
-            }
-            else
-            {
-                //throws exception that booking id doesnot exist
-                throw new Exception("bookingId doesnot exists");
-            }
-        }
+        
         //method to get ticket cancellation by ticket cancellation id
         public List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID)
         {
@@ -113,8 +101,8 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return GetTicketCancellations();
         }
+        }
     }
-}
 
 
 
