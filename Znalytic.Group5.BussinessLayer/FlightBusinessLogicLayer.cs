@@ -27,13 +27,7 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
         fdal = new FlightDataAccessLayer();
         }
 
-        public  bool CheckFlightId(string flightId)
-        {
-            List<Flight> _flightList = new  List<Flight>();
-           // Flight flight = new Flight();
-            bool result = _flightList.Exists(temp => temp.FlightId == flightId);
-            return result;
-        }
+        
 
         //Method to ADD FlightDetails to the list
         public void AddFlight(Flight flight)
@@ -81,6 +75,14 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 throw new FlightException(ex.Message);
             }
         }
+
+       
+
+        /// <summary>
+        /// Method to GET flight details by WareHouseId
+        /// </summary>
+        /// <param name="flightId">Reprents flight id</param>
+        /// <returns></returns>
 
         //Method to REMOVE flight  by flightId
         public void RemovetFlightByFlightId(string flightId)
@@ -152,7 +154,12 @@ namespace Znalytics.Group5.Airline.FlightModule.BusinessLogicLayer
                 throw new FlightException(ex.Message);
             }
         }
+        public bool CheckFlightId(string id)
+        {
+            return FlightDataAccessLayer.CheckFlightId(id);
+        }
 
-      
+
+
     }
 }

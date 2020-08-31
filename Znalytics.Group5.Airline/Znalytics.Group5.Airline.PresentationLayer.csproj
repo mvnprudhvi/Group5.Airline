@@ -47,15 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightBookingbusinessLogic.cs" />
+    <Compile Include="FlightSearchingPresentation.cs" />
     <Compile Include="OnlineAirlineReservationPL.cs" />
     <Compile Include="TicketCancellationpresentation.cs" />
     <Compile Include="CustomerPL.cs" />
-    <Compile Include="FlightBookingPL.cs" />
+    <Compile Include="FlightBookingPresentation.cs" />
     <Compile Include="FlightPresentation.cs" />
     <Compile Include="FlightPricePL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_flightBooking.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

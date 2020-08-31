@@ -40,7 +40,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
         /// <summary>
         /// propery for  flightName
         /// </summary>
-        public string FlightName
+        public  string FlightName
         {
             set
             {
@@ -78,16 +78,11 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
+                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
                     {
                         _flightId = value;
                     }
 
-
-                    else
-                    {
-                        throw new Exception("Enter valid flightId");
-                    }
                 }
             }
             get
