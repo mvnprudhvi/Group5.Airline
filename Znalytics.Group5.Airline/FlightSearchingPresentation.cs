@@ -123,8 +123,8 @@ namespace Znalytics.Group5.Airline
                 foreach (_flightSearching fb in _flightSearching)
                 {
                     Console.Write("=====The FlightSearching  are Below=====");
-                    Console.WriteLine("The booking id is " + fb.flightID);
-                    Console.WriteLine("The customer id is " + fb.customerID);
+                    Console.WriteLine("The flightId is " + fb.flightId);
+                    Console.WriteLine("The flightName id is " + fb.flightName);
                 }
             }
         }
