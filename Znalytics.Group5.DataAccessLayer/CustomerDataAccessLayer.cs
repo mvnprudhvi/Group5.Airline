@@ -76,6 +76,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
                 customer.CustomerId = _customer.Max(temp => temp.CustomerId) + 1;
             }
             _customer.Add(customer);
+            SaveIntoFile();
         }
 
 
@@ -169,6 +170,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void RemoveCustomerByCustomerId(int customerId)
         {
             _customer.RemoveAll(temp => temp.CustomerId == customerId);
+            SaveIntoFile();
         }
 
         /// <summary>
@@ -178,6 +180,7 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void RemoveCustomerByCustomerUserName(string customeruserName)
         {
             _customer.RemoveAll(temp => temp.CustomerUserName == customeruserName);
+            SaveIntoFile();
         }
     }
 }
