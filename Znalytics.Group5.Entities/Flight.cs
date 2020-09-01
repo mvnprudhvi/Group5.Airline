@@ -6,6 +6,7 @@ namespace Znalytics.Group5.Airline.FlightModule.Entities
 {
     public class Flight
     {
+        public object flightId;
 
 
         //Instance (or) non.staticfields

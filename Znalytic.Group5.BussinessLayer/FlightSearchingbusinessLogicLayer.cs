@@ -13,6 +13,11 @@ using Znalytics.Group5.Airline.FlightSearchingDataAcessLayer;
 using System.Dynamic;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
+using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
+using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer;
 
 namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
@@ -31,17 +36,17 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
             public FlightSchedulebusinessLogicLayer()
             {
-                fsdl = new FlightScheduleDataAccessLayer();
+        FlightScheduleDataAccessLayer fsdl = new FlightScheduleDataAccessLayer();
             }
               /// <summary>
               /// This method represents adding of flightsearching details
               /// </summary>
               /// <param name="FlightName"></param>
-            public void AddFlight(Flight flightId)
+            public void AddFlight(string flightId)
             {
-                if (flightId.flightId != null)
+                if (flightId.FlightId != null)
                 {
-                    _flightScheduleDataAccessLayer.Add(flightId);
+                    fsdl.Add(flightId);
                 }
                 else
                 {
@@ -66,11 +71,11 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 
    
 
-    public void UpdateFlight(Flight  flightId)
+    public void UpdateFlight(string  flightId)
             {
-                if (flightId.flightId != null)
+                if (flightId.FlightId != null)
                 {
-                    _flightScheduleDataAccessLayer.UpdateflightId(flightId);
+                   fsdl.UpdateflightId(flightId);
                 }
             }
 
@@ -98,7 +103,7 @@ namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
     /// <param name="Source"></param>
     /// <returns></returns>
 
-    public List<Flight> GetFlightSchedulesBySource(string source)
+    public List<FlightSchedule> GetFlightSchedulesBySource(string source)
     
     {
 

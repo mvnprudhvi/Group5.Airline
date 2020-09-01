@@ -34,12 +34,12 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        List<FlightSchedule> Flightschedule(string source);
+        List<FlightSchedule> GetScheduleBySource(string source);
         /// <summary>
         /// this method gets all the details of destination
         /// </summary>
         /// <param name="destination"></param>
         /// <returns></returns>
-        List<FlightSchedule> FlightShedule(string destination);
+        List<FlightSchedule> GetFlightSheduleByDestination(string destination);
     }
 }
