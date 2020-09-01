@@ -1,5 +1,5 @@
-﻿/*
-// created by reshma
+﻿
+/*// created by reshma
 // BusinessLogicLayer
 // Module:FlightBooking
 
@@ -28,7 +28,7 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
             bool result = _bookingList.Exists(temp => temp.bookingId == bookingId);
             return result;
         }
-       
+
         /// <summary>
         /// This Method Represents AddFlightBooking
         /// </summary>
@@ -46,7 +46,7 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
             }
         }
 
-       
+
         /// <summary>
         /// this Method Represents deletion of flightbooking
         /// </summary>
@@ -57,17 +57,17 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
             throw new NotImplementedException();
         }
         //method to get FlightBooking by  bookingid
-        
+
         public List<FlightBooking> GetFlightBookingsByBookingID(int bookingID)
         {
             return fbdl.GetFlightBookingsByBookingID(bookingID);
-           
+
         }
         //method to get FlightBooking by  customerid
         public List<FlightBooking> GetFlightBookingsByCustomerID(int customerID)
         {
             return fbdl.GetFlightBookingsByCustomerID(customerID);
-            
+
 
         }
 
@@ -76,7 +76,7 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
         public List<FlightBooking> GetFlightBookingsByFlightID(int flightID)
         {
             return fbdl.GetFlightBookingsByFlightID(flightID);
-            
+
         }
 
         /// <summary>
@@ -91,6 +91,7 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
     }
 
 }
+
 
 
 

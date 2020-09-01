@@ -1,5 +1,5 @@
-﻿/*
-/ created by Reshma
+﻿
+// created by Reshma
 // IDataAccessLayer
 //module:FlightBooking
 
@@ -39,7 +39,7 @@ namespace Znalytics.Group5.DataAccessLayer
 }
 
 
-*/
+
 
 
 

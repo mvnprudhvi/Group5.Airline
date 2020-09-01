@@ -1,4 +1,5 @@
-﻿/*
+﻿// created by Reshma
+
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
     public interface IFlightSearchingDataAccessLayer
@@ -40,4 +41,3 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         List<FlightSchedule> FlightSearching(string destination);
     }
 }
-*/
