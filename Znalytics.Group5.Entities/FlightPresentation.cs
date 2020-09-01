@@ -1,4 +1,4 @@
-﻿namespace Znalytics.Group5.Entities
+﻿/*namespace Znalytics.Group5.Entities
 {
     internal class FlightPresentation
     {

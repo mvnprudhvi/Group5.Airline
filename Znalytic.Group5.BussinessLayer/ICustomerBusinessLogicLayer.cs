@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,4 +37,4 @@ namespace Znalytics.Group5.AirLine.BusinessLogicLayer
         //Method For Login To Check User name and Password are Matching Or Not
         Tuple<string, string> CustomerLogin(string CustomerUserName, string CustomerPassword);
     }
-}
+}*/
