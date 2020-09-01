@@ -1,5 +1,5 @@
 ﻿
-/*sing System.Collections.Generic;
+/*using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightBooking.Entities;
 
 namespace Znalytic.Group5.BussinessLogicLayer
