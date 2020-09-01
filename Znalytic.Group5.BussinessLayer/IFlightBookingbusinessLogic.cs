@@ -10,9 +10,12 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// this method is to add flightbooking details to the list
         /// </summary>
         /// <param name="bookingID"></param>
-
-        void AddFlightBooking(FlightBooking bookingID);
-        
+      void AddFlightBooking(FlightBooking bookingID);
+       /// <summary>
+        /// this method is to updating flightbooking details to the list
+        /// </summary>
+        /// <param name="bookingID"></param>
+       void UpdateFlightBooking(FlightBooking booking);
         //this method represents get FlightBooking by booking id
         List<FlightBooking> GetFlightBookingsByBookingID(int bookingID);
         //this method represents get FlightBooking by customer id
