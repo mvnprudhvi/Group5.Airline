@@ -83,5 +83,4 @@ namespace Znalytic.Group5.BussinessLogicLayer
             throw new NotImplementedException();
         }
     }
-   
 }
