@@ -12,7 +12,7 @@ using Znalytics.Group5.Airline.Entities;
 namespace Znalytics.Group5.DataAccessLayer
 {
     /// <summary>
-    /// Represents Business logic layer of the customer personal details
+    /// Represents Business logic layer of the ticket cancellation
     /// </summary>
     public class TicketCancellationDataAccessLayer : ITicketCancellationDataAccessLayer
     {
