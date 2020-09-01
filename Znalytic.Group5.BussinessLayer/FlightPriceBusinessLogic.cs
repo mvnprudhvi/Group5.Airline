@@ -65,9 +65,16 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// </summary>
         /// <param name="price"></param>
         public void UpdateWeekendPriceHikePercentageByScheduleId(FlightPrice price)
-        {  
-            //calling UpdateWeekendPriceHikePercentageByScheduleId Method to Data Access Layer Through Reference Variable of FlightPriceDataAccessLayer
-            _flightPriceDataAccessLayer.UpdateWeekendPriceHikePercentageByScheduleId(price);
+        {
+            if (price.WeekendPriceHikePercentage > 0 && price.WeekendPriceHikePercentage <= 100)
+            {
+                //calling UpdateWeekendPriceHikePercentageByScheduleId Method to Data Access Layer Through Reference Variable of FlightPriceDataAccessLayer
+                _flightPriceDataAccessLayer.UpdateWeekendPriceHikePercentageByScheduleId(price);
+            }
+            else
+            {
+                throw new FlightPriceException("Please Enter Percentage Between 1 to 100");
+            }
         }
 
         /// <summary>
@@ -99,30 +106,37 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             //This Represents Difference of Before Days and Maxdays given 60 
             int diff = 60 - beforedays;
 
-            //foreach is to Calulating Before Days Prices and 
-            //it also Calculating Weekend Hike Percentage When Admin is Updated
-            foreach (FlightPrice pri in prs)
+            if (beforedays > 0 && beforedays <= 60)
             {
-                //Creating Object of FlightPrice
-                FlightPrice p = new FlightPrice();
+                //foreach is to Calulating Before Days Prices and 
+                //it also Calculating Weekend Hike Percentage When Admin is Updated
+                foreach (FlightPrice pri in prs)
+                {
+                    //Creating Object of FlightPrice
+                    FlightPrice p = new FlightPrice();
 
-                //Storing ScheduleId in Object 
-                p.FlightScheduleId = pri.FlightScheduleId;
+                    //Storing ScheduleId in Object 
+                    p.FlightScheduleId = pri.FlightScheduleId;
 
-                //Storing Business Class Seat Price and also Calculating before days Price of Business Class Seat and WeekendHike Percentage by Using Diff 
-                p.PriceForBusinessClassSeat = pri.PriceForBusinessClassSeat * (1 + (pri.WeekendPriceHikePercentage / 100)) + 1000 * diff;
+                    //Storing Business Class Seat Price and also Calculating before days Price of Business Class Seat and WeekendHike Percentage by Using Diff 
+                    p.PriceForBusinessClassSeat = pri.PriceForBusinessClassSeat * (1 + (pri.WeekendPriceHikePercentage / 100)) + 1000 * diff;
 
-                //Storing Economy Class Seat Price and also Calculating before days Price of Economy Class Seat and WeekendHike Percentage by Using Diff 
-                p.PriceForEconomyClassSeat = pri.PriceForEconomyClassSeat * (1 + (pri.WeekendPriceHikePercentage / 100)) + 500 * diff;
+                    //Storing Economy Class Seat Price and also Calculating before days Price of Economy Class Seat and WeekendHike Percentage by Using Diff 
+                    p.PriceForEconomyClassSeat = pri.PriceForEconomyClassSeat * (1 + (pri.WeekendPriceHikePercentage / 100)) + 500 * diff;
 
-                //Storing Weekend Hike Perecentage in Object
-                p.WeekendPriceHikePercentage = pri.WeekendPriceHikePercentage;
+                    //Storing Weekend Hike Perecentage in Object
+                    p.WeekendPriceHikePercentage = pri.WeekendPriceHikePercentage;
 
-                //Adding All Above Details in newlist of List<FlightPrice>
-                newlist.Add(p);
+                    //Adding All Above Details in newlist of List<FlightPrice>
+                    newlist.Add(p);
+                }
+                //It Represents Returning all Details into newlist of List<<FlightPrice>
+                return newlist;
             }
-            //It Represents Returning all Details into newlist of List<<FlightPrice>
-            return newlist;
+            else
+            {
+                throw new FlightPriceException("Please Enter Before Days Between 1 to 60");
+            }
         }
     }
 }
