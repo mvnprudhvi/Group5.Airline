@@ -83,7 +83,6 @@ namespace Znalytic.Group5.BussinessLogicLayer
             throw new NotImplementedException();
         }
     }
-
     /// <summary>
     /// This Method Represents GetbookingId 
     /// </summary>
