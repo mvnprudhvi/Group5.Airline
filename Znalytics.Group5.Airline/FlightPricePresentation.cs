@@ -43,6 +43,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void PricesMenu()
         {
             int choice = 0;
+            bool b;
             //do-While Looping Control Statement  
             //It Executes the Statements inside the Loop and Later it will check Condition
             do
@@ -59,30 +60,39 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
                 //Reading Choice Manually From User
                 Write("Enter Your choice: ");
-                choice = int.Parse(ReadLine());
-
-                //Switch is a Conditional Control Statement 
-                //It Selects Control Mechanism which Executes one after another until the Break Statment occurs
-                switch (choice)
+                //TryPrse is for Perfect Conversion of String to int
+                b = int.TryParse(ReadLine(), out choice);
+                if (b == true && choice <= 7)
                 {
-                    //This Case Represents Method Calling of AddFlightPrice to Add the FlightPrice
-                    case 1: AddFlightPrice(); break;
+                    //Switch is a Conditional Control Statement 
+                    //It Selects Control Mechanism which Executes one after another until the Break Statment occurs
+                    switch (choice)
+                    {
+                        //This Case Represents Method Calling of AddFlightPrice to Add the FlightPrice
+                        case 1: AddFlightPrice(); break;
 
-                    //This Case Represents Method Calling of DeleteFlightPrice to Delete the FlightPrice
-                    case 2: DeleteFlightPrice(); break;
+                        //This Case Represents Method Calling of DeleteFlightPrice to Delete the FlightPrice
+                        case 2: DeleteFlightPrice(); break;
 
-                    //This Case Represents Method Calling  of UpdateFlightPrice to Update the FlightPrice
-                    case 3: UpdateFlightPrice(); break;
+                        //This Case Represents Method Calling  of UpdateFlightPrice to Update the FlightPrice
+                        case 3: UpdateFlightPrice(); break;
 
-                    //This Case Represents Method Calling of UpdateWeekendPriceHikePercentageByScheduleId to update the  Weekend Hike Percentage Based on ScheduleId
-                    case 4: UpdateWeekendPriceHikePercentageByScheduleId(); break;
+                        //This Case Represents Method Calling of UpdateWeekendPriceHikePercentageByScheduleId to update the  Weekend Hike Percentage Based on ScheduleId
+                        case 4: UpdateWeekendPriceHikePercentageByScheduleId(); break;
 
-                    //This Case Represents Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Update the Weekend Price Hike Percentage For All Schedules
-                    case 5: UpdateWeekendPriceHikePercentageForAllSchedules(); break;
+                        //This Case Represents Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Update the Weekend Price Hike Percentage For All Schedules
+                        case 5: UpdateWeekendPriceHikePercentageForAllSchedules(); break;
 
-                    //This Case Represents Method Calling of GetFlightPricesByBeforeDays to View the FlightPrices Based on Before Days
-                    case 6: GetFlightPricesByBeforeDays(); break; 
+                        //This Case Represents Method Calling of GetFlightPricesByBeforeDays to View the FlightPrices Based on Before Days
+                        case 6: GetFlightPricesByBeforeDays(); break;
+                    }
                 }
+                else
+                {
+                    //Displaying Message if User Enter Incorrect Digits 
+                    WriteLine("Please Enter only Digit from 1 to 7");
+                }
+
             } while (choice != 7);
         }
 
@@ -97,23 +107,30 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to Add FlightPrice");
 
-            //Reading ScheduleId Manually From Admin
-            Write("Enter the Schedule Id (Ex.FSID01): ");
-            fp.FlightScheduleId = ReadLine();
+            try
+            {
+                //Reading ScheduleId Manually From Admin
+                Write("Enter the Schedule Id (Ex.FSID01): ");
+                fp.FlightScheduleId = ReadLine();
 
-            //Reading Business Class Seat Price Manually From Admin
-            Write("Enter the Price For Business Class Seats: ");
-            fp.PriceForBusinessClassSeat = double.Parse(ReadLine());
+                //Reading Business Class Seat Price Manually From Admin
+                Write("Enter the Price For Business Class Seats: ");
+                fp.PriceForBusinessClassSeat = double.Parse(ReadLine());
 
-            //Reading Economy Class Seat Price Manually From Admin
-            Write("Enter the Price For Economy Class Seats: ");
-            fp.PriceForEconomyClassSeat = double.Parse(ReadLine());
+                //Reading Economy Class Seat Price Manually From Admin
+                Write("Enter the Price For Economy Class Seats: ");
+                fp.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
-            //Method Calling of AddFlightPrice Method to FlightPriceBusinessLogic
-            _flightPriceBusinessLogic.AddFlightPrice(fp);
+                //Method Calling of AddFlightPrice Method to FlightPriceBusinessLogic
+                _flightPriceBusinessLogic.AddFlightPrice(fp);
 
-            //Displaying Message to Admin When FlightPrice is Added Successfully
-            WriteLine("The Price of ScheduleId:" + fp.FlightScheduleId + " is Added Successfully\n");
+                //Displaying Message to Admin When FlightPrice is Added Successfully
+                WriteLine("The Price of ScheduleId:" + fp.FlightScheduleId + " is Added Successfully\n");
+            }
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -121,21 +138,29 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void DeleteFlightPrice()
         {
+
             //Created an Object for FlightPrice and storing in Reference Variable
             FlightPrice fpr = new FlightPrice();
 
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to  Delete  Flight Price");
 
-            //Reading Existing ScheduleId Manually From Admin
-            Write("Enter Existing Flight Schedule Id to Delete the All Prices of That Schedule: ");
-            fpr.FlightScheduleId = ReadLine();
+            try
+            {
+                //Reading Existing ScheduleId Manually From Admin
+                Write("Enter Existing Flight Schedule Id to Delete the All Prices of That Schedule: ");
+                fpr.FlightScheduleId = ReadLine();
 
-            //Method Calling of DeleteFlightPrice Method to FlightPriceBusinessLogic
-            _flightPriceBusinessLogic.DeleteFlightPrice(fpr);
+                //Method Calling of DeleteFlightPrice Method to FlightPriceBusinessLogic
+                _flightPriceBusinessLogic.DeleteFlightPrice(fpr);
 
-            //Displaying Message to Admin When FlightPrice is Deleted Successfully
-            WriteLine("The Price of ScheduleId:" + fpr.FlightScheduleId + " is  Deleted Successfully\n");
+                //Displaying Message to Admin When FlightPrice is Deleted Successfully
+                WriteLine("The Price of ScheduleId:" + fpr.FlightScheduleId + " is  Deleted Successfully\n");
+            }
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -148,24 +173,31 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to Update Flight Price");
+            try
+            {
+                //Reading Existing ScheduleId Manually From Admin
+                Write("Enter Existing Schedule Id (Ex.FSID01): ");
+                fpri.FlightScheduleId = ReadLine();
 
-            //Reading Existing ScheduleId Manually From Admin
-            Write("Enter Existing Schedule Id (Ex.FSID01): ");
-            fpri.FlightScheduleId = ReadLine();
+                //Reading Business Class Seat Price Manually From Admin 
+                Write("Enter the Price For Business Class Seats: ");
+                fpri.PriceForBusinessClassSeat = double.Parse(ReadLine());
 
-            //Reading Business Class Seat Price Manually From Admin 
-            Write("Enter the Price For Business Class Seats: ");
-            fpri.PriceForBusinessClassSeat = double.Parse(ReadLine());
+                //Reading Economy Class Seat Price Manually From Admin
+                Write("Enter the Price For Economy Class Seats: ");
+                fpri.PriceForEconomyClassSeat = double.Parse(ReadLine());
 
-            //Reading Economy Class Seat Price Manually From Admin
-            Write("Enter the Price For Economy Class Seats: ");
-            fpri.PriceForEconomyClassSeat = double.Parse(ReadLine());
+                //Method Calling of UpdateFlightPrice Method to FlightPriceBusinessLogic
+                _flightPriceBusinessLogic.UpdateFlightPrice(fpri);
 
-            //Method Calling of UpdateFlightPrice Method to FlightPriceBusinessLogic
-            _flightPriceBusinessLogic.UpdateFlightPrice(fpri);
+                //Displaying Message to Admin When the FlightPrice is Updated Successfully
+                WriteLine("The Price of ScheduleId:" + fpri.FlightScheduleId + " is Successfully Updated\n");
 
-            //Displaying Message to Admin When the FlightPrice is Updated Successfully
-            WriteLine("The Price of ScheduleId:" + fpri.FlightScheduleId + " is Successfully Updated\n");
+            }
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -175,23 +207,30 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to Update Weekend Hike Perentage By ScheduleId ");
+            try
+            {
 
-            //Creating Object of Flight Price
-            FlightPrice fpri = new FlightPrice();
+                //Creating Object of Flight Price
+                FlightPrice fpri = new FlightPrice();
 
-            //Reading Existing ScheduleId Manually
-            Write("Enter Existing Schedule Id (Ex.FSID01): ");
-            fpri.FlightScheduleId = ReadLine();
+                //Reading Existing ScheduleId Manually
+                Write("Enter Existing Schedule Id (Ex.FSID01): ");
+                fpri.FlightScheduleId = ReadLine();
 
-            //Reading weekend hike Percentage  Manually
-            Write("Enter Weekend Hike Percentage: ");
-            fpri.WeekendPriceHikePercentage = double.Parse(ReadLine());
+                //Reading weekend hike Percentage  Manually
+                Write("Enter Weekend Hike Percentage: ");
+                fpri.WeekendPriceHikePercentage = double.Parse(ReadLine());
 
-            //Method Calling  of UpdateWeekendPriceHikePercentageByScheduleId to Business logic Layer
-            _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageByScheduleId(fpri);
+                //Method Calling  of UpdateWeekendPriceHikePercentageByScheduleId to Business logic Layer
+                _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageByScheduleId(fpri);
 
-            //Displaying Message When the Weekend Hike Perecentage is Added successfully
-            WriteLine("The Weekend Hike Percentage of ScheduleId:" + fpri.FlightScheduleId + " is  Updated Successfully\n");
+                //Displaying Message When the Weekend Hike Perecentage is Added successfully
+                WriteLine("The Weekend Hike Percentage of ScheduleId:" + fpri.FlightScheduleId + " is  Updated Successfully\n");
+            }
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -201,16 +240,22 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to Update Weekend Hike Perentage For ALL ScheduleId's ");
+            try
+            {
+                //Reading Weekend Hike Percentage From Admin 
+                Write("Enter Weekend Hike Percentage: ");
+                double weekendPriceHikePercentage = double.Parse(ReadLine());
 
-            //Reading Weekend Hike Percentage From Admin 
-            Write("Enter Weekend Hike Percentage: ");
-            double weekendPriceHikePercentage = double.Parse(ReadLine());
+                //Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Business logic Layer
+                _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageForAllSchedules(weekendPriceHikePercentage);
 
-            //Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Business logic Layer
-            _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageForAllSchedules(weekendPriceHikePercentage);
-
-            //Displaying Message When the Weekend Hike Perecentage For All Schedules is Updated Successfully
-            WriteLine("The Weekend Hike Percentage of All ScheduleId's is Successfully Updated\n");
+                //Displaying Message When the Weekend Hike Perecentage For All Schedules is Updated Successfully
+                WriteLine("The Weekend Hike Percentage of All ScheduleId's is Successfully Updated\n");
+            }
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
 
 
