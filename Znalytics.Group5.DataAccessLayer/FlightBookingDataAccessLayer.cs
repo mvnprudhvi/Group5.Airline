@@ -17,7 +17,8 @@ using System.Threading.Tasks;
 using Znalytics.Group5.Airline.Entities;
 using System.IO;
 
-namespace Znalytics.Group5.DataAccessLayer
+namespace Znalytic.Group5.Airline.DataAcessLayer
+
 {
 
 
