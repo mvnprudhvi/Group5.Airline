@@ -54,6 +54,16 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
             
         }
 
+        internal List<FlightSchedule> GetFlightsBySource(string source)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal List<FlightSchedule> GetFlightsByDestination(string destination)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Saving the data into Json file
         /// </summary>
