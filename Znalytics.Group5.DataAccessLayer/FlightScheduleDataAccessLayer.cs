@@ -359,6 +359,12 @@ namespace Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer
         }
 
 
+        public static bool CheckFlightId(string id)
+        {
+            //Call the CheckFlightScheduleId method of FlightSchedule Data Layer
+            return FlightScheduleDataAccessLayer.CheckFlightId(id);
+        }
+
         public static bool CheckFlightScheduleId(string id)
         {
             //Call the CheckFlightScheduleId method of FlightSchedule Data Layer

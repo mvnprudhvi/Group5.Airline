@@ -1,4 +1,5 @@
-﻿//created by Madhumitha.....
+﻿
+//created by Madhumitha.....
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -20,10 +21,10 @@ namespace Znalytics.Group5.DataAccessLayer
 
         // creating list
         private static List<TicketCancellation> _cancellationID
-        { 
+        {
             set;
             get;
-                }
+        }
         static TicketCancellationDataAccessLayer()
         {
 
@@ -75,7 +76,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 throw new Exception("bookingId doesnot exists");
             }
         }
-        
+
         //method to get ticket cancellation by ticket cancellation id
         public List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID)
         {
@@ -99,9 +100,8 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return GetTicketCancellations();
         }
-        }
     }
-
+}
 
 
 
@@ -298,3 +298,4 @@ namespace Znalytics.Group5.AirLine.CancellationDataAccessLayer
         }
     }
 }*/
+>>>>>>> 16446eab7872e3b0a455ef2c0ffcbd5725161888

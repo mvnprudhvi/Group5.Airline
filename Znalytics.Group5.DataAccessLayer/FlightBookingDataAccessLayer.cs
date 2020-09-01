@@ -1,4 +1,5 @@
-﻿// created by Reshma
+﻿/*
+// created by Reshma
 // DataAccessLayer
 //module:FlightBooking
 
@@ -12,12 +13,10 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Znalytics.Group5.Airline.FlightBooking.Entities;
 using Znalytics.Group5.Airline.Entities;
-using Newtonsoft.Json;
-using Znalytics.Group5.Airline.FlightBookingModule.Entities;
-using Znalytics.Group5.DataAccessLayer;
 
-namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
+namespace Znalytics.Group5.DataAccessLayer
 {
 
 
@@ -27,11 +26,8 @@ namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
     /// </summary>
   public  class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
 
-
     {
-        //Created an object for datalayer and stored it in reference variable
-        FlightBookingDataAccessLayer fbdl = new FlightBookingDataAccessLayer();
-       
+        private object JsonConvert;
 
         //creating list
         private static List<FlightBooking>_bookingList
@@ -75,25 +71,24 @@ namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
         /// Method For Getting Data From File
         /// </summary>
         /// <returns></returns>
-        public List<FlightBooking> GetFileData()
+        public List<FlightBooking> GetFiledata()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightBooking.txt");
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
             string str1 = streamReader.ReadToEnd();
             List<FlightBooking> _bookingList = JsonConvert.DeserializeObject<List<FlightBooking>>(str1);
             return _bookingList;
-
         }
 
        
         //methods to add FlightBooking
-        public void AddFlightBooking(FlightBooking Booking)
+        public void AddFlightBooking(FlightBooking bookingID)
         {
-            if (_bookingList.Exists(temp => temp.CustomerID == Booking.CustomerID))
+            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             {
 
 
 
-                _bookingList.Add(Booking);
+                _bookingList.Add(bookingID);
             }
 
             else
@@ -103,56 +98,24 @@ namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
             }
         }
 
-        public void UpdateFlightBooking(FlightBooking Booking)
+
+       /* //methods to update  FlightBooking
+        public void UpdateFlightBooking(FlightBooking bookingID)
         {
-
-            try
-            {
-                //FlightScheduleId should not be null
-                if (Booking.BookingID != 0)
-                {
-                    //Calls the UpdateSource Method of flightSchedule Data Layer
-                    fbdl.UpdateFlightBooking(Booking);
-                }
-            }
-            catch (FlightException ex)
-            {
-                throw new FlightException(ex.Message);
-            }
-
-        }
-
-
-       /* public void UpdateFlightBooking(FlightBooking bookingID)
-        {
+            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
             
-
-
-                FlightBooking fb = _bookingList.Find(temp => temp.BookingID == bookingID);
-            if (fb != null)
             {
-                fb.DepartureTiming = schedule.DepartureTiming;
+               _bookingList.Update(bookingID);
+            }
+            else
+            {
+                //throws exception that booking id doesnot exist
+                throw new Exception("bookingId doesnot exists");
+            }
+        }*/
 
-
-            }*/
-
-    /* //methods to update  FlightBooking
-     public void UpdateFlightBooking(FlightBooking bookingID)
-     {
-         if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
-
-         {
-            _bookingList.Update(bookingID);
-         }
-         else
-         {
-             //throws exception that booking id doesnot exist
-             throw new Exception("bookingId doesnot exists");
-         }
-     }*/
-
-    //method to get  FlightBooking by  Flight Bookingid
-    public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
+        //method to get  FlightBooking by  Flight Bookingid
+    /*    public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {
             return _bookingList.FindAll(temp => temp.BookingID == bookingID);
         }
@@ -168,6 +131,7 @@ namespace Znalytics.Group5.FlightBookingModule.DataAccessLayer
         }
     }
 }
+*/
 
 
 

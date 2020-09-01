@@ -7,6 +7,7 @@ using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Entities;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
@@ -21,11 +22,18 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     class FlightPresentation
     {
 
+       public void start()
+        {
+            AdminMenu();
+            Console.ReadKey();
+        }
+
         /// <summary>
         /// Beginning of the program
         /// </summary>
-        static void Main()
+        public  void AdminMenu()
         {
+
             //Login pagr for flight Administrator
             Console.WriteLine("ONLINE AIRLINE RESERVATION SYSTEM ");
             Console.WriteLine("==================================");
@@ -248,7 +256,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     if(fbl.GetFlightByFlightId(flight.FlightId) == null)
                     {
-                        fbl.RemovetFlightByFlightId(flightId);
+                        fbl.RemoveFlightByFlightId(flightId);
                         Console.WriteLine("flight is removed");
                     }
                 }

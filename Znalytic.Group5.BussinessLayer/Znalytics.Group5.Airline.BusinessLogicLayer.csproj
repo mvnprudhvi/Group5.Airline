@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerBusinessLogicLayer.cs" />
-    <Compile Include="customerID.cs" />
     <Compile Include="FlightBookingbusinessLogic.cs" />
     <Compile Include="FlightBusinessLogicLayer.cs" />
     <Compile Include="FlightScheduleBusinessLogicLayer.cs" />

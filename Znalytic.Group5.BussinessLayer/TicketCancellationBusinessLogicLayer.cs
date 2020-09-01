@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytic.Group5.Airline.FlightBooking.BussinessLogicLayer;
+using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.DataAccessLayer;
 namespace Znalytic.Group5.BussinessLogicLayer
@@ -13,6 +13,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
 
         //Created an object for DataAccessLayer and strore the object in reference variable
         TicketCancellationDataAccessLayer tcdal = new TicketCancellationDataAccessLayer();
+        private int customerID;
 
         public bool checkCancellationID(int cancellationID)
         {
@@ -83,13 +84,5 @@ namespace Znalytic.Group5.BussinessLogicLayer
             throw new NotImplementedException();
         }
     }
-
-    /// <summary>
-    /// This Method Represents GetbookingId 
-    /// </summary>
-    /// <returns>TicketCancellationDataAccessLayer</returns>
-    public List<TicketCancellation> GetTicketCancellations()
-    {
-        return tcdal.GetTicketCancellations();
-    }
+   
 }

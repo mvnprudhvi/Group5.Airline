@@ -14,7 +14,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
     public class CustomerPL
     {
         //Main Method for Customers Module
-        static void Main()
+        public void start()
         {
 
             Console.WriteLine("-----------------ONLINE AIRLINE RESERVATION SYSTEM----------------------:");
