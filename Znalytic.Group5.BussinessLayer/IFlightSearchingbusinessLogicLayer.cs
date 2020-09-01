@@ -1,24 +1,35 @@
-﻿/*// created by Reshma
+﻿// created by Reshma
 
 using System;
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
+
 namespace Znalytics.Group5.Airline.FlightSearchingbussinessLogicLayer
 {
     public interface IFlightSearchingbusinessLogicLayer
     {/// <summary>
-    /// this method represents adding of flightName
-    /// </summary>
-    /// <param name="FlightName"></param>
-        void Add(FlightName FlightName);
+     /// this method represents adding of flightName
+     /// </summary>
+     /// <param name="FlightId"></param>
+     
+      void AddFlight(string  flightId);
         /// <summary>
-        /// this method represents getting of all flightsearching
+        /// this method represents  getting all of flightName
         /// </summary>
         /// <returns></returns>
-        List<FlightSearching> GetFlightSearchings();
+
+        List<Flight> GetFlightSearchings();
+        // this method represents getting all details
+        void UpdateFlight(string flightId);
+           
+       
         /// <summary>
         /// this method represents getting all of flightName
         /// </summary>
         /// <param name="FlightName"></param>
         /// <returns></returns>
+        /// 
         List<Flight> GetFlightsByFlightName(string FlightName);
         /// <summary>
         /// this method represents getting all of flightId
