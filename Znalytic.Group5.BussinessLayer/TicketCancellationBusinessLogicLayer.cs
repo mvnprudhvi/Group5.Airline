@@ -13,6 +13,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
 
         //Created an object for DataAccessLayer and strore the object in reference variable
         TicketCancellationDataAccessLayer tcdal = new TicketCancellationDataAccessLayer();
+        //private fields
         private int customerID;
 
         public bool checkCancellationID(int cancellationID)
