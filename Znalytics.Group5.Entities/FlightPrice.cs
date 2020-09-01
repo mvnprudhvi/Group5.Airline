@@ -1,10 +1,15 @@
 ﻿/// <summary>
 /// Created By Dinesh
-/// Module Name is Flight Price
+/// Module Name is FlightPrice
 /// </summary>
 
-using System;
+//This Represents Importing Statements
+using System.Text.RegularExpressions;
 
+
+/// <summary>
+/// Created a namespace for Entity Layer of Airline Reservation System
+/// </summary>
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
@@ -12,59 +17,32 @@ namespace Znalytics.Group5.Airline.Entities
     /// </summary>
     public class FlightPrice
     {
-        //Private Fields
-        private string _flightId;
+        //Private Fields for Flight Price
         private string _flightScheduleId;
-        private int _beforeDays;
         private double _priceForBusinessClassSeat;
         private double _priceForEconomyClassSeat;
         private double _weekendPriceHikePercentage;
 
-        //Property For Flight Id
-        public string FlightId
-        {
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
 
-                    bool spaceFound = value.Contains(" ");
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FID") && value.Length <= 8)
-                    {
-                        _flightId = value;
-                    }
-                    else
-                    {
-                        throw new  FlightPriceException("invalid flightScheduleid");
-                    }
-                }
-            }
-            get
-            {
-                return _flightId;
-            }
-        }
-
-        //Property For Flight Schedule Id
+        /// <summary>
+        ///Property For Flight ScheduleId 
+        /// </summary>
         public string FlightScheduleId
         {
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                //This Represents Regular Expression for AlphaNumeric values
+                Regex r = new Regex("[A-Z0-9]$");
+
+                //WareHouseId should not be null or empty 
+                //Mandatory to Starts With "FSID" at Beginning
+                if (!string.IsNullOrEmpty(value) && value.StartsWith("FSID") && r.IsMatch(value) && value.Length <= 8)
                 {
-                    bool spaceFound = value.Contains(" ");
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.StartsWith("FSID") && value.Length <= 8)
-                    {
-                        _flightScheduleId = value;
-                    }
-                    else
-                    {
-                        throw new System.Exception("invalid flightScheduleid");
-                    }
+                    _flightScheduleId = value;
+                }
+                else
+                {
+                    throw new FlightPriceException("Enter Valid ScheduleId it Should not Contain Spaces and length should be less than or equal to 8");
                 }
             }
             get
@@ -74,50 +52,57 @@ namespace Znalytics.Group5.Airline.Entities
         }
 
 
-        //Property For Before Days
-        public int BeforeDays
-        {
-            set
-            {
-                if (value <= 60)
-                {
-                    _beforeDays = value;
-                }
-                else
-                {
-                    throw new Exception("Please Enter Before Days Below 60 Days Only");
-                }
-            }
-            get
-            {
-                return _beforeDays;
-            }
-        }
-        //Property For Business class seat
+        /// <summary>
+        /// Property For price Business class seat
+        /// </summary>
         public double PriceForBusinessClassSeat
         {
             set
             {
-                _priceForBusinessClassSeat = value;
+                //Value Should be Greater Than Zero
+                if (value > 0)
+                {
+                    _priceForBusinessClassSeat = value;
+                }
+                else
+                {
+                    throw new FlightPriceException("Please Enter Positive Values");
+                }
             }
             get
             {
                 return _priceForBusinessClassSeat;
             }
         }
-        //Property For Price Economy Class Seat
+
+
+        /// <summary>
+        /// Property For price Economy class seat
+        /// </summary>
         public double PriceForEconomyClassSeat
         {
             set
             {
-                _priceForEconomyClassSeat = value;
+                //Value Should be Greater Than Zero
+                if (value > 0)
+                {
+                    _priceForEconomyClassSeat = value;
+                }
+                else
+                {
+                    throw new FlightPriceException("Please Enter Positive Values");
+                }
             }
             get
             {
                 return _priceForEconomyClassSeat;
             }
         }
-        //Property For Weekend Hike Percentage
+
+
+        /// <summary>
+        /// Property For Weekend price Hike Percentage
+        /// </summary>
         public double WeekendPriceHikePercentage
         {
             set
@@ -129,5 +114,6 @@ namespace Znalytics.Group5.Airline.Entities
                 return _weekendPriceHikePercentage;
             }
         }
+
     }
 }
