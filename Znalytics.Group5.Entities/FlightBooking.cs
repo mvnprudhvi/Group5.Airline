@@ -16,6 +16,8 @@ namespace Znalytics.Group5.Airline.FlightBookingModule.Entities
 
     public class FlightBooking
     {
+        public static int bookingID;
+
         //  represents the private fields
         private string _flightName;
 

@@ -1,6 +1,9 @@
 ﻿
-/*using System.Collections.Generic;
-using Znalytics.Group5.Airline.FlightBooking.Entities;
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
+using Znalytic.Group5.Airline.DataAcessLayer;
 
 namespace Znalytic.Group5.BussinessLogicLayer
 {
@@ -10,7 +13,7 @@ namespace Znalytic.Group5.BussinessLogicLayer
         /// this method is to add flightbooking details to the list
         /// </summary>
         /// <param name="bookingID"></param>
-      void AddFlightBooking(FlightBooking bookingID);
+      void AddFlightBooking(FlightBooking booking);
        /// <summary>
         /// this method is to updating flightbooking details to the list
         /// </summary>
@@ -30,4 +33,3 @@ namespace Znalytic.Group5.BussinessLogicLayer
             
     }
 }
-*/

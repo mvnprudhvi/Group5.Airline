@@ -1,5 +1,5 @@
 ﻿
-/*// created by Reshma
+// created by Reshma
 // DataAccessLayer
 //module:FlightBooking
 
@@ -8,7 +8,7 @@
 using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightBookingModule.Entities;
-using System IO;
+//using System IO;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 
 using Znalytics.Group5.Airline.Entities;
 using System.IO;
+using Znalytics.Group5.DataAccessLayer;
 
 namespace Znalytic.Group5.Airline.DataAcessLayer
 
@@ -31,7 +32,7 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
         //Created an object for datalayer and stored it in reference variable
         FlightBookingDataAccessLayer fbdl = new FlightBookingDataAccessLayer();
     
-        private object JsonConvert;
+        //private object JsonConvert;
 
         //creating list
         private static List<FlightBooking>_bookingList
@@ -57,7 +58,7 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
            }
 
 
-        /// <summary>
+        /*/// <summary>
         /// Saving the data into Json file
         /// </summary>
         public void SaveIntoFile()
@@ -81,9 +82,14 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
             string str1 = streamReader.ReadToEnd();
             List<FlightBooking> _bookingList = JsonConvert.DeserializeObject<List<FlightBooking>>(str1);
             return _bookingList;
+        }*/
+
+        public List<FlightBooking> GetFlightBookingsByBookingID(int bookingID)
+        {
+            throw new NotImplementedException();
         }
 
-       
+
         //methods to add FlightBooking
         public void AddFlightBooking(FlightBooking bookingID)
         {
@@ -101,12 +107,18 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
                 throw new Exception("bookingId not added");
             }
         }
+
+        public List<FlightBooking> GetFlightBookingsByCustomerID(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 
         /// 
         /// </summary>
         /// <param name="schedule"></param>
-       
+
         public void UpdateFlightBooking(FlightBooking booking)
         {
 
@@ -125,6 +137,11 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
                 throw new FlightException(ex.Message);
             }
 
+        }
+
+        public List<FlightBooking> GetFlightBookings(int bookingID)
+        {
+            throw new NotImplementedException();
         }
 
 

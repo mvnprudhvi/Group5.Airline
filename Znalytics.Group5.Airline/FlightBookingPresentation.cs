@@ -16,6 +16,9 @@ using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.DataAccessLayer;
 using Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
+using Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer;
+
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
     /// <summary>
@@ -25,7 +28,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
     {
 
         private static FlightBookingbusinessLogic  _flightBookingbusinessLogic;
-        private static IEnumerable<FlightBookingPresentation> _flightBooking;
+        private static IEnumerable<FlightBookingPresentation> FlightBooking;
 
         /// <summary>
         /// Main Method
@@ -75,7 +78,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         /// </summary>
         static void AddFlightBooking()
         {
-            _flightBooking fb= new _flightBooking();
+            FlightBooking fb= new FlightBooking();
 
             Console.Write("Enter flight id: ");
            fb.FlightID = int.Parse(ReadLine());
@@ -96,7 +99,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void UpdateFlightBooking()
         {
 
-            _flightBooking fb= new _flightBooking();
+            FlightBooking fb= new FlightBooking();
 
             Console.Write("Enter Existing flight id: ");
            fb.flightID = int.Parse(ReadLine());
@@ -113,7 +116,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         static void DeleteFlightBooking()
         {
 
-            _flightBooking fb = new _flightBooking();
+            FlightBooking fb = new FlightBooking();
             Console.Write("Enter Existing booking id to Delete FlightBooking ");
             _flightBookingbusinessLogic.DeleteFlightBooking(fb);
             Console.WriteLine("The FlightBooking is Deleted Successfully \n");
@@ -127,9 +130,9 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
 
             object _flightBookingbusinessLayer = null;
-            List<FlightBooking> fb = _flightBookingbusinessLayer.GetFlightBooking();
+            List<FlightBooking> fb = _flightBookingbusinessLayer.GetFlightBookings();
 
-            foreach (_flightBooking fb in _flightBooking)
+            foreach (FlightBooking fb in FlightBooking)
             {
                 Console.Write("=====The FlightBooking  are Below=====");
                 Console.WriteLine("The booking id is " + fb.flightID);
