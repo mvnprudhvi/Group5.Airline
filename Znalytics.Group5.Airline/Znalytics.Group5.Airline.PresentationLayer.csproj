@@ -53,7 +53,7 @@
     <Compile Include="CustomerPL.cs" />
     <Compile Include="FlightBookingPresentation.cs" />
     <Compile Include="FlightPresentation.cs" />
-    <Compile Include="FlightPricePL.cs" />
+    <Compile Include="FlightPricePresentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
