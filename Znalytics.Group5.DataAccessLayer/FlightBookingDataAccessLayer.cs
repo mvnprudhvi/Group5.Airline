@@ -1,22 +1,24 @@
-﻿/*
+﻿
 // created by Reshma
 // DataAccessLayer
 //module:FlightBooking
 
 
 
-
 using System;
 using System.Collections.Generic;
-using System.IO;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
+using System IO;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Znalytics.Group5.Airline.FlightBooking.Entities;
-using Znalytics.Group5.Airline.Entities;
 
-namespace Znalytics.Group5.DataAccessLayer
+using Znalytics.Group5.Airline.Entities;
+using System.IO;
+
+namespace Znalytic.Group5.Airline.DataAcessLayer
+
 {
 
 
@@ -99,7 +101,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }
 
 
-       /* //methods to update  FlightBooking
+       ///methods to update  FlightBooking
         public void UpdateFlightBooking(FlightBooking bookingID)
         {
             if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
@@ -112,10 +114,10 @@ namespace Znalytics.Group5.DataAccessLayer
                 //throws exception that booking id doesnot exist
                 throw new Exception("bookingId doesnot exists");
             }
-        }*/
+        }
 
         //method to get  FlightBooking by  Flight Bookingid
-    /*    public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
+       public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {
             return _bookingList.FindAll(temp => temp.BookingID == bookingID);
         }
@@ -131,7 +133,7 @@ namespace Znalytics.Group5.DataAccessLayer
         }
     }
 }
-*/
+
 
 
 
