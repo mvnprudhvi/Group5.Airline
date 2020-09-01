@@ -47,12 +47,10 @@ namespace Znalytics.Group5.DataAccessLayer
             StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
             streamWriter.Write(str);
             streamWriter.Close();
-        }
-
-        /// <summary>
-        /// Method For Getting Data From File
-        /// </summary>
-        /// <returns></returns>
+        }/// <summary>
+         /// Method For Getting Data From File
+         /// </summary>
+         /// <returns></returns>
         public List<TicketCancellation> GetFiledata()
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\TicketCancellation.txt");
@@ -60,6 +58,8 @@ namespace Znalytics.Group5.DataAccessLayer
             List<TicketCancellation> _TicketCancellation = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
             return _cancellationID;
         }
+
+
 
         //methods to add ticket cancellation
         public void AddTicketCancellations(TicketCancellation bookingId)
