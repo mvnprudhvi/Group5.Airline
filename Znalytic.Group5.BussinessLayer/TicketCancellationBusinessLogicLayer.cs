@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytic.Group5.Airline.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.DataAccessLayer;
 namespace Znalytic.Group5.BussinessLogicLayer
