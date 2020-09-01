@@ -16,7 +16,7 @@ namespace Znalytics.Group5.DataAccessLayer
     /// </summary>
     public class TicketCancellationDataAccessLayer : ITicketCancellationDataAccessLayer
     {
-        private object JsonConvert;
+       // private object JsonConvert;
 
         // creating list
         private static List<TicketCancellation> _cancellationID
@@ -29,38 +29,12 @@ namespace Znalytics.Group5.DataAccessLayer
 
             _cancellationID = new List<TicketCancellation>()
             {
-
            new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01 },
            new TicketCancellation()  { CustomerID = 12345, BookingID = 23545, SeatNumber = 05  },
            new TicketCancellation() { CustomerID = 12345, BookingID = 67340, SeatNumber = 05 }
             };
         }
-        /// <summary>
-        /// Saving the data into Json file
-        /// </summary>
-        public void SaveIntoFile()
-        {
-
-            string str = JsonConvert.SerializeObject(_cancellationID);
-
-            //write data into file
-            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
-            streamWriter.Write(str);
-            streamWriter.Close();
-        }/// <summary>
-         /// Method For Getting Data From File
-         /// </summary>
-         /// <returns></returns>
-        public List<TicketCancellation> GetFiledata()
-        {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\TicketCancellation.txt");
-            string str1 = streamReader.ReadToEnd();
-            List<TicketCancellation> _TicketCancellation = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
-            return _cancellationID;
-        }
-
-
-
+     
         //methods to add ticket cancellation
         public void AddTicketCancellations(TicketCancellation bookingId)
         {
@@ -101,3 +75,31 @@ namespace Znalytics.Group5.DataAccessLayer
         }
     }
 }
+
+
+
+
+
+/*/// <summary>
+        /// Saving the data into Json file
+        /// </summary>
+        public void SaveIntoFile()
+        {
+
+            string str = JsonConvert.SerializeObject(_cancellationID);
+
+            //write data into file
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\FlightSchedule.txt");
+            streamWriter.Write(str);
+            streamWriter.Close();
+        }/// <summary>
+         /// Method For Getting Data From File
+         /// </summary>
+         /// <returns></returns>
+        public List<TicketCancellation> GetFiledata()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\TicketCancellation.txt");
+            string str1 = streamReader.ReadToEnd();
+            List<TicketCancellation> _TicketCancellation = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
+            return _cancellationID;
+        }*/
