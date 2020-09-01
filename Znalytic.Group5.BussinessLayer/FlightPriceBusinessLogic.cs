@@ -1,4 +1,4 @@
-﻿/// <summary>
+﻿/*/// <summary>
 /// Created By Dinesh
 /// Module Name is FlightPrice
 /// </summary>
@@ -65,7 +65,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
         /// </summary>
         /// <param name="price"></param>
         public void UpdateWeekendPriceHikePercentageByScheduleId(FlightPrice price)
-        {
+        {  
             //calling UpdateWeekendPriceHikePercentageByScheduleId Method to Data Access Layer Through Reference Variable of FlightPriceDataAccessLayer
             _flightPriceDataAccessLayer.UpdateWeekendPriceHikePercentageByScheduleId(price);
         }
@@ -125,4 +125,4 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             return newlist;
         }
     }
-}
+}*/

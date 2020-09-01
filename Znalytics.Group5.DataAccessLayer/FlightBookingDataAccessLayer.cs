@@ -1,5 +1,5 @@
 ﻿
-// created by Reshma
+/*// created by Reshma
 // DataAccessLayer
 //module:FlightBooking
 
@@ -170,7 +170,7 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
 /// Represents  class of flightbooking
 /// </summary>
 
-class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
+/*class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
     {
         // creating  list
         private static List<FlightBooking> _FlightBooking = new List<FlightBooking>();

@@ -1,4 +1,4 @@
-﻿//........KEERTHANA....
+﻿/*//........KEERTHANA....
 using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
@@ -150,8 +150,7 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 
         
 
-
-        /// <summary>
+/*/// <summary>
         ///  method to Get Destination by FlightScheduleId
         /// </summary>
         /// <param name="flightScheduleId"></param>
@@ -159,14 +158,14 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         public List<FlightSchedule> GetDestinationByFlightScheduleId(string flightScheduleId)
         {
             return fsdl.GetDestinationByFlightScheduleId(flightScheduleId);
-        }
+        }*/
 
 
 
         
 
 
-        //Method to UPDATE source of flightSchedule
+        /*//Method to UPDATE source of flightSchedule
         public void UpdateSource(FlightSchedule schedule)
         {
 
@@ -238,5 +237,5 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         }
 
     }
-}
+}*/
  

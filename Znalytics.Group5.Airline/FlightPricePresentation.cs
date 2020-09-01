@@ -280,12 +280,12 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             //Dispalying  Details of FligthId,Before Days,Hike Perecentage,Business Class Seats,Economy Class Seats Of FlightPrices
             WriteLine("=========FLIGHTS SCHEDULED PRICE DETAILS ARE BELOW=======");
             WriteLine("FlightScheduleId" + "  BeforeDays" + "  HikePercentage" + "  BusinessClassSeats" + "  EconomyClassSeats");
-            WriteLine("------------------------------------------------------------------------------------------------------");
+            WriteLine("-------------------------------------------------------------------------------------");
 
             //foreach Loop is For Retreiving the data from List<FlightPrice> Collection by Using Reference Variable
             foreach (FlightPrice pri in prs)
             {
-                WriteLine("   " + pri.FlightScheduleId + "\t\t" + beforedays + "     \t" + pri.WeekendPriceHikePercentage + "\t\t" + pri.PriceForBusinessClassSeat + " \t\t\t" + pri.PriceForEconomyClassSeat);
+                WriteLine("   " + pri.FlightScheduleId + "\t\t" + beforedays + "     \t" + pri.WeekendPriceHikePercentage + "%" + "\t\t" + pri.PriceForBusinessClassSeat + " \t\t\t" + pri.PriceForEconomyClassSeat);
             }
 
             //This Represents Giving one Line Space after this operation is Done
