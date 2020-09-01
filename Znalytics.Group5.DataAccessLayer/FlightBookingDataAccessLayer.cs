@@ -130,7 +130,7 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
 
 
 
-        /*//methods to update  FlightBooking
+        /*methods to update  FlightBooking
          public void UpdateFlightBooking(FlightBooking bookingID)
          {
              if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
