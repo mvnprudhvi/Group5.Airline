@@ -1,5 +1,7 @@
 ﻿// created by Reshma
-
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.FlightModule.Entities;
+using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
     public interface IFlightSearchingDataAccessLayer
@@ -8,19 +10,19 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         /// this method  add all the details of flightID
         /// </summary>
         /// <param name="FlightID"></param>
-        void AddFlightSearching(FlightSearching flightId);
+        void AddFlight(Flight flightId);
         /// <summary>
         /// this method updating all the details of flightID
         /// </summary>
         /// <param name="flightId"></param>
-        void UpdateFlightSearching(FlightSearching flightId);
+        void UpdateFlight(Flight flightId);
 
         /// <summary>
         /// this method gets all the details of flightName
         /// </summary>
         /// <param name="flightName"></param>
         /// <returns></returns>
-        List<Flight> FlightSearching(string flightName);
+        List<Flight> Flight(string flightName);
         /// <summary>
         /// this method gets all the details of flightId
         /// </summary>
@@ -32,12 +34,12 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        List<FlightSchedule> FlightSearching(string source);
+        List<FlightSchedule> Flightschedule(string source);
         /// <summary>
         /// this method gets all the details of destination
         /// </summary>
         /// <param name="destination"></param>
         /// <returns></returns>
-        List<FlightSchedule> FlightSearching(string destination);
+        List<FlightSchedule> FlightShedule(string destination);
     }
 }
