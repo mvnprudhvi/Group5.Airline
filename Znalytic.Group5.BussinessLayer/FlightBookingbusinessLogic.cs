@@ -45,6 +45,33 @@ namespace Znalytic.Group5.Airline.FlightBookingModule.BussinessLogicLayer
                 throw new Exception("bookingId can't be null");
             }
         }
+      
+      /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="schedule"></param>
+       
+        public void UpdateFlightBooking(FlightBooking booking)
+        {
+
+            try
+            {
+                //bookingID should not be null
+                if (booking.BookingID != 0)
+
+                //Calls the Update Method of FlightBooking of flightFlightBooking Data Layer
+                { 
+                        fbdl.UpdateFlightBooking(booking);
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
+
+        }
+
 
 
         /// <summary>

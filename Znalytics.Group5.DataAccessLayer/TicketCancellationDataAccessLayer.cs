@@ -20,10 +20,10 @@ namespace Znalytics.Group5.DataAccessLayer
 
         // creating list
         private static List<TicketCancellation> _cancellationID
-        { 
+        {
             set;
             get;
-                }
+        }
         static TicketCancellationDataAccessLayer()
         {
 
@@ -31,8 +31,8 @@ namespace Znalytics.Group5.DataAccessLayer
             {
 
            new TicketCancellation() { CustomerID = 12345, BookingID = 67890, SeatNumber = 01 },
-         new TicketCancellation() { CustomerID = 12345, BookingID = 23545, SeatNumber = 05  },
-          new TicketCancellation() { CustomerID = 12345, BookingID = 67340, SeatNumber = 05 }
+           new TicketCancellation()  { CustomerID = 12345, BookingID = 23545, SeatNumber = 05  },
+           new TicketCancellation() { CustomerID = 12345, BookingID = 67340, SeatNumber = 05 }
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\TicketCancellation.txt");
             string str1 = streamReader.ReadToEnd();
-            List<TicketCancellation> _ticketCancellations = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
+            List<TicketCancellation> _TicketCancellation = JsonConvert.DeserializeObject<List<TicketCancellation>>(str1);
             return _cancellationID;
         }
 
@@ -75,7 +75,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 throw new Exception("bookingId doesnot exists");
             }
         }
-        
+
         //method to get ticket cancellation by ticket cancellation id
         public List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID)
         {
@@ -99,5 +99,5 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return GetTicketCancellations();
         }
-        }
     }
+}
