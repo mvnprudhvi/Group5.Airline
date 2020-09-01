@@ -4,6 +4,7 @@ using Znalytic.Group5.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 using System;
 /// <summary>
+/// represents namespace
 /// </summary>
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
@@ -123,5 +124,3 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         }
     }
 }
-
-
