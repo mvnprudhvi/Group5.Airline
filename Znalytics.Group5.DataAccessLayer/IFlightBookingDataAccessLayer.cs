@@ -1,11 +1,14 @@
-﻿// created by Reshma
+﻿/*
+/ created by Reshma
 // IDataAccessLayer
 //module:FlightBooking
 
 
 
 
-using Znalytics.Group5.Airline.FlightBooking.Entities;
+using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.Airline.FlightBookingModule.Entities;
 
 namespace Znalytics.Group5.DataAccessLayer
 {
@@ -15,28 +18,28 @@ namespace Znalytics.Group5.DataAccessLayer
         /// method to add bookingId
         /// </summary>
         /// <param name="bookingID"></param>
-        void AddFlightBooking(FlightBooking bookingID);
+        void AddFlightBooking(FlightBooking Booking);
         /// <summary>
         /// method to updatation of customerId
         /// </summary>
         /// <param name="CustomerID"></param>
-        void UpdateFlightBooking(FlightBooking CustomerID);
+        void UpdateFlightBooking(FlightBooking Booking);
 
 
         //method to get  FlightBooking by  Flight Bookingid
-        FlightBooking GetFlightBookingsByFlightBookingID(int bookingID);
+       List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID);
 
         //method to get  FlightBooking by  customer id
-        FlightBooking GetFlightBookingsByFlightCustomerID(int customerID);
+        List<FlightBooking> GetFlightBookingsByFlightCustomerID(int customerID);
 
         //method to get  FlightBookinging by  flightid
-        FlightBooking GetFlightBookingsByFlightID(int flightID);
+       List<FlightBooking> GetFlightBookingsByFlightID(int flightID);
 
     }
 }
 
 
-
+*/
 
 
 

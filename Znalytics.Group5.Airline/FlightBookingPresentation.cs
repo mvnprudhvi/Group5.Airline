@@ -1,4 +1,4 @@
-﻿// Created by Reshma
+﻿/*// Created by Reshma
 // Presentation Layer
 // module: FlightBooking
 
@@ -6,14 +6,15 @@
 
 using System;
 using System.Collections.Generic;
+using Znalytics.Group5.DataAccessLayer;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-       //// presentation
+using Znalytic.Group5.Airline.BussinessLogicLayer;   
 
-using System;
-using System.Collections.Generic;
+using Znalytics.Group5.Airline.Entities;
+using Znalytics.Group5.DataAccessLayer;
 
 namespace Znalytics.Group5.Airline.PresentationLayer
 {
@@ -126,7 +127,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
 
             object _flightBookingbusinessLayer = null;
-            List<FlightBookingPresentation> fb = _flightBookingbusinessLayer.GetFlightBooking();
+            List<FlightBooking> fb = _flightBookingbusinessLayer.GetFlightBooking();
 
             foreach (_flightBooking fb in _flightBooking)
             {
@@ -140,7 +141,7 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
 
 
-
+*/
 
 
 

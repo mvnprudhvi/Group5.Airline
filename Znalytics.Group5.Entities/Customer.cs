@@ -11,7 +11,7 @@ namespace Znalytics.Group5.Airline.Entities
     public class Customer
     {
         //private fields
-        private string _customerId;
+        public  int _customerId;
         private string _customeruserName;
         private string _customerEmail;
         private string _customerPassword;
@@ -19,6 +19,7 @@ namespace Znalytics.Group5.Airline.Entities
         private string _customeraadharNumber;
         private string _customerpancardNumber;
         private string _customerGender;
+       
 
         /// <summary>
         /// Constructor That Initializes Fields
@@ -31,7 +32,7 @@ namespace Znalytics.Group5.Airline.Entities
         /// <param name="aadharNumber"></param>  
         /// <param name="pancardnumber"></param>
         /// <param name="gender"></param>  
-        public Customer(string customerId, string customeruserName, string customerEmail, string customerPassword, string customermobileNumber, string customeraadharNumber, string customerpancardNumber, string customerGender)
+        public Customer(int customerId, string customeruserName, string customerEmail, string customerPassword, string customermobileNumber, string customeraadharNumber, string customerpancardNumber, string customerGender)
         {
              _customerId = customerId;
              _customeruserName = customeruserName;
@@ -52,11 +53,11 @@ namespace Znalytics.Group5.Airline.Entities
         }
 
         // Property For Setting Values To Customer Id Field And Getting The Value of The Field
-        public string CustomerId
+        public int CustomerId
         {
             set
             {
-                if (value.Length>= 0 && value.Length <= 9)
+                if (value >= 0 && value <= 9)
                 {
                    _customerId = value;
                 }

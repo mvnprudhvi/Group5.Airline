@@ -4,8 +4,8 @@ using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 namespace Znalytics.Group5.Airline.DataAccessLayer
 {
-
-    public interface IFlightDataAccessLayer
+   
+      public interface IFlightDataAccessLayer
     {
         //method to add flight Details to the list
         void AddFlight(Flight flight);
@@ -15,15 +15,15 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
 
         void UpdateFlightByFlightId(Flight flight);
 
-        //
+        //method to update flight by flightName
         void UpdateFlightByFlightName(Flight flight);
 
         //method  to remove flight by flightname
-        void RemovetFlightByFlightId(string flightId);
+        void RemoveFlightByFlightId(string flightId);
 
         //method to remove flight by flightName
-        void RemoveFlightByFlightName(string flightName);
-       
+        void RemoveFlightByFlighthName(string flightName);
+
         //method to get flight by flightId
         Flight GetFlightByFlightId(string flightId);
 

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
+using Znalytics.Group5.Airline.FlightModule.DataAccessLayer;
 using Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer;
+using Znalytics.Group5.Airline.Entities;
 //Created a namespace for BusinessLogicLayer of FlightSchedule module
 namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 {
@@ -38,11 +40,14 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
 
                     fsdl.AddSchedule(schedule);
                 }
-
+                else
+                {
+                    throw new Exception("flightScheduleId already exists");
+                }
             }
-            catch (Exception ex)
+            catch (FlightException ex)
             {
-                throw new Exception("flightScheduleId already exists");
+                throw new FlightException(ex.Message);
             }
         }
         /// <summary>
@@ -55,39 +60,85 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         }
 
 
-        /// <summary>
         ///Method to GET flight Schedule by flightScheduleId
         /// </summary>
         /// <param name="flightScheduleId"></param>
         /// <returns></returns>
-        public List<FlightSchedule> GetScheduleByFlightScheduleId(string flightScheduleId)
+        /// 
+        public FlightSchedule GetScheduleByFlightScheduleId(string flightScheduleId)
         {
-            return fsdl.GetScheduleByFlightScheduleId(flightScheduleId);
+            try
+            {
+                //flight Id should not be null
+                if (flightScheduleId != null)
+                {
+                    return fsdl.GetScheduleByFlightScheduleId(flightScheduleId);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
         }
 
-        /// <summary>
-        /// Method to GET flightSchedule by flightId
+        ///Method to GET flight Schedule by flightId
         /// </summary>
         /// <param name="flightId"></param>
         /// <returns></returns>
-        public List<FlightSchedule> GetScheduleByFlightId(string flightId)
+        /// 
+        public FlightSchedule GetScheduleByFlightId(string flightId)
         {
-            return fsdl.GetScheduleByFlightId(flightId);
+            try
+            {
+                //flight Id should not be null
+                if (flightId != null)
+                {
+                    return fsdl.GetScheduleByFlightScheduleId(flightId);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
         }
 
-
         /// <summary>
-        /// Method to GET FlightSchedule by Source
+        /// Method to GET FlightSchedule details by source
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="locationsourceName">Represents source</param>
         /// <returns></returns>
         public List<FlightSchedule> GetScheduleBySource(string source)
         {
-            return fsdl.GetScheduleBySource(source);
+            try
+            {
+                //Location Name should not be null
+                if (source != null)
+                {
+                    //Calls the GetAddressByLocationName Method of WareHouseAddress Data Layer
+                    return fsdl.GetScheduleBySource(source);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (FlightException ex)
+            {
+                throw new FlightException(ex.Message);
+            }
         }
 
 
-        /// <summary>
+/*
+       /// <summary>
         /// Method to GET FlightSchedule by Destination
         /// </summary>
         /// <param name="source"></param>
@@ -95,17 +146,9 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         public List<FlightSchedule> GetScheduleByDestination(string destination)
         {
             return fsdl.GetScheduleByDestination(destination);
-        }
+        }*/
 
-        /// <summary>
-        ///  method to Get Source by FlightScheduleId
-        /// </summary>
-        /// <param name="flightScheduleId"></param>
-        /// <returns></returns>
-        public List<FlightSchedule> GetSourceByFlightScheduleId(string flightScheduleId)
-        {
-            return fsdl.GetSourceByFlightScheduleId(flightScheduleId);
-        }
+        
 
 
         /// <summary>
@@ -117,6 +160,10 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
         {
             return fsdl.GetDestinationByFlightScheduleId(flightScheduleId);
         }
+
+
+
+        
 
 
         //Method to UPDATE source of flightSchedule
@@ -184,10 +231,12 @@ namespace Znalytic.Group5.Airline.FlightScheduleModule.BusinessLogicLayer
             }
         }
 
-        public bool CheckFlightId(string id)
+       
+        public bool CheckFlightScheduleId(string id)
         {
-            throw new NotImplementedException();
+            return FlightScheduleDataAccessLayer.CheckFlightScheduleId(id);
         }
+
     }
 }
  

@@ -6,29 +6,31 @@ using Znalytics.Group5.Airline.BusinessLogicLayer;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
-//Represents Presentation Layer
+// Name Space Created For Customers Module In Presentation Layer
 
 namespace Znalytic.Group5.Airline.PresentationLayer
 {
-
+    //Represents Class of Customrs Presentation Layer
     public class CustomerPL
     {
-        static void Main()
+        //Main Method for Customers Module
+        public void start()
         {
 
             Console.WriteLine("-----------------ONLINE AIRLINE RESERVATION SYSTEM----------------------:");
 
-            CustomerAccountPage();
+            CustomersPage();
             Console.ReadKey();
 
-            static void CustomerAccountPage()
+            //Method To Enter Customers Page
+            static void CustomersPage()
             {
                 int choice = -1;
 
                 do
                 {
 
-                    Console.WriteLine("Enter 1 for sign up (Add Customer)");
+                    Console.WriteLine("Enter 1 for sign up ");
                     Console.WriteLine("Enter 2 for Login");
                     Console.WriteLine("Enter 3 for Exit");
                     bool b = int.TryParse(Console.ReadLine(), out choice);
@@ -37,12 +39,13 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                         switch (choice)
                         {
                             case 1: AddCustomer(); break;
-                            case 2: Login(); break;
+                            case 2: CustomerLogin(); break;
                         }
                     }
                 } while (choice != 3);
             }
 
+            //Method To Add Customer Details
             static void AddCustomer()
             {
                 try
@@ -55,7 +58,7 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
 
                     Console.WriteLine("enter your ID:");
-                    c.CustomerId = Console.ReadLine();
+                    c.CustomerId = int.Parse(Console.ReadLine());
 
                     //customer user name
                     Console.WriteLine("enter your user name:");
@@ -105,18 +108,23 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     Console.WriteLine(ex.Message);
                 }
             }
-            static void Login()
-            {
 
+            //Method for Customers Login
+            static void CustomerLogin()
+            {
+                 
                 //Login form
                 Console.WriteLine("-------LOGIN FORM-----------------");
                 Console.WriteLine("==================================");
-                Console.WriteLine("\nUsername:");
-                string userName = Console.ReadLine();
-                Console.Write("Password:");
-                string Password = Console.ReadLine();
-
-                if (userName == "," && Password == ",")
+                Console.WriteLine("Enter your Username:");
+                string CustomerUserName = Console.ReadLine();
+                Console.Write("Enter your Password:");
+                string CustomerPassword = Console.ReadLine();
+                CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+                Tuple<string, string> tuple = new Tuple<string, string>(CustomerUserName, CustomerPassword);
+                Tuple<string, string> c = customerBusinessLogicLayer.CustomerLogin(CustomerUserName, CustomerPassword);
+                Console.WriteLine("valid user");
+               
                 {
                     CustomersMenu();
                     Console.ReadKey();
@@ -125,8 +133,8 @@ namespace Znalytic.Group5.Airline.PresentationLayer
             }
             
             
-        CustomersMenu:
-            //represents customers menu
+        
+            //Represents Customers Menu
             static void CustomersMenu()
             {
             
@@ -137,8 +145,10 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                     Console.WriteLine("Customers Menu:");
                     Console.WriteLine("Enter 1 to Update Customer");
                     Console.WriteLine("Enter 2 to Get Customer");
-                    Console.WriteLine("Enter 3 to Delete Customer");
-                    Console.WriteLine("Enter 4 to Exit");
+                    Console.WriteLine("Enter 3 to Get Customer By Customer Id");
+                    Console.WriteLine("Enter 4 to Get Customer By Customer User Name");
+                    Console.WriteLine("Enter 5 to Delete Customer");
+                    Console.WriteLine("Enter 6 to Exit");
 
                     bool b = int.TryParse(Console.ReadLine(), out choice2);
                     if (b == true)
@@ -148,14 +158,16 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                             case 1: UpdateCustomer(); break;
                             case 2: GetCustomer(); break;
-                            case 3: DeleteCustomer(); break;
+                            case 3: GetCustomerByCustomerId(); break;
+                            case 4: GetCustomerByCustomerUserName(); break;
+                            case 5: DeleteCustomer(); break;
 
                         }
                     }
                 } while (choice2 != 4);
             
         
-        //update customer details
+        //Method to Update Customer Details
         static void UpdateCustomer()
             {
                 Customer c = new Customer();
@@ -223,21 +235,12 @@ namespace Znalytic.Group5.Airline.PresentationLayer
 
                         } while (choice3 <= 9);
                     }
-
-
-
-                    else
-                    {
-                        goto CustomersMenu;
-
-
-                    }
             }
         }
 
     
 
-            //view customer details
+            //Method to Get Customer Details
         static void GetCustomer()
             {
                 Customer c = new Customer();
@@ -251,35 +254,37 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 Console.WriteLine("These Are Your Details");
             }
 
+            //Method To Get Customer Details By Customer Id 
             static void GetCustomerByCustomerId()
             {
                 Customer c = new Customer();
                 Console.WriteLine("Enter existing Customer Id");
-                string CustomerId = Console.ReadLine();
+                int customerId = int.Parse(Console.ReadLine());
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-                Customer customer= customerBusinessLogicLayer.GetCustomerByCustomerId(CustomerId);
+                Customer customer= customerBusinessLogicLayer.GetCustomerByCustomerId(customerId);
                 Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
 
             }
 
+            //Method To Get Customer Details By Customer User Name
             static void GetCustomerByCustomerUserName()
             {
                 Customer c = new Customer();
                 Console.WriteLine("Enter existing Customer User Name");
-                string CustomerUserName = Console.ReadLine();
+                string customeruserName = Console.ReadLine();
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-                Customer customer = customerBusinessLogicLayer.GetCustomerByCustomerUserName(CustomerUserName);
+                Customer customer = customerBusinessLogicLayer.GetCustomerByCustomerUserName(customeruserName);
                 Console.WriteLine(customer.CustomerId + "," + customer.CustomerUserName + ", " + customer.CustomerPassword + "," + customer.CustomerEmail + "," + customer.CustomerMobileNumber + "," + customer.CustomerAadharNumber + customer.CustomerPanCardNumber + "," + customer.CustomerGender + ",");
             }
 
-
+            //Method Tp Delete Customer Details
                 static void DeleteCustomer()
         {
                 Customer c = new Customer();
                 CustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
                 Console.WriteLine("select the Option based on which you want to remove the Customer Account ");
-                Console.WriteLine("Enter 1 by Customer Id");
-                Console.WriteLine("Enter 2 by Customer UserName");
+                Console.WriteLine("Enter 1 For Customer Id");
+                Console.WriteLine("Enter 2 For Customer UserName");
                 customerBusinessLogicLayer.DeleteCustomer(c);
                 Console.WriteLine("Customer details Deleted successfully");
                 int choice;
@@ -301,24 +306,27 @@ namespace Znalytic.Group5.Airline.PresentationLayer
                 {
                     Console.WriteLine("the choice you entered is incorrect ..please ReEnter the choice ");
                 }
+
+                //Method To Delete Customer Details By Customer Id
                 void RemoveCustomerByCustomerId()
                 {
                     
                     Console.Write("Enter the CustomerId:");
-                    string CustomerId = Console.ReadLine();
+                    int customerId = int.Parse(Console.ReadLine());
   
-                    customerBusinessLogicLayer.RemoveCustomerByCustomerId(CustomerId);
+                    customerBusinessLogicLayer.RemoveCustomerByCustomerId(customerId);
                     Console.WriteLine("Your Account is Deleted");
 
 
                 }
 
+                //Method To Delete Customer Details By Customer User Name
                 void RemoveCustomerByCustomerUserName()
                 {
                     Console.Write("Enter the CustomerUserName:");
-                    string CustomerUserName = Console.ReadLine();
+                    string customeruserName = Console.ReadLine();
 
-                    customerBusinessLogicLayer.RemoveCustomerByCustomerUserName(CustomerUserName);
+                    customerBusinessLogicLayer.RemoveCustomerByCustomerUserName(customeruserName);
                     Console.WriteLine("Your Account is Deleted");
 
 

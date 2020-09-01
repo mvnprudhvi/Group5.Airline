@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
 using Znalytics.Group5.AirLine.Entities;
+using Newtonsoft.Json;
+using System.IO;
 
 //Created a Namespace For DataAccess Layer For Customer Module
 namespace Znalytics.Group5.Airline.DataAccessLayer
@@ -15,12 +17,47 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
     public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
         // Create a List For Customer
-        private static List<Customer> _customer;
+        private static List<Customer> _customer
+        {
+            set;
+            get;
+        }
+
 
         //Static Constructor
     static CustomerDataAccessLayer()
         {
             _customer = new List<Customer>();
+        }
+
+        /// <summary>
+        /// Saving the data into Json file
+        /// </summary>
+        private static void SaveIntoFile()
+        {
+            //Serialization converts an object into Json Format/String
+            //Serialize object is stored in a reference variable of a string
+            string s = JsonConvert.SerializeObject(_customer);
+
+            //Strean Writer writes data into file.
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\Customer.txt");
+            streamWriter.Write(s);
+            streamWriter.Close();
+        }
+        /// <summary>
+        /// reading the data from Json file and return the data in the file in List format
+        /// </summary>
+        /// <returns>Returns List of flightdetails  avaliable int Flight.Txt</returns>
+        public List<Customer> GetFiledata()
+        {
+            //Stream Reader reads the data from the given file
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Customer.txt");
+            string str = streamReader.ReadToEnd();
+
+            //Deserialization converts Json data/string to Object
+            List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(str);
+            return customer;
+
         }
 
         /// <summary>
@@ -30,14 +67,16 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         public void AddCustomer(Customer customer)
         {
 
-            if (!_customer.Exists(temp => temp.CustomerId == customer.CustomerId))
+            if (_customer.Count == 0)
             {
-                _customer.Add(customer);
+                customer.CustomerId = 1;
             }
             else
             {
-                throw new CustomerException("Customer id already exists");
+                customer.CustomerId = _customer.Max(temp => temp.CustomerId) + 1;
             }
+            _customer.Add(customer);
+            SaveIntoFile();
         }
 
 
@@ -45,17 +84,19 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// Method To  
         /// </summary>
         /// <returns></returns>
-        public void Login(Customer customer)
+        public Tuple<string, string> CustomerLogin(string CustomerUserName,string CustomerPassword)
         {
-            if (_customer.Exists(temp => temp.CustomerUserName == customer.CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == customer.CustomerPassword)))
+            if (_customer.Exists(temp => temp.CustomerUserName == CustomerUserName) && (_customer.Exists(temp => temp.CustomerPassword == CustomerPassword)))
             {
-                _customer.Login(customer);
+
+                return null;
             }
             else
             {
                 throw new CustomerException("UserName or Password is Incorrect");
             }
         }
+         
 
 
         /// <summary>
@@ -72,49 +113,21 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         /// </summary>
         /// <param name="CustomerId"></param>
         /// <returns></returns>
-        public List<Customer> GetCustomerByCustomerId(string customerId)
+        public Customer GetCustomerByCustomerId(int customerId)
         {
-            Customer c = _customer.Find(temp => temp.CustomerId == Customer.customerId);
+            Customer c = _customer.Find(temp => temp.CustomerId == customerId);
             return c;
         }
 
         /// <summary>
         /// Method To GET Customer Details By Customer Username
         /// </summary>
-        /// <param name="CustomerUserName"></param>
+        /// <param name="customeruserName"></param>
         /// <returns></returns>
-        public List<Customer> GetCustomerByCustomerUserName(string customeruserName)
+        public Customer GetCustomerByCustomerUserName(string customeruserName)
         {
-            Customer c = _customer.Find(temp => temp.CustomerUserName == Customer.customeruserName);
+            Customer c = _customer.Find(temp => temp.CustomerUserName == customeruserName);
             return c;
-        }
-
-
-        /// <summary>
-        /// Method To Delete The Added Details
-        /// </summary>
-        /// <returns></returns>
-        public void DeleteCustomer(Customer customer)
-        {
-            _customer.Remove(customer);
-        }
-
-        /// <summary>
-        /// Method To REMOVE Customer By Customer Id
-        /// </summary>
-        /// <param name="CustomerId"></param>
-        public void RemoveCustomerByCustomerId(string customerId)
-        {
-            _customer.RemoveAll(temp => temp.CustomerId == Customer.customerId);
-        }
-
-        /// <summary>
-        /// Method To REMOVE Customer By Customer User Name
-        /// </summary>
-        /// <param name="CustomerUserName"></param>
-        public void RemoveCustomerByCustomerUserName(string customeruserName)
-        {
-            _customer.RemoveAll(temp => temp.CustomerUserName == Customer.customeruserName);
         }
 
         /// <summary>
@@ -139,6 +152,35 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
             {
                 throw new CustomerException("Customer Detail Does not Exist");
             }
+        }
+
+        /// <summary>
+        /// Method To Delete The Added Details
+        /// </summary>
+        /// <returns></returns>
+        public void DeleteCustomer(Customer customer)
+        {
+            _customer.Remove(customer);
+        }
+
+        /// <summary>
+        /// Method To REMOVE Customer By Customer Id
+        /// </summary>
+        /// <param name="CustomerId"></param>
+        public void RemoveCustomerByCustomerId(int customerId)
+        {
+            _customer.RemoveAll(temp => temp.CustomerId == customerId);
+            SaveIntoFile();
+        }
+
+        /// <summary>
+        /// Method To REMOVE Customer By Customer User Name
+        /// </summary>
+        /// <param name="CustomerUserName"></param>
+        public void RemoveCustomerByCustomerUserName(string customeruserName)
+        {
+            _customer.RemoveAll(temp => temp.CustomerUserName == customeruserName);
+            SaveIntoFile();
         }
     }
 }

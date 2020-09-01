@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.Airline.DataAccessLayer;
-using Znalytics.Group5.AirLine.ICustomerBusinessLogicLayer;
+using Znalytics.Group5.AirLine.BusinessLogicLayer;
 using Znalytics.Group5.AirLine.Entities;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
     public class CustomerBusinessLogicLayer : ICustomerBusinessLogicLayer
     {
          CustomerDataAccessLayer cdal;
-
+        
 
         /// <summary>
         /// Default Constructor
@@ -33,10 +33,11 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             try
             {
                 //Customer Details Should Not Be null
-                if ((customer.CustomerId != null) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
+                if ((customer.CustomerId != 0) && (customer.CustomerUserName != null) && (customer.CustomerEmail != null) && (customer.CustomerPassword != null) && (customer.CustomerMobileNumber != null) && (customer.CustomerAadharNumber != null) && (customer.CustomerPanCardNumber != null) && (customer.CustomerGender != null))
                 {
                     cdal.AddCustomer(customer);
                 }
+                
             }
             catch (CustomerException ex)
             {
@@ -44,19 +45,30 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             }
         }
 
+        //Method To Login 
+        public Tuple<string,string>CustomerLogin(string CustomerUserName,string CustomerPassword)
+        {
+            //Customer User Name and Password Cannot Be null
+            if (CustomerUserName != null && CustomerPassword != null)
+            {
+                 return cdal.CustomerLogin(CustomerUserName,CustomerPassword);
+            }
+            return null;
+        }
+
         // Method to GET the Added Cutomer Details
-        public List<Customer> GetCustomer(Customer c)
+        public List<Customer> GetCustomer()
         {
             return cdal.GetCustomer();
         }
 
         //Method to GET Customer Details By Customer Id
-        public List<Customer> GetCustomerByCustomerId(string customerId)
+        public Customer GetCustomerByCustomerId(int customerId)
         {
             try
             {
                 //Customer Id Should Not Be null
-                if (customerId != null)
+                if (customerId != 0)
                 {
                     return cdal.GetCustomerByCustomerId(customerId);
                 }
@@ -71,12 +83,12 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             }
         }
 
-        //Method to GET flightDetails by flightId
-        public List<Customer> GetCustomerByCustomerUserName(string customeruserName)
+        //Method to GET Customer By Customer User Name
+        public Customer GetCustomerByCustomerUserName(string customeruserName)
         {
             try
             {
-                //flight Id should not be null
+                //Customer User Name should not be null
                 if (customeruserName != null)
                 {
                     return cdal.GetCustomerByCustomerUserName(customeruserName);
@@ -92,59 +104,14 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             }
         }
 
-        public void DeleteCustomer(Customer customer)
-        {
-            cdal.DeleteCustomer(customer);
-        }
-
-        public void Login(Customer customer)
-        {
-             cdal.Login(customer);
-        }
-
-        //Method to Delete Customer Details To The List
-        public void RemoveCustomerByCustomerId(string CustomerId)
-        {
-            try
-            {
-                //Customer Id should not be null
-                if (CustomerId != null)
-                {
-                    cdal.RemoveCustomerByCustomerId(CustomerId);
-                }
-            }
-            catch (CustomerException ex)
-            {
-                throw new CustomerException(ex.Message);
-            }
-        }
-
-        //Method to REMOVE Customer  by flightName
-        public void RemoveCustomerByCustomerUserName(string CustomerUserName)
-        {
-
-            try
-            {
-                //flight Name should not be null
-                if (CustomerUserName != null)
-                {
-                    cdal.RemoveCustomerByCustomerUserName(CustomerUserName);
-                }
-            }
-            catch (CustomerException ex)
-            {
-                throw new CustomerException(ex.Message);
-            }
-        }
-
         //Method to Update Customer Details To The List
-        public void UpdateCustomer(Customer customer)// update flightid
+        public void UpdateCustomer(Customer customer)// update Customer id
         {
 
             try
-            //WareHouse Id should not be null
+            //Customer Id should not be null
             {
-                if (customer.CustomerId != null) 
+                if (customer.CustomerId != 0)
                 {
                     cdal.UpdateCustomer(customer);
                 }
@@ -155,7 +122,46 @@ namespace Znalytics.Group5.Airline.BusinessLogicLayer
             }
         }
 
+        //Method To Delete Customer Details
+        public void DeleteCustomer(Customer customer)
+        {
+            cdal.DeleteCustomer(customer);
+        }
 
+        //Method to Delete Customer By Customer Id 
+        public void RemoveCustomerByCustomerId(int customerId)
+        {
+            try
+            {
+                //Customer Id should not be null
+                if (customerId != 0)
+                {
+                    cdal.RemoveCustomerByCustomerId(customerId);
+                }
+            }
+            catch (CustomerException ex)
+            {
+                throw new CustomerException(ex.Message);
+            }
+        }
+
+        //Method to REMOVE Customer by Customer User Name
+        public void RemoveCustomerByCustomerUserName(string customeruserName)
+        {
+
+            try
+            {
+                //Customer User Name should not be null
+                if (customeruserName != null)
+                {
+                    cdal.RemoveCustomerByCustomerUserName(customeruserName);
+                }
+            }
+            catch (CustomerException ex)
+            {
+                throw new CustomerException(ex.Message);
+            }
+        }
     }
 }
 

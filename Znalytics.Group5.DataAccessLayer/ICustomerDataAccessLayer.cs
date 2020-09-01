@@ -23,19 +23,19 @@ namespace Znalytics.Group5.Airline.DataAccessLayer
         void DeleteCustomer(Customer customer);
 
         //Method To Remove Customer Details By Customer Id
-        void RemoveCustomerByCustomerId(string customerId);
+        void RemoveCustomerByCustomerId(int customerId);
 
         //Method To Remove Customer Details By Customer User Name
         void RemoveCustomerByCustomerUserName(string customeruserName);
 
-        //Method To Login To The Application
-        void Login(Customer customer);
+        //Method For Login To Check User name and Password are Matching Or Not
+        Tuple<string, string> CustomerLogin(string CustomerUserName, string CustomerPassword);
 
         //Method To Get Customer Details By Customer Id
-        List<Customer> GetCustomerByCustomerId(string customerId);
+        Customer GetCustomerByCustomerId(int customerId);
 
         //Method To Get Customer Details By Customer User Name
-        List<Customer> GetCustomerByCustomerUserName(string customeruserName);
+        Customer GetCustomerByCustomerUserName(string customeruserName);
 
 
 
