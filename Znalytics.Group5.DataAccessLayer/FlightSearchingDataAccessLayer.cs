@@ -9,8 +9,6 @@ using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
 using Znalytics.Group5.Airline.FlightModule.Entities;
 using Znalytics.Group5.Airline.FlightScheduleModule.Entities;
-using Znalytics.Group5.Airline.FlightScheduleModule.DataAccessLayer;
-using Znalytics.Group5.Airline.FlightSearchingDataAcessLayer;
 
 namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 {
@@ -70,10 +68,9 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
         public List<FlightSchedule> GetScheduleBySource(string source)
         {
-            FlightScheduleDataAccessLayer sample = new FlightScheduleDataAccessLayer();
-
-            return sample.GetFlightsBySource(source);
-            
+            List<FlightSchedule> samp = FlightDataAccessLayer._scheduleList;
+            List<FlightSchedule> res = samp.FindAll(temp => temp.Source == source);
+            return res;
         }
         public List<FlightSchedule> GetScheduleByDestination(string destination)
         {
@@ -82,22 +79,8 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
             return sample.GetFlightsByDestination(destination);
         }
 
-        public void AddFlight(Flight flightId)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void UpdateFlight(Flight flightId)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public List<FlightSchedule> GetFlightSheduleByDestination(string destination)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-}
+}*/
 
 
 
