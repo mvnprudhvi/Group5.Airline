@@ -20,9 +20,9 @@ namespace Znalytics.Group5.DataAccessLayer
         /// <param name="bookingID"></param>
         void AddFlightBooking(FlightBooking Booking);
         /// <summary>
-        /// method to updatation of customerId
+        /// method to updatation of bookingId
         /// </summary>
-        /// <param name="CustomerID"></param>
+        /// <param name="bookingID"></param>
         void UpdateFlightBooking(FlightBooking Booking);
 
 
