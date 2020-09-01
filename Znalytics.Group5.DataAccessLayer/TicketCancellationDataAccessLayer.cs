@@ -20,10 +20,10 @@ namespace Znalytics.Group5.DataAccessLayer
 
         // creating list
         private static List<TicketCancellation> _cancellationID
-        { 
+        {
             set;
             get;
-                }
+        }
         static TicketCancellationDataAccessLayer()
         {
 
@@ -75,7 +75,7 @@ namespace Znalytics.Group5.DataAccessLayer
                 throw new Exception("bookingId doesnot exists");
             }
         }
-        
+
         //method to get ticket cancellation by ticket cancellation id
         public List<TicketCancellation> GetTicketCancellationsByCancellationID(int cancellationID)
         {
@@ -99,5 +99,5 @@ namespace Znalytics.Group5.DataAccessLayer
         {
             return GetTicketCancellations();
         }
-        }
     }
+}
