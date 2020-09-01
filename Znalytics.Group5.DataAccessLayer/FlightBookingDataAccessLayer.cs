@@ -27,8 +27,10 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
     /// Represents Business logic layer of the FlightBooking details
     /// </summary>
   public  class FlightBookingDataAccessLayer : IFlightBookingDataAccessLayer
-
-    {
+    { 
+        //Created an object for datalayer and stored it in reference variable
+        FlightBookingDataAccessLayer fbdl = new FlightBookingDataAccessLayer();
+    
         private object JsonConvert;
 
         //creating list
@@ -99,25 +101,52 @@ namespace Znalytic.Group5.Airline.DataAcessLayer
                 throw new Exception("bookingId not added");
             }
         }
-
-
-       ///methods to update  FlightBooking
-        public void UpdateFlightBooking(FlightBooking bookingID)
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="schedule"></param>
+       
+        public void UpdateFlightBooking(FlightBooking booking)
         {
-            if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
-            
+
+            try
             {
-               _bookingList.Update(bookingID);
+                //bookingID should not be null
+                if (booking.BookingID != 0)
+
+                //Calls the Update Method of FlightBooking of flightFlightBooking Data Layer
+                { 
+                        fbdl.UpdateFlightBooking(booking);
+                }
             }
-            else
+            catch (FlightException ex)
             {
-                //throws exception that booking id doesnot exist
-                throw new Exception("bookingId doesnot exists");
+                throw new FlightException(ex.Message);
             }
+
         }
 
+
+
+
+        /*methods to update  FlightBooking
+         public void UpdateFlightBooking(FlightBooking bookingID)
+         {
+             if (_bookingList.Exists(temp => temp.CustomerID == bookingID.CustomerID))
+
+             {
+                _bookingList.Update(bookingID);
+             }
+             else
+             {
+                 //throws exception that booking id doesnot exist
+                 throw new Exception("bookingId doesnot exists");
+             }
+         }*/
+
         //method to get  FlightBooking by  Flight Bookingid
-       public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
+        public List<FlightBooking> GetFlightBookingsByFlightBookingID(int bookingID)
         {
             return _bookingList.FindAll(temp => temp.BookingID == bookingID);
         }

@@ -127,11 +127,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 //Displaying Message to Admin When FlightPrice is Added Successfully
                 WriteLine("The Price of ScheduleId:" + fp.FlightScheduleId + " is Added Successfully\n");
             }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
             catch (FlightPriceException ex)
             {
                 WriteLine(ex.Message);
             }
         }
+
 
         /// <summary>
         /// This Method Represents to Delete the Price of Flight
@@ -157,11 +159,13 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 //Displaying Message to Admin When FlightPrice is Deleted Successfully
                 WriteLine("The Price of ScheduleId:" + fpr.FlightScheduleId + " is  Deleted Successfully\n");
             }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
             catch (FlightPriceException ex)
             {
                 WriteLine(ex.Message);
             }
         }
+
 
         /// <summary>
         /// This Method Represents to Update the Business price and Economy Price of Flight
@@ -192,13 +196,14 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
                 //Displaying Message to Admin When the FlightPrice is Updated Successfully
                 WriteLine("The Price of ScheduleId:" + fpri.FlightScheduleId + " is Successfully Updated\n");
-
             }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
             catch (FlightPriceException ex)
             {
                 WriteLine(ex.Message);
             }
         }
+
 
         /// <summary>
         /// This Method Represents to Update the Weekend Hike Percentage Based on Individual ScheduleId 
@@ -209,7 +214,6 @@ namespace Znalytics.Group5.Airline.PresentationLayer
             WriteLine("You Chose to Update Weekend Hike Perentage By ScheduleId ");
             try
             {
-
                 //Creating Object of Flight Price
                 FlightPrice fpri = new FlightPrice();
 
@@ -226,12 +230,15 @@ namespace Znalytics.Group5.Airline.PresentationLayer
 
                 //Displaying Message When the Weekend Hike Perecentage is Added successfully
                 WriteLine("The Weekend Hike Percentage of ScheduleId:" + fpri.FlightScheduleId + " is  Updated Successfully\n");
+
             }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
             catch (FlightPriceException ex)
             {
                 WriteLine(ex.Message);
             }
         }
+
 
         /// <summary>
         /// This Method Represents to Update the Weekend Hike Percentage For All ScheduleId's
@@ -245,13 +252,20 @@ namespace Znalytics.Group5.Airline.PresentationLayer
                 //Reading Weekend Hike Percentage From Admin 
                 Write("Enter Weekend Hike Percentage: ");
                 double weekendPriceHikePercentage = double.Parse(ReadLine());
+                if (weekendPriceHikePercentage > 0 && weekendPriceHikePercentage <= 100)
+                {
+                    //Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Business logic Layer
+                    _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageForAllSchedules(weekendPriceHikePercentage);
 
-                //Method Calling of UpdateWeekendPriceHikePercentageForAllSchedules to Business logic Layer
-                _flightPriceBusinessLogic.UpdateWeekendPriceHikePercentageForAllSchedules(weekendPriceHikePercentage);
-
-                //Displaying Message When the Weekend Hike Perecentage For All Schedules is Updated Successfully
-                WriteLine("The Weekend Hike Percentage of All ScheduleId's is Successfully Updated\n");
+                    //Displaying Message When the Weekend Hike Perecentage For All Schedules is Updated Successfully
+                    WriteLine("The Weekend Hike Percentage of All ScheduleId's is Successfully Updated\n");
+                }
+                else
+                {
+                    throw new FlightPriceException("Please Enter Percentage Between 1 to 100");
+                }
             }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
             catch (FlightPriceException ex)
             {
                 WriteLine(ex.Message);
@@ -266,30 +280,37 @@ namespace Znalytics.Group5.Airline.PresentationLayer
         {
             //Displaying What the user as selected the choice in FlightPrice Menu 
             WriteLine("You Chose to View Flight Prices By Before Days ");
-
-            //Reading  Before Days Manually From User
-            Write("Enter before days You  Want Booking in Advance(<=60): ");
-            int beforedays = int.Parse(ReadLine());
-
-            //Creating Reference Variable of List<FlightPrice> to get the Data from List
-            List<FlightPrice> prs;
-
-            // Method Calling of GetFlightPricesByBeforeDays to Business Logic Layer through Reference Variable of List<FlightPrice>
-            prs = _flightPriceBusinessLogic.GetFlightPricesByBeforeDays(beforedays);
-
-            //Dispalying  Details of FligthId,Before Days,Hike Perecentage,Business Class Seats,Economy Class Seats Of FlightPrices
-            WriteLine("=========FLIGHTS SCHEDULED PRICE DETAILS ARE BELOW=======");
-            WriteLine("FlightScheduleId" + "  BeforeDays" + "  HikePercentage" + "  BusinessClassSeats" + "  EconomyClassSeats");
-            WriteLine("-------------------------------------------------------------------------------------");
-
-            //foreach Loop is For Retreiving the data from List<FlightPrice> Collection by Using Reference Variable
-            foreach (FlightPrice pri in prs)
+            try
             {
-                WriteLine("   " + pri.FlightScheduleId + "\t\t" + beforedays + "     \t" + pri.WeekendPriceHikePercentage + "%" + "\t\t" + pri.PriceForBusinessClassSeat + " \t\t\t" + pri.PriceForEconomyClassSeat);
-            }
+                //Reading  Before Days Manually From User
+                Write("Enter before days You  Want Booking in Advance(<=60): ");
+                int beforedays = int.Parse(ReadLine());
 
-            //This Represents Giving one Line Space after this operation is Done
-            WriteLine();
+                //Creating Reference Variable of List<FlightPrice> to get the Data from List
+                List<FlightPrice> prs;
+
+                // Method Calling of GetFlightPricesByBeforeDays to Business Logic Layer through Reference Variable of List<FlightPrice>
+                prs = _flightPriceBusinessLogic.GetFlightPricesByBeforeDays(beforedays);
+
+                //Dispalying  Details of FligthId,Before Days,Hike Perecentage,Business Class Seats,Economy Class Seats Of FlightPrices
+                WriteLine("=========FLIGHTS SCHEDULED PRICE DETAILS ARE BELOW=======");
+                WriteLine("FlightScheduleId" + "  BeforeDays" + "  HikePercentage" + "  BusinessClassSeats" + "  EconomyClassSeats");
+                WriteLine("-------------------------------------------------------------------------------------");
+
+                //foreach Loop is For Retreiving the data from List<FlightPrice> Collection by Using Reference Variable
+                foreach (FlightPrice pri in prs)
+                {
+                    WriteLine("   " + pri.FlightScheduleId + "\t\t" + beforedays + "     \t" + pri.WeekendPriceHikePercentage + "%" + "\t\t" + pri.PriceForBusinessClassSeat + " \t\t\t" + pri.PriceForEconomyClassSeat);
+                }
+
+                //This Represents Giving one Line Space after this operation is Done
+                WriteLine();
+            }
+            //Catch Block Represents Displaying Exception Message which was thrown in Validations
+            catch (FlightPriceException ex)
+            {
+                WriteLine(ex.Message);
+            }
         }
     }
 }
