@@ -68,19 +68,34 @@ namespace Znalytics.Group5.Airline.FlightSearchingDataAcessLayer
 
         public List<FlightSchedule> GetScheduleBySource(string source)
         {
-            List<FlightSchedule> samp = FlightDataAccessLayer._scheduleList;
-            List<FlightSchedule> res = samp.FindAll(temp => temp.Source == source);
-            return res;
+            FlightScheduleDataAccessLayer sample = new FlightScheduleDataAccessLayer();
+
+            return sample.GetFlightsByDestination(source);
+            
         }
         public List<FlightSchedule> GetScheduleByDestination(string destination)
         {
             FlightScheduleDataAccessLayer sample = new FlightScheduleDataAccessLayer();
-            
+
             return sample.GetFlightsByDestination(destination);
         }
 
+        public void AddFlight(Flight flightId)
+        {
+            throw new System.NotImplementedException();
+        }
 
-}*/
+        public void UpdateFlight(Flight flightId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<FlightSchedule> GetFlightSheduleByDestination(string destination)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}
 
 
 
