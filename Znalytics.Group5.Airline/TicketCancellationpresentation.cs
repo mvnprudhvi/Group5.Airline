@@ -4,7 +4,7 @@ using Znalytic.Group5.BussinessLogicLayer;
 using Znalytics.Group5.Airline.Entities;
 using System;
 /// <summary>
-/// represents namespace
+/// represents namespace of ticket cancellation..
 /// </summary>
 namespace Znalytics.Group5.Airline.PresentationLayer
 {

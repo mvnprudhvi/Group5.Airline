@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Znalytics.Group5.Airline.Entities;
 using Znalytics.Group5.DataAccessLayer;
-
+//represents namespace of ticket cancellation business logic layer
 namespace Znalytic.Group5.BussinessLogicLayer
 {
     /// <summary>

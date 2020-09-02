@@ -1,8 +1,8 @@
 ﻿//created by Madhumitha........
-//Entities
+//Entities...
 //module:Ticketcancellation
 using System;
-
+//name space that represents ticket cancellation...
 namespace Znalytics.Group5.Airline.Entities
 {
     /// <summary>
@@ -20,6 +20,7 @@ namespace Znalytics.Group5.Airline.Entities
 
         public TicketCancellation()
         {
+
         }
 
         /// <summary>
@@ -65,13 +66,14 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                //id of the customerId should be 5 digits 
+                //id of the flight Id should be 5 digits 
                 if (value <= 5)
                 {
                     _flightID = value;
                 }
                 else
                 {
+                    //id of the flight Id should not exceed 5 digits
                     throw new Exception("flight id should not exceed 5 digits");
                 }
             }
@@ -84,7 +86,7 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                //id of the customerId should be 5 digits 
+                //id of the booking id should be 5 digits 
                 if (value <= 5)
                 {
                     BookingID = value;
@@ -136,14 +138,14 @@ namespace Znalytics.Group5.Airline.Entities
         {
             set
             {
-                //id of the customerId should be 5 digits 
+                //id of the cancellation Id should be 5 digits 
                 if (value <= 5)
                 {
                     _cancellationID = value;
                 }
                 else
                 {
-                    //throws exception that booking id shuold be 5 digits only
+                    //throws exception that cancellation id shuold be 5 digits only
                     throw new Exception("booking id should not exceed 5 digits");
                 }
             }
